@@ -1,0 +1,26 @@
+{
+  "source_identity_verified": true,
+  "editor_normalization": "CRLF to LF only",
+  "archive_file_count": 8,
+  "project_sha256": "558e6ecbeee196e77a0b54c24d7a5217f5fffa2c46ba8169207c6302f2bc7245",
+  "official_url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acb926f694b590c3c439f38",
+  "score": 56.71,
+  "rank": 158,
+  "time_gain_vs_M6_pct": [
+    -8.547008547008556,
+    5.343511450381684,
+    29.352226720647778,
+    9.61337513061651,
+    -0.7164790174002077,
+    9.349030470914126,
+    7.486886027658562,
+    1.2331838565022357,
+    -2.162629757785467,
+    0.8429926238145362,
+    1.074060197327338,
+    0.5458267000227474,
+    -0.6271165182490906,
+    0.2336448598130841,
+    0.21299254526091588
+  ]
+}

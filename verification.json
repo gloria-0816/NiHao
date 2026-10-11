@@ -1,0 +1,25 @@
+{
+  "selected": "HALFSTATIC_RETEST",
+  "source_sha256": "2973d43eec7cb4e727ff088429cf71573f535fc053f226a47ff94712d1b2595d",
+  "verified_editor": true,
+  "editor_normalization": "CRLF to LF only",
+  "editor_sha256": "c572e0b397df473f83a65d3c434febd2fd2ced410747595d34ada444a25afcad",
+  "verified_zip_files": 8,
+  "special_values": {
+    "groups": 30,
+    "cases": 30,
+    "runs": 60,
+    "strict_fail": 0
+  },
+  "half_numerical_audit": {
+    "cases": 51,
+    "runs": 102,
+    "all_bitwise_equal_parent": true,
+    "fp16_strict_pass": 43,
+    "fp32_strict_pass": 5,
+    "inherited_bf16_fail": 3,
+    "special_cases": 18,
+    "special_runs": 36,
+    "special_strict_fail": 0
+  }
+}

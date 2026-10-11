@@ -1,0 +1,34 @@
+{
+  "parent": "E023/M6",
+  "parent_source_sha256": "207f520c0a0f4fa5749b55e56ef8c8f522dd4152db6c5cc6b8b883a4572202d9",
+  "references": [
+    {
+      "url": "https://asc.gitcode.com/api/SIMD-API/adv_api/normalization/RmsNorm.html",
+      "used": "Multirow normalization, row/column alignment constraints and tiled vector processing; independent implementation for A2."
+    },
+    {
+      "url": "https://github.com/vllm-project/vllm-ascend/blob/main/csrc/moe/add_rms_norm_bias/op_kernel/add_rms_norm_bias.h",
+      "used": "Review parameter caching and per-row inverse RMS normalization; no source copied."
+    },
+    {
+      "url": "https://www.hiascend.com/doc_center/source/en/CANNCommunityEdition/900/API/ascendcopapi/atlasascendc_api_07_0084.html",
+      "used": "BlockReduceSum for batched FP32 short rows."
+    },
+    {
+      "url": "https://www.hiascend.com/doc_center/source/zh/CANNCommunityEdition/82RC1alpha001/opdevg/ascendcbestP/CANN%E7%A4%BE%E5%8C%BA%E7%89%88%208.2.RC1.alpha001%20Ascend%20C%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%2001.pdf",
+      "used": "Reduce API-call setup and support counter-length vector operations; profiling determines actual gains."
+    },
+    {
+      "url": "https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/910/API/ascendcopapi/docs/api/SIMD-API/基础API/同步控制/核内同步/SetFlag-WaitFlag.md",
+      "used": "SetFlag completes all preceding source-pipeline reads/writes; batch four independent input transfers before one MTE2_V wait. Checked with CANN9.0 installed API on A2."
+    },
+    {
+      "url": "https://www.hiascend.com/document/detail/zh/canncommercial/83RC1/opdevg/Ascendcopdevg/atlas_ascendc_10_00019.html",
+      "used": "Static LocalTensor avoids TPipe initialization; manually allocated UB, explicit sync, InitSocState and basic APIs."
+    },
+    {
+      "url": "https://www.hiascend.com/doc_center/source/zh/CANNCommunityEdition/910beta2/API/ascendcopapi/atlasascendc_api_07_0081.html",
+      "used": "WholeReduceSum dstRepStride measured in scalar elements; checked static work area bounds."
+    }
+  ]
+}

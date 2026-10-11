@@ -1,0 +1,19 @@
+{
+  "protocol": "ABBA then BAAB, process medians from last20 msprof tasks",
+  "source_sha256": "2973d43eec7cb4e727ff088429cf71573f535fc053f226a47ff94712d1b2595d",
+  "groups": [
+    {
+      "block": 0,
+      "base_us": 8.79,
+      "candidate_us": 7.890000000000001,
+      "gain_pct": 10.238907849829337
+    },
+    {
+      "block": 1,
+      "base_us": 8.145,
+      "candidate_us": 7.35,
+      "gain_pct": 9.760589318600369
+    }
+  ],
+  "both_blocks_positive": true
+}

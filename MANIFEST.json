@@ -1,0 +1,233 @@
+{
+  "repository": "gloria-0816/CANN_HuaiWei",
+  "visibility": "private",
+  "experiment": "E024_small_batch",
+  "archived_at": "2026-10-11",
+  "official_result": {
+    "variant": "HALFSTATIC_RETEST",
+    "submission_id": 735124,
+    "submitted_at": "2026/10/11 21:43:11",
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acb926f694b590c3c439f38",
+    "pass_cases": 15,
+    "total_cases": 15,
+    "score": 56.71,
+    "rank": 158,
+    "time_us": [
+      2.54,
+      2.48,
+      3.49,
+      8.65,
+      9.84,
+      13.09,
+      19.4,
+      35.24,
+      70.86,
+      56.46,
+      158.42,
+      87.46,
+      561.61,
+      4270.0,
+      9370.0
+    ],
+    "tbest_us": [
+      1.13,
+      1.63,
+      2.12,
+      4.43,
+      5.03,
+      7.95,
+      10.61,
+      29.72,
+      67.81,
+      46.79,
+      129.65,
+      75.96,
+      394.36,
+      3530.0,
+      7960.0
+    ],
+    "error_pct": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "source_sha256": "2973d43eec7cb4e727ff088429cf71573f535fc053f226a47ff94712d1b2595d",
+    "editor_sha256": "c572e0b397df473f83a65d3c434febd2fd2ced410747595d34ada444a25afcad",
+    "editor_normalization": "CRLF to LF only",
+    "runner_sha256": "911653b126d86b3374c7ad90b7a8c2bc73b3cef0da0c7e1e34d91f59ab8171b4",
+    "project_sha256": "558e6ecbeee196e77a0b54c24d7a5217f5fffa2c46ba8169207c6302f2bc7245",
+    "gain_vs_E023_pct": [
+      -8.547008547008556,
+      5.343511450381684,
+      29.352226720647778,
+      9.61337513061651,
+      -0.7164790174002077,
+      9.349030470914126,
+      7.486886027658562,
+      1.2331838565022357,
+      -2.162629757785467,
+      0.8429926238145362,
+      1.074060197327338,
+      0.5458267000227474,
+      -0.6271165182490906,
+      0.2336448598130841,
+      0.21299254526091588
+    ]
+  },
+  "source_sha256": "2973d43eec7cb4e727ff088429cf71573f535fc053f226a47ff94712d1b2595d",
+  "cloud_run_records": 438,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 32,
+      "sha256": "f3c426d02a60e329d7aa64dd88dce7a742efb3c379a31f4d5006b47edc132469"
+    },
+    {
+      "path": "audit_summary.json",
+      "bytes": 293993,
+      "sha256": "4d345aa6d054765b9700f01ee1d4360ce1c4b26a4b2a5aac0f1aef79e3552bec"
+    },
+    {
+      "path": "best_submission_735124.zip",
+      "bytes": 22113,
+      "sha256": "558e6ecbeee196e77a0b54c24d7a5217f5fffa2c46ba8169207c6302f2bc7245"
+    },
+    {
+      "path": "cloud_reports.zip",
+      "bytes": 3890780,
+      "sha256": "57a4eb9fb4ee5fd04fe9ac8f48785f1d8ba671d511c372527f7e1fe221b54122"
+    },
+    {
+      "path": "CMakeLists.txt",
+      "bytes": 645,
+      "sha256": "f111399c08fc725aa484f96ad7f99dc2eed769e2d694b2135f7cf4cce81851e9"
+    },
+    {
+      "path": "data_utils.h",
+      "bytes": 1962,
+      "sha256": "1bdaae93c09b65e2615691a39bfd611122c09668d90e21809c52516f443bfd84"
+    },
+    {
+      "path": "E024_full_experiment.zip",
+      "bytes": 3970835,
+      "sha256": "73987248184787faa9b11c1bd10fd1cb1f65c793074566193051f3c133ca2066"
+    },
+    {
+      "path": "final_verification.json",
+      "bytes": 770,
+      "sha256": "a6b08e1147b9699ba2fc4f3722a1a138a1ab5d1ff4db0f22a17e92d449513f5b"
+    },
+    {
+      "path": "half_numerical_audit.json",
+      "bytes": 11531,
+      "sha256": "81197deb37b24e78c72732c97ae92e65795176a5b6b5e5ca25873fae2247d137"
+    },
+    {
+      "path": "half_reproducibility.json",
+      "bytes": 482,
+      "sha256": "13397db1d7621533d0f3c4f4558e80376a0360ce4030c9995b215eec9f4c2b3c"
+    },
+    {
+      "path": "HANDOFF.md",
+      "bytes": 2468,
+      "sha256": "06761288ff6a1e33b4fa39f03a24bd9157f78273602ec691419ad726d722398b"
+    },
+    {
+      "path": "kernel.asc",
+      "bytes": 94634,
+      "sha256": "2973d43eec7cb4e727ff088429cf71573f535fc053f226a47ff94712d1b2595d"
+    },
+    {
+      "path": "main.asc",
+      "bytes": 5226,
+      "sha256": "edd8d27bf3b346dcbfae40025cfad4a790010e5b5800ac434f1c1b9a45763418"
+    },
+    {
+      "path": "numerical_audit.json",
+      "bytes": 33599,
+      "sha256": "f7a9a8873bfeb389a0f674017709e2eb3b49efa3436b2ac61cfea563d5dc3616"
+    },
+    {
+      "path": "official_rank_735124.png",
+      "bytes": 22311,
+      "sha256": "c73cadaa117b87bc1b143dc1aedaf7d1a51cc0fb7c33a4c828d8a42534259491"
+    },
+    {
+      "path": "official_results.json",
+      "bytes": 14258,
+      "sha256": "b7a0ef2bfeaf7b4c8a742895378795ffba42d8560b37fd6875e7ed0e014106a2"
+    },
+    {
+      "path": "official_score_735124.png",
+      "bytes": 22217,
+      "sha256": "062efa208b6d08d9901fb481fe6e3fa27fb8ef6abc4a153175cb0cfacc7dbca4"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2722,
+      "sha256": "559aed53ccb1579601df47c2d470c68d6767be1f7588a13d147d0ba73a80e19c"
+    },
+    {
+      "path": "research.json",
+      "bytes": 2119,
+      "sha256": "a763533c41b40fbd77aab82e5924913210d475562765708b67f10520d0e4f78a"
+    },
+    {
+      "path": "run.sh",
+      "bytes": 1109,
+      "sha256": "6285cd1a901a619d0056209907bf2bcc34a7fa2d430ab41cf90f453196f20c56"
+    },
+    {
+      "path": "scripts/AddRmsNormBias.py",
+      "bytes": 2066,
+      "sha256": "e6bb5635644678b8044a5c76660d618e2b08d42d90c18de95145d39c038508a8"
+    },
+    {
+      "path": "scripts/gen_data.py",
+      "bytes": 1074,
+      "sha256": "017d0f28983ff6ef072316a2f0b87bfb1f4ad6b58ffbe2bb0156628faf744681"
+    },
+    {
+      "path": "scripts/verify_result.py",
+      "bytes": 4586,
+      "sha256": "08e312f94cbfbf986161040f46cf1fb2f67f3bede5edf31454cb827061b911ac"
+    },
+    {
+      "path": "selection.json",
+      "bytes": 4169,
+      "sha256": "8e5365544032a2027f275614e6e10ae4a2c9d14ce015aa56a866a766e47b12b4"
+    },
+    {
+      "path": "submission_735124_official_dom.txt",
+      "bytes": 5258,
+      "sha256": "7e950ffca696fbdfdeeccf74919ea9f128c3c07ed2609481f6726b8a345d2143"
+    },
+    {
+      "path": "submission_735124_ranking_dom.txt",
+      "bytes": 4582,
+      "sha256": "123634350a587427f4c1cbac225ce70897a3bbbf552a97e745cbf60ad25eae06"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 701,
+      "sha256": "c5f21f2389c48665e2f5c81e248b6c4945572126d4831450966bf49f2b9a8998"
+    },
+    {
+      "path": "实验报告_E024.md",
+      "bytes": 10000,
+      "sha256": "bae7239c3470d894316e16ee7da849bf9c5138236ced1faf66d086cbf97540df"
+    }
+  ]
+}

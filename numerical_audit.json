@@ -1,0 +1,1216 @@
+{
+  "fp16_fp32_checked_runs": 128,
+  "strict_pass": true,
+  "unchanged_bf16_runs": 6,
+  "bf16_output_and_failure_count_equal_base": true,
+  "combo_fp16_checked_runs": 41,
+  "combo_fp16_bitwise_equal_base": true,
+  "details": [
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_511_wide_range",
+      "group": "tiny_special_tiny_special_511_wide_range",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_256_zeros",
+      "group": "tiny_special_tiny_special_256_zeros",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_511_checkerboard",
+      "group": "tiny_special_tiny_special_511_checkerboard",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_256_specials",
+      "group": "tiny_special_tiny_special_256_specials",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_512_cancel",
+      "group": "tiny_special_tiny_special_512_cancel",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_197_specials",
+      "group": "tiny_special_tiny_special_197_specials",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s7",
+      "group": "combo_pairs",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s3",
+      "group": "combo_pairs",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s3",
+      "group": "combo_pairs",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s6",
+      "group": "combo_pairs",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s7",
+      "group": "combo_pairs",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s6",
+      "group": "combo_pairs",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_256_cancel",
+      "group": "tiny_special_tiny_special_256_cancel",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_80_64",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s12",
+      "group": "tiny_boundary",
+      "dtype": "bfloat16",
+      "strict_pass": false,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s3",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s6",
+      "group": "tiny_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_41_256",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_39_193",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s14_reduced",
+      "group": "tiny_boundary",
+      "dtype": "bfloat16",
+      "strict_pass": false,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_79_256",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_2_64",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_128_256",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_7_65",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_159_512",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_161_256",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s5",
+      "group": "tiny_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_159_511",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_40_255",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_160_256",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_127_256",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_159_513",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_159_256",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s15_reduced",
+      "group": "tiny_boundary",
+      "dtype": "bfloat16",
+      "strict_pass": false,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s9",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_7_64",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s11",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_81_256",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s10",
+      "group": "tiny_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s4",
+      "group": "tiny_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s1",
+      "group": "tiny_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s7",
+      "group": "tiny_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_7_197",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_80_256",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s8",
+      "group": "tiny_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s2",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s13",
+      "group": "tiny_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_511_zeros",
+      "group": "tiny_special_tiny_special_511_zeros",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_197_cancel",
+      "group": "tiny_special_tiny_special_197_cancel",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_64_zeros",
+      "group": "tiny_special_tiny_special_64_zeros",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_64_cancel",
+      "group": "tiny_special_tiny_special_64_cancel",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_201_1023",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_767_319",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s14_reduced",
+      "group": "combo_boundary",
+      "dtype": "bfloat16",
+      "strict_pass": false,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_481_639",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_201_1025",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s2",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s1",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s9",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp32_159_197",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_479_577",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp32_80_256",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s10",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_767_397",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp32_159_511",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s7",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_201_1024",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp32_80_197",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp32_161_256",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s8",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp32_159_64",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s3",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_767_447",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_160_193",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s13",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_201_767",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp32_80_513",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_201_769",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp32_80_511",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_767_511",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s6",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp32_80_64",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_161_513",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_201_641",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s12",
+      "group": "combo_boundary",
+      "dtype": "bfloat16",
+      "strict_pass": false,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp32_80_65",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s5",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_159_193",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_161_193",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_201_768",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp32_160_256",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s15_reduced",
+      "group": "combo_boundary",
+      "dtype": "bfloat16",
+      "strict_pass": false,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_479_576",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp32_80_255",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_161_575",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_767_193",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_767_512",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp32_80_512",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_767_320",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp32_159_256",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_767_321",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_767_65",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp32_159_512",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "combo_fp16_481_640",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s11",
+      "group": "combo_boundary",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s4",
+      "group": "combo_boundary",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_197_wide_range",
+      "group": "tiny_special_tiny_special_197_wide_range",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_512_wide_range",
+      "group": "tiny_special_tiny_special_512_wide_range",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_511_specials",
+      "group": "tiny_special_tiny_special_511_specials",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_197_tail_impulse",
+      "group": "tiny_special_tiny_special_197_tail_impulse",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_256_wide_range",
+      "group": "tiny_special_tiny_special_256_wide_range",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_511_tail_impulse",
+      "group": "tiny_special_tiny_special_511_tail_impulse",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_64_wide_range",
+      "group": "tiny_special_tiny_special_64_wide_range",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_64_tail_impulse",
+      "group": "tiny_special_tiny_special_64_tail_impulse",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_197_checkerboard",
+      "group": "tiny_special_tiny_special_197_checkerboard",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_512_specials",
+      "group": "tiny_special_tiny_special_512_specials",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_512_zeros",
+      "group": "tiny_special_tiny_special_512_zeros",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_512_checkerboard",
+      "group": "tiny_special_tiny_special_512_checkerboard",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s3",
+      "group": "tiny2_check",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_512_tail_impulse",
+      "group": "tiny_special_tiny_special_512_tail_impulse",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s3",
+      "group": "tiny2_pairs",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "s3",
+      "group": "tiny2_pairs",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_197_zeros",
+      "group": "tiny_special_tiny_special_197_zeros",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_64_specials",
+      "group": "tiny_special_tiny_special_64_specials",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_64_checkerboard",
+      "group": "tiny_special_tiny_special_64_checkerboard",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_256_checkerboard",
+      "group": "tiny_special_tiny_special_256_checkerboard",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s10",
+      "group": "combo_check",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s7",
+      "group": "combo_check",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s8",
+      "group": "combo_check",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s3",
+      "group": "combo_check",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s6",
+      "group": "combo_check",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "COMBO",
+      "case_id": "s4",
+      "group": "combo_check",
+      "dtype": "float16",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_511_cancel",
+      "group": "tiny_special_tiny_special_511_cancel",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": false,
+      "failed_elements_match_base": true
+    },
+    {
+      "variant": "TINY2",
+      "case_id": "tiny_special_256_tail_impulse",
+      "group": "tiny_special_tiny_special_256_tail_impulse",
+      "dtype": "float32",
+      "strict_pass": true,
+      "bitwise_equal_base": true,
+      "failed_elements_match_base": true
+    }
+  ]
+}
