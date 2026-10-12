@@ -1,0 +1,275 @@
+{
+  "kind": "Simulation event windows relative to earliest X event, not instruction pure latency or board timing",
+  "cases": [
+    {
+      "case_id": "s4",
+      "trace_entry": "results/phase07/simulation_s4/profile/OPPROF_20261012202645_DGCYHFCGDOESVWED/simulator/trace.json",
+      "events": [
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 0.43400001525878906,
+          "end_us": 1.393999993801117
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 0.43400001525878906,
+          "end_us": 2.3240000009536743
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 0.43600010871887207,
+          "end_us": 2.327000141143799
+        },
+        {
+          "pipe": "VECTOR",
+          "instruction": "VADD",
+          "start_us": 2.3269999027252197,
+          "end_us": 2.380999904125929
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 0.43600010871887207,
+          "end_us": 2.439000129699707
+        },
+        {
+          "pipe": "MTE3",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 3.1470000743865967,
+          "end_us": 3.536000072956085
+        }
+      ]
+    },
+    {
+      "case_id": "s6",
+      "trace_entry": "results/phase07/simulation_s6/profile/OPPROF_20261012202702_FHIEGWRSLSHKJUFA/simulator/trace.json",
+      "events": [
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 0.7849999666213989,
+          "end_us": 1.273999959230423
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 0.7899998426437378,
+          "end_us": 1.2819998562335968
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 0.9329999685287476,
+          "end_us": 2.23799991607666
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 0.9390000104904175,
+          "end_us": 3.3200000524520874
+        },
+        {
+          "pipe": "VECTOR",
+          "instruction": "VADD",
+          "start_us": 3.3220001459121704,
+          "end_us": 3.4160001426935196
+        },
+        {
+          "pipe": "VECTOR",
+          "instruction": "VADD",
+          "start_us": 3.772999882698059,
+          "end_us": 3.7919998820871115
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 1.1319998502731323,
+          "end_us": 4.278999924659729
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 1.1390000581741333,
+          "end_us": 5.237000107765198
+        },
+        {
+          "pipe": "VECTOR",
+          "instruction": "VADD",
+          "start_us": 5.238999962806702,
+          "end_us": 5.330999962985516
+        },
+        {
+          "pipe": "VECTOR",
+          "instruction": "VADD",
+          "start_us": 5.6869999170303345,
+          "end_us": 5.705999916419387
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 3.5080000162124634,
+          "end_us": 5.890999913215637
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 3.5089999437332153,
+          "end_us": 6.512999892234802
+        },
+        {
+          "pipe": "MTE3",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 4.563999772071838,
+          "end_us": 6.824999690055847
+        },
+        {
+          "pipe": "VECTOR",
+          "instruction": "VADD",
+          "start_us": 7.087999939918518,
+          "end_us": 7.151999942958355
+        },
+        {
+          "pipe": "MTE3",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 7.086999535560608,
+          "end_us": 7.400999546051025
+        },
+        {
+          "pipe": "VECTOR",
+          "instruction": "VADD",
+          "start_us": 7.402000069618225,
+          "end_us": 7.419000070542097
+        },
+        {
+          "pipe": "MTE3",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 7.971999764442444,
+          "end_us": 8.163999766111374
+        }
+      ]
+    },
+    {
+      "case_id": "s7",
+      "trace_entry": "results/phase07/simulation_s7/profile/OPPROF_20261012202809_UVGNTOSOUAFKJQAU/simulator/trace.json",
+      "events": [
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 0.7749999761581421,
+          "end_us": 1.1459999680519104
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 0.781000018119812,
+          "end_us": 1.272000014781952
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 0.9350000619888306,
+          "end_us": 2.408000111579895
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 0.9420000314712524,
+          "end_us": 3.8179999589920044
+        },
+        {
+          "pipe": "VECTOR",
+          "instruction": "VADD",
+          "start_us": 3.8190001249313354,
+          "end_us": 3.9180001243948936
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 1.1330000162124634,
+          "end_us": 5.225000023841858
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 1.1399999856948853,
+          "end_us": 6.6219998598098755
+        },
+        {
+          "pipe": "VECTOR",
+          "instruction": "VADD",
+          "start_us": 6.6239999532699585,
+          "end_us": 6.7199999541044235
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 4.013999819755554,
+          "end_us": 7.757999777793884
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 4.015000224113464,
+          "end_us": 9.023000121116638
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 6.816999793052673,
+          "end_us": 9.960999846458435
+        },
+        {
+          "pipe": "MTE2",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 6.816999793052673,
+          "end_us": 10.895999789237976
+        },
+        {
+          "pipe": "MTE3",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 5.096000075340271,
+          "end_us": 11.33900010585785
+        },
+        {
+          "pipe": "VECTOR",
+          "instruction": "VADD",
+          "start_us": 11.63099992275238,
+          "end_us": 11.729999922215939
+        },
+        {
+          "pipe": "MTE3",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 11.630000472068787,
+          "end_us": 12.17400050163269
+        },
+        {
+          "pipe": "VECTOR",
+          "instruction": "VADD",
+          "start_us": 12.908999800682068,
+          "end_us": 12.976999804377556
+        },
+        {
+          "pipe": "MTE3",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 12.908000349998474,
+          "end_us": 13.446000337600708
+        },
+        {
+          "pipe": "MTE3",
+          "instruction": "MOV_SRC_TO_DST_ALIGN",
+          "start_us": 13.884000182151794,
+          "end_us": 14.165000170469284
+        }
+      ]
+    }
+  ],
+  "interpretation": "s6/s7 third batch VADD starts after its input DMA ends; source has a single-output reuse wait late in preceding iteration. This supports testing output lifetime, not a proof of board causal speedup",
+  "limitations": [
+    "Core0 diagnostic only, simulator uses one core; board data uses all40 cores.",
+    "DMA intervals may include issue/queue-to-completion span; simultaneous same-pipe starts are not independent pure instruction latencies.",
+    "Inlined source stacks often resolve to kernel entry, not individual source lines."
+  ]
+}

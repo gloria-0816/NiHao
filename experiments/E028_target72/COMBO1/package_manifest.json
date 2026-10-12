@@ -1,0 +1,18 @@
+{
+  "status": "candidate not submitted",
+  "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+  "zip_sha256": "75f55ea8d89738a170e67f240f9867d1b2175679ef0dd46eace828cfee877d2a",
+  "files": {
+    "CMakeLists.txt": "f111399c08fc725aa484f96ad7f99dc2eed769e2d694b2135f7cf4cce81851e9",
+    "data_utils.h": "1bdaae93c09b65e2615691a39bfd611122c09668d90e21809c52516f443bfd84",
+    "kernel.asc": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "main.asc": "edd8d27bf3b346dcbfae40025cfad4a790010e5b5800ac434f1c1b9a45763418",
+    "run.sh": "6285cd1a901a619d0056209907bf2bcc34a7fa2d430ab41cf90f453196f20c56",
+    "scripts/AddRmsNormBias.py": "e6bb5635644678b8044a5c76660d618e2b08d42d90c18de95145d39c038508a8",
+    "scripts/gen_data.py": "017d0f28983ff6ef072316a2f0b87bfb1f4ad6b58ffbe2bb0156628faf744681",
+    "scripts/verify_result.py": "08e312f94cbfbf986161040f46cf1fb2f67f3bede5edf31454cb827061b911ac"
+  },
+  "changed_only": [
+    "kernel.asc"
+  ]
+}

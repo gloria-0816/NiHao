@@ -1,0 +1,25 @@
+{
+  "protocol": {
+    "goal": 72,
+    "official_baseline": 65.36,
+    "base_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "variants": {
+      "S256": {
+        "sha256": "dd2062ab953007bb26474196169bd079cf6fcd373ac6ed3a32e2089e93b77807",
+        "parent": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+        "mechanism": "constant 256 width, four parts, one row/core; retain original two horizontal reductions",
+        "scope": "FP32, 2 <= rows <= available cores, 192 < D <= 256"
+      },
+      "S256F": {
+        "sha256": "98c23b92359f26ac26809df9b7bdca250df30b8db36b50fc11f1414918fd321b",
+        "parent": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+        "mechanism": "constant 256 width, four parts, one row/core; independent lane-pair fold then one horizontal reduction",
+        "scope": "FP32, 2 <= rows <= available cores, 192 < D <= 256"
+      }
+    },
+    "timing": "ordinary final20 of31 tasks; two ABBA/BAAB blocks; same input buffers warm",
+    "strict_policy": "FP32 must pass; reordered reduction may differ bitwise; BF16 accuracy repair deferred"
+  },
+  "driver_sha256": "7b9b7d5b2e041f67339b81310e65abc08edf485f732440808259cac59eeabeaf",
+  "baseline_runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163"
+}

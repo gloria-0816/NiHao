@@ -1,0 +1,50 @@
+[
+  {
+    "variant": "COMBO",
+    "case_id": "s2",
+    "n_core_records": 35,
+    "metrics": {
+      "aiv_time(us)": 1.375,
+      "aiv_vec_time(us)": 0.280556,
+      "aiv_scalar_time(us)": 0.423889,
+      "aiv_mte2_time(us)": 0.452778,
+      "aiv_mte3_time(us)": 0.289444,
+      "aiv_vec_ratio": 0.20404,
+      "aiv_scalar_ratio": 0.274479,
+      "aiv_mte2_ratio": 0.319783,
+      "aiv_mte3_ratio": 0.193261
+    }
+  },
+  {
+    "variant": "S256",
+    "case_id": "s2",
+    "n_core_records": 35,
+    "metrics": {
+      "aiv_time(us)": 1.358333,
+      "aiv_vec_time(us)": 0.271111,
+      "aiv_scalar_time(us)": 0.400556,
+      "aiv_mte2_time(us)": 0.376111,
+      "aiv_mte3_time(us)": 0.270556,
+      "aiv_vec_ratio": 0.199591,
+      "aiv_scalar_ratio": 0.310207,
+      "aiv_mte2_ratio": 0.256634,
+      "aiv_mte3_ratio": 0.218725
+    }
+  },
+  {
+    "variant": "S256F",
+    "case_id": "s2",
+    "n_core_records": 35,
+    "metrics": {
+      "aiv_time(us)": 1.318333,
+      "aiv_vec_time(us)": 0.270556,
+      "aiv_scalar_time(us)": 0.316667,
+      "aiv_mte2_time(us)": 0.441667,
+      "aiv_mte3_time(us)": 0.29,
+      "aiv_vec_ratio": 0.205225,
+      "aiv_scalar_ratio": 0.233702,
+      "aiv_mte2_ratio": 0.347934,
+      "aiv_mte3_ratio": 0.200909
+    }
+  }
+]

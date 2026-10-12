@@ -1,0 +1,14 @@
+{
+  "protocol": {
+    "base_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "target_score": 72,
+    "variants": {
+      "COMBO1": {
+        "sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+        "mechanism": "S256B fixed short FP32 block+whole reduction and S64PAIR two-block FP16 single64 DMA; mutually disjoint guards",
+        "status": "candidate, not official best"
+      }
+    }
+  },
+  "driver_sha256": "03f9e635f962aeeb006634f482fb8c7175f1ddaf17effa90b8221068f14bc7e1"
+}

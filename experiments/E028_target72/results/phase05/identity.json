@@ -1,0 +1,23 @@
+{
+  "protocol": {
+    "base_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "variants": {
+      "S64PAIR": {
+        "sha256": "9fe62f48e4d7c1f02097e7c9c2cf871f215b0c0954a56b96f3a98908b61d4f05",
+        "scope": "FP16 single row D64; actual X/R and gamma/bias positive aligned gap <=uint16 DMA block stride; otherwise COMBO fallback",
+        "mechanism": "Replace X/R and gamma/bias DMA pairs by two-block strided DMA; arithmetic and readiness ordering unchanged; pass fewer GM pointers",
+        "parent_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c"
+      },
+      "S256PAIR": {
+        "sha256": "7bd2ade7b717d36fb0e1f676d4bafb6f166792bb6301fa40ca3738a389472016",
+        "scope": "S256B one-row/core FP32 guard; actual X/R and gamma/bias positive gap <=uint32 byte stride; otherwise S256B fallback",
+        "mechanism": "Replace X/R and gamma/bias DMA pairs by two-block strided DMA; arithmetic and readiness ordering unchanged; pass fewer GM pointers",
+        "parent_sha256": "932f8665147da3d0b3d7c7e735f54610e2d69ba1465ec0103d00489d3421f353"
+      }
+    },
+    "target_score": 72,
+    "address_policy": "Use actual pointer differences with bounded nonnegative strides. Never assume allocator order, contiguous allocation or values; incompatible layouts use original entry.",
+    "source_link": "https://www.hiascend.com/doc_center/source/en/CANNCommunityEdition/900/API/ascendcopapi/atlasascendc_api_07_0265.html"
+  },
+  "driver_sha256": "43fab846e2d1d26a6e0ad4f872a07cf652354c18b6d1bb4fb1df654523a5f707"
+}

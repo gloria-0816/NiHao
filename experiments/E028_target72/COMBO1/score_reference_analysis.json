@@ -1,0 +1,15 @@
+{
+  "kind": "Arithmetic decomposition from rounded displayed times; not an official score or causal attribution",
+  "formula": "mean(100/(1+log_1.5(time/TBest)))",
+  "baseline_old_reference": 65.3660360695563,
+  "new_times_old_reference": 64.84614841864541,
+  "new_times_updated_reference": 64.51121154737403,
+  "time_changes_fixed_reference_delta": -0.5198876509108885,
+  "tbest_update_delta": -0.33493687127138116,
+  "official_baseline": 65.36,
+  "official_new": 64.52,
+  "notes": [
+    "Displayed ms values rounded; precise internal timings are not exposed.",
+    "Across-submission timing changes include unchanged route drift; not all code effects."
+  ]
+}

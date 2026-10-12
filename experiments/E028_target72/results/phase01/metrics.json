@@ -1,0 +1,50 @@
+[
+  {
+    "variant": "COMBO",
+    "case_id": "s2",
+    "n_core_records": 5,
+    "metrics": {
+      "aiv_time(us)": null,
+      "aiv_vec_time(us)": null,
+      "aiv_scalar_time(us)": null,
+      "aiv_mte2_time(us)": null,
+      "aiv_mte3_time(us)": null,
+      "aiv_vec_ratio": null,
+      "aiv_scalar_ratio": null,
+      "aiv_mte2_ratio": null,
+      "aiv_mte3_ratio": null
+    }
+  },
+  {
+    "variant": "S256",
+    "case_id": "s2",
+    "n_core_records": 5,
+    "metrics": {
+      "aiv_time(us)": null,
+      "aiv_vec_time(us)": null,
+      "aiv_scalar_time(us)": null,
+      "aiv_mte2_time(us)": null,
+      "aiv_mte3_time(us)": null,
+      "aiv_vec_ratio": null,
+      "aiv_scalar_ratio": null,
+      "aiv_mte2_ratio": null,
+      "aiv_mte3_ratio": null
+    }
+  },
+  {
+    "variant": "S256F",
+    "case_id": "s2",
+    "n_core_records": 5,
+    "metrics": {
+      "aiv_time(us)": null,
+      "aiv_vec_time(us)": null,
+      "aiv_scalar_time(us)": null,
+      "aiv_mte2_time(us)": null,
+      "aiv_mte3_time(us)": null,
+      "aiv_vec_ratio": null,
+      "aiv_scalar_ratio": null,
+      "aiv_mte2_ratio": null,
+      "aiv_mte3_ratio": null
+    }
+  }
+]

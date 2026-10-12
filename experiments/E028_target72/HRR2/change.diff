@@ -1,0 +1,31 @@
+--- COMBO/kernel.asc
++++ HRR2/kernel.asc
+@@ -2880,8 +2880,8 @@
+         GM_ADDR out, uint64_t rows, uint32_t d, float invD, float eps)
+     {
+         d_ = d; stride_ = (d + 63) / 64 * 64; invD_ = invD; eps_ = eps;
+-        begin_ = rows * GetBlockIdx() / GetBlockNum();
+-        count_ = static_cast<uint32_t>(rows * (GetBlockIdx()+1) / GetBlockNum() - begin_);
++        begin_ = GetBlockIdx();
++        count_ = static_cast<uint32_t>((rows - 1 - begin_) / GetBlockNum() + 1);
+         xgm_.SetGlobalBuffer((__gm__ half*)x); rgm_.SetGlobalBuffer((__gm__ half*)r);
+         ggm_.SetGlobalBuffer((__gm__ half*)g); bgm_.SetGlobalBuffer((__gm__ half*)b);
+         outgm_.SetGlobalBuffer((__gm__ half*)out);
+@@ -2900,7 +2900,7 @@
+     {
+         const uint32_t active = count_ * stride_;
+         const uint32_t gap = (stride_*2 - (d_*2+31)/32*32)/32;
+-        DataCopyExtParams batch = {static_cast<uint16_t>(count_),d_*2,0,gap,0};
++        DataCopyExtParams batch = {static_cast<uint16_t>(count_),d_*2,static_cast<uint32_t>((GetBlockNum()-1)*d_*2),gap,0};
+         DataCopyExtParams params = {1,d_*2,0,0,0};
+         DataCopyPadExtParams<half> pad = {}; pad.isPad = false;
+         DataCopyPad(x_,xgm_[begin_*d_],batch,pad);
+@@ -2942,7 +2942,7 @@
+             FusedMulAdd(x_[col],gh_[col],bh_[col],static_cast<uint64_t>(d_-col<128?d_-col:128),repeats,{1,1,1,rb,0,0});
+         PipeBarrier<PIPE_V>();
+         SetFlag<HardEvent::V_MTE3>(1); WaitFlag<HardEvent::V_MTE3>(1);
+-        DataCopyExtParams out = {static_cast<uint16_t>(count_),d_*2,gap,0,0};
++        DataCopyExtParams out = {static_cast<uint16_t>(count_),d_*2,gap,static_cast<uint32_t>((GetBlockNum()-1)*d_*2),0};
+         DataCopyPad(outgm_[begin_*d_],x_,out);
+         SetFlag<HardEvent::MTE3_V>(2); WaitFlag<HardEvent::MTE3_V>(2);
+     }

@@ -1,0 +1,17 @@
+{
+  "filename": "evidence_phase01_02b.zip",
+  "sha256": "c26fde852f1c579bc45ad87c417b80f4f48879d3f6e2c58f13eb0d9c7309660f",
+  "bytes": 4250745,
+  "entries": 1434,
+  "crc_pass": true,
+  "phases": [
+    "phase01",
+    "phase02",
+    "phase02b"
+  ],
+  "terminal_statuses": {
+    "phase01": "completed",
+    "phase02": "failed",
+    "phase02b": "completed"
+  }
+}

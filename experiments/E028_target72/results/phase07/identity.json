@@ -1,0 +1,15 @@
+{
+  "protocol": {
+    "base_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "target_score": 72,
+    "variants": {},
+    "purpose": "Baseline instruction and board engine diagnostics for FP16 s4/s6/s7; no new candidate or claimed gain",
+    "prior_official": {
+      "submission_id": 756788,
+      "score": 64.52,
+      "best_historical_score": 65.36
+    }
+  },
+  "driver_sha256": "bd5e5848bc40c013de6ef96cb850089570122f1412a4bac3a478e98c5300d195",
+  "board_runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163"
+}

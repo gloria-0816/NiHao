@@ -1,0 +1,23 @@
+{
+  "protocol": {
+    "base_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "variants": {
+      "P9LP": {
+        "sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+        "mechanism": "Input slot0 first; gamma/bias readiness event3 deferred to first affine; slot1 prefetched after parameter issue; half arithmetic unchanged",
+        "scope": "Only FP16 existing PipelineBatch9 guard: 321<=D<=1024, rows>=4*availableCoreNum; other routes unchanged"
+      },
+      "P9OUT": {
+        "sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+        "mechanism": "Two output slots without extra UB: slot1 aliases square buffer after reduction; its MTE3 event4 gates next square overwrite; slot0 event3 gates reuse; input Add/Cast may overlap previous write; same arithmetic",
+        "scope": "Only FP16 existing PipelineBatch9 guard: 321<=D<=1024, rows>=4*availableCoreNum; other routes unchanged"
+      }
+    },
+    "target_score": 72,
+    "prior_phase": "phase07",
+    "hypothesis": "Baseline s6/s7 trace shows input slot ready before next VADD while previous single output reuse wait blocks progress; MTE2 board activity 70%/80%; isolate parameter scheduling and output lifetime",
+    "correctness": "All structural edits must preserve complete output hash vs COMBO; inherited CPU strict fail retained only when bitwise equal",
+    "timing": "Two ABBA/BAAB blocks per candidate and target, final20 of31 ordinary tasks"
+  },
+  "driver_sha256": "3c5013099e8078ec872b03acae2a196eb40ec639d12fb85c05594896b70bdc1b"
+}

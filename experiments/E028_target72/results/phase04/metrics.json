@@ -1,0 +1,66 @@
+[
+  {
+    "variant": "COMBO",
+    "case_id": "s2",
+    "n_core_records": 35,
+    "metrics": {
+      "aiv_time(us)": 1.356667,
+      "aiv_vec_time(us)": 0.280556,
+      "aiv_scalar_time(us)": 0.402222,
+      "aiv_mte2_time(us)": 0.484444,
+      "aiv_mte3_time(us)": 0.297222,
+      "aiv_vec_ratio": 0.206798,
+      "aiv_scalar_ratio": 0.269027,
+      "aiv_mte2_ratio": 0.307159,
+      "aiv_mte3_ratio": 0.202262
+    }
+  },
+  {
+    "variant": "S256B",
+    "case_id": "s2",
+    "n_core_records": 35,
+    "metrics": {
+      "aiv_time(us)": 1.346667,
+      "aiv_vec_time(us)": 0.253333,
+      "aiv_scalar_time(us)": 0.323333,
+      "aiv_mte2_time(us)": 0.460556,
+      "aiv_mte3_time(us)": 0.306111,
+      "aiv_vec_ratio": 0.188119,
+      "aiv_scalar_ratio": 0.246001,
+      "aiv_mte2_ratio": 0.323122,
+      "aiv_mte3_ratio": 0.232239
+    }
+  },
+  {
+    "variant": "S256BP",
+    "case_id": "s2",
+    "n_core_records": 35,
+    "metrics": {
+      "aiv_time(us)": 1.19,
+      "aiv_vec_time(us)": 0.253333,
+      "aiv_scalar_time(us)": 0.33,
+      "aiv_mte2_time(us)": 0.468889,
+      "aiv_mte3_time(us)": 0.295,
+      "aiv_vec_ratio": 0.212885,
+      "aiv_scalar_ratio": 0.248613,
+      "aiv_mte2_ratio": 0.318807,
+      "aiv_mte3_ratio": 0.222532
+    }
+  },
+  {
+    "variant": "S256BUB",
+    "case_id": "s2",
+    "n_core_records": 35,
+    "metrics": {
+      "aiv_time(us)": 1.309444,
+      "aiv_vec_time(us)": 0.247222,
+      "aiv_scalar_time(us)": 0.351111,
+      "aiv_mte2_time(us)": 0.330556,
+      "aiv_mte3_time(us)": 0.256111,
+      "aiv_vec_ratio": 0.188799,
+      "aiv_scalar_ratio": 0.256702,
+      "aiv_mte2_ratio": 0.255074,
+      "aiv_mte3_ratio": 0.187806
+    }
+  }
+]

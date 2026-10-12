@@ -1,0 +1,24 @@
+{
+  "base_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+  "target_score": 72,
+  "variants": {
+    "S256BP": {
+      "sha256": "fbcb20b88d7f212876f9b38fa9bb5bbe7f6693982aa54a6404d1707e975744b0",
+      "parent": "932f8665147da3d0b3d7c7e735f54610e2d69ba1465ec0103d00489d3421f353",
+      "scope": "FP32, 2<=rows<=availableCoreNum, 192<D<=256",
+      "mechanism": "Only reorder fixed-row DMA: input-ready before parameter DMA; parameter wait deferred until affine"
+    },
+    "S256BUB": {
+      "sha256": "1ca61339f13267bc0c9f2100d46654e479c7d04ac8884ca6abad406fcc1dcd99",
+      "parent": "932f8665147da3d0b3d7c7e735f54610e2d69ba1465ec0103d00489d3421f353",
+      "scope": "FP32, 2<=rows<=availableCoreNum, 192<D<=256",
+      "mechanism": "Only compact fixed 256-float UB slots; alternate source bank-group phase with 256-byte gaps; same arithmetic/events"
+    },
+    "S256B": {
+      "sha256": "932f8665147da3d0b3d7c7e735f54610e2d69ba1465ec0103d00489d3421f353",
+      "mechanism": "Repeat positive prior candidate in same round"
+    }
+  },
+  "hypothesis_evidence": "phase03 simulation: distinct parameter-ready and input-ready waits; numerous vector mask/control instructions. Instruction CSV cycles include queuing; use trace execution intervals instead of summing inclusive code cycles.",
+  "performance": "Five rotated/reversed four-version blocks; each collection final20 of31 ordinary tasks, warm same input buffers"
+}

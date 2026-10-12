@@ -1,6 +1,6 @@
-# E027 当前最佳完整方案交接（2026-10-12）
+# 当前方案及E027/E028交接（2026-10-12）
 
-当前采用 **COMBO，65.36分，15/15 Pass**；[提交752881](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acc9d43694b590c3cdc5c62)，观察排名88。目标70分仍未达成。历史FACC/743109为64.98分，原工程和[E026交接](HANDOFF_E026.md)保留。
+当前采用 **COMBO，65.36分，15/15 Pass**；[提交752881](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acc9d43694b590c3cdc5c62)，观察排名88。当前目标72分仍未达成。历史FACC/743109为64.98分，原工程和[E026交接](HANDOFF_E026.md)保留。
 
 源码SHA256：`aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c`。根kernel.asc、COMBO/kernel.asc、当前最佳ZIP以及从比赛下载的752881工程内核逐字节一致；其余7文件与原FACC最佳工程逐字节一致。剪贴板检查曾显示CRLF，比赛下载后的实际源是LF，核验详情见COMBO/official_project_verification.json。
 
@@ -49,4 +49,12 @@
 
 大形状优先MTE2/Vector/MTE3重叠、DMA批量与缓冲槽复用、跨核地址分配。FPRR只是小收益，MTE2比例仍高；继续改流水需检查读写依赖，并避开旧OVL3等已记录回退方案。BF16精度修复暂缓，FP32/FP16和特殊值检查保持。
 
-下一轮实验以当前COMBO为对照基线，保留旧FACC便于回滚。所有正收益候选保留研究证据，正式采用需完整组合及官方评测确认。目标70分仍在继续，不把65.36标成完成目标。
+下一轮实验以当前COMBO为对照基线，保留旧FACC便于回滚。所有正收益候选保留研究证据，正式采用需完整组合及官方评测确认。目标已提升到72分，尚未达到。
+
+## E028后续优化与本次同步
+
+[E028报告](experiments/E028_target72/报告.md)归档八阶段完整正负结果、候选源码、执行协议及工具数据。COMBO1正式提交756788：2026/10/12 19:59:09，64.52分、15/15 Pass；[结构化成绩](experiments/E028_target72/COMBO1/official_state.json)区分最高历史成绩与最新提交。此次仍保留根kernel.asc及best_submission_752881.zip的65.36分完整方案，未将低分候选替换为最佳。
+
+短FP32分块规约S256B保留；第4/6/7点已导出基线指令仿真。P9LP延后FP16参数等待，第6/7点代理+2.79%/+1.69%；P9OUT共享平方区的输出槽回退，不采用。12组边界共36份捕获与COMBO逐位一致。下一轮独立双输出UB预算与mask复用见[实现假设](experiments/E028_target72/下一轮实现假设.md)，尚未执行，不预先列收益。BF16精度修复继续暂缓。
+
+本次只同步相对本仓库新增的E028材料，E027直接沿用本PR原有改动。其他仓库的早期实验、探针及整仓快照不导入。原始源码/协议/证据ZIP按字节保持；报告链接已适配本仓库，外部学习手册用固定提交链接引用。

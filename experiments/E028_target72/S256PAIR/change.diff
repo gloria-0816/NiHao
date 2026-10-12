@@ -1,0 +1,169 @@
+--- S256B/kernel.asc
++++ S256PAIR/kernel.asc
+@@ -3343,6 +3343,151 @@
+     op.Process();
+ }
+ 
++template <typename T, bool AlignedDma = false>
++class PairedShortFloat256Kernel {
++public:
++    __aicore__ inline void Init(GM_ADDR x, GM_ADDR g, GM_ADDR out, uint32_t d, float inverseD, float epsilon,
++                               uint32_t xrStride, uint32_t gbStride)
++    {
++        xrStride_=xrStride;gbStride_=gbStride;
++        d_ = d;
++        padded_ = 256;
++        invD_ = inverseD;
++        epsilon_ = epsilon;
++        xgm_.SetGlobalBuffer((__gm__ T*)x);
++        ggm_.SetGlobalBuffer((__gm__ T*)g);
++        outgm_.SetGlobalBuffer((__gm__ T*)out);
++        // Each fixed slot reserves 16384 B, enough for 4096 FP32 elements.
++        // Slots are byte-addressed, 32 B aligned, and never exceed UB148000 B.
++        x_ = LocalTensor<T>(TPosition::VECIN, 0, padded_);
++        r_ = LocalTensor<T>(TPosition::VECIN, 16384, padded_);
++        g_ = LocalTensor<T>(TPosition::VECIN, 32768, padded_);
++        b_ = LocalTensor<T>(TPosition::VECIN, 49152, padded_);
++        y_ = LocalTensor<float>(TPosition::VECOUT, 65536, padded_);
++        tmp_ = LocalTensor<float>(TPosition::VECCALC, 81920, padded_);
++        gf_ = LocalTensor<float>(TPosition::VECCALC, 98304, padded_);
++        bf_ = LocalTensor<float>(TPosition::VECCALC, 114688, padded_);
++        result_ = LocalTensor<T>(TPosition::VECOUT, 131072, padded_);
++        partials_ = LocalTensor<float>(TPosition::VECCALC, 147456, 64);
++        sum_ = LocalTensor<float>(TPosition::VECCALC, 147712, 8);
++        work_ = LocalTensor<float>(TPosition::VECCALC, 147744, 64);
++    }
++
++    __aicore__ inline void Process()
++    {
++        CacheParameters();
++        ProcessRow(GetBlockIdx());
++    }
++
++    __aicore__ inline void CacheParameters()
++    {
++        DataCopyExtParams copy = {1, static_cast<uint32_t>(d_ * sizeof(T)), 0, 0, 0};
++        DataCopyPadExtParams<T> pad = {};
++        pad.isPad = false;
++        DataCopyExtParams pair={2,static_cast<uint32_t>(d_*sizeof(T)),gbStride_,static_cast<uint32_t>((16384-(d_*sizeof(T)+31)/32*32)/32),0};
++        DataCopyPad(g_,ggm_,pair,pad);
++        SetFlag<HardEvent::MTE2_V>(0);
++        WaitFlag<HardEvent::MTE2_V>(0);
++        if (sizeof(T) == sizeof(float)) {
++            gf_ = g_.template ReinterpretCast<float>();
++            bf_ = b_.template ReinterpretCast<float>();
++        } else {
++            ToFloat<T>(gf_, g_, d_);
++            ToFloat<T>(bf_, b_, d_);
++        }
++        PipeBarrier<PIPE_V>();
++    }
++
++    __aicore__ inline void ProcessRow(uint64_t row)
++    {
++        const uint64_t base = row * d_;
++        DataCopyExtParams copy = {1, static_cast<uint32_t>(d_ * sizeof(T)), 0, 0, 0};
++        DataCopyPadExtParams<T> pad = {};
++        pad.isPad = false;
++        DataCopyExtParams pair={2,static_cast<uint32_t>(d_*sizeof(T)),xrStride_,static_cast<uint32_t>((16384-(d_*sizeof(T)+31)/32*32)/32),0};
++        DataCopyPad(x_,xgm_[base],pair,pad);
++        SetFlag<HardEvent::MTE2_V>(0);
++        WaitFlag<HardEvent::MTE2_V>(0);
++        if (sizeof(T) == sizeof(float) && d_ == padded_) {
++            y_ = x_.template ReinterpretCast<float>();
++            tmp_ = r_.template ReinterpretCast<float>();
++        } else {
++            if (d_ != padded_) {
++                Duplicate(y_[d_ / 64 * 64], 0.0f, 64);
++                PipeBarrier<PIPE_V>();
++            }
++            ToFloat<T>(y_, x_, d_);
++            ToFloat<T>(tmp_, r_, d_);
++        }
++        PipeBarrier<PIPE_V>();
++        Add(y_, y_, tmp_, d_);
++        PipeBarrier<PIPE_V>();
++        Mul(tmp_, y_, y_, 256);
++        PipeBarrier<PIPE_V>();
++        constexpr uint32_t parts = 4;
++        // A2 ReduceSum(count) is not supported in static Tensor mode. Two
++        // hardware reductions retain FP32 arithmetic while tree-summing the
++        // repeat partials. This differs from the baseline's sequential final
++        // accumulation, and must be checked against the official tolerance.
++        // Four 64-float repeats -> 32 block sums -> one whole-vector sum.
++        BlockReduceSum(partials_,tmp_,4,64,1,1,8);PipeBarrier<PIPE_V>();
++        WholeReduceSum(sum_,partials_,32,1,1,1,8);PipeBarrier<PIPE_V>();
++        Muls(sum_, sum_, invD_, 1);
++        PipeBarrier<PIPE_V>();
++        Adds(sum_, sum_, epsilon_, 1);
++        PipeBarrier<PIPE_V>();
++        Sqrt(sum_, sum_, 1);
++        PipeBarrier<PIPE_V>();
++        Brcb(work_, sum_, 1, {1, 8});
++        PipeBarrier<PIPE_V>();
++        Div(y_, y_, work_, static_cast<uint64_t>(64), static_cast<uint8_t>(parts),
++            {1, 1, 0, 8, 8, 0});
++        PipeBarrier<PIPE_V>();
++        // Preserve combo_core's affine FMA and normalization placement.
++        FusedMulAdd(y_, gf_, bf_, d_);
++        PipeBarrier<PIPE_V>();
++        if (sizeof(T) == sizeof(float)) {
++            // VECIN (aligned) and VECOUT (unaligned) are both A2 DMA sources.
++            // Retain the baseline's final FP32 Adds(+0) conversion.
++            Adds(y_, y_, 0.0f, d_);
++            PipeBarrier<PIPE_V>();
++            result_ = y_.template ReinterpretCast<T>();
++        } else {
++            FromFloat<T>(result_, y_, d_);
++            PipeBarrier<PIPE_V>();
++        }
++        SetFlag<HardEvent::V_MTE3>(1);
++        WaitFlag<HardEvent::V_MTE3>(1);
++        if (AlignedDma) {
++            DataCopyParams aligned = {1, static_cast<uint16_t>(d_ * sizeof(T) / 32), 0, 0};
++            DataCopy(outgm_[base], result_, aligned);
++        } else {
++            DataCopyPad(outgm_[base], result_, copy);
++        }
++        // V and MTE2 are separate pipelines. Guard both future vector writes
++        // and future input DMA writes against the preceding GM output read.
++        SetFlag<HardEvent::MTE3_V>(2);
++        WaitFlag<HardEvent::MTE3_V>(2);
++        SetFlag<HardEvent::MTE3_MTE2>(3);
++        WaitFlag<HardEvent::MTE3_MTE2>(3);
++    }
++
++private:
++    GlobalTensor<T> xgm_, ggm_, outgm_;
++    LocalTensor<T> x_, r_, g_, b_, result_;
++    LocalTensor<float> y_, tmp_, gf_, bf_, partials_, sum_, work_;
++    uint32_t xrStride_,gbStride_;
++    uint32_t d_, padded_;
++    float invD_, epsilon_;
++};
++
++__global__ __vector__ void paired_short_float_256_custom(
++    GM_ADDR x,GM_ADDR gamma,GM_ADDR output,uint32_t d,float invD,float epsilon,uint32_t xrStride,uint32_t gbStride)
++{
++    InitSocState();PairedShortFloat256Kernel<float,false> op;
++    op.Init(x,gamma,output,d,invD,epsilon,xrStride,gbStride);op.Process();
++}
++
+ } // namespace addrmsnormbias_solution
+ 
+ extern "C" void run_kernel(
+@@ -3377,6 +3522,14 @@
+     const float inverseD = 1.0f / static_cast<float>(d);
+     // E028: one row per launched core, width band gives a constant 256-float UB vector.
+     if (input.dtype == 0 && rows > 1 && rows <= static_cast<uint64_t>(blockNum) && d > 192 && d <= 256) {
++        const uint64_t xr=reinterpret_cast<uint64_t>(residual)-reinterpret_cast<uint64_t>(x);
++        const uint64_t gb=reinterpret_cast<uint64_t>(bias)-reinterpret_cast<uint64_t>(gamma);
++        const uint64_t bytes=static_cast<uint64_t>(d)*4;
++        if (xr>=bytes && gb>=bytes && xr-bytes<=0xffffffffULL && gb-bytes<=0xffffffffULL) {
++            paired_short_float_256_custom<<<blockNum,nullptr,stream>>>(x,gamma,output,d,inverseD,epsilon,
++                static_cast<uint32_t>(xr-bytes),static_cast<uint32_t>(gb-bytes));
++            return;
++        }
+         if (d == 256) fixed_short_float_256_custom<true><<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
+         else fixed_short_float_256_custom<false><<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
+         return;
