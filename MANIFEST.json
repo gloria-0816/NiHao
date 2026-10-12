@@ -162,8 +162,8 @@
     },
     {
       "path": "HANDOFF.md",
-      "bytes": 5030,
-      "sha256": "70e7eff703768962a8b11dc65e1995f437379c425cd17f0e1b91ccba1e2c8ed8"
+      "bytes": 5556,
+      "sha256": "fee54c80585af429da7168c0ca8bb9a3d836c9108134f695dbb041d32efe94af"
     },
     {
       "path": "HANDOFF_E026.md",
@@ -172,8 +172,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 2680,
-      "sha256": "b95fb793f1c493782d1ddc9ab1ca229b65fece42a7279bea24989b588c235a7d"
+      "bytes": 2944,
+      "sha256": "459e9d5022257816dcb7cea3bbf3bce6684bed437b8206fe336ed6916d8df297"
     },
     {
       "path": "REPRODUCE.md",
@@ -252,8 +252,8 @@
     },
     {
       "path": "docs/优化目标72分_E028.md",
-      "bytes": 1537,
-      "sha256": "80db85ae7f9197129fcbc67a9b05b0ea7a788ada4abbbef082dd1af6de49521a"
+      "bytes": 1787,
+      "sha256": "dbddc83929f270ec0a7107e725b42270ec9c6d57ce11a1be973f1d63ff22442e"
     },
     {
       "path": "experiments/E028_target72/COMBO1/change.diff",
@@ -321,6 +321,16 @@
       "sha256": "c1cad1adeabc7e10e5d3a526f3bb37717ccf1d7703081ead0493aeef3e02f9cb"
     },
     {
+      "path": "experiments/E028_target72/P9DB/change.diff",
+      "bytes": 9705,
+      "sha256": "7065f519cb012f6148816d19050bbf4756de00a11e940978e07425e7573506f7"
+    },
+    {
+      "path": "experiments/E028_target72/P9DB/kernel.asc",
+      "bytes": 173481,
+      "sha256": "9106f44db10fcffefc56c3d53c4822f8d4b3a3254d165e972efbbe4218d0fc0c"
+    },
+    {
       "path": "experiments/E028_target72/P9LP/change.diff",
       "bytes": 9287,
       "sha256": "80a7225f3634b6511207fc7f07da49f731b74a434a0361ec058b03990c193f47"
@@ -329,6 +339,16 @@
       "path": "experiments/E028_target72/P9LP/kernel.asc",
       "bytes": 173068,
       "sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba"
+    },
+    {
+      "path": "experiments/E028_target72/P9MASK/change.diff",
+      "bytes": 9872,
+      "sha256": "997af03d832c634b99341071882e0df538be7be7e71a075d40df8008bc47421e"
+    },
+    {
+      "path": "experiments/E028_target72/P9MASK/kernel.asc",
+      "bytes": 173643,
+      "sha256": "6efa9923498beea0159d584e4673e9f8f8695c4fca2038b333a5fb37e242279e"
     },
     {
       "path": "experiments/E028_target72/P9OUT/change.diff",
@@ -556,6 +576,16 @@
       "sha256": "3c5013099e8078ec872b03acae2a196eb40ec639d12fb85c05594896b70bdc1b"
     },
     {
+      "path": "experiments/E028_target72/phase09.py",
+      "bytes": 6075,
+      "sha256": "057da2abb834501e333166b2aee8b873a56ce710fba6db56c63121a7eb7e3bf5"
+    },
+    {
+      "path": "experiments/E028_target72/phase09_preparation.json",
+      "bytes": 2901,
+      "sha256": "4870b8548d3bb739e623840b9830926d7a8290a03330a1bb9b6807e829a0d0db"
+    },
+    {
       "path": "experiments/E028_target72/priority_analysis.json",
       "bytes": 3882,
       "sha256": "16160b6670587f79cdda6d27f5eccfe3c5c1efcfaee6c7cfbf1e7a68194ab0f7"
@@ -604,6 +634,11 @@
       "path": "experiments/E028_target72/protocol_phase08.json",
       "bytes": 1454,
       "sha256": "bfa4eb3e30b1456e30bec31e3d2a8d9de77d53716c32c2feda1881bdb1dcb08a"
+    },
+    {
+      "path": "experiments/E028_target72/protocol_phase09.json",
+      "bytes": 2726,
+      "sha256": "29dcc095dfd14c89dd694fb99db410f1e249aed2f68db5a5187baa1d1ef9a93a"
     },
     {
       "path": "experiments/E028_target72/results/phase01/checks.json",
@@ -932,18 +967,18 @@
     },
     {
       "path": "experiments/E028_target72/sync_manifest.json",
-      "bytes": 50169,
-      "sha256": "ee4f39610939848243ecc1cc308eb98d046f6cd7988f5bc8c8dec8e9a50731d9"
+      "bytes": 51902,
+      "sha256": "b35969da0d5d4360acb9d14d0dafe7d863b216c6e5a9ec43c9a7e8f6e130f1dc"
     },
     {
       "path": "experiments/E028_target72/下一轮实现假设.md",
-      "bytes": 3135,
-      "sha256": "f250084184f235f7636c502c580a4b8d76c0521fb587e8b19d88e2f0bd111aad"
+      "bytes": 3554,
+      "sha256": "c7b62c885bc334976f4279ea6de5719d10e309fe3aff88062da2b27520ef0ca7"
     },
     {
       "path": "experiments/E028_target72/报告.md",
-      "bytes": 21466,
-      "sha256": "31b141172f30b2f38f111ab0efa8edce52d27532143cc9473e4ae55eca06afde"
+      "bytes": 23390,
+      "sha256": "82d3d4805601c24e818df4f51f1a5cb0905bc1bc0a9d7587291fdad9f6a97b38"
     },
     {
       "path": "final_verification.json",
@@ -1220,5 +1255,6 @@
     "goal_achieved": false
   },
   "E028_manifest": "experiments/E028_target72/sync_manifest.json",
-  "current_goal_score": 72
+  "current_goal_score": 72,
+  "E028_phase09_status": "prepared_not_device_compiled_or_measured"
 }

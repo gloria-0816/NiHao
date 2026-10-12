@@ -1,0 +1,94 @@
+{
+  "base_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+  "target_score": 72,
+  "variants": {
+    "P9DB": {
+      "sha256": "9106f44db10fcffefc56c3d53c4822f8d4b3a3254d165e972efbbe4218d0fc0c",
+      "parent_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "mechanism": "Independent double output + compact UB without changing batch, arithmetic or parameter timing",
+      "scope": "FP16, rows>=4*availableCoreNum, 321<=D<=640"
+    },
+    "P9MASK": {
+      "sha256": "6efa9923498beea0159d584e4673e9f8f8695c4fca2038b333a5fb37e242279e",
+      "parent_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "mechanism": "Normal mask reuse only in FP32 normalization and native-half affine repeat loops; identical arithmetic, barriers and UB",
+      "scope": "FP16, rows>=4*availableCoreNum, 321<=D<=1024"
+    },
+    "P9LP": {
+      "sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+      "mechanism": "Input slot0 first; gamma/bias readiness event3 deferred to first affine; slot1 prefetched after parameter issue; half arithmetic unchanged",
+      "scope": "Only FP16 existing PipelineBatch9 guard: 321<=D<=1024, rows>=4*availableCoreNum; other routes unchanged"
+    }
+  },
+  "previous_phase": "phase08",
+  "scope": "Actual planned phase09, not yet compiled or measured",
+  "board_timing": "Six rotated/reversed four-version blocks per s6/s7/s8, each final20 of31 ordinary tasks; same inputs warm; P9LP exact runner reused after hash verification",
+  "numerical_policy": "Every structural candidate must be bitwise equal to COMBO on complete captured output; inherited CPU strict failures retained only when equal",
+  "UB": {
+    "P9DB": [
+      [
+        "x0",
+        0,
+        18816
+      ],
+      [
+        "x1",
+        18848,
+        18816
+      ],
+      [
+        "r0",
+        37696,
+        18816
+      ],
+      [
+        "r1",
+        56544,
+        18816
+      ],
+      [
+        "y",
+        75392,
+        37632
+      ],
+      [
+        "square",
+        113056,
+        37632
+      ],
+      [
+        "out0",
+        150720,
+        18816
+      ],
+      [
+        "out1",
+        169568,
+        18816
+      ],
+      [
+        "gamma",
+        188416,
+        1280
+      ],
+      [
+        "bias",
+        189728,
+        1280
+      ],
+      [
+        "work",
+        191040,
+        4864
+      ],
+      [
+        "sums",
+        195936,
+        256
+      ]
+    ],
+    "UB_end": 196192,
+    "UB_limit": 196608
+  },
+  "protection": "20 full-output shape/capacity/width/tail cases, four versions each; every candidate must be bitwise equal to COMBO; CPU strict failures retained only if equal"
+}

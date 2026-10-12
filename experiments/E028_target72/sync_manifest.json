@@ -1089,18 +1089,65 @@
     {
       "path": "experiments/E028_target72/下一轮实现假设.md",
       "source_sha256": "f250084184f235f7636c502c580a4b8d76c0521fb587e8b19d88e2f0bd111aad",
-      "destination_sha256": "f250084184f235f7636c502c580a4b8d76c0521fb587e8b19d88e2f0bd111aad",
-      "bytes": 3135,
-      "byte_identical": true,
-      "documentation_links_updated": false
+      "destination_sha256": "c7b62c885bc334976f4279ea6de5719d10e309fe3aff88062da2b27520ef0ca7",
+      "bytes": 3554,
+      "byte_identical": false,
+      "documentation_links_updated": false,
+      "documentation_updated": true
     },
     {
       "path": "experiments/E028_target72/报告.md",
       "source_sha256": "f7e0fe4e18e8e7db7634ae6851f89dbbd02c042a4e05f7073cdc18b31631e1c4",
-      "destination_sha256": "31b141172f30b2f38f111ab0efa8edce52d27532143cc9473e4ae55eca06afde",
-      "bytes": 21466,
+      "destination_sha256": "82d3d4805601c24e818df4f51f1a5cb0905bc1bc0a9d7587291fdad9f6a97b38",
+      "bytes": 23390,
       "byte_identical": false,
-      "documentation_links_updated": true
+      "documentation_links_updated": true,
+      "documentation_updated": true
+    }
+  ],
+  "continuations": [
+    {
+      "source_repository": "ttal6688/huawei-CANN",
+      "source_commit": "c07c7314782a1b12be01875b6c34f3d1ce662fa5",
+      "phase": "phase09",
+      "status": "prepared_not_device_compiled_or_measured",
+      "files": [
+        {
+          "path": "experiments/E028_target72/P9DB/kernel.asc",
+          "sha256": "9106f44db10fcffefc56c3d53c4822f8d4b3a3254d165e972efbbe4218d0fc0c",
+          "bytes": 173481
+        },
+        {
+          "path": "experiments/E028_target72/P9DB/change.diff",
+          "sha256": "7065f519cb012f6148816d19050bbf4756de00a11e940978e07425e7573506f7",
+          "bytes": 9705
+        },
+        {
+          "path": "experiments/E028_target72/P9MASK/kernel.asc",
+          "sha256": "6efa9923498beea0159d584e4673e9f8f8695c4fca2038b333a5fb37e242279e",
+          "bytes": 173643
+        },
+        {
+          "path": "experiments/E028_target72/P9MASK/change.diff",
+          "sha256": "997af03d832c634b99341071882e0df538be7be7e71a075d40df8008bc47421e",
+          "bytes": 9872
+        },
+        {
+          "path": "experiments/E028_target72/phase09.py",
+          "sha256": "057da2abb834501e333166b2aee8b873a56ce710fba6db56c63121a7eb7e3bf5",
+          "bytes": 6075
+        },
+        {
+          "path": "experiments/E028_target72/protocol_phase09.json",
+          "sha256": "29dcc095dfd14c89dd694fb99db410f1e249aed2f68db5a5187baa1d1ef9a93a",
+          "bytes": 2726
+        },
+        {
+          "path": "experiments/E028_target72/phase09_preparation.json",
+          "sha256": "4870b8548d3bb739e623840b9830926d7a8290a03330a1bb9b6807e829a0d0db",
+          "bytes": 2901
+        }
+      ]
     }
   ]
 }

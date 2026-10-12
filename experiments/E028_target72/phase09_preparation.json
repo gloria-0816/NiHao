@@ -1,0 +1,123 @@
+{
+  "status": "prepared_not_device_compiled_or_measured",
+  "source_hashes": {
+    "P9DB": "9106f44db10fcffefc56c3d53c4822f8d4b3a3254d165e972efbbe4218d0fc0c",
+    "P9MASK": "6efa9923498beea0159d584e4673e9f8f8695c4fca2038b333a5fb37e242279e",
+    "P9LP": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba"
+  },
+  "driver_sha256": "057da2abb834501e333166b2aee8b873a56ce710fba6db56c63121a7eb7e3bf5",
+  "source_derived_UB_regions": [
+    {
+      "name": "x_[0]",
+      "type": "half",
+      "position": "VECIN",
+      "address": 0,
+      "bytes": 18816,
+      "end": 18816
+    },
+    {
+      "name": "x_[1]",
+      "type": "half",
+      "position": "VECIN",
+      "address": 18848,
+      "bytes": 18816,
+      "end": 37664
+    },
+    {
+      "name": "r_[0]",
+      "type": "half",
+      "position": "VECIN",
+      "address": 37696,
+      "bytes": 18816,
+      "end": 56512
+    },
+    {
+      "name": "r_[1]",
+      "type": "half",
+      "position": "VECIN",
+      "address": 56544,
+      "bytes": 18816,
+      "end": 75360
+    },
+    {
+      "name": "y_",
+      "type": "float",
+      "position": "VECCALC",
+      "address": 75392,
+      "bytes": 37632,
+      "end": 113024
+    },
+    {
+      "name": "tmp_",
+      "type": "float",
+      "position": "VECCALC",
+      "address": 113056,
+      "bytes": 37632,
+      "end": 150688
+    },
+    {
+      "name": "out_[0]",
+      "type": "half",
+      "position": "VECOUT",
+      "address": 150720,
+      "bytes": 18816,
+      "end": 169536
+    },
+    {
+      "name": "out_[1]",
+      "type": "half",
+      "position": "VECOUT",
+      "address": 169568,
+      "bytes": 18816,
+      "end": 188384
+    },
+    {
+      "name": "gh_",
+      "type": "half",
+      "position": "VECIN",
+      "address": 188416,
+      "bytes": 1280,
+      "end": 189696
+    },
+    {
+      "name": "bh_",
+      "type": "half",
+      "position": "VECIN",
+      "address": 189728,
+      "bytes": 1280,
+      "end": 191008
+    },
+    {
+      "name": "work_",
+      "type": "float",
+      "position": "VECCALC",
+      "address": 191040,
+      "bytes": 4864,
+      "end": 195904
+    },
+    {
+      "name": "sums_",
+      "type": "float",
+      "position": "VECCALC",
+      "address": 195936,
+      "bytes": 256,
+      "end": 196192
+    }
+  ],
+  "exhaustive_width_count_combinations": 5952,
+  "max_partial_workspace_write": 1176,
+  "max_partial_workspace_read": 1176,
+  "max_active_elements": 9408,
+  "UB_end": 196192,
+  "UB_limit": 196608,
+  "python_syntax": "valid",
+  "mask_review": "Existing installed 9.0 repeat interfaces and old compiled MASK64B are basis; full mask and tail masks separated; actual compile+bitwise gate required",
+  "execution": {
+    "launched_by_this_agent": false,
+    "connection": "Configured local SSH forwarding port closed",
+    "official_score": 64.52,
+    "best_historical_score": 65.36,
+    "target_score": 72,
+    "goal_achieved": false
+  }
+}
