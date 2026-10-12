@@ -1,0 +1,155 @@
+{
+  "submission_id": 756788,
+  "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acccb8d694b590c3cfd3432",
+  "observed_status": "Pass",
+  "submitted_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+  "official_score": 64.52,
+  "target_score": 72,
+  "rank": 97,
+  "passed": 15,
+  "total": 15,
+  "submitted_at": "2026/10/12 19:59:09",
+  "score_provenance": "User supplied ranking row; official detail page independently confirms submission time, 15 Pass, all times and current TBest",
+  "engineering_download_verified": false,
+  "engineering_download_note": "Browser download attempts returned or timed out without an observed file; not represented as a verified engineering archive",
+  "best_historical_official_score": 65.36,
+  "selected_as_best": false,
+  "goal_achieved": false,
+  "cases": [
+    {
+      "case_id": 1,
+      "baseline_752881_us": 2.37,
+      "actual_756788_us": 2.26,
+      "tbest_observed_us": 1.15,
+      "latency_drop_pct": 4.641350210970478,
+      "error_percentage": 0,
+      "status": "Pass"
+    },
+    {
+      "case_id": 2,
+      "baseline_752881_us": 2.62,
+      "actual_756788_us": 2.53,
+      "tbest_observed_us": 1.64,
+      "latency_drop_pct": 3.435114503816805,
+      "error_percentage": 0,
+      "status": "Pass"
+    },
+    {
+      "case_id": 3,
+      "baseline_752881_us": 2.75,
+      "actual_756788_us": 2.76,
+      "tbest_observed_us": 2.12,
+      "latency_drop_pct": -0.3636363636363559,
+      "error_percentage": 0,
+      "status": "Pass"
+    },
+    {
+      "case_id": 4,
+      "baseline_752881_us": 7.44,
+      "actual_756788_us": 7.46,
+      "tbest_observed_us": 4.32,
+      "latency_drop_pct": -0.26881720430106953,
+      "error_percentage": 0,
+      "status": "Pass"
+    },
+    {
+      "case_id": 5,
+      "baseline_752881_us": 5.9,
+      "actual_756788_us": 5.84,
+      "tbest_observed_us": 4.65,
+      "latency_drop_pct": 1.0169491525423813,
+      "error_percentage": 0,
+      "status": "Pass"
+    },
+    {
+      "case_id": 6,
+      "baseline_752881_us": 11.73,
+      "actual_756788_us": 12.01,
+      "tbest_observed_us": 7.97,
+      "latency_drop_pct": -2.387041773231026,
+      "error_percentage": 0,
+      "status": "Pass"
+    },
+    {
+      "case_id": 7,
+      "baseline_752881_us": 16.09,
+      "actual_756788_us": 16.28,
+      "tbest_observed_us": 10.77,
+      "latency_drop_pct": -1.1808576755748992,
+      "error_percentage": 0,
+      "status": "Pass"
+    },
+    {
+      "case_id": 8,
+      "baseline_752881_us": 31.77,
+      "actual_756788_us": 32.63,
+      "tbest_observed_us": 29.72,
+      "latency_drop_pct": -2.706956248032745,
+      "error_percentage": 0,
+      "status": "Pass"
+    },
+    {
+      "case_id": 9,
+      "baseline_752881_us": 70.86,
+      "actual_756788_us": 70.61,
+      "tbest_observed_us": 67.81,
+      "latency_drop_pct": 0.3528083545018346,
+      "error_percentage": 0,
+      "status": "Pass"
+    },
+    {
+      "case_id": 10,
+      "baseline_752881_us": 47.93,
+      "actual_756788_us": 48.94,
+      "tbest_observed_us": 45.87,
+      "latency_drop_pct": -2.1072397245983683,
+      "error_percentage": 0,
+      "status": "Pass"
+    },
+    {
+      "case_id": 11,
+      "baseline_752881_us": 156.78,
+      "actual_756788_us": 156.67,
+      "tbest_observed_us": 131.05,
+      "latency_drop_pct": 0.07016201046052663,
+      "error_percentage": 0,
+      "status": "Pass"
+    },
+    {
+      "case_id": 12,
+      "baseline_752881_us": 80.24,
+      "actual_756788_us": 80.69,
+      "tbest_observed_us": 75.96,
+      "latency_drop_pct": -0.5608175473579298,
+      "error_percentage": 0,
+      "status": "Pass"
+    },
+    {
+      "case_id": 13,
+      "baseline_752881_us": 550.59,
+      "actual_756788_us": 553.7,
+      "tbest_observed_us": 397.19,
+      "latency_drop_pct": -0.564848616938196,
+      "error_percentage": 0,
+      "status": "Pass"
+    },
+    {
+      "case_id": 14,
+      "baseline_752881_us": 4050,
+      "actual_756788_us": 4060,
+      "tbest_observed_us": 3530,
+      "latency_drop_pct": -0.24691358024691357,
+      "error_percentage": 0,
+      "status": "Pass"
+    },
+    {
+      "case_id": 15,
+      "baseline_752881_us": 9360,
+      "actual_756788_us": 9380,
+      "tbest_observed_us": 7960,
+      "latency_drop_pct": -0.21367521367521367,
+      "error_percentage": 0,
+      "status": "Pass"
+    }
+  ]
+}

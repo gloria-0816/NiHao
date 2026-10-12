@@ -1,0 +1,173 @@
+--- COMBO/kernel.asc
++++ P9OUT/kernel.asc
+@@ -1883,6 +1883,161 @@
+     op.Init(x,r,g,b,out,rows,d,invD,eps); op.Process();
+ }
+ 
++template <typename T, bool BlockReduction>
++class P9OUTKernel {
++public:
++    __aicore__ inline void Init(GM_ADDR x, GM_ADDR r, GM_ADDR g, GM_ADDR b,
++        GM_ADDR out, uint64_t rows, uint32_t d, float invD, float eps)
++    {
++        d_=d; stride_=(d+63)/64*64; batch_=9408/stride_;
++        begin_=rows*GetBlockIdx()/GetBlockNum();
++        end_=rows*(GetBlockIdx()+1)/GetBlockNum(); invD_=invD; eps_=eps;
++        xgm_.SetGlobalBuffer((__gm__ T*)x); rgm_.SetGlobalBuffer((__gm__ T*)r);
++        ggm_.SetGlobalBuffer((__gm__ T*)g); bgm_.SetGlobalBuffer((__gm__ T*)b);
++        outgm_.SetGlobalBuffer((__gm__ T*)out);
++        x_[0]=LocalTensor<T>(TPosition::VECIN,0,9408);
++        x_[1]=LocalTensor<T>(TPosition::VECIN,18944,9408);
++        r_[0]=LocalTensor<T>(TPosition::VECIN,37888,9408);
++        r_[1]=LocalTensor<T>(TPosition::VECIN,56832,9408);
++        y_=LocalTensor<float>(TPosition::VECCALC,75776,9408);
++        tmp_=LocalTensor<float>(TPosition::VECCALC,113536,9408);
++        out_[0]=LocalTensor<T>(TPosition::VECOUT,151296,9408);
++        out_[1]=LocalTensor<T>(TPosition::VECOUT,113536,9408);
++        gamma_=LocalTensor<float>(TPosition::VECCALC,170240,1024);
++        bias_=LocalTensor<float>(TPosition::VECCALC,174464,1024);
++        gh_=LocalTensor<T>(TPosition::VECIN,178688,1024);
++        bh_=LocalTensor<T>(TPosition::VECIN,180864,1024);
++        work_=LocalTensor<float>(TPosition::VECCALC,183040,2048);
++        sums_=LocalTensor<float>(TPosition::VECCALC,191360,128);
++    }
++    __aicore__ inline void Process()
++    {
++        DataCopyExtParams parameter={1,static_cast<uint32_t>(d_*sizeof(T)),0,0,0};
++        DataCopyPadExtParams<T> pad={}; pad.isPad=false;
++        DataCopyPad(gh_,ggm_,parameter,pad); DataCopyPad(bh_,bgm_,parameter,pad);
++        SetFlag<HardEvent::MTE2_V>(0); WaitFlag<HardEvent::MTE2_V>(0);
++        if(!CompactParameterType<T>::value){ToFloat<T>(gamma_,gh_,d_);ToFloat<T>(bias_,bh_,d_);}
++        PipeBarrier<PIPE_V>();
++        Prefetch(begin_,0);
++        if(begin_+batch_<end_) Prefetch(begin_+batch_,1);
++        bool pendingOutput[2]={false,false};
++        uint32_t slot=0;
++        for(uint64_t row=begin_;row<end_;row+=batch_,slot^=1) {
++            const uint32_t count=Min(batch_,static_cast<uint32_t>(end_-row));
++            const uint32_t active=count*stride_;
++            WaitFlag<HardEvent::MTE2_V>(slot);
++            if(CompactParameterType<T>::value) {
++                Add(x_[slot],x_[slot],r_[slot],active);PipeBarrier<PIPE_V>();
++                ToFloat<T>(y_,x_[slot],active);PipeBarrier<PIPE_V>();
++            } else {
++                ToFloat<T>(y_,x_[slot],active);ToFloat<T>(tmp_,r_[slot],active);PipeBarrier<PIPE_V>();
++            }
++            // This slot is only overwritten after both Cast source reads end.
++            if(row+2*batch_<end_) {
++                SetFlag<HardEvent::V_MTE2>(slot); WaitFlag<HardEvent::V_MTE2>(slot);
++                Prefetch(row+2*batch_,slot);
++            }
++            if(!CompactParameterType<T>::value){Add(y_,y_,tmp_,active);PipeBarrier<PIPE_V>();}
++            if(d_!=stride_) {
++                uint64_t tail[2]={~static_cast<uint64_t>(0)<<(d_%64),0};
++                Duplicate(y_[d_/64*64],0.0f,tail,count,1,stride_/8);
++                PipeBarrier<PIPE_V>();
++            }
++            // Output slot1 aliases the square buffer; only that writer gates reuse.
++            if(pendingOutput[1]) {WaitFlag<HardEvent::MTE3_V>(4);pendingOutput[1]=false;}
++            Mul(tmp_,y_,y_,active); PipeBarrier<PIPE_V>();
++            const uint32_t parts=stride_/64;
++            if(BlockReduction) {
++                BlockReduceSum(work_,tmp_,active/64,64,1,1,8);
++                PipeBarrier<PIPE_V>();
++                const uint32_t partialRow=parts*8;
++                if(partialRow>64) {
++                    Add(work_,work_,work_[64],partialRow-64,count,
++                        {1,1,1,static_cast<uint8_t>(parts),static_cast<uint8_t>(parts),static_cast<uint8_t>(parts)});
++                    PipeBarrier<PIPE_V>();
++                }
++                WholeReduceSum(sums_,work_,Min(64,partialRow),count,1,1,parts);
++            } else if(parts<=8) {
++                WholeReduceSum(work_,tmp_,64,active/64,8,1,8);
++                PipeBarrier<PIPE_V>();
++                uint64_t mask[2]={0,0};
++                for(uint32_t p=0;p<parts;++p) mask[0]|=static_cast<uint64_t>(1)<<(p*8);
++                WholeReduceSum(sums_,work_,mask,count,1,1,parts);
++            } else {
++                const uint32_t partialStride=(parts+7)/8*8;
++                for(uint32_t i=0;i<count;++i)
++                    WholeReduceSum(work_[i*partialStride],tmp_[i*stride_],64,parts,1,1,8);
++                PipeBarrier<PIPE_V>();
++                WholeReduceSum(sums_,work_,parts,count,1,1,partialStride/8);
++            }
++            PipeBarrier<PIPE_V>();
++            Muls(sums_,sums_,invD_,count); PipeBarrier<PIPE_V>();
++            Adds(sums_,sums_,eps_,count); PipeBarrier<PIPE_V>();
++            Sqrt(sums_,sums_,count); Duplicate(work_,1.0f,count); PipeBarrier<PIPE_V>();
++            Div(sums_,work_,sums_,count); PipeBarrier<PIPE_V>();
++            const uint32_t rms=(count+7)/8*8;
++            Brcb(work_,sums_,rms/8,{1,8}); PipeBarrier<PIPE_V>();
++            if(count<=parts) {
++                for(uint32_t i=0;i<count;++i)
++                    Mul(y_[i*stride_],y_[i*stride_],work_[i*8],64,parts,{1,1,0,8,8,0});
++                PipeBarrier<PIPE_V>();
++                if(!CompactParameterType<T>::value)
++                    for(uint32_t i=0;i<count;++i)FusedMulAdd(y_[i*stride_],gamma_,bias_,d_);
++            } else {
++                const uint8_t step=stride_/8;
++                for(uint32_t col=0;col<d_;col+=64)
++                    Mul(y_[col],y_[col],work_,Min(64,d_-col),count,{1,1,0,step,step,1});
++                PipeBarrier<PIPE_V>();
++                if(!CompactParameterType<T>::value)
++                    for(uint32_t col=0;col<d_;col+=64)
++                        FusedMulAdd(y_[col],gamma_[col],bias_[col],Min(64,d_-col),count,{1,1,1,step,0,0});
++            }
++            PipeBarrier<PIPE_V>();
++            if(pendingOutput[slot]) {WaitFlag<HardEvent::MTE3_V>(3+slot);pendingOutput[slot]=false;}
++            FromFloat<T>(out_[slot],y_,active); PipeBarrier<PIPE_V>();
++            if(CompactParameterType<T>::value) {
++                const uint32_t halfParts=(d_+127)/128;
++                if(count<=halfParts) {
++                    for(uint32_t i=0;i<count;++i)FusedMulAdd(out_[slot][i*stride_].template ReinterpretCast<half>(),gh_.template ReinterpretCast<half>(),bh_.template ReinterpretCast<half>(),d_);
++                } else {
++                    for(uint32_t col=0;col<d_;col+=128)
++                        FusedMulAdd(out_[slot][col].template ReinterpretCast<half>(),gh_[col].template ReinterpretCast<half>(),bh_[col].template ReinterpretCast<half>(),Min(128,d_-col),count,
++                            {1,1,1,static_cast<uint8_t>(stride_/16),0,0});
++                }
++                PipeBarrier<PIPE_V>();
++            }
++            SetFlag<HardEvent::V_MTE3>(2); WaitFlag<HardEvent::V_MTE3>(2);
++            DataCopyExtParams copy={static_cast<uint16_t>(count),static_cast<uint32_t>(d_*sizeof(T)),Gap(),0,0};
++            DataCopyPad(outgm_[row*d_],out_[slot],copy);
++            SetFlag<HardEvent::MTE3_V>(3+slot); pendingOutput[slot]=true;
++        }
++        for(uint32_t i=0;i<2;++i) if(pendingOutput[i]) WaitFlag<HardEvent::MTE3_V>(3+i);
++    }
++private:
++    __aicore__ inline uint32_t Min(uint32_t a,uint32_t b){return a<b?a:b;}
++    __aicore__ inline uint32_t Gap(){return (stride_*sizeof(T)-(static_cast<uint32_t>(d_*sizeof(T))+31)/32*32)/32;}
++    __aicore__ inline void Prefetch(uint64_t row,uint32_t slot)
++    {
++        const uint32_t count=Min(batch_,static_cast<uint32_t>(end_-row));
++        DataCopyExtParams copy={static_cast<uint16_t>(count),static_cast<uint32_t>(d_*sizeof(T)),0,Gap(),0};
++        DataCopyPadExtParams<T> pad={}; pad.isPad=false;
++        DataCopyPad(x_[slot],xgm_[row*d_],copy,pad);
++        DataCopyPad(r_[slot],rgm_[row*d_],copy,pad);
++        SetFlag<HardEvent::MTE2_V>(slot);
++    }
++    GlobalTensor<T> xgm_,rgm_,ggm_,bgm_,outgm_;
++    LocalTensor<T> x_[2],r_[2],out_[2],gh_,bh_;
++    LocalTensor<float> y_,tmp_,gamma_,bias_,work_,sums_;
++    uint64_t begin_,end_; uint32_t d_,stride_,batch_; float invD_,eps_;
++};
++template <typename T,bool BlockReduction>
++__global__ __vector__ void p9out_custom(GM_ADDR x,GM_ADDR r,GM_ADDR g,
++    GM_ADDR b,GM_ADDR out,uint64_t rows,uint32_t d,float invD,float eps)
++{
++    InitSocState(); P9OUTKernel<T,BlockReduction> op;
++    op.Init(x,r,g,b,out,rows,d,invD,eps); op.Process();
++}
++
+ class BFloatTripleInplaceKernel {
+ public:
+     __aicore__ inline void Init(GM_ADDR x,GM_ADDR r,GM_ADDR g,GM_ADDR b,GM_ADDR out,
+@@ -3230,7 +3385,7 @@
+         return;
+     }
+     if (rows >= static_cast<uint64_t>(blockNum)*4 && ((input.dtype==1 && d>=321 && d<=1024) || (input.dtype==2 && d==128))) {
+-        if(input.dtype==1) pipeline_batch9_custom<half,true><<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
++        if(input.dtype==1) p9out_custom<half,true><<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
+         else bfloat_short_inplace_custom<<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,epsilon);
+         return;
+     }

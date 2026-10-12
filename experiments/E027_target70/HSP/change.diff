@@ -1,0 +1,22 @@
+--- FACC/kernel.asc
++++ HSP/kernel.asc
+@@ -2798,8 +2798,10 @@
+         DataCopyPadExtParams<half> pad = {}; pad.isPad = false;
+         DataCopyPad(x_,xgm_[begin_*d_],batch,pad);
+         DataCopyPad(r_,rgm_[begin_*d_],batch,pad);
++        SetFlag<HardEvent::MTE2_V>(0);
+         DataCopyPad(gh_,ggm_,params,pad); DataCopyPad(bh_,bgm_,params,pad);
+-        SetFlag<HardEvent::MTE2_V>(0); WaitFlag<HardEvent::MTE2_V>(0);
++        SetFlag<HardEvent::MTE2_V>(3);
++        WaitFlag<HardEvent::MTE2_V>(0);
+         Add(x_,x_,r_,active);PipeBarrier<PIPE_V>();
+         ToFloat<half>(y_,x_,active);PipeBarrier<PIPE_V>();
+         if(d_!=stride_) {
+@@ -2828,6 +2830,7 @@
+         for(uint32_t col=0;col<d_;col+=128)
+             Mul(x_[col],x_[col],broadcast,static_cast<uint64_t>(d_-col<128?d_-col:128),repeats,{1,1,0,rb,rb,1});
+         PipeBarrier<PIPE_V>();
++        WaitFlag<HardEvent::MTE2_V>(3);
+         for(uint32_t col=0;col<d_;col+=128)
+             FusedMulAdd(x_[col],gh_[col],bh_[col],static_cast<uint64_t>(d_-col<128?d_-col:128),repeats,{1,1,1,rb,0,0});
+         PipeBarrier<PIPE_V>();

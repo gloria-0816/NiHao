@@ -1,0 +1,36 @@
+--- S256B/kernel.asc
++++ S256BP/kernel.asc
+@@ -3212,7 +3212,6 @@
+ 
+     __aicore__ inline void Process()
+     {
+-        CacheParameters();
+         ProcessRow(GetBlockIdx());
+     }
+ 
+@@ -3231,8 +3230,7 @@
+             DataCopyPad(g_, ggm_, copy, pad);
+             DataCopyPad(b_, bgm_, copy, pad);
+         }
+-        SetFlag<HardEvent::MTE2_V>(0);
+-        WaitFlag<HardEvent::MTE2_V>(0);
++        SetFlag<HardEvent::MTE2_V>(3);
+         if (sizeof(T) == sizeof(float)) {
+             gf_ = g_.template ReinterpretCast<float>();
+             bf_ = b_.template ReinterpretCast<float>();
+@@ -3258,6 +3256,7 @@
+             DataCopyPad(r_, rgm_[base], copy, pad);
+         }
+         SetFlag<HardEvent::MTE2_V>(0);
++        CacheParameters();
+         WaitFlag<HardEvent::MTE2_V>(0);
+         if (sizeof(T) == sizeof(float) && d_ == padded_) {
+             y_ = x_.template ReinterpretCast<float>();
+@@ -3295,6 +3294,7 @@
+             {1, 1, 0, 8, 8, 0});
+         PipeBarrier<PIPE_V>();
+         // Preserve combo_core's affine FMA and normalization placement.
++        WaitFlag<HardEvent::MTE2_V>(3);
+         FusedMulAdd(y_, gf_, bf_, d_);
+         PipeBarrier<PIPE_V>();
+         if (sizeof(T) == sizeof(float)) {

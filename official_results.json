@@ -2597,5 +2597,250 @@
     ],
     "score": 59.94,
     "observed_rank": 125
+  },
+  {
+    "variant": "E027_COMBO",
+    "submission_id": 752881,
+    "points": [
+      {
+        "case": 1,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.37,
+        "tbest_us": 1.16
+      },
+      {
+        "case": 2,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.62,
+        "tbest_us": 1.67
+      },
+      {
+        "case": 3,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.75,
+        "tbest_us": 2.16
+      },
+      {
+        "case": 4,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 7.44,
+        "tbest_us": 4.32
+      },
+      {
+        "case": 5,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 5.9,
+        "tbest_us": 4.79
+      },
+      {
+        "case": 6,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 11.73,
+        "tbest_us": 8.02
+      },
+      {
+        "case": 7,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 16.09,
+        "tbest_us": 10.5
+      },
+      {
+        "case": 8,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 31.77,
+        "tbest_us": 29.72
+      },
+      {
+        "case": 9,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 70.86,
+        "tbest_us": 67.81
+      },
+      {
+        "case": 10,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 47.93,
+        "tbest_us": 45.87
+      },
+      {
+        "case": 11,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 156.78,
+        "tbest_us": 130.91
+      },
+      {
+        "case": 12,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 80.24,
+        "tbest_us": 75.96
+      },
+      {
+        "case": 13,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 550.59,
+        "tbest_us": 397.19
+      },
+      {
+        "case": 14,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 4050.0,
+        "tbest_us": 3530.0
+      },
+      {
+        "case": 15,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 9360.0,
+        "tbest_us": 7960.0
+      }
+    ],
+    "score": 65.36,
+    "observed_rank": 88,
+    "source_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "goal_score": 70,
+    "goal_achieved": false,
+    "official_url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acc9d43694b590c3cdc5c62",
+    "observed_at": "2026-10-12",
+    "prior_best": {
+      "variant": "FACC",
+      "score": 64.98,
+      "submission_id": 743109
+    },
+    "ranking_reference_changed": true
+  },
+  {
+    "variant": "E028_COMBO1",
+    "submission_id": 756788,
+    "points": [
+      {
+        "case": 1,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.26,
+        "tbest_us": 1.15
+      },
+      {
+        "case": 2,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.53,
+        "tbest_us": 1.64
+      },
+      {
+        "case": 3,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.76,
+        "tbest_us": 2.12
+      },
+      {
+        "case": 4,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 7.46,
+        "tbest_us": 4.32
+      },
+      {
+        "case": 5,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 5.84,
+        "tbest_us": 4.65
+      },
+      {
+        "case": 6,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 12.01,
+        "tbest_us": 7.97
+      },
+      {
+        "case": 7,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 16.28,
+        "tbest_us": 10.77
+      },
+      {
+        "case": 8,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 32.63,
+        "tbest_us": 29.72
+      },
+      {
+        "case": 9,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 70.61,
+        "tbest_us": 67.81
+      },
+      {
+        "case": 10,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 48.94,
+        "tbest_us": 45.87
+      },
+      {
+        "case": 11,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 156.67,
+        "tbest_us": 131.05
+      },
+      {
+        "case": 12,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 80.69,
+        "tbest_us": 75.96
+      },
+      {
+        "case": 13,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 553.7,
+        "tbest_us": 397.19
+      },
+      {
+        "case": 14,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 4060,
+        "tbest_us": 3530
+      },
+      {
+        "case": 15,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 9380,
+        "tbest_us": 7960
+      }
+    ],
+    "score": 64.52,
+    "observed_rank": 97,
+    "source_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "goal_score": 72,
+    "goal_achieved": false,
+    "official_url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acccb8d694b590c3cfd3432",
+    "submitted_at": "2026/10/12 19:59:09",
+    "score_provenance": "User supplied ranking row; official detail page independently confirms submission time, 15 Pass, all times and current TBest",
+    "selected_as_best": false,
+    "engineering_download_verified": false
   }
 ]

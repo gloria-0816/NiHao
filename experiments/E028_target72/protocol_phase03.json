@@ -1,0 +1,20 @@
+{
+  "base_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+  "variants": {
+    "RR4": {
+      "sha256": "0a9394931a923b7b96324fa229255ec3a91c8940f2755805c74f984912cb0056",
+      "scope": "Original large FP32 cyclic host guard; compact layout only 3072<D<=3264; tree only paddedD=3136",
+      "mechanism": "Extend compact FP32 batch4 layout to cyclic large-workset route; arithmetic and events unchanged",
+      "max_compact_ub_end_bytes": 189824
+    },
+    "RR4TREE": {
+      "sha256": "422766f0e884e84d3a48e0fe4550a3930bb0c176b6a11c0f5aa3bb19d0743a8a",
+      "scope": "Original large FP32 cyclic host guard; compact layout only 3072<D<=3264; tree only paddedD=3136",
+      "mechanism": "RR4 plus balanced 49-chunk fold before one WholeReduceSum; compare with sequential 49-repeat accumulation",
+      "max_compact_ub_end_bytes": 189824
+    }
+  },
+  "target_score": 72,
+  "diagnostic_build": "CMAKE_ASC_RUN_MODE=sim; CMAKE_ASC_ARCHITECTURES=dav-2201; -O2 -g; separate binaries, never board performance",
+  "alignment_review": "All new vector source/destination starts are 32B aligned; final fold writes contiguous 64-float work slots, then one multi-repeat WholeReduceSum packs scalar results."
+}

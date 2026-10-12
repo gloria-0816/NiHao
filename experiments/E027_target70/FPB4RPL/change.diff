@@ -1,0 +1,68 @@
+--- FACC/kernel.asc
++++ FPB4RPL/kernel.asc
+@@ -1984,15 +1984,35 @@
+     {
+         d_=d;stride_=(d+63)/64*64;batch_=12288/stride_;
+         begin_=rows*GetBlockIdx()/GetBlockNum();end_=rows*(GetBlockIdx()+1)/GetBlockNum();invD_=invD;eps_=eps;
++        earlyResidual_ = d > 3072 && d <= 3264 && end_ - begin_ <= 128;
+         xgm_.SetGlobalBuffer((__gm__ float*)x);rgm_.SetGlobalBuffer((__gm__ float*)r);
+         ggm_.SetGlobalBuffer((__gm__ float*)g);bgm_.SetGlobalBuffer((__gm__ float*)b);outgm_.SetGlobalBuffer((__gm__ float*)out);
+-        x_[0]=LocalTensor<float>(TPosition::VECIN,0,12288);
+-        x_[1]=LocalTensor<float>(TPosition::VECIN,49280,12288);
+-        r_=LocalTensor<float>(TPosition::VECIN,98560,12288);
+-        gf_=LocalTensor<float>(TPosition::VECIN,147840,4096);
+-        bf_=LocalTensor<float>(TPosition::VECIN,164352,4096);
+-        work_=LocalTensor<float>(TPosition::VECCALC,180864,1536);
+-        sums_=LocalTensor<float>(TPosition::VECCALC,187136,32);
++        if (d > 3072 && d <= 3264) {
++            const bool compactBatch4 = d > 3072 && d <= 3264;
++            const uint32_t capacity = compactBatch4 ? 4 * stride_ : 12288;
++            const uint32_t parameterCapacity = compactBatch4 ? stride_ : 4096;
++            batch_ = capacity / stride_;
++            const uint32_t inputSlotBytes = capacity * sizeof(float) + 128;
++            const uint32_t parameterSlotBytes = parameterCapacity * sizeof(float) + 128;
++            const uint32_t gammaOffset = 3 * inputSlotBytes;
++            const uint32_t biasOffset = gammaOffset + parameterSlotBytes;
++            const uint32_t workOffset = biasOffset + parameterSlotBytes;
++            x_[0] = LocalTensor<float>(TPosition::VECIN, 0, capacity);
++            x_[1] = LocalTensor<float>(TPosition::VECIN, inputSlotBytes, capacity);
++            r_ = LocalTensor<float>(TPosition::VECIN, 2 * inputSlotBytes, capacity);
++            gf_ = LocalTensor<float>(TPosition::VECIN, gammaOffset, parameterCapacity);
++            bf_ = LocalTensor<float>(TPosition::VECIN, biasOffset, parameterCapacity);
++            work_ = LocalTensor<float>(TPosition::VECCALC, workOffset, 1536);
++            sums_ = LocalTensor<float>(TPosition::VECCALC, workOffset + 1536 * sizeof(float) + 128, 32);
++        } else {
++            x_[0]=LocalTensor<float>(TPosition::VECIN,0,12288);
++            x_[1]=LocalTensor<float>(TPosition::VECIN,49280,12288);
++            r_=LocalTensor<float>(TPosition::VECIN,98560,12288);
++            gf_=LocalTensor<float>(TPosition::VECIN,147840,4096);
++            bf_=LocalTensor<float>(TPosition::VECIN,164352,4096);
++            work_=LocalTensor<float>(TPosition::VECCALC,180864,1536);
++            sums_=LocalTensor<float>(TPosition::VECCALC,187136,32);
++        }
+     }
+     __aicore__ inline void Process()
+     {
+@@ -2023,8 +2043,12 @@
+             for(uint32_t i=0;i<count;++i)
+                 Add(work_[i*64],tmp[i*stride_],work_[i*64],64,parts,{1,1,1,0,8,0});
+             PipeBarrier<PIPE_V>();
++            if(earlyResidual_ && row+batch_<end_) {
++                SetFlag<HardEvent::V_MTE2>(2);WaitFlag<HardEvent::V_MTE2>(2);
++                Copy(r_,rgm_,row+batch_);SetFlag<HardEvent::MTE2_V>(2);
++            }
+             WholeReduceSum(sums_,work_,64,count,1,1,8);PipeBarrier<PIPE_V>();
+-            if(row+batch_<end_) {
++            if(!earlyResidual_ && row+batch_<end_) {
+                 SetFlag<HardEvent::V_MTE2>(2);WaitFlag<HardEvent::V_MTE2>(2);
+                 Copy(r_,rgm_,row+batch_);SetFlag<HardEvent::MTE2_V>(2);
+             }
+@@ -2057,7 +2081,7 @@
+     }
+     GlobalTensor<float> xgm_,rgm_,ggm_,bgm_,outgm_;
+     LocalTensor<float> x_[2],r_,gf_,bf_,work_,sums_;
+-    uint64_t begin_,end_;uint32_t d_,stride_,batch_;float invD_,eps_;
++    uint64_t begin_,end_;uint32_t d_,stride_,batch_;float invD_,eps_;bool earlyResidual_;
+ };
+ __global__ __vector__ void float_broad_triple_custom(GM_ADDR x,GM_ADDR r,GM_ADDR g,GM_ADDR b,GM_ADDR out,
+     uint64_t rows,uint32_t d,float invD,float eps)

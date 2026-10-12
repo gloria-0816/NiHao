@@ -1,19 +1,20 @@
 # CANN_HuaiWei
 
-AddRmsNormBias CANN 性能优化归档，更新于2026-10-12。
+当前最佳完整官方记录：**E027_COMBO，65.36分，15/15 Pass**，[提交752881](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acc9d43694b590c3cdc5c62)，2026-10-12 16:41:39，观察排名88。此前FACC/743109记录为64.98分；TBest参考随排行榜变化，不能把两次显示分数的差值全归因于代码。当前目标72分尚未达成。
 
-**最高完整官方成绩：64.98 分，15/15 Pass，观察排名 91。** 方案 FACC，提交 [743109](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acc0f3d694b590c3c87def3)。相对上一阶段56.71分提高8.27分。排名是评测完成时观察值，会随他人提交变化。
+- [当前交接文档](HANDOFF.md)：选中源码身份、15点耗时、优化路线和复现边界。
+- [完整比赛工程](best_submission_752881.zip)、[当前内核](kernel.asc)、[选择记录](selection.json)、[全部官方结果](official_results.json)。
+- [E028八阶段后续优化记录](experiments/E028_target72/报告.md)：候选源码、失败结果、指令仿真、msprof原始证据及64.52分正式提交。
+- [72分优化入口](docs/优化目标72分_E028.md)、[下一轮实现假设](experiments/E028_target72/下一轮实现假设.md)、[增量同步哈希清单](experiments/E028_target72/sync_manifest.json)。
+- [E027九阶段实验报告](experiments/E027_target70/报告.md)：全部正负结果、工具分析、候选源码和原始证据索引。
+- [比赛实际收到的工程](experiments/E027_target70/COMBO/official_submission_752881.zip)：已下载核验，8个文件均与本轮选中工程逐字节一致。
+- [历史E026交接](HANDOFF_E026.md)、[E026报告](实验报告_E026.md)、[FACC旧最佳工程](best_submission_743109.zip)、[完整E026实验包](E026_full_experiment.zip)继续保留。
+- [文件哈希清单](MANIFEST.json)，本轮细项另见[E027清单](experiments/E027_target70/MANIFEST.json)。
 
-最后一轮 HSM63：64.3 分，15/15 Pass，提交 744352。 用户要求本轮评分后停止。70分目标未达成；后续没有继续发起实验。
+COMBO采用FP32宽行四行批量、大工作集跨核循环行分配、FP16短行参数搬运重叠。每个守卫由dtype、D、rows及可用核数决定，fallback以完整源码为准。九阶段云机试验完成；负收益候选未合并。小形状继续研究归约关键路径和固定开销，大形状优先流水与搬运；BF16精度修复按用户要求暂缓。
 
-- [交接文档](HANDOFF.md)：最佳源码身份、15点耗时、复现和验证边界。
-- [完整比赛工程](best_submission_743109.zip)：8个原始工程文件。根目录和scripts/保留同一套最佳源码。
-- [kernel.asc](kernel.asc)、[选择记录](selection.json)、[全部官方结果](official_results.json)。
-- [本阶段实验报告](实验报告_E026.md)、[完整实验与工具包](E026_full_experiment.zip)。原始云机报告分卷保存在 cloud_reports_E026_part*.zip，文件身份见MANIFEST.json。
-- [文件哈希清单](MANIFEST.json)。此前E024文档和压缩包继续保留。
+![本次官方分数](official_rank_752881.png)
 
-最佳版以实际 dtype、行数、列数和可用向量核数选择路径。FP32 宽行将多个64元素向量重复的平方和累加到同一组lane，最后一次 WholeReduceSum；FP16 长行保留整行残差，减少重复读写并用 mixed FP32 平方；短行按每核多行归约、原生FP16加法及affine融合减少指令；BF16 中宽行使用三阶段静态缓冲和参数复用，D128路径保留已验证批次。不同路径的实际守卫以 kernel.asc/run_kernel 为准。
+云机为Ascend910B3、CANN9.0.0、40个向量核；本机Windows用于代码及证据归档。自建输入不是官方隐藏输入，云机局部收益不是官方分数。采用一次完整官方结果，避免拼接不同提交的最快点。
 
-![最高分官方记录](official_rank_743109.png)
-
-构建复现见 HANDOFF.md。云机使用Ascend910B3、CANN9.0.0、40个向量核；本机Windows仅归档。自建输入不是官方隐藏输入，云机收益不能当作比赛收益，也不拼接不同提交的最快测试点。
+E028最新正式提交756788为64.52分、15/15 Pass，未替换历史最佳65.36分的主内核。短FP32 S256B和FP16参数调度P9LP保留研究；P9LP的第6/7点代理约+2.79%/+1.69%，仍需复测和正式评测。当前PR在原E027改动上仅追加E028及交接，不重新导入更早实验或另一仓库的整仓快照。

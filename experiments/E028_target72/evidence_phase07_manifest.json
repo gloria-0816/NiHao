@@ -1,0 +1,9 @@
+{
+  "filename": "evidence_phase07.zip",
+  "sha256": "c21a29ec39e04f6f0e7c3713b1ec6f71ca8abc139962b957775857cd00c7ed4b",
+  "bytes": 5175343,
+  "entries": 386,
+  "crc_pass": true,
+  "phase": "phase07",
+  "terminal_status": "completed"
+}

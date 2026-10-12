@@ -1,0 +1,6 @@
+{
+  "sha256": "dc09bdd9786a51dffd8946fa78d7a15b393838c32a1acd73c082aeb9977fe4b7",
+  "scope": "existing StaticHalfRowsKernel only: half D<=256 and 4<=rows/core<=32",
+  "factor": "Input ready event precedes gamma/bias DMA; parameters wait postponed until affine",
+  "state": "five_shapes_bitwise_pass_positive_s4"
+}

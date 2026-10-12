@@ -1,0 +1,299 @@
+--- COMBO/kernel.asc
++++ COMBO1/kernel.asc
+@@ -623,6 +623,93 @@
+ };
+ 
+ template <typename T>
++__global__ __vector__ void paired_row_64_custom(
++    GM_ADDR x, GM_ADDR gamma, GM_ADDR output, float epsilon, uint32_t xrStride, uint32_t gbStride)
++{
++    // CANN 9.0 static Tensor programming: this entry never creates TPipe,
++    // TQue, TBuf, or calls an API with implicit TPipe event allocation.
++    InitSocState();
++    GlobalTensor<T> xgm, ggm, outgm;
++    xgm.SetGlobalBuffer((__gm__ T*)x);
++    ggm.SetGlobalBuffer((__gm__ T*)gamma);
++    outgm.SetGlobalBuffer((__gm__ T*)output);
++    // Byte-addressed UB regions; all starts are 32 B aligned and disjoint.
++    // Each typed input slot reserves 256 B, enough for 64 FP32 elements.
++    LocalTensor<T> xt(TPosition::VECIN, 0, 64);
++    LocalTensor<T> rt(TPosition::VECIN, 256, 64);
++    LocalTensor<T> gt(TPosition::VECIN, 512, 64);
++    LocalTensor<T> bt(TPosition::VECIN, 768, 64);
++    LocalTensor<float> y(TPosition::VECCALC, 1024, 64);
++    LocalTensor<float> tmp(TPosition::VECCALC, 1280, 64);
++    LocalTensor<float> gf(TPosition::VECCALC, 1536, 64);
++    LocalTensor<float> bf(TPosition::VECCALC, 1792, 64);
++    LocalTensor<float> sum(TPosition::VECCALC, 2048, 8);
++    LocalTensor<float> work(TPosition::VECCALC, 2080, 64);
++    LocalTensor<T> result(TPosition::VECOUT, 2336, 64);
++
++    // D64 transfers are exactly 4 blocks (FP16/BF16) or 8 blocks (FP32).
++    // All UB starts and full-vector GM bases are 32 B aligned.
++    DataCopyParams copy = {1, static_cast<uint16_t>(64 * sizeof(T) / 32), 0, 0};
++    DataCopyParams inputPair={2,copy.blockLen,static_cast<uint16_t>(xrStride),static_cast<uint16_t>((256-64*sizeof(T))/32)};
++    DataCopy(xt, xgm, inputPair);
++    SetFlag<HardEvent::MTE2_V>(0);
++    DataCopyParams parameterPair={2,copy.blockLen,static_cast<uint16_t>(gbStride),static_cast<uint16_t>((256-64*sizeof(T))/32)};
++    DataCopy(gt, ggm, parameterPair);
++    SetFlag<HardEvent::MTE2_V>(1);
++    WaitFlag<HardEvent::MTE2_V>(0);
++    if (sizeof(T) == sizeof(float)) {
++        // FP32 operands already occupy FP32 UB storage.
++        y = xt.template ReinterpretCast<float>();
++        tmp = rt.template ReinterpretCast<float>();
++        gf = gt.template ReinterpretCast<float>();
++        bf = bt.template ReinterpretCast<float>();
++    } else {
++        if(CompactParameterType<T>::value) {
++            Add(xt,xt,rt,64);PipeBarrier<PIPE_V>();
++            ToFloat<T>(y,xt,64);
++        } else {
++            ToFloat<T>(y,xt,64);ToFloat<T>(tmp,rt,64);
++        }
++        PipeBarrier<PIPE_V>();
++    }
++    if(!CompactParameterType<T>::value) Add(y,y,tmp,64);
++    PipeBarrier<PIPE_V>();
++    Mul(tmp, y, y, 64);
++    PipeBarrier<PIPE_V>();
++    WholeReduceSum(sum, tmp, 64, 1, 1, 1, 8);
++    PipeBarrier<PIPE_V>();
++    Muls(sum, sum, 0.015625f, 1);
++    PipeBarrier<PIPE_V>();
++    Adds(sum, sum, epsilon, 1);
++    PipeBarrier<PIPE_V>();
++    Sqrt(sum, sum, 1);
++    PipeBarrier<PIPE_V>();
++    Brcb(work, sum, 1, {1, 8});
++    PipeBarrier<PIPE_V>();
++    Div(y, y, work, static_cast<uint64_t>(64), static_cast<uint8_t>(1),
++        {1, 1, 0, 8, 8, 0});
++    PipeBarrier<PIPE_V>();
++    WaitFlag<HardEvent::MTE2_V>(1);
++    if(sizeof(T)!=sizeof(float)) {
++        ToFloat<T>(gf,gt,64);ToFloat<T>(bf,bt,64);PipeBarrier<PIPE_V>();
++    }
++    FusedMulAdd(y,gf,bf,64);
++    PipeBarrier<PIPE_V>();
++    if (sizeof(T) == sizeof(float)) {
++        // A2 permits a direct VECIN -> GM transfer from the overwritten xt.
++        result = y.template ReinterpretCast<T>();
++    } else {
++        FromFloat<T>(result, y, 64);
++        PipeBarrier<PIPE_V>();
++    }
++    SetFlag<HardEvent::V_MTE3>(1);
++    WaitFlag<HardEvent::V_MTE3>(1);
++    DataCopy(outgm, result, copy);
++    SetFlag<HardEvent::MTE3_V>(2);
++    WaitFlag<HardEvent::MTE3_V>(2);
++}
++
++template <typename T>
+ __global__ __vector__ void single_row_64_custom(
+     GM_ADDR x, GM_ADDR residual, GM_ADDR gamma, GM_ADDR bias, GM_ADDR output,
+     float epsilon)
+@@ -3178,6 +3265,171 @@
+ }
+ 
+ 
++template <typename T, bool AlignedDma = false>
++class FixedShortFloat256Kernel {
++public:
++    __aicore__ inline void Init(GM_ADDR x, GM_ADDR r, GM_ADDR g, GM_ADDR b,
++                               GM_ADDR out, uint64_t rows, uint32_t d, float inverseD, float epsilon)
++    {
++        rows_ = rows;
++        d_ = d;
++        padded_ = 256;
++        invD_ = inverseD;
++        epsilon_ = epsilon;
++        xgm_.SetGlobalBuffer((__gm__ T*)x);
++        rgm_.SetGlobalBuffer((__gm__ T*)r);
++        ggm_.SetGlobalBuffer((__gm__ T*)g);
++        bgm_.SetGlobalBuffer((__gm__ T*)b);
++        outgm_.SetGlobalBuffer((__gm__ T*)out);
++        // Each fixed slot reserves 16384 B, enough for 4096 FP32 elements.
++        // Slots are byte-addressed, 32 B aligned, and never exceed UB148000 B.
++        x_ = LocalTensor<T>(TPosition::VECIN, 0, padded_);
++        r_ = LocalTensor<T>(TPosition::VECIN, 16384, padded_);
++        g_ = LocalTensor<T>(TPosition::VECIN, 32768, padded_);
++        b_ = LocalTensor<T>(TPosition::VECIN, 49152, padded_);
++        y_ = LocalTensor<float>(TPosition::VECOUT, 65536, padded_);
++        tmp_ = LocalTensor<float>(TPosition::VECCALC, 81920, padded_);
++        gf_ = LocalTensor<float>(TPosition::VECCALC, 98304, padded_);
++        bf_ = LocalTensor<float>(TPosition::VECCALC, 114688, padded_);
++        result_ = LocalTensor<T>(TPosition::VECOUT, 131072, padded_);
++        partials_ = LocalTensor<float>(TPosition::VECCALC, 147456, 64);
++        sum_ = LocalTensor<float>(TPosition::VECCALC, 147712, 8);
++        work_ = LocalTensor<float>(TPosition::VECCALC, 147744, 64);
++    }
++
++    __aicore__ inline void Process()
++    {
++        CacheParameters();
++        ProcessRow(GetBlockIdx());
++    }
++
++    __aicore__ inline void CacheParameters()
++    {
++        DataCopyExtParams copy = {1, static_cast<uint32_t>(d_ * sizeof(T)), 0, 0, 0};
++        DataCopyPadExtParams<T> pad = {};
++        pad.isPad = false;
++        if (AlignedDma) {
++            // Host enables this variant only for FP32 and D divisible by 64.
++            // DataCopyParams.blockLen is in 32 B blocks, not bytes.
++            DataCopyParams aligned = {1, static_cast<uint16_t>(d_ * sizeof(T) / 32), 0, 0};
++            DataCopy(g_, ggm_, aligned);
++            DataCopy(b_, bgm_, aligned);
++        } else {
++            DataCopyPad(g_, ggm_, copy, pad);
++            DataCopyPad(b_, bgm_, copy, pad);
++        }
++        SetFlag<HardEvent::MTE2_V>(0);
++        WaitFlag<HardEvent::MTE2_V>(0);
++        if (sizeof(T) == sizeof(float)) {
++            gf_ = g_.template ReinterpretCast<float>();
++            bf_ = b_.template ReinterpretCast<float>();
++        } else {
++            ToFloat<T>(gf_, g_, d_);
++            ToFloat<T>(bf_, b_, d_);
++        }
++        PipeBarrier<PIPE_V>();
++    }
++
++    __aicore__ inline void ProcessRow(uint64_t row)
++    {
++        const uint64_t base = row * d_;
++        DataCopyExtParams copy = {1, static_cast<uint32_t>(d_ * sizeof(T)), 0, 0, 0};
++        DataCopyPadExtParams<T> pad = {};
++        pad.isPad = false;
++        if (AlignedDma) {
++            DataCopyParams aligned = {1, static_cast<uint16_t>(d_ * sizeof(T) / 32), 0, 0};
++            DataCopy(x_, xgm_[base], aligned);
++            DataCopy(r_, rgm_[base], aligned);
++        } else {
++            DataCopyPad(x_, xgm_[base], copy, pad);
++            DataCopyPad(r_, rgm_[base], copy, pad);
++        }
++        SetFlag<HardEvent::MTE2_V>(0);
++        WaitFlag<HardEvent::MTE2_V>(0);
++        if (sizeof(T) == sizeof(float) && d_ == padded_) {
++            y_ = x_.template ReinterpretCast<float>();
++            tmp_ = r_.template ReinterpretCast<float>();
++        } else {
++            if (d_ != padded_) {
++                Duplicate(y_[d_ / 64 * 64], 0.0f, 64);
++                PipeBarrier<PIPE_V>();
++            }
++            ToFloat<T>(y_, x_, d_);
++            ToFloat<T>(tmp_, r_, d_);
++        }
++        PipeBarrier<PIPE_V>();
++        Add(y_, y_, tmp_, d_);
++        PipeBarrier<PIPE_V>();
++        Mul(tmp_, y_, y_, 256);
++        PipeBarrier<PIPE_V>();
++        constexpr uint32_t parts = 4;
++        // A2 ReduceSum(count) is not supported in static Tensor mode. Two
++        // hardware reductions retain FP32 arithmetic while tree-summing the
++        // repeat partials. This differs from the baseline's sequential final
++        // accumulation, and must be checked against the official tolerance.
++        // Four 64-float repeats -> 32 block sums -> one whole-vector sum.
++        BlockReduceSum(partials_,tmp_,4,64,1,1,8);PipeBarrier<PIPE_V>();
++        WholeReduceSum(sum_,partials_,32,1,1,1,8);PipeBarrier<PIPE_V>();
++        Muls(sum_, sum_, invD_, 1);
++        PipeBarrier<PIPE_V>();
++        Adds(sum_, sum_, epsilon_, 1);
++        PipeBarrier<PIPE_V>();
++        Sqrt(sum_, sum_, 1);
++        PipeBarrier<PIPE_V>();
++        Brcb(work_, sum_, 1, {1, 8});
++        PipeBarrier<PIPE_V>();
++        Div(y_, y_, work_, static_cast<uint64_t>(64), static_cast<uint8_t>(parts),
++            {1, 1, 0, 8, 8, 0});
++        PipeBarrier<PIPE_V>();
++        // Preserve combo_core's affine FMA and normalization placement.
++        FusedMulAdd(y_, gf_, bf_, d_);
++        PipeBarrier<PIPE_V>();
++        if (sizeof(T) == sizeof(float)) {
++            // VECIN (aligned) and VECOUT (unaligned) are both A2 DMA sources.
++            // Retain the baseline's final FP32 Adds(+0) conversion.
++            Adds(y_, y_, 0.0f, d_);
++            PipeBarrier<PIPE_V>();
++            result_ = y_.template ReinterpretCast<T>();
++        } else {
++            FromFloat<T>(result_, y_, d_);
++            PipeBarrier<PIPE_V>();
++        }
++        SetFlag<HardEvent::V_MTE3>(1);
++        WaitFlag<HardEvent::V_MTE3>(1);
++        if (AlignedDma) {
++            DataCopyParams aligned = {1, static_cast<uint16_t>(d_ * sizeof(T) / 32), 0, 0};
++            DataCopy(outgm_[base], result_, aligned);
++        } else {
++            DataCopyPad(outgm_[base], result_, copy);
++        }
++        // V and MTE2 are separate pipelines. Guard both future vector writes
++        // and future input DMA writes against the preceding GM output read.
++        SetFlag<HardEvent::MTE3_V>(2);
++        WaitFlag<HardEvent::MTE3_V>(2);
++        SetFlag<HardEvent::MTE3_MTE2>(3);
++        WaitFlag<HardEvent::MTE3_MTE2>(3);
++    }
++
++private:
++    GlobalTensor<T> xgm_, rgm_, ggm_, bgm_, outgm_;
++    LocalTensor<T> x_, r_, g_, b_, result_;
++    LocalTensor<float> y_, tmp_, gf_, bf_, partials_, sum_, work_;
++    uint64_t rows_;
++    uint32_t d_, padded_;
++    float invD_, epsilon_;
++};
++
++template <bool AlignedDma = false>
++__global__ __vector__ void fixed_short_float_256_custom(
++    GM_ADDR x, GM_ADDR residual, GM_ADDR gamma, GM_ADDR bias, GM_ADDR output,
++    uint64_t rows, uint32_t d, float inverseD, float epsilon)
++{
++    InitSocState();
++    FixedShortFloat256Kernel<float, AlignedDma> op;
++    op.Init(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
++    op.Process();
++}
++
+ } // namespace addrmsnormbias_solution
+ 
+ extern "C" void run_kernel(
+@@ -3210,6 +3462,12 @@
+     // The inverse dimension depends only on shape metadata. Compute it once
+     // on the host, leaving every tensor operation on the NPU.
+     const float inverseD = 1.0f / static_cast<float>(d);
++    // E028: one row per launched core, width band gives a constant 256-float UB vector.
++    if (input.dtype == 0 && rows > 1 && rows <= static_cast<uint64_t>(blockNum) && d > 192 && d <= 256) {
++        if (d == 256) fixed_short_float_256_custom<true><<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
++        else fixed_short_float_256_custom<false><<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
++        return;
++    }
+     if(input.dtype==1 && d>1024 && d<=4096 && rows>=static_cast<uint64_t>(blockNum)*4) {
+         half_wide_pipeline_custom<half,false><<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
+         return;
+@@ -3317,8 +3575,15 @@
+             single_row_64_custom<float><<<1, nullptr, stream>>>(
+                 x, residual, gamma, bias, output, epsilon);
+         } else if (input.dtype == 1) {
+-            single_row_64_custom<half><<<1, nullptr, stream>>>(
+-                x, residual, gamma, bias, output, epsilon);
++            const uint64_t xr=reinterpret_cast<uint64_t>(residual)-reinterpret_cast<uint64_t>(x);
++            const uint64_t gb=reinterpret_cast<uint64_t>(bias)-reinterpret_cast<uint64_t>(gamma);
++            // A regular two-block DMA requires positive, aligned uint16 block strides.
++            if (xr>=128 && gb>=128 && xr-128<=65535ULL*32 && gb-128<=65535ULL*32 && xr%32==0 && gb%32==0) {
++                paired_row_64_custom<half><<<1,nullptr,stream>>>(x,gamma,output,epsilon,
++                    static_cast<uint32_t>((xr-128)/32),static_cast<uint32_t>((gb-128)/32));
++            } else {
++                single_row_64_custom<half><<<1,nullptr,stream>>>(x,residual,gamma,bias,output,epsilon);
++            }
+         } else if (input.dtype == 2) {
+             single_row_64_custom<bfloat16_t><<<1, nullptr, stream>>>(
+                 x, residual, gamma, bias, output, epsilon);

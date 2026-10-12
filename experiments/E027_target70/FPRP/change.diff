@@ -1,0 +1,15 @@
+--- FACC/kernel.asc
++++ FPRP/kernel.asc
+@@ -2023,11 +2023,11 @@
+             for(uint32_t i=0;i<count;++i)
+                 Add(work_[i*64],tmp[i*stride_],work_[i*64],64,parts,{1,1,1,0,8,0});
+             PipeBarrier<PIPE_V>();
+-            WholeReduceSum(sums_,work_,64,count,1,1,8);PipeBarrier<PIPE_V>();
+             if(row+batch_<end_) {
+                 SetFlag<HardEvent::V_MTE2>(2);WaitFlag<HardEvent::V_MTE2>(2);
+                 Copy(r_,rgm_,row+batch_);SetFlag<HardEvent::MTE2_V>(2);
+             }
++            WholeReduceSum(sums_,work_,64,count,1,1,8);PipeBarrier<PIPE_V>();
+             Muls(sums_,sums_,invD_,count);PipeBarrier<PIPE_V>();
+             Adds(sums_,sums_,eps_,count);PipeBarrier<PIPE_V>();
+             Sqrt(sums_,sums_,count);Duplicate(work_,1.0f,count);PipeBarrier<PIPE_V>();

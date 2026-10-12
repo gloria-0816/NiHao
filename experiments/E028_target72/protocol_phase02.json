@@ -1,0 +1,20 @@
+{
+  "base_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+  "variants": {
+    "S256B": {
+      "sha256": "932f8665147da3d0b3d7c7e735f54610e2d69ba1465ec0103d00489d3421f353",
+      "scope": "FP32, 2 <= rows <= available cores, 192 < D <= 256",
+      "mechanism": "Fixed short-row geometry; BlockReduceSum then WholeReduceSum instead of two WholeReduceSum"
+    },
+    "HRR": {
+      "sha256": "be321fe12722fe452b4b83d2cdb145d144cccc904c4b532cc57dc232b96ccf76",
+      "scope": "Original FP16 StaticHalfRows host guard, D <= 256 and 4..32 rows/core",
+      "mechanism": "Cyclic cross-core rows and strided GM DMA; unchanged UB layout/arithmetic/events"
+    }
+  },
+  "source_links": [
+    "https://asc.gitcode.com/guide/operator_practice/simd_operator_optimization/vector_compute/low_latency_instruction.html",
+    "https://www.hiascend.com/doc_center/source/en/CANNCommunityEdition/900/API/ascendcopapi/atlasascendc_api_07_0265.html"
+  ],
+  "target_score": 72
+}

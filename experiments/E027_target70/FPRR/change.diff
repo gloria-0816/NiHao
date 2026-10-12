@@ -1,0 +1,111 @@
+--- FACC/kernel.asc
++++ FPRR/kernel.asc
+@@ -2065,6 +2065,94 @@
+     InitSocState();FloatBroadTripleKernel op;op.Init(x,r,g,b,out,rows,d,invD,eps);op.Process();
+ }
+ 
++class FloatBroadRoundRobinKernel {
++public:
++    __aicore__ inline void Init(GM_ADDR x,GM_ADDR r,GM_ADDR g,GM_ADDR b,GM_ADDR out,
++        uint64_t rows,uint32_t d,float invD,float eps)
++    {
++        d_=d;stride_=(d+63)/64*64;batch_=12288/stride_;
++        begin_=GetBlockIdx();end_=rows;rowStep_=GetBlockNum();invD_=invD;eps_=eps;
++        xgm_.SetGlobalBuffer((__gm__ float*)x);rgm_.SetGlobalBuffer((__gm__ float*)r);
++        ggm_.SetGlobalBuffer((__gm__ float*)g);bgm_.SetGlobalBuffer((__gm__ float*)b);outgm_.SetGlobalBuffer((__gm__ float*)out);
++        x_[0]=LocalTensor<float>(TPosition::VECIN,0,12288);
++        x_[1]=LocalTensor<float>(TPosition::VECIN,49280,12288);
++        r_=LocalTensor<float>(TPosition::VECIN,98560,12288);
++        gf_=LocalTensor<float>(TPosition::VECIN,147840,4096);
++        bf_=LocalTensor<float>(TPosition::VECIN,164352,4096);
++        work_=LocalTensor<float>(TPosition::VECCALC,180864,1536);
++        sums_=LocalTensor<float>(TPosition::VECCALC,187136,32);
++    }
++    __aicore__ inline void Process()
++    {
++        DataCopyExtParams cp={1,d_*4,0,0,0};DataCopyPadExtParams<float> pad={};pad.isPad=false;
++        DataCopyPad(gf_,ggm_,cp,pad);DataCopyPad(bf_,bgm_,cp,pad);
++        SetFlag<HardEvent::MTE2_V>(3);WaitFlag<HardEvent::MTE2_V>(3);
++        Copy(x_[0],xgm_,begin_);SetFlag<HardEvent::MTE2_V>(0);
++        Copy(r_,rgm_,begin_);SetFlag<HardEvent::MTE2_V>(2);
++        if(begin_+batch_*rowStep_<end_) {Copy(x_[1],xgm_,begin_+batch_*rowStep_);SetFlag<HardEvent::MTE2_V>(1);}
++        uint32_t slot=0;
++        for(uint64_t row=begin_;row<end_;row+=batch_*rowStep_,slot^=1) {
++            WaitFlag<HardEvent::MTE2_V>(slot);WaitFlag<HardEvent::MTE2_V>(2);
++            auto y=x_[slot];auto tmp=r_;
++            const uint32_t count=Min(batch_,static_cast<uint32_t>((end_-row+rowStep_-1)/rowStep_)),active=count*stride_;
++            Add(y,y,tmp,active);PipeBarrier<PIPE_V>();
++            if(d_!=stride_) {
++                uint64_t tail[2]={~static_cast<uint64_t>(0)<<(d_%64),0};
++                // A2 high-dimensional repeat strides are only 8 bits.
++                // A 3136-float row needs 392 blocks, so clear rows individually.
++                for(uint32_t i=0;i<count;++i)Duplicate(y[i*stride_+d_/64*64],0.0f,tail,1,1,8);
++                PipeBarrier<PIPE_V>();
++            }
++            Mul(tmp,y,y,active);PipeBarrier<PIPE_V>();
++            const uint32_t parts=stride_/64;
++            // Accumulate corresponding lanes across chunks before the final
++            // within-vector reduction, as in the installed RMSNorm helper.
++            Duplicate(work_,0.0f,count*64);PipeBarrier<PIPE_V>();
++            for(uint32_t i=0;i<count;++i)
++                Add(work_[i*64],tmp[i*stride_],work_[i*64],64,parts,{1,1,1,0,8,0});
++            PipeBarrier<PIPE_V>();
++            WholeReduceSum(sums_,work_,64,count,1,1,8);PipeBarrier<PIPE_V>();
++            if(row+batch_*rowStep_<end_) {
++                SetFlag<HardEvent::V_MTE2>(2);WaitFlag<HardEvent::V_MTE2>(2);
++                Copy(r_,rgm_,row+batch_*rowStep_);SetFlag<HardEvent::MTE2_V>(2);
++            }
++            Muls(sums_,sums_,invD_,count);PipeBarrier<PIPE_V>();
++            Adds(sums_,sums_,eps_,count);PipeBarrier<PIPE_V>();
++            Sqrt(sums_,sums_,count);Duplicate(work_,1.0f,count);PipeBarrier<PIPE_V>();
++            Div(sums_,work_,sums_,count);PipeBarrier<PIPE_V>();
++            Brcb(work_,sums_,(count+7)/8,{1,8});PipeBarrier<PIPE_V>();
++            for(uint32_t i=0;i<count;++i)
++                Mul(y[i*stride_],y[i*stride_],work_[i*8],64,parts,{1,1,0,8,8,0});
++            PipeBarrier<PIPE_V>();
++            for(uint32_t i=0;i<count;++i)FusedMulAdd(y[i*stride_],gf_,bf_,d_);
++            PipeBarrier<PIPE_V>();
++            SetFlag<HardEvent::V_MTE3>(slot);WaitFlag<HardEvent::V_MTE3>(slot);
++            DataCopyExtParams out={static_cast<uint16_t>(count),d_*4,Gap(),(rowStep_-1)*d_*4,0};DataCopyPad(outgm_[row*d_],y,out);
++            SetFlag<HardEvent::MTE3_MTE2>(slot);WaitFlag<HardEvent::MTE3_MTE2>(slot);
++            if(row+2*batch_*rowStep_<end_) {
++                Copy(x_[slot],xgm_,row+2*batch_*rowStep_);SetFlag<HardEvent::MTE2_V>(slot);
++            }
++        }
++        PipeBarrier<PIPE_ALL>();
++    }
++private:
++    __aicore__ inline uint32_t Min(uint32_t a,uint32_t b){return a<b?a:b;}
++    __aicore__ inline uint32_t Gap(){return (stride_*4-(d_*4+31)/32*32)/32;}
++    __aicore__ inline void Copy(LocalTensor<float> dst,GlobalTensor<float> src,uint64_t row) {
++        const uint32_t count=Min(batch_,static_cast<uint32_t>((end_-row+rowStep_-1)/rowStep_));
++        DataCopyExtParams copy={static_cast<uint16_t>(count),d_*4,(rowStep_-1)*d_*4,Gap(),0};DataCopyPadExtParams<float> pad={};pad.isPad=false;
++        DataCopyPad(dst,src[row*d_],copy,pad);
++    }
++    GlobalTensor<float> xgm_,rgm_,ggm_,bgm_,outgm_;
++    LocalTensor<float> x_[2],r_,gf_,bf_,work_,sums_;
++    uint64_t begin_,end_;uint32_t d_,stride_,batch_,rowStep_;float invD_,eps_;
++};
++__global__ __vector__ void float_broad_rr_custom(GM_ADDR x,GM_ADDR r,GM_ADDR g,GM_ADDR b,GM_ADDR out,
++    uint64_t rows,uint32_t d,float invD,float eps)
++{
++    InitSocState();FloatBroadRoundRobinKernel op;op.Init(x,r,g,b,out,rows,d,invD,eps);op.Process();
++}
++
+ 
+ 
+ template <typename T,bool BlockReduction>
+@@ -3104,6 +3192,13 @@
+         half_wide_pipeline_custom<half,false><<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
+         return;
+     }
++    // E027: distribute large FP32 working sets cyclically across AIV cores.
++    // GM stride is in bytes; UB row padding remains in 32-byte blocks.
++    if(input.dtype==0 && d>1536 && d<=4096 && rows>=static_cast<uint64_t>(blockNum)*4 &&
++       rows*static_cast<uint64_t>(d)*sizeof(float)>=64ULL*1024*1024) {
++        float_broad_rr_custom<<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
++        return;
++    }
+     if(input.dtype==0 && d>1536 && d<=4096 && rows>=static_cast<uint64_t>(blockNum)*4) {
+         float_broad_triple_custom<<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
+         return;

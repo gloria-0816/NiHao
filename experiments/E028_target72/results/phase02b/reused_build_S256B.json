@@ -1,0 +1,9 @@
+{
+  "prior": {
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 33.62425758497557
+  },
+  "source_sha256": "932f8665147da3d0b3d7c7e735f54610e2d69ba1465ec0103d00489d3421f353",
+  "runner_sha256": "c3a5bfffb17263cddce7808b2f1f4d28d180211d816d61a081f75e2774290a2e"
+}

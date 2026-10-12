@@ -1,0 +1,7 @@
+{
+  "status": "completed",
+  "official_score_unchanged": 65.36,
+  "target_score": 72,
+  "goal_achieved": false,
+  "protection": "15 representative paths; final two BF16 shapes reduced; changed FP32 strict passed, other arithmetic bitwise preserved"
+}

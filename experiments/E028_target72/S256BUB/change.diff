@@ -1,0 +1,36 @@
+--- S256B/kernel.asc
++++ S256BUB/kernel.asc
+@@ -3194,20 +3194,20 @@
+         ggm_.SetGlobalBuffer((__gm__ T*)g);
+         bgm_.SetGlobalBuffer((__gm__ T*)b);
+         outgm_.SetGlobalBuffer((__gm__ T*)out);
+-        // Each fixed slot reserves 16384 B, enough for 4096 FP32 elements.
+-        // Slots are byte-addressed, 32 B aligned, and never exceed UB148000 B.
++        // Fixed 256-float slots with 256B gaps alternate bank-group phase.
++        // All regions are disjoint and 32B aligned; highest end is 12288B.
+         x_ = LocalTensor<T>(TPosition::VECIN, 0, padded_);
+-        r_ = LocalTensor<T>(TPosition::VECIN, 16384, padded_);
+-        g_ = LocalTensor<T>(TPosition::VECIN, 32768, padded_);
+-        b_ = LocalTensor<T>(TPosition::VECIN, 49152, padded_);
+-        y_ = LocalTensor<float>(TPosition::VECOUT, 65536, padded_);
+-        tmp_ = LocalTensor<float>(TPosition::VECCALC, 81920, padded_);
+-        gf_ = LocalTensor<float>(TPosition::VECCALC, 98304, padded_);
+-        bf_ = LocalTensor<float>(TPosition::VECCALC, 114688, padded_);
+-        result_ = LocalTensor<T>(TPosition::VECOUT, 131072, padded_);
+-        partials_ = LocalTensor<float>(TPosition::VECCALC, 147456, 64);
+-        sum_ = LocalTensor<float>(TPosition::VECCALC, 147712, 8);
+-        work_ = LocalTensor<float>(TPosition::VECCALC, 147744, 64);
++        r_ = LocalTensor<T>(TPosition::VECIN, 1280, padded_);
++        g_ = LocalTensor<T>(TPosition::VECIN, 2560, padded_);
++        b_ = LocalTensor<T>(TPosition::VECIN, 3840, padded_);
++        y_ = LocalTensor<float>(TPosition::VECOUT, 5120, padded_);
++        tmp_ = LocalTensor<float>(TPosition::VECCALC, 6400, padded_);
++        gf_ = LocalTensor<float>(TPosition::VECCALC, 7680, padded_);
++        bf_ = LocalTensor<float>(TPosition::VECCALC, 8960, padded_);
++        result_ = LocalTensor<T>(TPosition::VECOUT, 10240, padded_);
++        partials_ = LocalTensor<float>(TPosition::VECCALC, 11520, 64);
++        sum_ = LocalTensor<float>(TPosition::VECCALC, 11776, 8);
++        work_ = LocalTensor<float>(TPosition::VECCALC, 12032, 64);
+     }
+ 
+     __aicore__ inline void Process()

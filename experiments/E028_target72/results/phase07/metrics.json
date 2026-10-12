@@ -1,0 +1,50 @@
+[
+  {
+    "variant": "COMBO",
+    "case_id": "s4",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 4.7875,
+      "aiv_vec_time(us)": 0.811667,
+      "aiv_scalar_time(us)": 0.7466665,
+      "aiv_mte2_time(us)": 2.427778,
+      "aiv_mte3_time(us)": 0.6858335,
+      "aiv_vec_ratio": 0.17003200000000002,
+      "aiv_scalar_ratio": 0.15917900000000001,
+      "aiv_mte2_ratio": 0.5184804999999999,
+      "aiv_mte3_ratio": 0.1710855
+    }
+  },
+  {
+    "variant": "COMBO",
+    "case_id": "s6",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 8.435555,
+      "aiv_vec_time(us)": 3.37,
+      "aiv_scalar_time(us)": 1.7383335,
+      "aiv_mte2_time(us)": 5.822222,
+      "aiv_mte3_time(us)": 1.6961115,
+      "aiv_vec_ratio": 0.3989475,
+      "aiv_scalar_ratio": 0.20817750000000002,
+      "aiv_mte2_ratio": 0.695943,
+      "aiv_mte3_ratio": 0.20019599999999999
+    }
+  },
+  {
+    "variant": "COMBO",
+    "case_id": "s7",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 11.871944500000001,
+      "aiv_vec_time(us)": 4.805,
+      "aiv_scalar_time(us)": 1.8327775000000002,
+      "aiv_mte2_time(us)": 9.3755555,
+      "aiv_mte3_time(us)": 2.9055555,
+      "aiv_vec_ratio": 0.40431,
+      "aiv_scalar_ratio": 0.154623,
+      "aiv_mte2_ratio": 0.7970745,
+      "aiv_mte3_ratio": 0.24517450000000002
+    }
+  }
+]

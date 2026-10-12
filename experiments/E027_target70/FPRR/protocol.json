@@ -1,0 +1,7 @@
+{
+  "sha256": "a9618b5907b9373fc65b67b2af6c5850973125b4505cee52c2f1c8c2bccca648",
+  "base_sha256": "bc62917a0b4e5a6155b188e5f829f32590832ba1e06345deb50564beacef356b",
+  "scope": "float32 1536<D<=4096, rows>=4*cores, input>=64MiB",
+  "reference": "https://www.hiascend.com/doc_center/source/en/CANNCommunityEdition/900/API/ascendcopapi/atlasascendc_api_07_0265.html",
+  "state": "eight_shapes_bitwise_pass_positive_s13"
+}

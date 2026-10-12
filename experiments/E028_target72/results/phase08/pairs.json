@@ -1,0 +1,5698 @@
+[
+  {
+    "case_id": "s6",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_0/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_0/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_0/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_0",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:37:41Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 7.0771709909895435,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65066008576,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.7897
+      ],
+      "host_queued_batch_median_us": 16.7897
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_0/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      8.92,
+      8.5,
+      8.6,
+      8.64,
+      8.5,
+      8.78,
+      8.56,
+      8.64,
+      8.54,
+      8.54,
+      8.46,
+      8.4,
+      8.52,
+      8.98,
+      8.54,
+      8.44,
+      8.76,
+      8.6,
+      8.6,
+      8.68
+    ],
+    "median_us": 8.58,
+    "block": 0,
+    "position": 0,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s6",
+    "variant": "P9LP",
+    "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+    "runner_sha256": "1797601fed30cbe740d89c4e4a896ab9d3558e0aa8a97861b8e5df4608b116d0",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_1/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9LP/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_1/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_1",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:37:48Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 7.077249221038073,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65068359680,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        17.1352
+      ],
+      "host_queued_batch_median_us": 17.1352
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      8.34,
+      8.32,
+      8.26,
+      8.48,
+      8.5,
+      8.44,
+      8.22,
+      8.56,
+      8.34,
+      8.28,
+      8.42,
+      8.26,
+      8.46,
+      8.58,
+      8.8,
+      8.82,
+      8.16,
+      8.54,
+      8.36,
+      8.28
+    ],
+    "median_us": 8.39,
+    "block": 0,
+    "position": 1,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s6",
+    "variant": "P9LP",
+    "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+    "runner_sha256": "1797601fed30cbe740d89c4e4a896ab9d3558e0aa8a97861b8e5df4608b116d0",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_2/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9LP/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_2/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_2/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_2",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:37:56Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 7.02746616397053,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65068736512,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        30.52835
+      ],
+      "host_queued_batch_median_us": 30.52835
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_2/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      8.26,
+      8.2,
+      8.2,
+      8.38,
+      8.14,
+      8.46,
+      8.6,
+      8.56,
+      8.34,
+      8.36,
+      8.3,
+      8.18,
+      8.42,
+      8.5,
+      8.42,
+      8.48,
+      8.22,
+      8.54,
+      8.7,
+      8.8
+    ],
+    "median_us": 8.4,
+    "block": 0,
+    "position": 2,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s6",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_3/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_3/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_3/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_3",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:38:03Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 7.076929708011448,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65068969984,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        28.1753
+      ],
+      "host_queued_batch_median_us": 28.1753
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_0_3/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      8.78,
+      8.48,
+      8.78,
+      8.74,
+      8.4,
+      8.56,
+      8.4,
+      8.54,
+      8.8,
+      8.62,
+      8.38,
+      8.5,
+      8.6,
+      8.52,
+      8.44,
+      8.46,
+      8.68,
+      8.62,
+      8.46,
+      8.4
+    ],
+    "median_us": 8.53,
+    "block": 0,
+    "position": 3,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s6",
+    "variant": "P9LP",
+    "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+    "runner_sha256": "1797601fed30cbe740d89c4e4a896ab9d3558e0aa8a97861b8e5df4608b116d0",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_0/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9LP/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_0/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_0/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_0",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:38:10Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 8.028705365024507,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65069146112,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.7882
+      ],
+      "host_queued_batch_median_us": 16.7882
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_0/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      8.44,
+      8.12,
+      8.3,
+      8.22,
+      8.58,
+      8.3,
+      8.28,
+      8.5,
+      8.44,
+      8.16,
+      8.42,
+      8.36,
+      8.52,
+      8.32,
+      8.3,
+      8.32,
+      8.32,
+      8.24,
+      8.6,
+      8.28
+    ],
+    "median_us": 8.32,
+    "block": 1,
+    "position": 0,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s6",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_1/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_1/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_1",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:38:18Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 8.078286411007866,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65068531712,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        17.25215
+      ],
+      "host_queued_batch_median_us": 17.25215
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      8.56,
+      8.46,
+      8.7,
+      8.48,
+      8.72,
+      8.46,
+      8.54,
+      8.42,
+      8.54,
+      8.78,
+      8.76,
+      8.46,
+      8.88,
+      8.74,
+      9.08,
+      8.62,
+      9.12,
+      8.96,
+      9.26,
+      9.12
+    ],
+    "median_us": 8.71,
+    "block": 1,
+    "position": 1,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s6",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_2/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_2/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_2/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_2",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:38:26Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 8.078638674051035,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65068834816,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.9107
+      ],
+      "host_queued_batch_median_us": 16.9107
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_2/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      8.64,
+      8.6,
+      8.5,
+      8.74,
+      8.68,
+      8.58,
+      8.64,
+      8.72,
+      8.6,
+      8.64,
+      8.7,
+      8.44,
+      8.44,
+      8.7,
+      8.66,
+      8.46,
+      8.76,
+      8.44,
+      8.68,
+      8.78
+    ],
+    "median_us": 8.64,
+    "block": 1,
+    "position": 2,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s6",
+    "variant": "P9LP",
+    "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+    "runner_sha256": "1797601fed30cbe740d89c4e4a896ab9d3558e0aa8a97861b8e5df4608b116d0",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_3/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9LP/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_3/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_3/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_3",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:38:34Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 7.076846906973515,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65069015040,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.07615
+      ],
+      "host_queued_batch_median_us": 16.07615
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9LP_1_3/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      8.48,
+      8.24,
+      8.4,
+      8.28,
+      8.36,
+      8.38,
+      8.72,
+      8.54,
+      8.22,
+      8.44,
+      8.28,
+      8.44,
+      8.36,
+      8.2,
+      8.56,
+      8.28,
+      8.34,
+      8.34,
+      8.24,
+      8.28
+    ],
+    "median_us": 8.35,
+    "block": 1,
+    "position": 3,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s6",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_0/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_0/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_0/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_0",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:38:41Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 8.07804194802884,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65068670976,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.36265
+      ],
+      "host_queued_batch_median_us": 16.36265
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_0/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      8.6,
+      8.5,
+      8.44,
+      8.5,
+      8.46,
+      8.56,
+      8.48,
+      8.56,
+      8.7,
+      8.44,
+      8.5,
+      8.6,
+      8.48,
+      8.44,
+      8.52,
+      8.78,
+      9.12,
+      8.94,
+      9.04,
+      9.18
+    ],
+    "median_us": 8.54,
+    "block": 0,
+    "position": 0,
+    "pair": "P9OUT"
+  },
+  {
+    "case_id": "s6",
+    "variant": "P9OUT",
+    "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+    "runner_sha256": "517dad9036d6553eb784afd1f03ace846d19770617c5bce1f9c1a224dc8a4c69",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_1/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9OUT/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_1/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_1",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:38:50Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 6.0752905730041675,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65068158976,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.4707
+      ],
+      "host_queued_batch_median_us": 16.4707
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      9.54,
+      9.22,
+      9.02,
+      8.92,
+      8.98,
+      9.4,
+      9.18,
+      8.94,
+      9.32,
+      9.18,
+      8.92,
+      9.04,
+      9.02,
+      8.84,
+      8.82,
+      9.0,
+      9.16,
+      9.18,
+      9.14,
+      9.0
+    ],
+    "median_us": 9.03,
+    "block": 0,
+    "position": 1,
+    "pair": "P9OUT"
+  },
+  {
+    "case_id": "s6",
+    "variant": "P9OUT",
+    "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+    "runner_sha256": "517dad9036d6553eb784afd1f03ace846d19770617c5bce1f9c1a224dc8a4c69",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_2/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9OUT/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_2/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_2/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_2",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:38:56Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 7.077150980010629,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65068564480,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.00115
+      ],
+      "host_queued_batch_median_us": 16.00115
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_2/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      8.86,
+      8.92,
+      9.02,
+      9.08,
+      9.06,
+      8.88,
+      8.96,
+      8.82,
+      8.96,
+      9.02,
+      9.16,
+      8.8,
+      8.78,
+      8.8,
+      8.76,
+      9.0,
+      8.98,
+      8.84,
+      8.94,
+      8.8
+    ],
+    "median_us": 8.93,
+    "block": 0,
+    "position": 2,
+    "pair": "P9OUT"
+  },
+  {
+    "case_id": "s6",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_3/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_3/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_3/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_3",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:39:03Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 8.078552022983786,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65068822528,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.0022
+      ],
+      "host_queued_batch_median_us": 16.0022
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_0_3/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      8.42,
+      8.5,
+      8.4,
+      8.64,
+      8.44,
+      8.44,
+      8.54,
+      8.62,
+      8.48,
+      8.36,
+      8.62,
+      8.62,
+      8.34,
+      8.52,
+      8.64,
+      8.46,
+      8.56,
+      9.06,
+      8.98,
+      8.78
+    ],
+    "median_us": 8.53,
+    "block": 0,
+    "position": 3,
+    "pair": "P9OUT"
+  },
+  {
+    "case_id": "s6",
+    "variant": "P9OUT",
+    "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+    "runner_sha256": "517dad9036d6553eb784afd1f03ace846d19770617c5bce1f9c1a224dc8a4c69",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_0/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9OUT/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_0/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_0/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_0",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:39:11Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 7.076930987997912,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65070493696,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        17.2422
+      ],
+      "host_queued_batch_median_us": 17.2422
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_0/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      8.82,
+      8.76,
+      8.84,
+      9.04,
+      9.2,
+      8.82,
+      9.0,
+      9.04,
+      9.3,
+      8.94,
+      8.82,
+      8.86,
+      8.94,
+      8.72,
+      9.08,
+      8.84,
+      9.06,
+      9.12,
+      9.04,
+      8.8
+    ],
+    "median_us": 8.94,
+    "block": 1,
+    "position": 0,
+    "pair": "P9OUT"
+  },
+  {
+    "case_id": "s6",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_1/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_1/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_1",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:39:18Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 8.078608354029711,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65070911488,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.6657
+      ],
+      "host_queued_batch_median_us": 16.6657
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      8.46,
+      8.88,
+      8.58,
+      8.88,
+      8.64,
+      8.68,
+      8.5,
+      8.38,
+      8.6,
+      8.46,
+      8.5,
+      8.44,
+      8.74,
+      8.98,
+      8.42,
+      8.4,
+      8.52,
+      8.9,
+      8.76,
+      8.56
+    ],
+    "median_us": 8.57,
+    "block": 1,
+    "position": 1,
+    "pair": "P9OUT"
+  },
+  {
+    "case_id": "s6",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_2/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_2/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_2/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_2",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:39:26Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 8.034702991019003,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65071415296,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.2077
+      ],
+      "host_queued_batch_median_us": 16.2077
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_2/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      8.68,
+      8.74,
+      8.36,
+      8.4,
+      8.48,
+      8.72,
+      8.46,
+      8.42,
+      8.38,
+      8.66,
+      8.4,
+      8.7,
+      8.68,
+      8.84,
+      8.66,
+      8.44,
+      9.14,
+      8.82,
+      9.1,
+      9.46
+    ],
+    "median_us": 8.67,
+    "block": 1,
+    "position": 2,
+    "pair": "P9OUT"
+  },
+  {
+    "case_id": "s6",
+    "variant": "P9OUT",
+    "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+    "runner_sha256": "517dad9036d6553eb784afd1f03ace846d19770617c5bce1f9c1a224dc8a4c69",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_3/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9OUT/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_3/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_3/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_3",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:39:34Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 8.078605122980662,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65071284224,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.03215
+      ],
+      "host_queued_batch_median_us": 16.03215
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s6_P9OUT_1_3/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      9.0,
+      8.8,
+      8.94,
+      9.14,
+      8.96,
+      8.76,
+      8.78,
+      8.72,
+      8.88,
+      9.0,
+      8.88,
+      8.86,
+      8.72,
+      9.12,
+      9.08,
+      8.86,
+      8.98,
+      9.0,
+      8.82,
+      8.88
+    ],
+    "median_us": 8.88,
+    "block": 1,
+    "position": 3,
+    "pair": "P9OUT"
+  },
+  {
+    "case_id": "s7",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_0/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_0/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_0/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_0",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:39:42Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 7.077148717013188,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65070641152,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        17.0277
+      ],
+      "host_queued_batch_median_us": 17.0277
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_0/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      10.74,
+      10.5,
+      10.52,
+      10.52,
+      10.52,
+      10.5,
+      11.12,
+      10.8,
+      10.7,
+      10.74,
+      10.56,
+      10.58,
+      10.62,
+      10.52,
+      10.6,
+      10.62,
+      10.54,
+      10.68,
+      10.52,
+      10.66
+    ],
+    "median_us": 10.59,
+    "block": 0,
+    "position": 0,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s7",
+    "variant": "P9LP",
+    "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+    "runner_sha256": "1797601fed30cbe740d89c4e4a896ab9d3558e0aa8a97861b8e5df4608b116d0",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_1/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9LP/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_1/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_1",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:39:50Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 6.076101801008917,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65070723072,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.56315
+      ],
+      "host_queued_batch_median_us": 16.56315
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      10.92,
+      10.58,
+      10.66,
+      10.54,
+      10.88,
+      10.64,
+      10.58,
+      10.58,
+      10.54,
+      10.54,
+      10.8,
+      10.54,
+      10.54,
+      10.44,
+      10.44,
+      10.64,
+      10.54,
+      10.48,
+      10.7,
+      10.36
+    ],
+    "median_us": 10.559999999999999,
+    "block": 0,
+    "position": 1,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s7",
+    "variant": "P9LP",
+    "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+    "runner_sha256": "1797601fed30cbe740d89c4e4a896ab9d3558e0aa8a97861b8e5df4608b116d0",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_2/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9LP/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_2/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_2/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_2",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:39:56Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 8.029456247983035,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65070641152,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.34065
+      ],
+      "host_queued_batch_median_us": 16.34065
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_2/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      10.32,
+      10.24,
+      10.46,
+      10.28,
+      10.28,
+      10.56,
+      10.6,
+      10.6,
+      9.94,
+      10.36,
+      10.32,
+      9.98,
+      10.6,
+      11.02,
+      10.22,
+      10.5,
+      10.32,
+      10.3,
+      10.4,
+      10.26
+    ],
+    "median_us": 10.32,
+    "block": 0,
+    "position": 2,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s7",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_3/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_3/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_3/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_3",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:40:04Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 7.077105408010539,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65070120960,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.6367
+      ],
+      "host_queued_batch_median_us": 16.6367
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_0_3/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      10.34,
+      10.44,
+      10.52,
+      10.38,
+      10.46,
+      10.48,
+      10.42,
+      10.58,
+      11.34,
+      10.46,
+      10.66,
+      10.4,
+      10.62,
+      10.68,
+      10.52,
+      10.52,
+      10.5,
+      10.7,
+      10.64,
+      10.92
+    ],
+    "median_us": 10.52,
+    "block": 0,
+    "position": 3,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s7",
+    "variant": "P9LP",
+    "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+    "runner_sha256": "1797601fed30cbe740d89c4e4a896ab9d3558e0aa8a97861b8e5df4608b116d0",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_0/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9LP/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_0/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_0/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_0",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:40:11Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 8.078405086998828,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65069686784,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.24415
+      ],
+      "host_queued_batch_median_us": 16.24415
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_0/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      10.3,
+      10.34,
+      10.4,
+      10.48,
+      10.3,
+      10.24,
+      10.74,
+      10.82,
+      10.82,
+      10.46,
+      10.38,
+      10.34,
+      10.98,
+      10.46,
+      10.66,
+      10.58,
+      10.32,
+      10.56,
+      10.36,
+      10.3
+    ],
+    "median_us": 10.43,
+    "block": 1,
+    "position": 0,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s7",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_1/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_1/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_1",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:40:19Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 8.078333776036743,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65070125056,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        18.2107
+      ],
+      "host_queued_batch_median_us": 18.2107
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      10.5,
+      10.84,
+      10.88,
+      10.64,
+      10.74,
+      11.08,
+      11.12,
+      10.8,
+      11.08,
+      10.84,
+      10.88,
+      10.68,
+      10.88,
+      10.62,
+      10.62,
+      10.54,
+      10.72,
+      10.96,
+      10.64,
+      10.64
+    ],
+    "median_us": 10.77,
+    "block": 1,
+    "position": 1,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s7",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_2/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_2/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_2/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_2",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:40:27Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 6.075337312009651,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65070563328,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        17.8642
+      ],
+      "host_queued_batch_median_us": 17.8642
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_2/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      10.84,
+      10.74,
+      10.6,
+      10.56,
+      10.66,
+      10.54,
+      10.72,
+      10.68,
+      10.6,
+      10.7,
+      10.58,
+      10.76,
+      10.46,
+      10.56,
+      10.7,
+      10.68,
+      10.64,
+      10.92,
+      10.72,
+      10.58
+    ],
+    "median_us": 10.67,
+    "block": 1,
+    "position": 2,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s7",
+    "variant": "P9LP",
+    "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+    "runner_sha256": "1797601fed30cbe740d89c4e4a896ab9d3558e0aa8a97861b8e5df4608b116d0",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_3/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9LP/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_3/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_3/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_3",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:40:34Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 7.07636841898784,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "0f844909bd0daa434c8d7ac5fa316adce1505036f49232dc0864f4217af2f0ba",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65070739456,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.5577
+      ],
+      "host_queued_batch_median_us": 16.5577
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9LP_1_3/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      10.46,
+      10.44,
+      10.46,
+      10.46,
+      10.64,
+      10.74,
+      10.66,
+      10.76,
+      10.62,
+      10.44,
+      10.44,
+      10.38,
+      10.76,
+      10.44,
+      10.54,
+      10.7,
+      10.44,
+      10.48,
+      10.48,
+      10.46
+    ],
+    "median_us": 10.47,
+    "block": 1,
+    "position": 3,
+    "pair": "P9LP"
+  },
+  {
+    "case_id": "s7",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_0/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_0/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_0/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_0",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:40:41Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 6.075021859025583,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65070088192,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.3332
+      ],
+      "host_queued_batch_median_us": 16.3332
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_0/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      10.8,
+      10.34,
+      10.5,
+      10.82,
+      11.18,
+      10.94,
+      11.1,
+      10.74,
+      10.56,
+      10.44,
+      10.42,
+      10.48,
+      10.56,
+      10.5,
+      10.66,
+      10.62,
+      11.22,
+      10.7,
+      10.54,
+      10.48
+    ],
+    "median_us": 10.59,
+    "block": 0,
+    "position": 0,
+    "pair": "P9OUT"
+  },
+  {
+    "case_id": "s7",
+    "variant": "P9OUT",
+    "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+    "runner_sha256": "517dad9036d6553eb784afd1f03ace846d19770617c5bce1f9c1a224dc8a4c69",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_1/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9OUT/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_1/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_1",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:40:47Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 8.078888321993873,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65070596096,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.4912
+      ],
+      "host_queued_batch_median_us": 16.4912
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      10.76,
+      10.68,
+      10.88,
+      10.92,
+      10.84,
+      11.06,
+      11.14,
+      11.02,
+      10.7,
+      10.94,
+      10.82,
+      10.96,
+      11.08,
+      10.8,
+      11.0,
+      11.32,
+      10.84,
+      10.7,
+      10.72,
+      11.14
+    ],
+    "median_us": 10.9,
+    "block": 0,
+    "position": 1,
+    "pair": "P9OUT"
+  },
+  {
+    "case_id": "s7",
+    "variant": "P9OUT",
+    "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+    "runner_sha256": "517dad9036d6553eb784afd1f03ace846d19770617c5bce1f9c1a224dc8a4c69",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_2/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9OUT/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_2/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_2/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_2",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:40:55Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 8.079534830001649,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65070637056,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.1012
+      ],
+      "host_queued_batch_median_us": 16.1012
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_2/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      11.06,
+      11.0,
+      10.8,
+      11.08,
+      10.76,
+      11.02,
+      10.88,
+      10.94,
+      10.78,
+      11.02,
+      10.82,
+      10.92,
+      11.08,
+      11.16,
+      10.9,
+      10.92,
+      10.78,
+      10.8,
+      11.12,
+      10.74
+    ],
+    "median_us": 10.92,
+    "block": 0,
+    "position": 2,
+    "pair": "P9OUT"
+  },
+  {
+    "case_id": "s7",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_3/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_3/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_3/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_3",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:41:03Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 8.07875950000016,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65070256128,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.3697
+      ],
+      "host_queued_batch_median_us": 16.3697
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_0_3/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      10.58,
+      10.72,
+      10.86,
+      10.86,
+      10.88,
+      11.28,
+      11.58,
+      10.88,
+      10.82,
+      10.78,
+      10.5,
+      10.64,
+      10.7,
+      10.78,
+      10.92,
+      10.76,
+      10.62,
+      10.66,
+      11.06,
+      10.88
+    ],
+    "median_us": 10.8,
+    "block": 0,
+    "position": 3,
+    "pair": "P9OUT"
+  },
+  {
+    "case_id": "s7",
+    "variant": "P9OUT",
+    "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+    "runner_sha256": "517dad9036d6553eb784afd1f03ace846d19770617c5bce1f9c1a224dc8a4c69",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_0/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9OUT/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_0/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_0/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_0",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:41:11Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 7.076711262983736,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65070473216,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        17.0497
+      ],
+      "host_queued_batch_median_us": 17.0497
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_0/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      10.8,
+      10.84,
+      10.82,
+      10.96,
+      11.08,
+      10.8,
+      10.94,
+      10.82,
+      10.98,
+      10.78,
+      10.82,
+      10.98,
+      11.52,
+      11.02,
+      10.86,
+      10.82,
+      10.9,
+      11.1,
+      10.88,
+      10.88
+    ],
+    "median_us": 10.88,
+    "block": 1,
+    "position": 0,
+    "pair": "P9OUT"
+  },
+  {
+    "case_id": "s7",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_1/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_1/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_1",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:41:19Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 7.026646801037714,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65070604288,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.89415
+      ],
+      "host_queued_batch_median_us": 16.89415
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      10.64,
+      10.58,
+      10.54,
+      10.6,
+      10.72,
+      10.78,
+      10.84,
+      10.64,
+      10.62,
+      10.58,
+      10.84,
+      10.46,
+      10.68,
+      10.48,
+      10.54,
+      10.52,
+      10.48,
+      10.58,
+      10.58,
+      10.68
+    ],
+    "median_us": 10.59,
+    "block": 1,
+    "position": 1,
+    "pair": "P9OUT"
+  },
+  {
+    "case_id": "s7",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_2/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_2/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_2/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_2",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:41:26Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 7.077359430026263,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65070944256,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.0272
+      ],
+      "host_queued_batch_median_us": 16.0272
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_2/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      10.4,
+      10.78,
+      10.4,
+      10.4,
+      10.58,
+      11.08,
+      10.98,
+      10.96,
+      10.92,
+      10.8,
+      11.22,
+      10.7,
+      10.74,
+      10.78,
+      10.5,
+      10.54,
+      10.92,
+      10.64,
+      10.56,
+      10.7
+    ],
+    "median_us": 10.719999999999999,
+    "block": 1,
+    "position": 2,
+    "pair": "P9OUT"
+  },
+  {
+    "case_id": "s7",
+    "variant": "P9OUT",
+    "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+    "runner_sha256": "517dad9036d6553eb784afd1f03ace846d19770617c5bce1f9c1a224dc8a4c69",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "msprof",
+      "--output=/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_3/profile",
+      "--task-time=on",
+      "--ai-core=off",
+      "--runtime-api=on",
+      "/home/developer/addrms_E028/experiments/E028_target72/build_P9OUT/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_3/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_3/benchmark.json",
+      "--warmup",
+      "10",
+      "--repeats",
+      "1",
+      "--batch",
+      "20",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_3",
+    "settings": {
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timing": "host"
+    },
+    "profile": "ordinary",
+    "started_utc": "2026-10-12T12:41:33Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 8.080035875027534,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "d364f7969b2bfdcb6a36b9d05e97459101f6efabb3ff54b86163f14875b872a5",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65071087616,
+      "total_hbm": 65452113920,
+      "warmup": 10,
+      "repeats": 1,
+      "batch": 20,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        16.2587
+      ],
+      "host_queued_batch_median_us": 16.2587
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase08/pair_s7_P9OUT_1_3/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "task_times_us": [
+      10.84,
+      11.16,
+      10.96,
+      10.86,
+      11.0,
+      10.9,
+      11.14,
+      10.82,
+      10.94,
+      10.78,
+      10.94,
+      10.8,
+      11.04,
+      10.94,
+      11.0,
+      10.84,
+      10.88,
+      10.68,
+      10.8,
+      10.94
+    ],
+    "median_us": 10.92,
+    "block": 1,
+    "position": 3,
+    "pair": "P9OUT"
+  }
+]

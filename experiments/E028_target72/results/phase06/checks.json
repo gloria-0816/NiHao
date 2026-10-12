@@ -1,0 +1,3885 @@
+[
+  {
+    "case_id": "s1",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "a08acfbf1d792dc0d2914fa64e304097f6aba12d07815fa86ab38dffac231203",
+    "input_file_sha256": {
+      "x.bin": "a06a3ab3f864a63b45569f72395ddef462aec49d817213a82e3f53f32702868b",
+      "residual.bin": "4eadfbb640d78a6ee1b85fbdded97d0d838d959d21f28d625ce559b470f57533",
+      "gamma.bin": "85d4624b0157faf075107eaafb228f8b34f4ae1fb25dc2f2ddaa56cd89742186",
+      "bias.bin": "d0cec426a12b1dcb2be81abdf115eeba7e266ce8e5aeccd991ab7e85bc181242",
+      "golden_output.bin": "b4a87ff69aeec1ef0418616ed7c07323ea40f92f7668bf0b1427ce02ff0972d0",
+      "golden_output_fp32.bin": "87e47f274df28692f9143a024faea69f0174623aaf2856b54a8b256ff1987c0a",
+      "meta.json": "a08acfbf1d792dc0d2914fa64e304097f6aba12d07815fa86ab38dffac231203"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s1_COMBO/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s1_COMBO/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s1_COMBO",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:44:40Z",
+    "status": "measured_strict_pass",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.268670938006835,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1,
+        64
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 640,
+      "free_hbm_before_allocation": 65075179520,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        27.93
+      ],
+      "host_queued_batch_median_us": 27.93
+    },
+    "strict": {
+      "case_id": "s1",
+      "shape": [
+        1,
+        1,
+        64
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s1_COMBO/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 64,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 0.001953125,
+      "max_relative_error": 0.0008888888888888889,
+      "examples": []
+    },
+    "output_sha256": "4d633e24898c6781e5fafd5f7c3e803e1d336b9faafac9b73b9fa0f93cb6b36c",
+    "output_bytes": 128,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null
+  },
+  {
+    "case_id": "s1",
+    "variant": "COMBO1",
+    "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "runner_sha256": "e8ae28e5af99cdbff8c1910a122bfe0dcd821ded97ef2df42ba6dee051955687",
+    "shape": [
+      1,
+      1,
+      64
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "a08acfbf1d792dc0d2914fa64e304097f6aba12d07815fa86ab38dffac231203",
+    "input_file_sha256": {
+      "x.bin": "a06a3ab3f864a63b45569f72395ddef462aec49d817213a82e3f53f32702868b",
+      "residual.bin": "4eadfbb640d78a6ee1b85fbdded97d0d838d959d21f28d625ce559b470f57533",
+      "gamma.bin": "85d4624b0157faf075107eaafb228f8b34f4ae1fb25dc2f2ddaa56cd89742186",
+      "bias.bin": "d0cec426a12b1dcb2be81abdf115eeba7e266ce8e5aeccd991ab7e85bc181242",
+      "golden_output.bin": "b4a87ff69aeec1ef0418616ed7c07323ea40f92f7668bf0b1427ce02ff0972d0",
+      "golden_output_fp32.bin": "87e47f274df28692f9143a024faea69f0174623aaf2856b54a8b256ff1987c0a",
+      "meta.json": "a08acfbf1d792dc0d2914fa64e304097f6aba12d07815fa86ab38dffac231203"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E028/experiments/E028_target72/build_COMBO1/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s1_COMBO1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s1_COMBO1/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s1_COMBO1",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:44:42Z",
+    "status": "measured_strict_pass",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 3.269517728011124,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1,
+        64
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 640,
+      "free_hbm_before_allocation": 65075453952,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        29.271
+      ],
+      "host_queued_batch_median_us": 29.271
+    },
+    "strict": {
+      "case_id": "s1",
+      "shape": [
+        1,
+        1,
+        64
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s1_COMBO1/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 64,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 0.001953125,
+      "max_relative_error": 0.0008888888888888889,
+      "examples": []
+    },
+    "output_sha256": "4d633e24898c6781e5fafd5f7c3e803e1d336b9faafac9b73b9fa0f93cb6b36c",
+    "output_bytes": 128,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_COMBO": true
+  },
+  {
+    "case_id": "s2",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      7,
+      197
+    ],
+    "dtype": "float32",
+    "input_meta_sha256": "f1824d28fd6d40f2abd3db1fc159a900e39fe1badf5d1214bf17441ebf78c9ec",
+    "input_file_sha256": {
+      "x.bin": "1280977e7d84149b4634f56e80f0252bd5bd9b62c3a0c9c01477150fac0d6604",
+      "residual.bin": "0e96c9ceeae2e5f209a0bfedffe7372af9245b4225eeb40c42f81b610c13fb06",
+      "gamma.bin": "7e078fcf2f012fac06b3e98c99723c19103a6585f45e02412119b6570ed450df",
+      "bias.bin": "056c2792d9df98ac96fcae34520393cc4f8c39d2e9d0fcb2a1bfe883cfc57b08",
+      "golden_output.bin": "259d2865ba9dabcbdeaf508ea6c212890288f8039875f8bc62da359be8d693a9",
+      "golden_output_fp32.bin": "259d2865ba9dabcbdeaf508ea6c212890288f8039875f8bc62da359be8d693a9",
+      "meta.json": "f1824d28fd6d40f2abd3db1fc159a900e39fe1badf5d1214bf17441ebf78c9ec"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s2_COMBO/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s2_COMBO/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s2_COMBO",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:44:46Z",
+    "status": "measured_strict_pass",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 3.2702196150203235,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        7,
+        197
+      ],
+      "dtype": 0,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 18124,
+      "free_hbm_before_allocation": 65075400704,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        22.351
+      ],
+      "host_queued_batch_median_us": 22.351
+    },
+    "strict": {
+      "case_id": "s2",
+      "shape": [
+        1,
+        7,
+        197
+      ],
+      "dtype": "float32",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s2_COMBO/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "elements": 1379,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 4.76837158203125e-07,
+      "max_relative_error": 1.2947665535903877e-05,
+      "examples": []
+    },
+    "output_sha256": "16b5f07cb629fb14658da0116d3ad149a7a4f1385a554919d08db295686aa277",
+    "output_bytes": 5516,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null
+  },
+  {
+    "case_id": "s2",
+    "variant": "COMBO1",
+    "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "runner_sha256": "e8ae28e5af99cdbff8c1910a122bfe0dcd821ded97ef2df42ba6dee051955687",
+    "shape": [
+      1,
+      7,
+      197
+    ],
+    "dtype": "float32",
+    "input_meta_sha256": "f1824d28fd6d40f2abd3db1fc159a900e39fe1badf5d1214bf17441ebf78c9ec",
+    "input_file_sha256": {
+      "x.bin": "1280977e7d84149b4634f56e80f0252bd5bd9b62c3a0c9c01477150fac0d6604",
+      "residual.bin": "0e96c9ceeae2e5f209a0bfedffe7372af9245b4225eeb40c42f81b610c13fb06",
+      "gamma.bin": "7e078fcf2f012fac06b3e98c99723c19103a6585f45e02412119b6570ed450df",
+      "bias.bin": "056c2792d9df98ac96fcae34520393cc4f8c39d2e9d0fcb2a1bfe883cfc57b08",
+      "golden_output.bin": "259d2865ba9dabcbdeaf508ea6c212890288f8039875f8bc62da359be8d693a9",
+      "golden_output_fp32.bin": "259d2865ba9dabcbdeaf508ea6c212890288f8039875f8bc62da359be8d693a9",
+      "meta.json": "f1824d28fd6d40f2abd3db1fc159a900e39fe1badf5d1214bf17441ebf78c9ec"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E028/experiments/E028_target72/build_COMBO1/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s2_COMBO1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s2_COMBO1/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s2_COMBO1",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:44:49Z",
+    "status": "measured_strict_pass",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.2682578430103604,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        7,
+        197
+      ],
+      "dtype": 0,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 18124,
+      "free_hbm_before_allocation": 65075216384,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        21.44
+      ],
+      "host_queued_batch_median_us": 21.44
+    },
+    "strict": {
+      "case_id": "s2",
+      "shape": [
+        1,
+        7,
+        197
+      ],
+      "dtype": "float32",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s2_COMBO1/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "elements": 1379,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 4.76837158203125e-07,
+      "max_relative_error": 1.2947665535903877e-05,
+      "examples": []
+    },
+    "output_sha256": "16b5f07cb629fb14658da0116d3ad149a7a4f1385a554919d08db295686aa277",
+    "output_bytes": 5516,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_COMBO": true
+  },
+  {
+    "case_id": "s3",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      128,
+      256
+    ],
+    "dtype": "float32",
+    "input_meta_sha256": "40a4752727de37f46904e8c69e80587e950f0d39dab4a5cedd2556529dbebffa",
+    "input_file_sha256": {
+      "x.bin": "6b45a3c3fd3a5d4199e1088d6dfa232ddd5ecd6be9e81548667e1fc0c01c37f5",
+      "residual.bin": "5649e80cfce282a66667319a8bb872c8332c24fc92395c4cadb03a3e06027891",
+      "gamma.bin": "5c7f0c158b19ae09680306b66842bb8c2130bccf4a11543d7324342ba9cfa72e",
+      "bias.bin": "673acb2076f73809c8d799d2d3726ee6bfeea06b677db240a952e4bc53a126d7",
+      "golden_output.bin": "31db8a90284c556abe67794f9a67ff10d5bcd7ee5fec5ed57fe0baba701739b9",
+      "golden_output_fp32.bin": "31db8a90284c556abe67794f9a67ff10d5bcd7ee5fec5ed57fe0baba701739b9",
+      "meta.json": "40a4752727de37f46904e8c69e80587e950f0d39dab4a5cedd2556529dbebffa"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s3_COMBO/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s3_COMBO/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s3_COMBO",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:44:51Z",
+    "status": "measured_strict_pass",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.0678708830091637,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        128,
+        256
+      ],
+      "dtype": 0,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 395264,
+      "free_hbm_before_allocation": 65074995200,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        39.07
+      ],
+      "host_queued_batch_median_us": 39.07
+    },
+    "strict": {
+      "case_id": "s3",
+      "shape": [
+        1,
+        128,
+        256
+      ],
+      "dtype": "float32",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s3_COMBO/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "elements": 32768,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 4.76837158203125e-07,
+      "max_relative_error": 0.0004743833017077799,
+      "examples": []
+    },
+    "output_sha256": "835ee58cc64884da91ca7bbef745a08889347a92818141ed5c7602c66a88c365",
+    "output_bytes": 131072,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null
+  },
+  {
+    "case_id": "s3",
+    "variant": "COMBO1",
+    "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "runner_sha256": "e8ae28e5af99cdbff8c1910a122bfe0dcd821ded97ef2df42ba6dee051955687",
+    "shape": [
+      1,
+      128,
+      256
+    ],
+    "dtype": "float32",
+    "input_meta_sha256": "40a4752727de37f46904e8c69e80587e950f0d39dab4a5cedd2556529dbebffa",
+    "input_file_sha256": {
+      "x.bin": "6b45a3c3fd3a5d4199e1088d6dfa232ddd5ecd6be9e81548667e1fc0c01c37f5",
+      "residual.bin": "5649e80cfce282a66667319a8bb872c8332c24fc92395c4cadb03a3e06027891",
+      "gamma.bin": "5c7f0c158b19ae09680306b66842bb8c2130bccf4a11543d7324342ba9cfa72e",
+      "bias.bin": "673acb2076f73809c8d799d2d3726ee6bfeea06b677db240a952e4bc53a126d7",
+      "golden_output.bin": "31db8a90284c556abe67794f9a67ff10d5bcd7ee5fec5ed57fe0baba701739b9",
+      "golden_output_fp32.bin": "31db8a90284c556abe67794f9a67ff10d5bcd7ee5fec5ed57fe0baba701739b9",
+      "meta.json": "40a4752727de37f46904e8c69e80587e950f0d39dab4a5cedd2556529dbebffa"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E028/experiments/E028_target72/build_COMBO1/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s3_COMBO1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s3_COMBO1/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s3_COMBO1",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:44:53Z",
+    "status": "measured_strict_pass",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.0677774619834963,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        128,
+        256
+      ],
+      "dtype": 0,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 395264,
+      "free_hbm_before_allocation": 65075011584,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        41.44
+      ],
+      "host_queued_batch_median_us": 41.44
+    },
+    "strict": {
+      "case_id": "s3",
+      "shape": [
+        1,
+        128,
+        256
+      ],
+      "dtype": "float32",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s3_COMBO1/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "elements": 32768,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 4.76837158203125e-07,
+      "max_relative_error": 0.0004743833017077799,
+      "examples": []
+    },
+    "output_sha256": "835ee58cc64884da91ca7bbef745a08889347a92818141ed5c7602c66a88c365",
+    "output_bytes": 131072,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_COMBO": true
+  },
+  {
+    "case_id": "s4",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      767,
+      193
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "af2752fbcb5a439d43c8a75e3f5843bd6cb876fd4dace07ee759ada18042a63c",
+    "input_file_sha256": {
+      "x.bin": "f32fef6ea22353a3874a2d03d654b5c82f026fbb6ab4ddb780de933bc1ac9892",
+      "residual.bin": "e8e1eb549fc0a27bf76f20533da4d9985aa37480d19d48c9adbbf1de603d3306",
+      "gamma.bin": "eded8ee6280ced695655cd1c6e7210b7075b0466ec9223b97ffd589f204156a3",
+      "bias.bin": "0253db0ea14c220b1f998d8e2571d061d55f4cdddef38e8fa44abafae47a3177",
+      "golden_output.bin": "0d016b273cd0fe3cac37d884396a4f1b464eb57dc72201bc2191410b7228687f",
+      "golden_output_fp32.bin": "28d3c86c3a0667fffc3917e99af8e40f6687398e4020c4d0be81a0542ba058bc",
+      "meta.json": "af2752fbcb5a439d43c8a75e3f5843bd6cb876fd4dace07ee759ada18042a63c"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s4_COMBO/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s4_COMBO/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s4_COMBO",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:44:55Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 3.27029242599383,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        767,
+        193
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 888958,
+      "free_hbm_before_allocation": 65074565120,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        30.81
+      ],
+      "host_queued_batch_median_us": 30.81
+    },
+    "strict": {
+      "case_id": "s4",
+      "shape": [
+        1,
+        767,
+        193
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s4_COMBO/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 148031,
+      "failed_elements": 63,
+      "classification_failures": 0,
+      "finite_failures": 63,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 1.921540656205421,
+      "examples": [
+        {
+          "flat_index": 1552,
+          "actual": 2.20703125,
+          "expected": 2.2109375
+        },
+        {
+          "flat_index": 7825,
+          "actual": 2.587890625,
+          "expected": 2.591796875
+        },
+        {
+          "flat_index": 8227,
+          "actual": -2.46484375,
+          "expected": -2.46875
+        },
+        {
+          "flat_index": 9016,
+          "actual": -2.037109375,
+          "expected": -2.041015625
+        },
+        {
+          "flat_index": 9984,
+          "actual": 2.26953125,
+          "expected": 2.265625
+        },
+        {
+          "flat_index": 10201,
+          "actual": -2.09765625,
+          "expected": -2.1015625
+        },
+        {
+          "flat_index": 13913,
+          "actual": 2.337890625,
+          "expected": 2.341796875
+        },
+        {
+          "flat_index": 17855,
+          "actual": 2.875,
+          "expected": 2.87890625
+        }
+      ]
+    },
+    "output_sha256": "f365003a2c6ce14472427d44f65522ad132f23cf0cd520a7317ce6a6b3e97225",
+    "output_bytes": 296062,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null
+  },
+  {
+    "case_id": "s4",
+    "variant": "COMBO1",
+    "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "runner_sha256": "e8ae28e5af99cdbff8c1910a122bfe0dcd821ded97ef2df42ba6dee051955687",
+    "shape": [
+      1,
+      767,
+      193
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "af2752fbcb5a439d43c8a75e3f5843bd6cb876fd4dace07ee759ada18042a63c",
+    "input_file_sha256": {
+      "x.bin": "f32fef6ea22353a3874a2d03d654b5c82f026fbb6ab4ddb780de933bc1ac9892",
+      "residual.bin": "e8e1eb549fc0a27bf76f20533da4d9985aa37480d19d48c9adbbf1de603d3306",
+      "gamma.bin": "eded8ee6280ced695655cd1c6e7210b7075b0466ec9223b97ffd589f204156a3",
+      "bias.bin": "0253db0ea14c220b1f998d8e2571d061d55f4cdddef38e8fa44abafae47a3177",
+      "golden_output.bin": "0d016b273cd0fe3cac37d884396a4f1b464eb57dc72201bc2191410b7228687f",
+      "golden_output_fp32.bin": "28d3c86c3a0667fffc3917e99af8e40f6687398e4020c4d0be81a0542ba058bc",
+      "meta.json": "af2752fbcb5a439d43c8a75e3f5843bd6cb876fd4dace07ee759ada18042a63c"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E028/experiments/E028_target72/build_COMBO1/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s4_COMBO1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s4_COMBO1/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s4_COMBO1",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:44:59Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 3.2698840419761837,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        767,
+        193
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 888958,
+      "free_hbm_before_allocation": 65075421184,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        44.61
+      ],
+      "host_queued_batch_median_us": 44.61
+    },
+    "strict": {
+      "case_id": "s4",
+      "shape": [
+        1,
+        767,
+        193
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s4_COMBO1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 148031,
+      "failed_elements": 63,
+      "classification_failures": 0,
+      "finite_failures": 63,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 1.921540656205421,
+      "examples": [
+        {
+          "flat_index": 1552,
+          "actual": 2.20703125,
+          "expected": 2.2109375
+        },
+        {
+          "flat_index": 7825,
+          "actual": 2.587890625,
+          "expected": 2.591796875
+        },
+        {
+          "flat_index": 8227,
+          "actual": -2.46484375,
+          "expected": -2.46875
+        },
+        {
+          "flat_index": 9016,
+          "actual": -2.037109375,
+          "expected": -2.041015625
+        },
+        {
+          "flat_index": 9984,
+          "actual": 2.26953125,
+          "expected": 2.265625
+        },
+        {
+          "flat_index": 10201,
+          "actual": -2.09765625,
+          "expected": -2.1015625
+        },
+        {
+          "flat_index": 13913,
+          "actual": 2.337890625,
+          "expected": 2.341796875
+        },
+        {
+          "flat_index": 17855,
+          "actual": 2.875,
+          "expected": 2.87890625
+        }
+      ]
+    },
+    "output_sha256": "f365003a2c6ce14472427d44f65522ad132f23cf0cd520a7317ce6a6b3e97225",
+    "output_bytes": 296062,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_COMBO": true
+  },
+  {
+    "case_id": "s5",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      8,
+      32768
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "b1a09859b7b278721eb1411dab33e1566e5630f1f12c54f6b377848eaa0b84c4",
+    "input_file_sha256": {
+      "x.bin": "6346f1b502ad0e4e2fdaf0df0ad5239bfddf3bdee541dbc32855d04894fa5e4f",
+      "residual.bin": "78f85f2a342c880b71b81d14321bbe3089b3f19d86869b5f447cfe4a6410c947",
+      "gamma.bin": "d0d0139c61a2330959b35fef4eea3152ec0f27508f3423f36daafd736afe3f15",
+      "bias.bin": "b81f563ae33b7ea81983794e91610af87c72b2102d831c704c84dc18ff97c863",
+      "golden_output.bin": "457611b3d490876e3a8e2fa5bb69e2af9a1c2021d6c09f84d8e0b188c374f4cd",
+      "golden_output_fp32.bin": "e367c259e405400d071704fa718f1d82fa2fe432486bf7208e6b14ee81d513b2",
+      "meta.json": "b1a09859b7b278721eb1411dab33e1566e5630f1f12c54f6b377848eaa0b84c4"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s5_COMBO/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s5_COMBO/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s5_COMBO",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:02Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.0678154819761403,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        8,
+        32768
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 1703936,
+      "free_hbm_before_allocation": 65075265536,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        50.441
+      ],
+      "host_queued_batch_median_us": 50.441
+    },
+    "strict": {
+      "case_id": "s5",
+      "shape": [
+        1,
+        8,
+        32768
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s5_COMBO/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 262144,
+      "failed_elements": 124,
+      "classification_failures": 0,
+      "finite_failures": 124,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 69.26666666666667,
+      "examples": [
+        {
+          "flat_index": 1515,
+          "actual": -2.0546875,
+          "expected": -2.05078125
+        },
+        {
+          "flat_index": 1971,
+          "actual": 1.822265625,
+          "expected": 1.8193359375
+        },
+        {
+          "flat_index": 3929,
+          "actual": -2.234375,
+          "expected": -2.23046875
+        },
+        {
+          "flat_index": 17892,
+          "actual": 2.39453125,
+          "expected": 2.390625
+        },
+        {
+          "flat_index": 19596,
+          "actual": 2.564453125,
+          "expected": 2.560546875
+        },
+        {
+          "flat_index": 22273,
+          "actual": 2.78515625,
+          "expected": 2.78125
+        },
+        {
+          "flat_index": 26917,
+          "actual": -1.779296875,
+          "expected": -1.7763671875
+        },
+        {
+          "flat_index": 30609,
+          "actual": -2.0390625,
+          "expected": -2.03515625
+        }
+      ]
+    },
+    "output_sha256": "bc2ec331c297818467652d885d51b84b944344fce59ce2ee16a0f6e4bc250594",
+    "output_bytes": 524288,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null
+  },
+  {
+    "case_id": "s5",
+    "variant": "COMBO1",
+    "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "runner_sha256": "e8ae28e5af99cdbff8c1910a122bfe0dcd821ded97ef2df42ba6dee051955687",
+    "shape": [
+      1,
+      8,
+      32768
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "b1a09859b7b278721eb1411dab33e1566e5630f1f12c54f6b377848eaa0b84c4",
+    "input_file_sha256": {
+      "x.bin": "6346f1b502ad0e4e2fdaf0df0ad5239bfddf3bdee541dbc32855d04894fa5e4f",
+      "residual.bin": "78f85f2a342c880b71b81d14321bbe3089b3f19d86869b5f447cfe4a6410c947",
+      "gamma.bin": "d0d0139c61a2330959b35fef4eea3152ec0f27508f3423f36daafd736afe3f15",
+      "bias.bin": "b81f563ae33b7ea81983794e91610af87c72b2102d831c704c84dc18ff97c863",
+      "golden_output.bin": "457611b3d490876e3a8e2fa5bb69e2af9a1c2021d6c09f84d8e0b188c374f4cd",
+      "golden_output_fp32.bin": "e367c259e405400d071704fa718f1d82fa2fe432486bf7208e6b14ee81d513b2",
+      "meta.json": "b1a09859b7b278721eb1411dab33e1566e5630f1f12c54f6b377848eaa0b84c4"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E028/experiments/E028_target72/build_COMBO1/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s5_COMBO1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s5_COMBO1/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s5_COMBO1",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:04Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.2681602929951623,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        8,
+        32768
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 1703936,
+      "free_hbm_before_allocation": 65074839552,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        51.511
+      ],
+      "host_queued_batch_median_us": 51.511
+    },
+    "strict": {
+      "case_id": "s5",
+      "shape": [
+        1,
+        8,
+        32768
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s5_COMBO1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 262144,
+      "failed_elements": 124,
+      "classification_failures": 0,
+      "finite_failures": 124,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 69.26666666666667,
+      "examples": [
+        {
+          "flat_index": 1515,
+          "actual": -2.0546875,
+          "expected": -2.05078125
+        },
+        {
+          "flat_index": 1971,
+          "actual": 1.822265625,
+          "expected": 1.8193359375
+        },
+        {
+          "flat_index": 3929,
+          "actual": -2.234375,
+          "expected": -2.23046875
+        },
+        {
+          "flat_index": 17892,
+          "actual": 2.39453125,
+          "expected": 2.390625
+        },
+        {
+          "flat_index": 19596,
+          "actual": 2.564453125,
+          "expected": 2.560546875
+        },
+        {
+          "flat_index": 22273,
+          "actual": 2.78515625,
+          "expected": 2.78125
+        },
+        {
+          "flat_index": 26917,
+          "actual": -1.779296875,
+          "expected": -1.7763671875
+        },
+        {
+          "flat_index": 30609,
+          "actual": -2.0390625,
+          "expected": -2.03515625
+        }
+      ]
+    },
+    "output_sha256": "bc2ec331c297818467652d885d51b84b944344fce59ce2ee16a0f6e4bc250594",
+    "output_bytes": 524288,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_COMBO": true
+  },
+  {
+    "case_id": "s6",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s6_COMBO/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s6_COMBO/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s6_COMBO",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:06Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.268432924989611,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65074745344,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        47.91
+      ],
+      "host_queued_batch_median_us": 47.91
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s6_COMBO/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null
+  },
+  {
+    "case_id": "s6",
+    "variant": "COMBO1",
+    "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "runner_sha256": "e8ae28e5af99cdbff8c1910a122bfe0dcd821ded97ef2df42ba6dee051955687",
+    "shape": [
+      1,
+      1513,
+      577
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899",
+    "input_file_sha256": {
+      "x.bin": "be96f563a3a9c2ade568a93d5dd0aeb9f3e532bd93fc6ccb26ec4cb8f2039ec7",
+      "residual.bin": "4c4514dacfd861bac58a259e24159ec288d088ce722df9474c54b46f13acf4e6",
+      "gamma.bin": "e16ad198a31b8c828133ab9e5bfd3a912c8aecf16dde04a6bba169699c41771d",
+      "bias.bin": "e852194cb66039b4af10c73a40a4e9f29b8a1541086f54471fac65bbba98655d",
+      "golden_output.bin": "10e07f3a3b7a5e3b850e49d28de40a88190ca16492a63367aa2bbeb17b863ff0",
+      "golden_output_fp32.bin": "ae8f226d2246a7b014e64e93334aeeea5c2e7b97597fd7c5c9afdf1a0ee28944",
+      "meta.json": "4205eaa4474d8700df8a6e68b6dee26ce4a84c0e21a64900bd27e252edcb3899"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E028/experiments/E028_target72/build_COMBO1/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s6_COMBO1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s6_COMBO1/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s6_COMBO1",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:09Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 3.3700906870071776,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 5240314,
+      "free_hbm_before_allocation": 65074253824,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        29.93
+      ],
+      "host_queued_batch_median_us": 29.93
+    },
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s6_COMBO1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    },
+    "output_sha256": "5aba59b882a6a3ca77482bc36eeab056e03a2473d9f1345af768d0dc650cd5bc",
+    "output_bytes": 1746002,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_COMBO": true
+  },
+  {
+    "case_id": "s7",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s7_COMBO/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s7_COMBO/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s7_COMBO",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:12Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.26804537101998,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65074769920,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        42.811
+      ],
+      "host_queued_batch_median_us": 42.811
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s7_COMBO/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null
+  },
+  {
+    "case_id": "s7",
+    "variant": "COMBO1",
+    "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "runner_sha256": "e8ae28e5af99cdbff8c1910a122bfe0dcd821ded97ef2df42ba6dee051955687",
+    "shape": [
+      1,
+      3113,
+      397
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7",
+    "input_file_sha256": {
+      "x.bin": "60b8dc27e7ed6a07c09899f9d1ec97c533dd8d4ba5fcc3d47a0663bf2912c77b",
+      "residual.bin": "f3320cb4f72b9a19b198aabaf96bcd4c6ae603413e7b5f7d633638d359b0cd45",
+      "gamma.bin": "42538b7d42b833a19b915b08574e8181888c09185844f6c77cb2b2d7156de26f",
+      "bias.bin": "7d1aa455248f26d92ebcbc7ee0b5b77afa82337daf1ee568f6a11038872c871d",
+      "golden_output.bin": "6dd98558aad854ee1a6a37d47439b59260640a37b338cb5cdd8520d7a5da1ff4",
+      "golden_output_fp32.bin": "c836b8afa164bf3e12c2e8a2b95cf7b014507e7fbdb7647b940d23d4e1661060",
+      "meta.json": "c4348fa28cabf77c10877ce8db94cb7e1d865a9a6e3d45b98584b5be25b3e6b7"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E028/experiments/E028_target72/build_COMBO1/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s7_COMBO1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s7_COMBO1/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s7_COMBO1",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:15Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 3.2698228509980254,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7416754,
+      "free_hbm_before_allocation": 65074704384,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        46.11
+      ],
+      "host_queued_batch_median_us": 46.11
+    },
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s7_COMBO1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    },
+    "output_sha256": "b94d6bdf72d8c35388c6e2d0d79b0df491f34cb1a412172d333aac9c21cb0a5e",
+    "output_bytes": 2471722,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_COMBO": true
+  },
+  {
+    "case_id": "s8",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      10240,
+      512
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "a398d4979345dd444c1748ebfdab716673912f295cc53733db7b303a99e22e0f",
+    "input_file_sha256": {
+      "x.bin": "056b381e6b74f01c96e675150257d1b4d2b230864e88c23dd77a58412dace1a8",
+      "residual.bin": "aa419cca6576dc05c5a8534e424f82252cdbe21d5dfe70676936cf78579df242",
+      "gamma.bin": "bfd461ad12ec1ee3882a91542216ce9ba5f0cb0e34886584752e43a1f8964c67",
+      "bias.bin": "a77bbe97057013fabc619b746702ee182f0e905b6d28f17251488b124dc3875c",
+      "golden_output.bin": "0da6c7c7e7ec72d47cc946124ced6f357f58d61a6acec3fd8b239915dab4d569",
+      "golden_output_fp32.bin": "25ff7b5d6696e3a4dbfaca42c9b395d676563051545e4f7ff60656a7b52df36f",
+      "meta.json": "a398d4979345dd444c1748ebfdab716673912f295cc53733db7b303a99e22e0f"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s8_COMBO/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s8_COMBO/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s8_COMBO",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:18Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.068364187987754,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        10240,
+        512
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 31459328,
+      "free_hbm_before_allocation": 65074507776,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        45.9
+      ],
+      "host_queued_batch_median_us": 45.9
+    },
+    "strict": {
+      "case_id": "s8",
+      "shape": [
+        1,
+        10240,
+        512
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s8_COMBO/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 5242880,
+      "failed_elements": 444,
+      "classification_failures": 0,
+      "finite_failures": 444,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 31.0,
+      "examples": [
+        {
+          "flat_index": 8973,
+          "actual": -2.265625,
+          "expected": -2.26953125
+        },
+        {
+          "flat_index": 13805,
+          "actual": -2.12109375,
+          "expected": -2.1171875
+        },
+        {
+          "flat_index": 20197,
+          "actual": -2.40625,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 20780,
+          "actual": 2.41796875,
+          "expected": 2.4140625
+        },
+        {
+          "flat_index": 30621,
+          "actual": -2.427734375,
+          "expected": -2.431640625
+        },
+        {
+          "flat_index": 76567,
+          "actual": -2.5546875,
+          "expected": -2.55859375
+        },
+        {
+          "flat_index": 84809,
+          "actual": 2.255859375,
+          "expected": 2.251953125
+        },
+        {
+          "flat_index": 85053,
+          "actual": -2.369140625,
+          "expected": -2.365234375
+        }
+      ]
+    },
+    "output_sha256": "ed3b94d61efbb5bc0d9218e48b91487c947777794738078aae8212d244f0dbe8",
+    "output_bytes": 10485760,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null
+  },
+  {
+    "case_id": "s8",
+    "variant": "COMBO1",
+    "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "runner_sha256": "e8ae28e5af99cdbff8c1910a122bfe0dcd821ded97ef2df42ba6dee051955687",
+    "shape": [
+      1,
+      10240,
+      512
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "a398d4979345dd444c1748ebfdab716673912f295cc53733db7b303a99e22e0f",
+    "input_file_sha256": {
+      "x.bin": "056b381e6b74f01c96e675150257d1b4d2b230864e88c23dd77a58412dace1a8",
+      "residual.bin": "aa419cca6576dc05c5a8534e424f82252cdbe21d5dfe70676936cf78579df242",
+      "gamma.bin": "bfd461ad12ec1ee3882a91542216ce9ba5f0cb0e34886584752e43a1f8964c67",
+      "bias.bin": "a77bbe97057013fabc619b746702ee182f0e905b6d28f17251488b124dc3875c",
+      "golden_output.bin": "0da6c7c7e7ec72d47cc946124ced6f357f58d61a6acec3fd8b239915dab4d569",
+      "golden_output_fp32.bin": "25ff7b5d6696e3a4dbfaca42c9b395d676563051545e4f7ff60656a7b52df36f",
+      "meta.json": "a398d4979345dd444c1748ebfdab716673912f295cc53733db7b303a99e22e0f"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E028/experiments/E028_target72/build_COMBO1/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s8_COMBO1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s8_COMBO1/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s8_COMBO1",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:20Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.067747781984508,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        10240,
+        512
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 31459328,
+      "free_hbm_before_allocation": 65074360320,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        46.6
+      ],
+      "host_queued_batch_median_us": 46.6
+    },
+    "strict": {
+      "case_id": "s8",
+      "shape": [
+        1,
+        10240,
+        512
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s8_COMBO1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 5242880,
+      "failed_elements": 444,
+      "classification_failures": 0,
+      "finite_failures": 444,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 31.0,
+      "examples": [
+        {
+          "flat_index": 8973,
+          "actual": -2.265625,
+          "expected": -2.26953125
+        },
+        {
+          "flat_index": 13805,
+          "actual": -2.12109375,
+          "expected": -2.1171875
+        },
+        {
+          "flat_index": 20197,
+          "actual": -2.40625,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 20780,
+          "actual": 2.41796875,
+          "expected": 2.4140625
+        },
+        {
+          "flat_index": 30621,
+          "actual": -2.427734375,
+          "expected": -2.431640625
+        },
+        {
+          "flat_index": 76567,
+          "actual": -2.5546875,
+          "expected": -2.55859375
+        },
+        {
+          "flat_index": 84809,
+          "actual": 2.255859375,
+          "expected": 2.251953125
+        },
+        {
+          "flat_index": 85053,
+          "actual": -2.369140625,
+          "expected": -2.365234375
+        }
+      ]
+    },
+    "output_sha256": "ed3b94d61efbb5bc0d9218e48b91487c947777794738078aae8212d244f0dbe8",
+    "output_bytes": 10485760,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_COMBO": true
+  },
+  {
+    "case_id": "s9",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      4096,
+      1536
+    ],
+    "dtype": "float32",
+    "input_meta_sha256": "0dbf45da960d9fef0f49db203d2eab7b27aa877eba8da3508ee2a9421c3dd814",
+    "input_file_sha256": {
+      "x.bin": "985f83f15aa2b69bf8ab8c10f038ad672da517d318644e98e953f4b8e9bd8d9a",
+      "residual.bin": "ce99953eae39b530152026aa0c1be250a25657e7dc67af250ecbd87a5b8b2770",
+      "gamma.bin": "8d328b0be0790fb4415c7d2d1934734ab2c143ebce623f1bf36fad07b1b493a6",
+      "bias.bin": "b7999096e14aad3343520b14c12f657d252f37dedb4889d3262f9b4d80d7e63d",
+      "golden_output.bin": "ddcc77052b9164274a540c07f3e20e2c35b3b38d5d66fceb67a4d7dbe56cf13e",
+      "golden_output_fp32.bin": "ddcc77052b9164274a540c07f3e20e2c35b3b38d5d66fceb67a4d7dbe56cf13e",
+      "meta.json": "0dbf45da960d9fef0f49db203d2eab7b27aa877eba8da3508ee2a9421c3dd814"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s9_COMBO/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s9_COMBO/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s9_COMBO",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:23Z",
+    "status": "measured_strict_pass",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.2680349010042846,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        4096,
+        1536
+      ],
+      "dtype": 0,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 75509760,
+      "free_hbm_before_allocation": 65073733632,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        79.921
+      ],
+      "host_queued_batch_median_us": 79.921
+    },
+    "strict": {
+      "case_id": "s9",
+      "shape": [
+        1,
+        4096,
+        1536
+      ],
+      "dtype": "float32",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s9_COMBO/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "elements": 6291456,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 9.5367431640625e-07,
+      "max_relative_error": 0.1,
+      "examples": []
+    },
+    "output_sha256": "1e771ce21c9b9b4d06a83634dad995115d96925750f2c9132515d83dfaea03ab",
+    "output_bytes": 25165824,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null
+  },
+  {
+    "case_id": "s9",
+    "variant": "COMBO1",
+    "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "runner_sha256": "e8ae28e5af99cdbff8c1910a122bfe0dcd821ded97ef2df42ba6dee051955687",
+    "shape": [
+      1,
+      4096,
+      1536
+    ],
+    "dtype": "float32",
+    "input_meta_sha256": "0dbf45da960d9fef0f49db203d2eab7b27aa877eba8da3508ee2a9421c3dd814",
+    "input_file_sha256": {
+      "x.bin": "985f83f15aa2b69bf8ab8c10f038ad672da517d318644e98e953f4b8e9bd8d9a",
+      "residual.bin": "ce99953eae39b530152026aa0c1be250a25657e7dc67af250ecbd87a5b8b2770",
+      "gamma.bin": "8d328b0be0790fb4415c7d2d1934734ab2c143ebce623f1bf36fad07b1b493a6",
+      "bias.bin": "b7999096e14aad3343520b14c12f657d252f37dedb4889d3262f9b4d80d7e63d",
+      "golden_output.bin": "ddcc77052b9164274a540c07f3e20e2c35b3b38d5d66fceb67a4d7dbe56cf13e",
+      "golden_output_fp32.bin": "ddcc77052b9164274a540c07f3e20e2c35b3b38d5d66fceb67a4d7dbe56cf13e",
+      "meta.json": "0dbf45da960d9fef0f49db203d2eab7b27aa877eba8da3508ee2a9421c3dd814"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E028/experiments/E028_target72/build_COMBO1/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s9_COMBO1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s9_COMBO1/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s9_COMBO1",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:26Z",
+    "status": "measured_strict_pass",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 3.2699109020177275,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        4096,
+        1536
+      ],
+      "dtype": 0,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 75509760,
+      "free_hbm_before_allocation": 65074171904,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        92.191
+      ],
+      "host_queued_batch_median_us": 92.191
+    },
+    "strict": {
+      "case_id": "s9",
+      "shape": [
+        1,
+        4096,
+        1536
+      ],
+      "dtype": "float32",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s9_COMBO1/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "elements": 6291456,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 9.5367431640625e-07,
+      "max_relative_error": 0.1,
+      "examples": []
+    },
+    "output_sha256": "1e771ce21c9b9b4d06a83634dad995115d96925750f2c9132515d83dfaea03ab",
+    "output_bytes": 25165824,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_COMBO": true
+  },
+  {
+    "case_id": "s10",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      8192,
+      1024
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "35ee6e52c74ca33459fe8abed42604686f5b3c70ba8672cf8947b38e30189453",
+    "input_file_sha256": {
+      "x.bin": "5820b6566f50ea2e07ff7f5af1bd6dd2e24aad0ddd54337f7e79244bfd0efe4b",
+      "residual.bin": "45d907f39c4f61f6be8834d6bba328ea95bd587df758a7676638bae4405821e8",
+      "gamma.bin": "e1a355b79198fe625ff18c3af804be1d9db56cac6986e7dcd35c59964bd646e7",
+      "bias.bin": "a77237cf2c95a033abfefe68fc7f89eae2709222c3a031a08b3f9a0b7c96570c",
+      "golden_output.bin": "4e9f8ad7ce74a07e4cc95dc0a33f81fc0009e3fb9455688e88fac7cb17a1f254",
+      "golden_output_fp32.bin": "8a6c2dd391ff461a4cf1a203521b57f5caf9ea10d5a7893abfb262006140ce7b",
+      "meta.json": "35ee6e52c74ca33459fe8abed42604686f5b3c70ba8672cf8947b38e30189453"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s10_COMBO/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s10_COMBO/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s10_COMBO",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:29Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.2683476739912294,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        8192,
+        1024
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 50335744,
+      "free_hbm_before_allocation": 65074302976,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        62.05
+      ],
+      "host_queued_batch_median_us": 62.05
+    },
+    "strict": {
+      "case_id": "s10",
+      "shape": [
+        1,
+        8192,
+        1024
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s10_COMBO/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 8388608,
+      "failed_elements": 783,
+      "classification_failures": 0,
+      "finite_failures": 783,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 158.53846153846155,
+      "examples": [
+        {
+          "flat_index": 12212,
+          "actual": 2.56640625,
+          "expected": 2.5625
+        },
+        {
+          "flat_index": 31151,
+          "actual": -2.45703125,
+          "expected": -2.4609375
+        },
+        {
+          "flat_index": 37310,
+          "actual": 2.07421875,
+          "expected": 2.0703125
+        },
+        {
+          "flat_index": 50945,
+          "actual": -2.330078125,
+          "expected": -2.333984375
+        },
+        {
+          "flat_index": 61843,
+          "actual": -2.740234375,
+          "expected": -2.744140625
+        },
+        {
+          "flat_index": 97787,
+          "actual": -2.033203125,
+          "expected": -2.029296875
+        },
+        {
+          "flat_index": 106713,
+          "actual": 2.052734375,
+          "expected": 2.048828125
+        },
+        {
+          "flat_index": 119001,
+          "actual": 2.228515625,
+          "expected": 2.224609375
+        }
+      ]
+    },
+    "output_sha256": "42a30ad671c4b467d362dd136762be240f95c2b7f9ef8c0bad31120ef82abf35",
+    "output_bytes": 16777216,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null
+  },
+  {
+    "case_id": "s10",
+    "variant": "COMBO1",
+    "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "runner_sha256": "e8ae28e5af99cdbff8c1910a122bfe0dcd821ded97ef2df42ba6dee051955687",
+    "shape": [
+      1,
+      8192,
+      1024
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "35ee6e52c74ca33459fe8abed42604686f5b3c70ba8672cf8947b38e30189453",
+    "input_file_sha256": {
+      "x.bin": "5820b6566f50ea2e07ff7f5af1bd6dd2e24aad0ddd54337f7e79244bfd0efe4b",
+      "residual.bin": "45d907f39c4f61f6be8834d6bba328ea95bd587df758a7676638bae4405821e8",
+      "gamma.bin": "e1a355b79198fe625ff18c3af804be1d9db56cac6986e7dcd35c59964bd646e7",
+      "bias.bin": "a77237cf2c95a033abfefe68fc7f89eae2709222c3a031a08b3f9a0b7c96570c",
+      "golden_output.bin": "4e9f8ad7ce74a07e4cc95dc0a33f81fc0009e3fb9455688e88fac7cb17a1f254",
+      "golden_output_fp32.bin": "8a6c2dd391ff461a4cf1a203521b57f5caf9ea10d5a7893abfb262006140ce7b",
+      "meta.json": "35ee6e52c74ca33459fe8abed42604686f5b3c70ba8672cf8947b38e30189453"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E028/experiments/E028_target72/build_COMBO1/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s10_COMBO1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s10_COMBO1/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s10_COMBO1",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:32Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.2685197360115126,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        8192,
+        1024
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 50335744,
+      "free_hbm_before_allocation": 65073831936,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        66.951
+      ],
+      "host_queued_batch_median_us": 66.951
+    },
+    "strict": {
+      "case_id": "s10",
+      "shape": [
+        1,
+        8192,
+        1024
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s10_COMBO1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 8388608,
+      "failed_elements": 783,
+      "classification_failures": 0,
+      "finite_failures": 783,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 158.53846153846155,
+      "examples": [
+        {
+          "flat_index": 12212,
+          "actual": 2.56640625,
+          "expected": 2.5625
+        },
+        {
+          "flat_index": 31151,
+          "actual": -2.45703125,
+          "expected": -2.4609375
+        },
+        {
+          "flat_index": 37310,
+          "actual": 2.07421875,
+          "expected": 2.0703125
+        },
+        {
+          "flat_index": 50945,
+          "actual": -2.330078125,
+          "expected": -2.333984375
+        },
+        {
+          "flat_index": 61843,
+          "actual": -2.740234375,
+          "expected": -2.744140625
+        },
+        {
+          "flat_index": 97787,
+          "actual": -2.033203125,
+          "expected": -2.029296875
+        },
+        {
+          "flat_index": 106713,
+          "actual": 2.052734375,
+          "expected": 2.048828125
+        },
+        {
+          "flat_index": 119001,
+          "actual": 2.228515625,
+          "expected": 2.224609375
+        }
+      ]
+    },
+    "output_sha256": "42a30ad671c4b467d362dd136762be240f95c2b7f9ef8c0bad31120ef82abf35",
+    "output_bytes": 16777216,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_COMBO": true
+  },
+  {
+    "case_id": "s11",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      3749,
+      3083
+    ],
+    "dtype": "float32",
+    "input_meta_sha256": "dc3b4ad0961e33e34a50ed5ce2fdc18f3a6ef5db1469eab1560362541aafc6c1",
+    "input_file_sha256": {
+      "x.bin": "6680614d9a35bcc7536ecfae71630f1e196262ac098a863fe6347102bb873f28",
+      "residual.bin": "73837e290cc3aaf3b9697ec42e1ffffeb7fb93673169e77bc6381e2021eb1ffa",
+      "gamma.bin": "15793378be6dbc2381e97b20db8d365af6958f6de98f366ab2d9d80af94c03b9",
+      "bias.bin": "1bf65ab6aadd9567d73cb2ae269d9fb8ea5ce81c3e259915ed1e21d0a99f87dd",
+      "golden_output.bin": "aa0ba34322f72e53245c5c011629af8b6789d14470668149c5d536298ddda5f6",
+      "golden_output_fp32.bin": "aa0ba34322f72e53245c5c011629af8b6789d14470668149c5d536298ddda5f6",
+      "meta.json": "dc3b4ad0961e33e34a50ed5ce2fdc18f3a6ef5db1469eab1560362541aafc6c1"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s11_COMBO/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s11_COMBO/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s11_COMBO",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:35Z",
+    "status": "measured_strict_pass",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.2679709310177714,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3749,
+        3083
+      ],
+      "dtype": 0,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 138722668,
+      "free_hbm_before_allocation": 65073250304,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        97.202
+      ],
+      "host_queued_batch_median_us": 97.202
+    },
+    "strict": {
+      "case_id": "s11",
+      "shape": [
+        1,
+        3749,
+        3083
+      ],
+      "dtype": "float32",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s11_COMBO/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "elements": 11558167,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 9.5367431640625e-07,
+      "max_relative_error": 0.05263157894736842,
+      "examples": []
+    },
+    "output_sha256": "a2903e3ef5ffdeb7e63cfcb9466fe3e6e0784443c80bd889e614f57e1db98298",
+    "output_bytes": 46232668,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null
+  },
+  {
+    "case_id": "s11",
+    "variant": "COMBO1",
+    "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "runner_sha256": "e8ae28e5af99cdbff8c1910a122bfe0dcd821ded97ef2df42ba6dee051955687",
+    "shape": [
+      1,
+      3749,
+      3083
+    ],
+    "dtype": "float32",
+    "input_meta_sha256": "dc3b4ad0961e33e34a50ed5ce2fdc18f3a6ef5db1469eab1560362541aafc6c1",
+    "input_file_sha256": {
+      "x.bin": "6680614d9a35bcc7536ecfae71630f1e196262ac098a863fe6347102bb873f28",
+      "residual.bin": "73837e290cc3aaf3b9697ec42e1ffffeb7fb93673169e77bc6381e2021eb1ffa",
+      "gamma.bin": "15793378be6dbc2381e97b20db8d365af6958f6de98f366ab2d9d80af94c03b9",
+      "bias.bin": "1bf65ab6aadd9567d73cb2ae269d9fb8ea5ce81c3e259915ed1e21d0a99f87dd",
+      "golden_output.bin": "aa0ba34322f72e53245c5c011629af8b6789d14470668149c5d536298ddda5f6",
+      "golden_output_fp32.bin": "aa0ba34322f72e53245c5c011629af8b6789d14470668149c5d536298ddda5f6",
+      "meta.json": "dc3b4ad0961e33e34a50ed5ce2fdc18f3a6ef5db1469eab1560362541aafc6c1"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E028/experiments/E028_target72/build_COMBO1/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s11_COMBO1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s11_COMBO1/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s11_COMBO1",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:38Z",
+    "status": "measured_strict_pass",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 3.2700905939855147,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3749,
+        3083
+      ],
+      "dtype": 0,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 138722668,
+      "free_hbm_before_allocation": 65073868800,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        100.861
+      ],
+      "host_queued_batch_median_us": 100.861
+    },
+    "strict": {
+      "case_id": "s11",
+      "shape": [
+        1,
+        3749,
+        3083
+      ],
+      "dtype": "float32",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s11_COMBO1/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "elements": 11558167,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 9.5367431640625e-07,
+      "max_relative_error": 0.05263157894736842,
+      "examples": []
+    },
+    "output_sha256": "a2903e3ef5ffdeb7e63cfcb9466fe3e6e0784443c80bd889e614f57e1db98298",
+    "output_bytes": 46232668,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_COMBO": true
+  },
+  {
+    "case_id": "s12",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      3408,
+      4096
+    ],
+    "dtype": "bfloat16",
+    "input_meta_sha256": "3a39cabf316064f6fed3f60439e439cebe082b158a5e7f468b09d6946babf1ce",
+    "input_file_sha256": {
+      "x.bin": "b12cf8d23dde265afa53aa7e0c294f1d0ee564c6b27776c6007fbb9a0a295a32",
+      "residual.bin": "b18cb385562f3b09880c3bd25dece1e787a3f074b1f9edf81c244685dc84fcee",
+      "gamma.bin": "f4194f9994aca84da4af0abd191c800607ec31f07b91574b81532034018c9806",
+      "bias.bin": "1c2a3f219cedd815678c3adec094de68574209a25ba91ac95b13e4b46362162f",
+      "golden_output.bin": "0f98ff04b46bf5ac962e17efe4428bbe418108d0418a7cb44d5fee3419b10020",
+      "golden_output_fp32.bin": "d36dc704a9be712cb5864e5903e20e36d6a09f3d69ea5ce8da036e15a040fb7c",
+      "meta.json": "3a39cabf316064f6fed3f60439e439cebe082b158a5e7f468b09d6946babf1ce"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s12_COMBO/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s12_COMBO/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s12_COMBO",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:43Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 3.270090144011192,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3408,
+        4096
+      ],
+      "dtype": 2,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 83771392,
+      "free_hbm_before_allocation": 65073446912,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        107.071
+      ],
+      "host_queued_batch_median_us": 107.071
+    },
+    "strict": {
+      "case_id": "s12",
+      "shape": [
+        1,
+        3408,
+        4096
+      ],
+      "dtype": "bfloat16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s12_COMBO/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 13959168,
+      "failed_elements": 75,
+      "classification_failures": 0,
+      "finite_failures": 75,
+      "max_abs_error": 0.015625,
+      "max_relative_error": 0.038461538461538464,
+      "examples": [
+        {
+          "flat_index": 15009,
+          "actual": -1.5234375,
+          "expected": -1.53125
+        },
+        {
+          "flat_index": 16693,
+          "actual": -1.109375,
+          "expected": -1.1171875
+        },
+        {
+          "flat_index": 152983,
+          "actual": 0.5703125,
+          "expected": 0.56640625
+        },
+        {
+          "flat_index": 239388,
+          "actual": 1.375,
+          "expected": 1.3671875
+        },
+        {
+          "flat_index": 254722,
+          "actual": 0.71875,
+          "expected": 0.72265625
+        },
+        {
+          "flat_index": 416946,
+          "actual": 0.64453125,
+          "expected": 0.6484375
+        },
+        {
+          "flat_index": 537932,
+          "actual": -0.375,
+          "expected": -0.376953125
+        },
+        {
+          "flat_index": 556149,
+          "actual": 0.5234375,
+          "expected": 0.52734375
+        }
+      ]
+    },
+    "output_sha256": "c247d3e474464589bcb3d9cd955e8a9b455ed0307a6eeb3cf5e533b0f582ca16",
+    "output_bytes": 27918336,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null
+  },
+  {
+    "case_id": "s12",
+    "variant": "COMBO1",
+    "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "runner_sha256": "e8ae28e5af99cdbff8c1910a122bfe0dcd821ded97ef2df42ba6dee051955687",
+    "shape": [
+      1,
+      3408,
+      4096
+    ],
+    "dtype": "bfloat16",
+    "input_meta_sha256": "3a39cabf316064f6fed3f60439e439cebe082b158a5e7f468b09d6946babf1ce",
+    "input_file_sha256": {
+      "x.bin": "b12cf8d23dde265afa53aa7e0c294f1d0ee564c6b27776c6007fbb9a0a295a32",
+      "residual.bin": "b18cb385562f3b09880c3bd25dece1e787a3f074b1f9edf81c244685dc84fcee",
+      "gamma.bin": "f4194f9994aca84da4af0abd191c800607ec31f07b91574b81532034018c9806",
+      "bias.bin": "1c2a3f219cedd815678c3adec094de68574209a25ba91ac95b13e4b46362162f",
+      "golden_output.bin": "0f98ff04b46bf5ac962e17efe4428bbe418108d0418a7cb44d5fee3419b10020",
+      "golden_output_fp32.bin": "d36dc704a9be712cb5864e5903e20e36d6a09f3d69ea5ce8da036e15a040fb7c",
+      "meta.json": "3a39cabf316064f6fed3f60439e439cebe082b158a5e7f468b09d6946babf1ce"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E028/experiments/E028_target72/build_COMBO1/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s12_COMBO1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s12_COMBO1/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s12_COMBO1",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:47Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 3.269828481017612,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3408,
+        4096
+      ],
+      "dtype": 2,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 83771392,
+      "free_hbm_before_allocation": 65073545216,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        106.431
+      ],
+      "host_queued_batch_median_us": 106.431
+    },
+    "strict": {
+      "case_id": "s12",
+      "shape": [
+        1,
+        3408,
+        4096
+      ],
+      "dtype": "bfloat16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s12_COMBO1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 13959168,
+      "failed_elements": 75,
+      "classification_failures": 0,
+      "finite_failures": 75,
+      "max_abs_error": 0.015625,
+      "max_relative_error": 0.038461538461538464,
+      "examples": [
+        {
+          "flat_index": 15009,
+          "actual": -1.5234375,
+          "expected": -1.53125
+        },
+        {
+          "flat_index": 16693,
+          "actual": -1.109375,
+          "expected": -1.1171875
+        },
+        {
+          "flat_index": 152983,
+          "actual": 0.5703125,
+          "expected": 0.56640625
+        },
+        {
+          "flat_index": 239388,
+          "actual": 1.375,
+          "expected": 1.3671875
+        },
+        {
+          "flat_index": 254722,
+          "actual": 0.71875,
+          "expected": 0.72265625
+        },
+        {
+          "flat_index": 416946,
+          "actual": 0.64453125,
+          "expected": 0.6484375
+        },
+        {
+          "flat_index": 537932,
+          "actual": -0.375,
+          "expected": -0.376953125
+        },
+        {
+          "flat_index": 556149,
+          "actual": 0.5234375,
+          "expected": 0.52734375
+        }
+      ]
+    },
+    "output_sha256": "c247d3e474464589bcb3d9cd955e8a9b455ed0307a6eeb3cf5e533b0f582ca16",
+    "output_bytes": 27918336,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_COMBO": true
+  },
+  {
+    "case_id": "s13",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      10300,
+      3079
+    ],
+    "dtype": "float32",
+    "input_meta_sha256": "5a165920c5fe7ae74f2cc44b1923915028f09f45d4bbbdea5b3505cee7efa90c",
+    "input_file_sha256": {
+      "x.bin": "76d39d09c692e12c24963af0796a3a70eaa5274965fe3bb870b887fb537f8b10",
+      "residual.bin": "0aca55ef84811058c47e75c49497355014ed2174f4a51b1cc1560d9554eb132d",
+      "gamma.bin": "e3c9477f97dec309c156d60973854720ef2446493d146eb2c869be6569842387",
+      "bias.bin": "bc8c54782b230963c8d26c113c673746a1520d56b041b6d1a3af97f987832662",
+      "golden_output.bin": "640ea0527cbda7d2831f637f32f346dafeb0d6d89152d7c5d597478edd5424b6",
+      "golden_output_fp32.bin": "640ea0527cbda7d2831f637f32f346dafeb0d6d89152d7c5d597478edd5424b6",
+      "meta.json": "5a165920c5fe7ae74f2cc44b1923915028f09f45d4bbbdea5b3505cee7efa90c"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s13_COMBO/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s13_COMBO/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s13_COMBO",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:51Z",
+    "status": "measured_strict_pass",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.2686476570088416,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        10300,
+        3079
+      ],
+      "dtype": 0,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 380589032,
+      "free_hbm_before_allocation": 65073639424,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        390.965
+      ],
+      "host_queued_batch_median_us": 390.965
+    },
+    "strict": {
+      "case_id": "s13",
+      "shape": [
+        1,
+        10300,
+        3079
+      ],
+      "dtype": "float32",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s13_COMBO/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "elements": 31713700,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 9.5367431640625e-07,
+      "max_relative_error": 0.15384615384615385,
+      "examples": []
+    },
+    "output_sha256": "9d091b01f4af4de9279b51f3f1357e3e9490e3c2d1ba3c2526a9a2552a66bc51",
+    "output_bytes": 126854800,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null
+  },
+  {
+    "case_id": "s13",
+    "variant": "COMBO1",
+    "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "runner_sha256": "e8ae28e5af99cdbff8c1910a122bfe0dcd821ded97ef2df42ba6dee051955687",
+    "shape": [
+      1,
+      10300,
+      3079
+    ],
+    "dtype": "float32",
+    "input_meta_sha256": "5a165920c5fe7ae74f2cc44b1923915028f09f45d4bbbdea5b3505cee7efa90c",
+    "input_file_sha256": {
+      "x.bin": "76d39d09c692e12c24963af0796a3a70eaa5274965fe3bb870b887fb537f8b10",
+      "residual.bin": "0aca55ef84811058c47e75c49497355014ed2174f4a51b1cc1560d9554eb132d",
+      "gamma.bin": "e3c9477f97dec309c156d60973854720ef2446493d146eb2c869be6569842387",
+      "bias.bin": "bc8c54782b230963c8d26c113c673746a1520d56b041b6d1a3af97f987832662",
+      "golden_output.bin": "640ea0527cbda7d2831f637f32f346dafeb0d6d89152d7c5d597478edd5424b6",
+      "golden_output_fp32.bin": "640ea0527cbda7d2831f637f32f346dafeb0d6d89152d7c5d597478edd5424b6",
+      "meta.json": "5a165920c5fe7ae74f2cc44b1923915028f09f45d4bbbdea5b3505cee7efa90c"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E028/experiments/E028_target72/build_COMBO1/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s13_COMBO1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s13_COMBO1/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s13_COMBO1",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:45:56Z",
+    "status": "measured_strict_pass",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.2687337679963093,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        10300,
+        3079
+      ],
+      "dtype": 0,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 380589032,
+      "free_hbm_before_allocation": 65073606656,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        407.104
+      ],
+      "host_queued_batch_median_us": 407.104
+    },
+    "strict": {
+      "case_id": "s13",
+      "shape": [
+        1,
+        10300,
+        3079
+      ],
+      "dtype": "float32",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s13_COMBO1/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "elements": 31713700,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 9.5367431640625e-07,
+      "max_relative_error": 0.15384615384615385,
+      "examples": []
+    },
+    "output_sha256": "9d091b01f4af4de9279b51f3f1357e3e9490e3c2d1ba3c2526a9a2552a66bc51",
+    "output_bytes": 126854800,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_COMBO": true
+  },
+  {
+    "case_id": "s14_reduced",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      3841,
+      128
+    ],
+    "dtype": "bfloat16",
+    "input_meta_sha256": "f7a7514376e1f8a013dea814f3630f9f41c0c3ea0a92e91a03c3647306e544fb",
+    "input_file_sha256": {
+      "x.bin": "d642241d4b7b6b45a3c5adc51c6f9b3566f6ca47476f0991b11001491a4fac41",
+      "residual.bin": "bff7fb8fde915f1edf92f85356b8184b4ecfbd23a9c5b02438149ffee111b82a",
+      "gamma.bin": "63dd7e2d2aee80fa3a11ff821108563f0163479c3b946d8be4d3aa0ae8d104c0",
+      "bias.bin": "0e2f9d98f83c06efcc21cdd3f2c5e1f7a60663cc82c63183ada3963625799eb4",
+      "golden_output.bin": "7f3f28ab8c00b4688041b2426df05f103b1b91643f8d1ae8024e211dfe1560ba",
+      "golden_output_fp32.bin": "a3747b37ce70e5a37d59f7fc7e108dbf6740afa283abaecb084a1beffdc88b89",
+      "meta.json": "f7a7514376e1f8a013dea814f3630f9f41c0c3ea0a92e91a03c3647306e544fb"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s14_reduced_COMBO/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s14_reduced_COMBO/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s14_reduced_COMBO",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:46:00Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.2678760190028697,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3841,
+        128
+      ],
+      "dtype": 2,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 2950400,
+      "free_hbm_before_allocation": 65073451008,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        32.45
+      ],
+      "host_queued_batch_median_us": 32.45
+    },
+    "strict": {
+      "case_id": "s14_reduced",
+      "shape": [
+        1,
+        3841,
+        128
+      ],
+      "dtype": "bfloat16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s14_reduced_COMBO/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 491648,
+      "failed_elements": 3,
+      "classification_failures": 0,
+      "finite_failures": 3,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 0.006060606060606061,
+      "examples": [
+        {
+          "flat_index": 327633,
+          "actual": -0.640625,
+          "expected": -0.64453125
+        },
+        {
+          "flat_index": 406913,
+          "actual": -0.65234375,
+          "expected": -0.65625
+        },
+        {
+          "flat_index": 472180,
+          "actual": 0.92578125,
+          "expected": 0.921875
+        }
+      ]
+    },
+    "output_sha256": "75683b6be8a26720323aa236b726ad8a1599ab568b208ee037a187c7ec5ce837",
+    "output_bytes": 983296,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null
+  },
+  {
+    "case_id": "s14_reduced",
+    "variant": "COMBO1",
+    "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "runner_sha256": "e8ae28e5af99cdbff8c1910a122bfe0dcd821ded97ef2df42ba6dee051955687",
+    "shape": [
+      1,
+      3841,
+      128
+    ],
+    "dtype": "bfloat16",
+    "input_meta_sha256": "f7a7514376e1f8a013dea814f3630f9f41c0c3ea0a92e91a03c3647306e544fb",
+    "input_file_sha256": {
+      "x.bin": "d642241d4b7b6b45a3c5adc51c6f9b3566f6ca47476f0991b11001491a4fac41",
+      "residual.bin": "bff7fb8fde915f1edf92f85356b8184b4ecfbd23a9c5b02438149ffee111b82a",
+      "gamma.bin": "63dd7e2d2aee80fa3a11ff821108563f0163479c3b946d8be4d3aa0ae8d104c0",
+      "bias.bin": "0e2f9d98f83c06efcc21cdd3f2c5e1f7a60663cc82c63183ada3963625799eb4",
+      "golden_output.bin": "7f3f28ab8c00b4688041b2426df05f103b1b91643f8d1ae8024e211dfe1560ba",
+      "golden_output_fp32.bin": "a3747b37ce70e5a37d59f7fc7e108dbf6740afa283abaecb084a1beffdc88b89",
+      "meta.json": "f7a7514376e1f8a013dea814f3630f9f41c0c3ea0a92e91a03c3647306e544fb"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E028/experiments/E028_target72/build_COMBO1/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s14_reduced_COMBO1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s14_reduced_COMBO1/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s14_reduced_COMBO1",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:46:03Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 3.2697777110151947,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        3841,
+        128
+      ],
+      "dtype": 2,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 2950400,
+      "free_hbm_before_allocation": 65072873472,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        31.311
+      ],
+      "host_queued_batch_median_us": 31.311
+    },
+    "strict": {
+      "case_id": "s14_reduced",
+      "shape": [
+        1,
+        3841,
+        128
+      ],
+      "dtype": "bfloat16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s14_reduced_COMBO1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 491648,
+      "failed_elements": 3,
+      "classification_failures": 0,
+      "finite_failures": 3,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 0.006060606060606061,
+      "examples": [
+        {
+          "flat_index": 327633,
+          "actual": -0.640625,
+          "expected": -0.64453125
+        },
+        {
+          "flat_index": 406913,
+          "actual": -0.65234375,
+          "expected": -0.65625
+        },
+        {
+          "flat_index": 472180,
+          "actual": 0.92578125,
+          "expected": 0.921875
+        }
+      ]
+    },
+    "output_sha256": "75683b6be8a26720323aa236b726ad8a1599ab568b208ee037a187c7ec5ce837",
+    "output_bytes": 983296,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_COMBO": true
+  },
+  {
+    "case_id": "s15_reduced",
+    "variant": "COMBO",
+    "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+    "runner_sha256": "e4365fad501d28222e4057b6390be5dda495e722a584ab168ab6bd3881854163",
+    "shape": [
+      1,
+      161,
+      8192
+    ],
+    "dtype": "bfloat16",
+    "input_meta_sha256": "3c1b7edc1143b67b8f848a21ff17d3057ae462cf8f75da343fb5261c61b51260",
+    "input_file_sha256": {
+      "x.bin": "df2d0655f6bb62e02dbe0c6908e9d3459b52c709353db4ad6cd9f55eeae3d26a",
+      "residual.bin": "dbbf1a59e5da0c1c6a77a3b4dfdd797d454229b7a13ec06706f113210ded8c62",
+      "gamma.bin": "aeb1bb85fd10eacdf0235787b0fdeff2c73f94afd80f47ba2ff35cf3a0bdcf69",
+      "bias.bin": "7160116958ef1aaf9cb2be78f34de5d6cea3ccb0aff71b3cf52994499ae2bea5",
+      "golden_output.bin": "3d2c7e994385b5516ffedd7f11b27bbe7449f95f2826622be2f9d32c2b55b71b",
+      "golden_output_fp32.bin": "d1e641af1311ea3c10f9bca3ff4c5842aed7060441ea0318bb7c74744fc82d92",
+      "meta.json": "3c1b7edc1143b67b8f848a21ff17d3057ae462cf8f75da343fb5261c61b51260"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E027/experiments/E027_target70/build_COMBO/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s15_reduced_COMBO/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s15_reduced_COMBO/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s15_reduced_COMBO",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:46:06Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.2683464039873797,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        161,
+        8192
+      ],
+      "dtype": 2,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7946240,
+      "free_hbm_before_allocation": 65073037312,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        32.091
+      ],
+      "host_queued_batch_median_us": 32.091
+    },
+    "strict": {
+      "case_id": "s15_reduced",
+      "shape": [
+        1,
+        161,
+        8192
+      ],
+      "dtype": "bfloat16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s15_reduced_COMBO/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1318912,
+      "failed_elements": 14,
+      "classification_failures": 0,
+      "finite_failures": 14,
+      "max_abs_error": 0.015625,
+      "max_relative_error": 0.007692307692307693,
+      "examples": [
+        {
+          "flat_index": 48451,
+          "actual": -1.546875,
+          "expected": -1.5546875
+        },
+        {
+          "flat_index": 358806,
+          "actual": 1.34375,
+          "expected": 1.3359375
+        },
+        {
+          "flat_index": 373526,
+          "actual": 0.7265625,
+          "expected": 0.72265625
+        },
+        {
+          "flat_index": 380037,
+          "actual": 1.1875,
+          "expected": 1.1796875
+        },
+        {
+          "flat_index": 402061,
+          "actual": -2.078125,
+          "expected": -2.0625
+        },
+        {
+          "flat_index": 434079,
+          "actual": 1.03125,
+          "expected": 1.0390625
+        },
+        {
+          "flat_index": 524436,
+          "actual": -1.421875,
+          "expected": -1.4296875
+        },
+        {
+          "flat_index": 583554,
+          "actual": -2.75,
+          "expected": -2.765625
+        }
+      ]
+    },
+    "output_sha256": "8c49cdf8a36c6671fc3414b00d7e8ee8f7cb2b0d81b38579507cdf16d2c79707",
+    "output_bytes": 2637824,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null
+  },
+  {
+    "case_id": "s15_reduced",
+    "variant": "COMBO1",
+    "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+    "runner_sha256": "e8ae28e5af99cdbff8c1910a122bfe0dcd821ded97ef2df42ba6dee051955687",
+    "shape": [
+      1,
+      161,
+      8192
+    ],
+    "dtype": "bfloat16",
+    "input_meta_sha256": "3c1b7edc1143b67b8f848a21ff17d3057ae462cf8f75da343fb5261c61b51260",
+    "input_file_sha256": {
+      "x.bin": "df2d0655f6bb62e02dbe0c6908e9d3459b52c709353db4ad6cd9f55eeae3d26a",
+      "residual.bin": "dbbf1a59e5da0c1c6a77a3b4dfdd797d454229b7a13ec06706f113210ded8c62",
+      "gamma.bin": "aeb1bb85fd10eacdf0235787b0fdeff2c73f94afd80f47ba2ff35cf3a0bdcf69",
+      "bias.bin": "7160116958ef1aaf9cb2be78f34de5d6cea3ccb0aff71b3cf52994499ae2bea5",
+      "golden_output.bin": "3d2c7e994385b5516ffedd7f11b27bbe7449f95f2826622be2f9d32c2b55b71b",
+      "golden_output_fp32.bin": "d1e641af1311ea3c10f9bca3ff4c5842aed7060441ea0318bb7c74744fc82d92",
+      "meta.json": "3c1b7edc1143b67b8f848a21ff17d3057ae462cf8f75da343fb5261c61b51260"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E028/experiments/E028_target72/build_COMBO1/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s15_reduced_COMBO1/case",
+      "--result",
+      "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s15_reduced_COMBO1/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s15_reduced_COMBO1",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-12T11:46:08Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.2680965210020076,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "c562589d1509ddc08557d5705491a63e0ee707b0728252592302ab299c58f426",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        161,
+        8192
+      ],
+      "dtype": 2,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 7946240,
+      "free_hbm_before_allocation": 65073000448,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        46.311
+      ],
+      "host_queued_batch_median_us": 46.311
+    },
+    "strict": {
+      "case_id": "s15_reduced",
+      "shape": [
+        1,
+        161,
+        8192
+      ],
+      "dtype": "bfloat16",
+      "output": "/home/developer/addrms_E028/experiments/E028_target72/results/phase06/check_s15_reduced_COMBO1/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1318912,
+      "failed_elements": 14,
+      "classification_failures": 0,
+      "finite_failures": 14,
+      "max_abs_error": 0.015625,
+      "max_relative_error": 0.007692307692307693,
+      "examples": [
+        {
+          "flat_index": 48451,
+          "actual": -1.546875,
+          "expected": -1.5546875
+        },
+        {
+          "flat_index": 358806,
+          "actual": 1.34375,
+          "expected": 1.3359375
+        },
+        {
+          "flat_index": 373526,
+          "actual": 0.7265625,
+          "expected": 0.72265625
+        },
+        {
+          "flat_index": 380037,
+          "actual": 1.1875,
+          "expected": 1.1796875
+        },
+        {
+          "flat_index": 402061,
+          "actual": -2.078125,
+          "expected": -2.0625
+        },
+        {
+          "flat_index": 434079,
+          "actual": 1.03125,
+          "expected": 1.0390625
+        },
+        {
+          "flat_index": 524436,
+          "actual": -1.421875,
+          "expected": -1.4296875
+        },
+        {
+          "flat_index": 583554,
+          "actual": -2.75,
+          "expected": -2.765625
+        }
+      ]
+    },
+    "output_sha256": "8c49cdf8a36c6671fc3414b00d7e8ee8f7cb2b0d81b38579507cdf16d2c79707",
+    "output_bytes": 2637824,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_COMBO": true
+  }
+]

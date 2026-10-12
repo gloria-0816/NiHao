@@ -1,0 +1,129 @@
+{
+  "kind": "Arithmetic planning only; fixed historical TBest, no new score or measured gain",
+  "official_baseline": 65.36,
+  "target_score": 72,
+  "source_submission": 752881,
+  "recomputed_score": 65.3660360695563,
+  "rows": [
+    {
+      "case_id": 1,
+      "baseline_us": 2.37,
+      "tbest_us": 1.16,
+      "ratio": 2.043103448275862,
+      "estimated_case_score": 36.204341060871535,
+      "maximum_total_score_gain_if_at_tbest": 4.253043929275231
+    },
+    {
+      "case_id": 2,
+      "baseline_us": 2.62,
+      "tbest_us": 1.67,
+      "ratio": 1.568862275449102,
+      "estimated_case_score": 47.377614244508436,
+      "maximum_total_score_gain_if_at_tbest": 3.508159050366104
+    },
+    {
+      "case_id": 3,
+      "baseline_us": 2.75,
+      "tbest_us": 2.16,
+      "ratio": 1.2731481481481481,
+      "estimated_case_score": 62.67257451797519,
+      "maximum_total_score_gain_if_at_tbest": 2.488495032134987
+    },
+    {
+      "case_id": 4,
+      "baseline_us": 7.44,
+      "tbest_us": 4.32,
+      "ratio": 1.722222222222222,
+      "estimated_case_score": 42.721885523990046,
+      "maximum_total_score_gain_if_at_tbest": 3.81854096506733
+    },
+    {
+      "case_id": 5,
+      "baseline_us": 5.9,
+      "tbest_us": 4.79,
+      "ratio": 1.2317327766179542,
+      "estimated_case_score": 66.0488130015624,
+      "maximum_total_score_gain_if_at_tbest": 2.263412466562507
+    },
+    {
+      "case_id": 6,
+      "baseline_us": 11.73,
+      "tbest_us": 8.02,
+      "ratio": 1.4625935162094765,
+      "estimated_case_score": 51.60714188206868,
+      "maximum_total_score_gain_if_at_tbest": 3.2261905411954213
+    },
+    {
+      "case_id": 7,
+      "baseline_us": 16.09,
+      "tbest_us": 10.5,
+      "ratio": 1.5323809523809524,
+      "estimated_case_score": 48.71693448912603,
+      "maximum_total_score_gain_if_at_tbest": 3.4188710340582644
+    },
+    {
+      "case_id": 8,
+      "baseline_us": 31.77,
+      "tbest_us": 29.72,
+      "ratio": 1.068977119784657,
+      "estimated_case_score": 85.87318027531296,
+      "maximum_total_score_gain_if_at_tbest": 0.9417879816458026
+    },
+    {
+      "case_id": 9,
+      "baseline_us": 70.86,
+      "tbest_us": 67.81,
+      "ratio": 1.0449786167231971,
+      "estimated_case_score": 90.21130403342936,
+      "maximum_total_score_gain_if_at_tbest": 0.6525797311047096
+    },
+    {
+      "case_id": 10,
+      "baseline_us": 47.93,
+      "tbest_us": 45.87,
+      "ratio": 1.0449095269239155,
+      "estimated_case_score": 90.22457654799044,
+      "maximum_total_score_gain_if_at_tbest": 0.6516948968006375
+    },
+    {
+      "case_id": 11,
+      "baseline_us": 156.78,
+      "tbest_us": 130.91,
+      "ratio": 1.1976166832174777,
+      "estimated_case_score": 69.21578733322706,
+      "maximum_total_score_gain_if_at_tbest": 2.0522808444515297
+    },
+    {
+      "case_id": 12,
+      "baseline_us": 80.24,
+      "tbest_us": 75.96,
+      "ratio": 1.0563454449710374,
+      "estimated_case_score": 88.09089811767069,
+      "maximum_total_score_gain_if_at_tbest": 0.7939401254886207
+    },
+    {
+      "case_id": 13,
+      "baseline_us": 550.59,
+      "tbest_us": 397.19,
+      "ratio": 1.3862131473602055,
+      "estimated_case_score": 55.388322277893224,
+      "maximum_total_score_gain_if_at_tbest": 2.974111848140452
+    },
+    {
+      "case_id": 14,
+      "baseline_us": 4050.0,
+      "tbest_us": 3530.0,
+      "ratio": 1.1473087818696883,
+      "estimated_case_score": 74.68722964151799,
+      "maximum_total_score_gain_if_at_tbest": 1.6875180238988008
+    },
+    {
+      "case_id": 15,
+      "baseline_us": 9360.0,
+      "tbest_us": 7960.0,
+      "ratio": 1.1758793969849246,
+      "estimated_case_score": 71.44993809620055,
+      "maximum_total_score_gain_if_at_tbest": 1.9033374602532964
+    }
+  ]
+}

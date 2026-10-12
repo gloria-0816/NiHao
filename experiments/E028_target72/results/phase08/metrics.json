@@ -1,0 +1,98 @@
+[
+  {
+    "variant": "COMBO",
+    "case_id": "s6",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 8.2574995,
+      "aiv_vec_time(us)": 3.37,
+      "aiv_scalar_time(us)": 1.7605555,
+      "aiv_mte2_time(us)": 5.483333,
+      "aiv_mte3_time(us)": 1.6769444999999998,
+      "aiv_vec_ratio": 0.405893,
+      "aiv_scalar_ratio": 0.2191085,
+      "aiv_mte2_ratio": 0.6799195,
+      "aiv_mte3_ratio": 0.20534049999999998
+    }
+  },
+  {
+    "variant": "P9LP",
+    "case_id": "s6",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 7.8294445,
+      "aiv_vec_time(us)": 3.371667,
+      "aiv_scalar_time(us)": 1.6880555,
+      "aiv_mte2_time(us)": 5.195,
+      "aiv_mte3_time(us)": 1.7144445,
+      "aiv_vec_ratio": 0.429223,
+      "aiv_scalar_ratio": 0.21947,
+      "aiv_mte2_ratio": 0.6728475,
+      "aiv_mte3_ratio": 0.21769300000000003
+    }
+  },
+  {
+    "variant": "P9OUT",
+    "case_id": "s6",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 8.708611000000001,
+      "aiv_vec_time(us)": 3.454444,
+      "aiv_scalar_time(us)": 1.8777775,
+      "aiv_mte2_time(us)": 5.4825,
+      "aiv_mte3_time(us)": 1.64,
+      "aiv_vec_ratio": 0.394318,
+      "aiv_scalar_ratio": 0.2224465,
+      "aiv_mte2_ratio": 0.6466185,
+      "aiv_mte3_ratio": 0.1881765
+    }
+  },
+  {
+    "variant": "COMBO",
+    "case_id": "s7",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 11.858889,
+      "aiv_vec_time(us)": 4.805,
+      "aiv_scalar_time(us)": 1.8875000000000002,
+      "aiv_mte2_time(us)": 9.322778,
+      "aiv_mte3_time(us)": 2.8811109999999998,
+      "aiv_vec_ratio": 0.4048495,
+      "aiv_scalar_ratio": 0.16141,
+      "aiv_mte2_ratio": 0.791804,
+      "aiv_mte3_ratio": 0.2457045
+    }
+  },
+  {
+    "variant": "P9LP",
+    "case_id": "s7",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 11.166667,
+      "aiv_vec_time(us)": 4.806667,
+      "aiv_scalar_time(us)": 1.931389,
+      "aiv_mte2_time(us)": 8.5930555,
+      "aiv_mte3_time(us)": 2.9083335,
+      "aiv_vec_ratio": 0.430448,
+      "aiv_scalar_ratio": 0.1727725,
+      "aiv_mte2_ratio": 0.7747005,
+      "aiv_mte3_ratio": 0.261893
+    }
+  },
+  {
+    "variant": "P9OUT",
+    "case_id": "s7",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 11.772777999999999,
+      "aiv_vec_time(us)": 4.882778,
+      "aiv_scalar_time(us)": 2.0677775,
+      "aiv_mte2_time(us)": 9.150833500000001,
+      "aiv_mte3_time(us)": 2.879722,
+      "aiv_vec_ratio": 0.41422400000000004,
+      "aiv_scalar_ratio": 0.1780675,
+      "aiv_mte2_ratio": 0.7871444999999999,
+      "aiv_mte3_ratio": 0.245577
+    }
+  }
+]

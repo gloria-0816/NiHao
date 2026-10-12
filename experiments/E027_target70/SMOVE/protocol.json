@@ -1,0 +1,6 @@
+{
+  "sha256": "7a65228b9849ef01ed05da6e3e892e63a3e09faf2d4dfd03229118a4bc4c892b",
+  "state": "seven_shapes_strict_bitwise_pass_negative",
+  "factor": "FP32 input aliasing avoids two ToFloat copies; mask zero tail after residual add; merge parameter readiness and omit terminal input reuse wait; original reduction unchanged",
+  "scope": "FP32 SmallRowsStaticKernel D<=256 only"
+}

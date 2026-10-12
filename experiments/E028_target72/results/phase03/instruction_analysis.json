@@ -1,0 +1,847 @@
+{
+  "kind": "Simulator trace execution intervals; no board timing; engine intervals overlap; not additive",
+  "trace_file": "/home/developer/addrms_E028/experiments/E028_target72/results/phase03/simulation/profile/OPPROF_20261012191608_XARGKAGOVIWLNLHG/simulator/trace.json",
+  "event_count": 282,
+  "pipes": {
+    "CACHEMISS": {
+      "count": 20,
+      "execution_interval_union_us": 0.011999637936241925
+    },
+    "FLOWCTRL": {
+      "count": 14,
+      "execution_interval_union_us": 0.003000000026077032
+    },
+    "MTE2": {
+      "count": 4,
+      "execution_interval_union_us": 0.37999987602233887
+    },
+    "MTE3": {
+      "count": 1,
+      "execution_interval_union_us": 0.13199999928474426
+    },
+    "SCALAR": {
+      "count": 188,
+      "execution_interval_union_us": 0.42999763193074614
+    },
+    "VECTOR": {
+      "count": 55,
+      "execution_interval_union_us": 0.31799898587632924
+    }
+  },
+  "rows": [
+    {
+      "core": "core0.veccore0",
+      "pipe": "MTE2",
+      "instruction": "MOV_SRC_TO_DST_ALIGN",
+      "count": 4,
+      "min_execution_us": 0.35499998927116394,
+      "median_execution_us": 0.35999999940395355,
+      "max_execution_us": 0.3630000054836273,
+      "execution_interval_union_us": 0.37999987602233887,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_data_copy_impl.h:488\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_operator_data_copy_intf_impl.h:1399\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:914\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:896\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_data_copy_impl.h:488\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_operator_data_copy_intf_impl.h:1399\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:915\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:896\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "LDP_XI_XJ_XN",
+      "count": 3,
+      "min_execution_us": 0.003000000026077032,
+      "median_execution_us": 0.003000000026077032,
+      "max_execution_us": 0.20200000703334808,
+      "execution_interval_union_us": 0.20500000705942512,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1027"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "LD_XD_XN_IMM",
+      "count": 5,
+      "min_execution_us": 0.003000000026077032,
+      "median_execution_us": 0.003000000026077032,
+      "max_execution_us": 0.20200000703334808,
+      "execution_interval_union_us": 0.21200005384162068,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1027",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_tensor_impl.h:872\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:950\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "ST_XD_XN_IMM",
+      "count": 2,
+      "min_execution_us": 0.13899999856948853,
+      "median_execution_us": 0.14999999850988388,
+      "max_execution_us": 0.16099999845027924,
+      "execution_interval_union_us": 0.16200000047683716,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1027",
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:0\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "MTE3",
+      "instruction": "MOV_SRC_TO_DST_ALIGN",
+      "count": 1,
+      "min_execution_us": 0.13199999928474426,
+      "median_execution_us": 0.13199999928474426,
+      "max_execution_us": 0.13199999928474426,
+      "execution_interval_union_us": 0.13199999928474426,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_data_copy_impl.h:562\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_operator_data_copy_intf_impl.h:1491\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1004\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "VECTOR",
+      "instruction": "VCADD",
+      "count": 2,
+      "min_execution_us": 0.024000000208616257,
+      "median_execution_us": 0.029500000178813934,
+      "max_execution_us": 0.03500000014901161,
+      "execution_interval_union_us": 0.05900000035762787,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:265\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:282\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_reduce_intf_impl.h:534\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:969\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:265\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:282\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_reduce_intf_impl.h:534\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:971\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "VECTOR",
+      "instruction": "VMADD",
+      "count": 1,
+      "min_execution_us": 0.02800000086426735,
+      "median_execution_us": 0.02800000086426735,
+      "max_execution_us": 0.02800000086426735,
+      "execution_interval_union_us": 0.02800000086426735,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_impl.h:762\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_binary_intf_impl.h:1212\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:986\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "VECTOR",
+      "instruction": "VDIV",
+      "count": 1,
+      "min_execution_us": 0.020999999716877937,
+      "median_execution_us": 0.020999999716877937,
+      "max_execution_us": 0.020999999716877937,
+      "execution_interval_union_us": 0.020999999716877937,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_impl.h:186\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_impl.h:207\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_binary_intf_impl.h:374\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:982\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "VECTOR",
+      "instruction": "VADD",
+      "count": 1,
+      "min_execution_us": 0.01899999938905239,
+      "median_execution_us": 0.01899999938905239,
+      "max_execution_us": 0.01899999938905239,
+      "execution_interval_union_us": 0.01899999938905239,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_impl.h:70\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_binary_intf_impl.h:118\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:957\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "VECTOR",
+      "instruction": "VSQRT",
+      "count": 1,
+      "min_execution_us": 0.01899999938905239,
+      "median_execution_us": 0.01899999938905239,
+      "max_execution_us": 0.01899999938905239,
+      "execution_interval_union_us": 0.01899999938905239,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_unary_impl.h:351\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_unary_intf_impl.h:848\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:978\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "VECTOR",
+      "instruction": "MOVEMASK",
+      "count": 24,
+      "min_execution_us": 0.008999999612569809,
+      "median_execution_us": 0.008999999612569809,
+      "max_execution_us": 0.017000000923871994,
+      "execution_interval_union_us": 0.14700021035969257,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1027",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/kernel_utils_base.h:64\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_common_intf_impl.h:104\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1028"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "VECTOR",
+      "instruction": "VADDS",
+      "count": 4,
+      "min_execution_us": 0.01600000075995922,
+      "median_execution_us": 0.017000000923871994,
+      "max_execution_us": 0.017000000923871994,
+      "execution_interval_union_us": 0.0670000035315752,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_scalar_impl.h:34\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_scalar_impl.h:71\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_binary_scalar_intf_impl.h:149\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:17\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:953\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_scalar_impl.h:34\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_scalar_impl.h:71\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_binary_scalar_intf_impl.h:149\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:17\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:954\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "VECTOR",
+      "instruction": "VMULS",
+      "count": 1,
+      "min_execution_us": 0.01600000075995922,
+      "median_execution_us": 0.01600000075995922,
+      "max_execution_us": 0.01600000075995922,
+      "execution_interval_union_us": 0.01600000075995922,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_scalar_impl.h:87\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_scalar_impl.h:124\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_binary_scalar_intf_impl.h:278\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:974\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "VECTOR",
+      "instruction": "VMUL",
+      "count": 1,
+      "min_execution_us": 0.014000000432133675,
+      "median_execution_us": 0.014000000432133675,
+      "max_execution_us": 0.014000000432133675,
+      "execution_interval_union_us": 0.014000000432133675,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_impl.h:171\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_binary_intf_impl.h:278\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:959\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "VECTOR",
+      "instruction": "MOVEV",
+      "count": 1,
+      "min_execution_us": 0.008999999612569809,
+      "median_execution_us": 0.008999999612569809,
+      "max_execution_us": 0.008999999612569809,
+      "execution_interval_union_us": 0.008999999612569809,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_duplicate_impl.h:37\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_duplicate_impl.h:66\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_duplicate_intf_impl.h:113\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:950\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "VECTOR",
+      "instruction": "VBRCB",
+      "count": 1,
+      "min_execution_us": 0.008999999612569809,
+      "median_execution_us": 0.008999999612569809,
+      "max_execution_us": 0.008999999612569809,
+      "execution_interval_union_us": 0.008999999612569809,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_brcb_impl.h:38\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_brcb_intf_impl.h:64\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:980\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "FLOWCTRL",
+      "instruction": "DCCI",
+      "count": 1,
+      "min_execution_us": 0.003000000026077032,
+      "median_execution_us": 0.003000000026077032,
+      "max_execution_us": 0.003000000026077032,
+      "execution_interval_union_us": 0.003000000026077032,
+      "source_stack_examples": [
+        ""
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "MADD",
+      "count": 2,
+      "min_execution_us": 0.0020000000949949026,
+      "median_execution_us": 0.0020000000949949026,
+      "max_execution_us": 0.0020000000949949026,
+      "execution_interval_union_us": 0.004000000189989805,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1027",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/dav_c220/kernel_operator_sys_var_impl.h:67\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_sys_var_intf_impl.h:50\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:897\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "MOV_XD_IMM",
+      "count": 36,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.030999493785202503,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1027",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/kernel_utils_base.h:56\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_common_intf_impl.h:104\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1028"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "MOVK",
+      "count": 24,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.01799934811424464,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1027",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_data_copy_impl.h:488\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_operator_data_copy_intf_impl.h:1399\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:914\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:896\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "MOV_XD_SPR",
+      "count": 17,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.014000000664964318,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1027",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/kernel_utils_base.h:56\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_common_intf_impl.h:104\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1028"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "ADD",
+      "count": 6,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0050000002374872565,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1027",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_tensor_impl.h:1556\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:940\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "AND",
+      "count": 4,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.004000000189989805,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1027",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_data_copy_impl.h:488\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_operator_data_copy_intf_impl.h:1399\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:914\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:896\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "NEG",
+      "count": 5,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0050000002374872565,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1027",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/dav_c220/kernel_operator_sys_var_impl.h:0\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_sys_var_intf_impl.h:50\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:897\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "ADD_IMM",
+      "count": 3,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0020000000949949026,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1027",
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:0\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "INSERT_XD_XN",
+      "count": 1,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0010000000474974513,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/kernel_utils_base.h:56\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_common_intf_impl.h:104\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1028"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "INSERT_XD",
+      "count": 10,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.010000000474974513,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/kernel_utils_base.h:59\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_common_intf_impl.h:104\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1028",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_data_copy_impl.h:488\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_operator_data_copy_intf_impl.h:1399\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:914\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:896\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "MOV_XD_XN",
+      "count": 13,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.006999855278991163,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_data_copy_impl.h:488\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_operator_data_copy_intf_impl.h:1399\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:914\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:896\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:0\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "SHL",
+      "count": 7,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.007000000332482159,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_data_copy_impl.h:488\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_operator_data_copy_intf_impl.h:1399\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:914\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:896\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:0\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "SIGNEXT",
+      "count": 4,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.004000000189989805,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/dav_c220/kernel_operator_sys_var_impl.h:67\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_sys_var_intf_impl.h:50\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:897\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_scalar_impl.h:70\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_binary_scalar_intf_impl.h:149\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:17\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:953\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "CMP",
+      "count": 5,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0050000002374872565,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:897\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:945\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "MOVX8_XD_IMM",
+      "count": 7,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0059998552314937115,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:0\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:265\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:282\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_reduce_intf_impl.h:534\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:969\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "MUL",
+      "count": 1,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0010000000474974513,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:931\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "ZEROEXT",
+      "count": 11,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.009999855421483517,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:945\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_tensor_impl.h:689\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_tensor_impl.h:671\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_duplicate_intf_impl.h:113\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:950\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "SHR",
+      "count": 1,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0010000000474974513,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:961\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "CMP_IMM",
+      "count": 3,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.003000000142492354,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:966\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/utils/kernel_utils_struct_param.h:45\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/utils/kernel_utils_struct_param.h:38\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:281\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_reduce_intf_impl.h:534\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:971\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "OR",
+      "count": 2,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0020000000949949026,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:265\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:282\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_reduce_intf_impl.h:534\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:969\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_impl.h:186\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_impl.h:207\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_binary_intf_impl.h:374\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:982\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "SUB_IMM",
+      "count": 2,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0020000000949949026,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/utils/kernel_utils_struct_param.h:52\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/utils/kernel_utils_struct_param.h:38\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:281\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_reduce_intf_impl.h:534\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:971\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_event.h:371\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_operator_data_copy_intf_impl.h:1489\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1004\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "NOT",
+      "count": 2,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0020000000949949026,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/utils/kernel_utils_struct_param.h:52\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/utils/kernel_utils_struct_param.h:38\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:281\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_reduce_intf_impl.h:534\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:971\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/utils/kernel_utils_struct_param.h:56\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/utils/kernel_utils_struct_param.h:38\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:281\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_reduce_intf_impl.h:534\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:971\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "SEL",
+      "count": 2,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0020000000949949026,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/utils/kernel_utils_struct_param.h:52\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/utils/kernel_utils_struct_param.h:38\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:281\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_reduce_intf_impl.h:534\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:971\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/utils/kernel_utils_struct_param.h:56\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/utils/kernel_utils_struct_param.h:38\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:281\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_reduce_intf_impl.h:534\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:971\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "VECTOR",
+      "instruction": "BAR",
+      "count": 17,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.01600000075995922,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_reg.h:112\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_block_sync_intf_impl.h:107\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:926\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:896\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:950\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "CACHEMISS",
+      "instruction": "0x10d1eb34",
+      "count": 1,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0010000000474974513,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1027"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "CACHEMISS",
+      "instruction": "0x10d1eb80",
+      "count": 1,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0010000000474974513,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1027"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "CACHEMISS",
+      "instruction": "0x10d1ec00",
+      "count": 1,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0010000000474974513,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/dav_c220/kernel_operator_sys_var_impl.h:0\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_sys_var_intf_impl.h:50\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:897\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "CACHEMISS",
+      "instruction": "0x10d1ec80",
+      "count": 1,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0010000000474974513,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:0\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "CACHEMISS",
+      "instruction": "0x10d1ed68",
+      "count": 1,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0010000000474974513,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_reg.h:112\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_block_sync_intf_impl.h:107\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:956\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "CACHEMISS",
+      "instruction": "0x10d1ed80",
+      "count": 2,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0020000000949949026,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_impl.h:69\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_binary_intf_impl.h:118\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:957\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "CACHEMISS",
+      "instruction": "0x10d1ee00",
+      "count": 2,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0020000000949949026,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:265\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:282\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_reduce_intf_impl.h:534\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:969\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "CACHEMISS",
+      "instruction": "0x10d1ee80",
+      "count": 2,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0020000000949949026,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/utils/kernel_utils_struct_param.h:52\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/utils/kernel_utils_struct_param.h:38\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_reduce_impl.h:281\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_reduce_intf_impl.h:534\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:971\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "CACHEMISS",
+      "instruction": "0x10d1ed00",
+      "count": 1,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0010000000474974513,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_tensor_impl.h:872\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:950\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "CACHEMISS",
+      "instruction": "0x10d1ef00",
+      "count": 2,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0020000000949949026,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_scalar_impl.h:34\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_vec_binary_scalar_impl.h:71\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_vec_binary_scalar_intf_impl.h:149\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:976\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "CACHEMISS",
+      "instruction": "0x10d1ef80",
+      "count": 2,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0020000000949949026,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_event.h:312\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_event.h:906\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_block_sync_intf_impl.h:76\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:998\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "CACHEMISS",
+      "instruction": "0x10d1f000",
+      "count": 2,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0020000000949949026,
+      "source_stack_examples": [
+        ""
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "CACHEMISS",
+      "instruction": "0x10d1f080",
+      "count": 2,
+      "min_execution_us": 0.0010000000474974513,
+      "median_execution_us": 0.0010000000474974513,
+      "max_execution_us": 0.0010000000474974513,
+      "execution_interval_union_us": 0.0020000000949949026,
+      "source_stack_examples": [
+        ""
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "SCALAR",
+      "instruction": "MOV_SPR_XN",
+      "count": 10,
+      "min_execution_us": 0.0,
+      "median_execution_us": 0.0,
+      "max_execution_us": 0.0,
+      "execution_interval_union_us": 0.0,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/kernel_utils_base.h:56\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_common_intf_impl.h:104\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1028",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/impl/kernel_utils_base.h:59\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/tikcpp/tikcfw/interface/../../impl/basic_api/kernel_operator_common_intf_impl.h:104\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1028"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "FLOWCTRL",
+      "instruction": "JUMPC",
+      "count": 7,
+      "min_execution_us": 0.0,
+      "median_execution_us": 0.0,
+      "max_execution_us": 0.0,
+      "execution_interval_union_us": 0.0,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:897\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:945\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "FLOWCTRL",
+      "instruction": "JUMP",
+      "count": 3,
+      "min_execution_us": 0.0,
+      "median_execution_us": 0.0,
+      "max_execution_us": 0.0,
+      "execution_interval_union_us": 0.0,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:0\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031",
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/dav_c220/kernel_operator_data_copy_impl.h:0\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_operator_data_copy_intf_impl.h:1491\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1004\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "FLOWCTRL",
+      "instruction": "JUMPCMP",
+      "count": 1,
+      "min_execution_us": 0.0,
+      "median_execution_us": 0.0,
+      "max_execution_us": 0.0,
+      "execution_interval_union_us": 0.0,
+      "source_stack_examples": [
+        "/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_event.h:371\n/home/developer/Ascend/cann-9.0.0/aarch64-linux/asc/impl/basic_api/kernel_operator_data_copy_intf_impl.h:1489\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1004\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:898\n/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1031"
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "FLOWCTRL",
+      "instruction": "NOP",
+      "count": 1,
+      "min_execution_us": 0.0,
+      "median_execution_us": 0.0,
+      "max_execution_us": 0.0,
+      "execution_interval_union_us": 0.0,
+      "source_stack_examples": [
+        ""
+      ]
+    },
+    {
+      "core": "core0.veccore0",
+      "pipe": "FLOWCTRL",
+      "instruction": "END",
+      "count": 1,
+      "min_execution_us": 0.0,
+      "median_execution_us": 0.0,
+      "max_execution_us": 0.0,
+      "execution_interval_union_us": 0.0,
+      "source_stack_examples": [
+        "/home/developer/addrms_E028/experiments/E028_target72/build_sim_COMBO/kernel.asc:1032"
+      ]
+    }
+  ],
+  "notes": [
+    "CSV instr/code cycles can include queuing and nested stack attribution; they are not summed as pure execution latency.",
+    "Core-id=0 only; simulation models selected Ascend910B3, may differ from board cache/timing."
+  ]
+}
