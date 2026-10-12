@@ -1,0 +1,322 @@
+[
+  {
+    "variant": "FACC",
+    "metrics": {
+      "PipeUtilization_20261012155222011.csv": {
+        "aiv_time(us)": 264.62388599999997,
+        "aiv_vec_ratio": 0.39914099999999997,
+        "aiv_mte2_ratio": 0.9885075
+      },
+      "L2Cache_20261012155222011.csv": {
+        "aic_r0_read_cache_hit": null,
+        "aic_r0_read_cache_miss_allocate": null,
+        "aic_r1_read_cache_hit": null,
+        "aic_r1_read_cache_miss_allocate": null,
+        "aic_write_hit_rate(%)": null,
+        "aic_read_hit_rate(%)": null,
+        "aic_total_hit_rate(%)": null,
+        "aiv_time(us)": 264.62388599999997,
+        "aiv_r0_read_cache_hit": 985.5,
+        "aiv_r0_read_cache_miss_allocate": 24136.5,
+        "aiv_r1_read_cache_hit": 982.5,
+        "aiv_r1_read_cache_miss_allocate": 24147.5,
+        "aiv_write_hit_rate(%)": 10.895360499999999,
+        "aiv_read_hit_rate(%)": 3.919638,
+        "aiv_total_hit_rate(%)": 4.7682725
+      },
+      "OpBasicInfo_20261012155222011.csv": {},
+      "Memory_20261012155222011.csv": {
+        "aic_l1_read_bw(GB/s)": null,
+        "aic_main_mem_read_bw(GB/s)": null,
+        "aiv_time(us)": 264.62388599999997,
+        "aiv_main_mem_read_bw(GB/s)": 22.627813500000002,
+        "aiv_mte2_ratio": 0.9885075,
+        "read_main_memory_datas(KB)": 6280.875
+      },
+      "PipeUtilization_20261012155222989.csv": {
+        "aiv_time(us)": 264.2088925,
+        "aiv_vec_ratio": 0.399996,
+        "aiv_mte2_ratio": 0.9875895
+      },
+      "L2Cache_20261012155222989.csv": {
+        "aic_r0_read_cache_hit": null,
+        "aic_r0_read_cache_miss_allocate": null,
+        "aic_r1_read_cache_hit": null,
+        "aic_r1_read_cache_miss_allocate": null,
+        "aic_write_hit_rate(%)": null,
+        "aic_read_hit_rate(%)": null,
+        "aic_total_hit_rate(%)": null,
+        "aiv_time(us)": 264.2088925,
+        "aiv_r0_read_cache_hit": 983.0,
+        "aiv_r0_read_cache_miss_allocate": 24141.0,
+        "aiv_r1_read_cache_hit": 981.5,
+        "aiv_r1_read_cache_miss_allocate": 24144.5,
+        "aiv_write_hit_rate(%)": 10.895360499999999,
+        "aiv_read_hit_rate(%)": 3.918323,
+        "aiv_total_hit_rate(%)": 4.766325
+      },
+      "Memory_20261012155222989.csv": {
+        "aic_l1_read_bw(GB/s)": null,
+        "aic_main_mem_read_bw(GB/s)": null,
+        "aiv_time(us)": 264.2088925,
+        "aiv_main_mem_read_bw(GB/s)": 22.6751195,
+        "aiv_mte2_ratio": 0.9875895,
+        "read_main_memory_datas(KB)": 6280.875
+      },
+      "OpBasicInfo_20261012155222989.csv": {},
+      "Memory_20261012155222337.csv": {
+        "aic_l1_read_bw(GB/s)": null,
+        "aic_main_mem_read_bw(GB/s)": null,
+        "aiv_time(us)": 263.2858275,
+        "aiv_main_mem_read_bw(GB/s)": 22.715847,
+        "aiv_mte2_ratio": 0.9869675,
+        "read_main_memory_datas(KB)": 6280.875
+      },
+      "L2Cache_20261012155222337.csv": {
+        "aic_r0_read_cache_hit": null,
+        "aic_r0_read_cache_miss_allocate": null,
+        "aic_r1_read_cache_hit": null,
+        "aic_r1_read_cache_miss_allocate": null,
+        "aic_write_hit_rate(%)": null,
+        "aic_read_hit_rate(%)": null,
+        "aic_total_hit_rate(%)": null,
+        "aiv_time(us)": 263.2858275,
+        "aiv_r0_read_cache_hit": 990.0,
+        "aiv_r0_read_cache_miss_allocate": 24142.0,
+        "aiv_r1_read_cache_hit": 978.0,
+        "aiv_r1_read_cache_miss_allocate": 24138.5,
+        "aiv_write_hit_rate(%)": 10.895360499999999,
+        "aiv_read_hit_rate(%)": 3.920317,
+        "aiv_total_hit_rate(%)": 4.768077
+      },
+      "OpBasicInfo_20261012155222337.csv": {},
+      "PipeUtilization_20261012155222337.csv": {
+        "aiv_time(us)": 263.2858275,
+        "aiv_vec_ratio": 0.40076049999999996,
+        "aiv_mte2_ratio": 0.9869675
+      },
+      "PipeUtilization_20261012155221621.csv": {
+        "aiv_time(us)": 263.543884,
+        "aiv_vec_ratio": 0.4009725,
+        "aiv_mte2_ratio": 0.9878785
+      },
+      "L2Cache_20261012155221621.csv": {
+        "aic_r0_read_cache_hit": null,
+        "aic_r0_read_cache_miss_allocate": null,
+        "aic_r1_read_cache_hit": null,
+        "aic_r1_read_cache_miss_allocate": null,
+        "aic_write_hit_rate(%)": null,
+        "aic_read_hit_rate(%)": null,
+        "aic_total_hit_rate(%)": null,
+        "aiv_time(us)": 263.543884,
+        "aiv_r0_read_cache_hit": 985.0,
+        "aiv_r0_read_cache_miss_allocate": 24137.5,
+        "aiv_r1_read_cache_hit": 982.0,
+        "aiv_r1_read_cache_miss_allocate": 24138.5,
+        "aiv_write_hit_rate(%)": 10.895360499999999,
+        "aiv_read_hit_rate(%)": 3.920317,
+        "aiv_total_hit_rate(%)": 4.768356
+      },
+      "Memory_20261012155221621.csv": {
+        "aic_l1_read_bw(GB/s)": null,
+        "aic_main_mem_read_bw(GB/s)": null,
+        "aiv_time(us)": 263.543884,
+        "aiv_main_mem_read_bw(GB/s)": 22.730469,
+        "aiv_mte2_ratio": 0.9878785,
+        "read_main_memory_datas(KB)": 6280.875
+      },
+      "OpBasicInfo_20261012155221621.csv": {},
+      "OpBasicInfo_20261012155222662.csv": {},
+      "L2Cache_20261012155222662.csv": {
+        "aic_r0_read_cache_hit": null,
+        "aic_r0_read_cache_miss_allocate": null,
+        "aic_r1_read_cache_hit": null,
+        "aic_r1_read_cache_miss_allocate": null,
+        "aic_write_hit_rate(%)": null,
+        "aic_read_hit_rate(%)": null,
+        "aic_total_hit_rate(%)": null,
+        "aiv_time(us)": 262.949722,
+        "aiv_r0_read_cache_hit": 982.5,
+        "aiv_r0_read_cache_miss_allocate": 24143.5,
+        "aiv_r1_read_cache_hit": 984.5,
+        "aiv_r1_read_cache_miss_allocate": 24143.5,
+        "aiv_write_hit_rate(%)": 10.895360499999999,
+        "aiv_read_hit_rate(%)": 3.920553,
+        "aiv_total_hit_rate(%)": 4.7683975
+      },
+      "PipeUtilization_20261012155222662.csv": {
+        "aiv_time(us)": 262.949722,
+        "aiv_vec_ratio": 0.4011415,
+        "aiv_mte2_ratio": 0.9878210000000001
+      },
+      "Memory_20261012155222662.csv": {
+        "aic_l1_read_bw(GB/s)": null,
+        "aic_main_mem_read_bw(GB/s)": null,
+        "aiv_time(us)": 262.949722,
+        "aiv_main_mem_read_bw(GB/s)": 22.735714,
+        "aiv_mte2_ratio": 0.9878210000000001,
+        "read_main_memory_datas(KB)": 6280.875
+      }
+    }
+  },
+  {
+    "variant": "FPRR",
+    "metrics": {
+      "Memory_20261012155234006.csv": {
+        "aic_l1_read_bw(GB/s)": null,
+        "aic_main_mem_read_bw(GB/s)": null,
+        "aiv_time(us)": 264.91944850000004,
+        "aiv_main_mem_read_bw(GB/s)": 22.648196,
+        "aiv_mte2_ratio": 0.9871540000000001,
+        "read_main_memory_datas(KB)": 6276.875
+      },
+      "OpBasicInfo_20261012155234006.csv": {},
+      "L2Cache_20261012155234006.csv": {
+        "aic_r0_read_cache_hit": null,
+        "aic_r0_read_cache_miss_allocate": null,
+        "aic_r1_read_cache_hit": null,
+        "aic_r1_read_cache_miss_allocate": null,
+        "aic_write_hit_rate(%)": null,
+        "aic_read_hit_rate(%)": null,
+        "aic_total_hit_rate(%)": null,
+        "aiv_time(us)": 264.91944850000004,
+        "aiv_r0_read_cache_hit": 1009.5,
+        "aiv_r0_read_cache_miss_allocate": 24119.5,
+        "aiv_r1_read_cache_hit": 1024.5,
+        "aiv_r1_read_cache_miss_allocate": 24076.5,
+        "aiv_write_hit_rate(%)": 11.0855995,
+        "aiv_read_hit_rate(%)": 4.0335920000000005,
+        "aiv_total_hit_rate(%)": 5.030062
+      },
+      "PipeUtilization_20261012155234006.csv": {
+        "aiv_time(us)": 264.91944850000004,
+        "aiv_vec_ratio": 0.401709,
+        "aiv_mte2_ratio": 0.9871540000000001
+      },
+      "OpBasicInfo_20261012155234986.csv": {},
+      "Memory_20261012155234986.csv": {
+        "aic_l1_read_bw(GB/s)": null,
+        "aic_main_mem_read_bw(GB/s)": null,
+        "aiv_time(us)": 264.5880585,
+        "aiv_main_mem_read_bw(GB/s)": 22.596736999999997,
+        "aiv_mte2_ratio": 0.986661,
+        "read_main_memory_datas(KB)": 6276.875
+      },
+      "L2Cache_20261012155234986.csv": {
+        "aic_r0_read_cache_hit": null,
+        "aic_r0_read_cache_miss_allocate": null,
+        "aic_r1_read_cache_hit": null,
+        "aic_r1_read_cache_miss_allocate": null,
+        "aic_write_hit_rate(%)": null,
+        "aic_read_hit_rate(%)": null,
+        "aic_total_hit_rate(%)": null,
+        "aiv_time(us)": 264.5880585,
+        "aiv_r0_read_cache_hit": 1048.0,
+        "aiv_r0_read_cache_miss_allocate": 24055.5,
+        "aiv_r1_read_cache_hit": 1059.5,
+        "aiv_r1_read_cache_miss_allocate": 24059.5,
+        "aiv_write_hit_rate(%)": 11.0791565,
+        "aiv_read_hit_rate(%)": 4.1991315,
+        "aiv_total_hit_rate(%)": 5.093579999999999
+      },
+      "PipeUtilization_20261012155234986.csv": {
+        "aiv_time(us)": 264.5880585,
+        "aiv_vec_ratio": 0.400839,
+        "aiv_mte2_ratio": 0.986661
+      },
+      "OpBasicInfo_20261012155234336.csv": {},
+      "PipeUtilization_20261012155234336.csv": {
+        "aiv_time(us)": 263.0650025,
+        "aiv_vec_ratio": 0.40315999999999996,
+        "aiv_mte2_ratio": 0.986539
+      },
+      "L2Cache_20261012155234336.csv": {
+        "aic_r0_read_cache_hit": null,
+        "aic_r0_read_cache_miss_allocate": null,
+        "aic_r1_read_cache_hit": null,
+        "aic_r1_read_cache_miss_allocate": null,
+        "aic_write_hit_rate(%)": null,
+        "aic_read_hit_rate(%)": null,
+        "aic_total_hit_rate(%)": null,
+        "aiv_time(us)": 263.0650025,
+        "aiv_r0_read_cache_hit": 1051.5,
+        "aiv_r0_read_cache_miss_allocate": 24097.5,
+        "aiv_r1_read_cache_hit": 1056.5,
+        "aiv_r1_read_cache_miss_allocate": 24043.5,
+        "aiv_write_hit_rate(%)": 11.042465,
+        "aiv_read_hit_rate(%)": 4.1868435,
+        "aiv_total_hit_rate(%)": 4.915831
+      },
+      "Memory_20261012155234336.csv": {
+        "aic_l1_read_bw(GB/s)": null,
+        "aic_main_mem_read_bw(GB/s)": null,
+        "aiv_time(us)": 263.0650025,
+        "aiv_main_mem_read_bw(GB/s)": 22.7327185,
+        "aiv_mte2_ratio": 0.986539,
+        "read_main_memory_datas(KB)": 6276.875
+      },
+      "Memory_20261012155233617.csv": {
+        "aic_l1_read_bw(GB/s)": null,
+        "aic_main_mem_read_bw(GB/s)": null,
+        "aiv_time(us)": 265.477783,
+        "aiv_main_mem_read_bw(GB/s)": 22.590633,
+        "aiv_mte2_ratio": 0.987136,
+        "read_main_memory_datas(KB)": 6276.875
+      },
+      "PipeUtilization_20261012155233617.csv": {
+        "aiv_time(us)": 265.477783,
+        "aiv_vec_ratio": 0.40042750000000005,
+        "aiv_mte2_ratio": 0.987136
+      },
+      "L2Cache_20261012155233617.csv": {
+        "aic_r0_read_cache_hit": null,
+        "aic_r0_read_cache_miss_allocate": null,
+        "aic_r1_read_cache_hit": null,
+        "aic_r1_read_cache_miss_allocate": null,
+        "aic_write_hit_rate(%)": null,
+        "aic_read_hit_rate(%)": null,
+        "aic_total_hit_rate(%)": null,
+        "aiv_time(us)": 265.477783,
+        "aiv_r0_read_cache_hit": 1069.5,
+        "aiv_r0_read_cache_miss_allocate": 24059.5,
+        "aiv_r1_read_cache_hit": 1081.5,
+        "aiv_r1_read_cache_miss_allocate": 24025.0,
+        "aiv_write_hit_rate(%)": 11.0920155,
+        "aiv_read_hit_rate(%)": 4.2836715000000005,
+        "aiv_total_hit_rate(%)": 5.0957365
+      },
+      "OpBasicInfo_20261012155233617.csv": {},
+      "Memory_20261012155234658.csv": {
+        "aic_l1_read_bw(GB/s)": null,
+        "aic_main_mem_read_bw(GB/s)": null,
+        "aiv_time(us)": 265.787781,
+        "aiv_main_mem_read_bw(GB/s)": 22.5109285,
+        "aiv_mte2_ratio": 0.9871715000000001,
+        "read_main_memory_datas(KB)": 6276.875
+      },
+      "PipeUtilization_20261012155234658.csv": {
+        "aiv_time(us)": 265.787781,
+        "aiv_vec_ratio": 0.39914499999999997,
+        "aiv_mte2_ratio": 0.9871715000000001
+      },
+      "OpBasicInfo_20261012155234658.csv": {},
+      "L2Cache_20261012155234658.csv": {
+        "aic_r0_read_cache_hit": null,
+        "aic_r0_read_cache_miss_allocate": null,
+        "aic_r1_read_cache_hit": null,
+        "aic_r1_read_cache_miss_allocate": null,
+        "aic_write_hit_rate(%)": null,
+        "aic_read_hit_rate(%)": null,
+        "aic_total_hit_rate(%)": null,
+        "aiv_time(us)": 265.787781,
+        "aiv_r0_read_cache_hit": 1074.0,
+        "aiv_r0_read_cache_miss_allocate": 24032.5,
+        "aiv_r1_read_cache_hit": 1061.0,
+        "aiv_r1_read_cache_miss_allocate": 24055.0,
+        "aiv_write_hit_rate(%)": 10.992092,
+        "aiv_read_hit_rate(%)": 4.2201165,
+        "aiv_total_hit_rate(%)": 5.050886
+      }
+    }
+  }
+]

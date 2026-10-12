@@ -1,0 +1,17 @@
+--- FACC/kernel.asc
++++ STREE/kernel.asc
+@@ -965,6 +965,14 @@
+         // accumulation, and must be checked against the official tolerance.
+         if (parts == 1) {
+             WholeReduceSum(sum_, tmp_, 64, 1, 1, 1, 8);
++        } else if (sizeof(T) == sizeof(float) && parts == 4) {
++            // Two independent lane-wise pairs, followed by one lane merge.
++            // All four source vectors include the previously zeroed tail.
++            Add(tmp_, tmp_, tmp_[128], 64, 2, {1,1,1,8,8,8});
++            PipeBarrier<PIPE_V>();
++            Add(tmp_, tmp_, tmp_[64], 64);
++            PipeBarrier<PIPE_V>();
++            WholeReduceSum(sum_, tmp_, 64, 1, 1, 1, 8);
+         } else {
+             WholeReduceSum(partials_, tmp_, 64, parts, 1, 1, 8);
+             PipeBarrier<PIPE_V>();

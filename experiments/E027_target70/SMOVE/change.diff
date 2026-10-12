@@ -1,0 +1,62 @@
+--- FACC/kernel.asc
++++ SMOVE/kernel.asc
+@@ -914,16 +914,16 @@
+             DataCopyPad(g_, ggm_, copy, pad);
+             DataCopyPad(b_, bgm_, copy, pad);
+         }
+-        SetFlag<HardEvent::MTE2_V>(0);
+-        WaitFlag<HardEvent::MTE2_V>(0);
+-        if (sizeof(T) == sizeof(float)) {
+-            gf_ = g_.template ReinterpretCast<float>();
+-            bf_ = b_.template ReinterpretCast<float>();
++        if (sizeof(T) == sizeof(float) && d_<=256) {
++            // The first input readiness event also covers these parameter copies.
++            gf_=g_.template ReinterpretCast<float>();bf_=b_.template ReinterpretCast<float>();
+         } else {
+-            ToFloat<T>(gf_, g_, d_);
+-            ToFloat<T>(bf_, b_, d_);
+-        }
+-        PipeBarrier<PIPE_V>();
++            SetFlag<HardEvent::MTE2_V>(0);WaitFlag<HardEvent::MTE2_V>(0);
++            if(sizeof(T)==sizeof(float)) {
++                gf_=g_.template ReinterpretCast<float>();bf_=b_.template ReinterpretCast<float>();
++            } else {ToFloat<T>(gf_,g_,d_);ToFloat<T>(bf_,b_,d_);}
++            PipeBarrier<PIPE_V>();
++        }
+     }
+ 
+     __aicore__ inline void ProcessRow(uint64_t row)
+@@ -942,7 +942,9 @@
+         }
+         SetFlag<HardEvent::MTE2_V>(0);
+         WaitFlag<HardEvent::MTE2_V>(0);
+-        if (sizeof(T) == sizeof(float) && d_ == padded_) {
++        if (sizeof(T) == sizeof(float) && d_ <=256) {
++            y_=x_.template ReinterpretCast<float>();tmp_=r_.template ReinterpretCast<float>();
++        } else if (sizeof(T) == sizeof(float) && d_ == padded_) {
+             y_ = x_.template ReinterpretCast<float>();
+             tmp_ = r_.template ReinterpretCast<float>();
+         } else {
+@@ -956,6 +958,10 @@
+         PipeBarrier<PIPE_V>();
+         Add(y_, y_, tmp_, d_);
+         PipeBarrier<PIPE_V>();
++        if(sizeof(T)==sizeof(float) && d_<=256 && d_!=padded_) {
++            uint64_t tail[2]={~static_cast<uint64_t>(0)<<(d_%64),0};
++            Duplicate(y_[d_/64*64],0.0f,tail,1,1,8);PipeBarrier<PIPE_V>();
++        }
+         Mul(tmp_, y_, y_, padded_);
+         PipeBarrier<PIPE_V>();
+         const uint32_t parts = padded_ / 64;
+@@ -1007,8 +1013,9 @@
+         // and future input DMA writes against the preceding GM output read.
+         SetFlag<HardEvent::MTE3_V>(2);
+         WaitFlag<HardEvent::MTE3_V>(2);
+-        SetFlag<HardEvent::MTE3_MTE2>(3);
+-        WaitFlag<HardEvent::MTE3_MTE2>(3);
++        if(!(sizeof(T)==sizeof(float) && d_<=256) || row+GetBlockNum()<rows_) {
++            SetFlag<HardEvent::MTE3_MTE2>(3);WaitFlag<HardEvent::MTE3_MTE2>(3);
++        }
+     }
+ 
+ private:

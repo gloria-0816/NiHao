@@ -1,0 +1,6 @@
+{
+  "sha256": "45b19504c2188cd40e72b5d58726517ebcbf92b4ac71a3c1d54c6ceaa17c54ac",
+  "state": "seven_shapes_strict_pass_negative",
+  "factor": "two independent lane-wise pairs then merge then one WholeReduceSum; change only reduction",
+  "scope": "FP32 SmallRowsStaticKernel 192<D<=256 only; arithmetic association changes"
+}

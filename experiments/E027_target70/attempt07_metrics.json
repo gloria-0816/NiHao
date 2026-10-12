@@ -1,0 +1,26 @@
+[
+  {
+    "variant": "FACC",
+    "metrics": {
+      "aiv_time(us)": 1.371111,
+      "aiv_vec_time(us)": 0.280556,
+      "aiv_vec_ratio": 0.204619,
+      "aiv_mte2_ratio": 0.347745,
+      "aiv_scalar_time(us)": 0.34,
+      "aiv_scalar_ratio": 0.262646
+    },
+    "n_rows": 35
+  },
+  {
+    "variant": "SFOLD",
+    "metrics": {
+      "aiv_time(us)": 1.379444,
+      "aiv_vec_time(us)": 0.261111,
+      "aiv_vec_ratio": 0.189287,
+      "aiv_mte2_ratio": 0.304864,
+      "aiv_scalar_time(us)": 0.382778,
+      "aiv_scalar_ratio": 0.268803
+    },
+    "n_rows": 35
+  }
+]

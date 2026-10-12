@@ -1,0 +1,17 @@
+--- FACC/kernel.asc
++++ SFOLD/kernel.asc
+@@ -965,6 +965,14 @@
+         // accumulation, and must be checked against the official tolerance.
+         if (parts == 1) {
+             WholeReduceSum(sum_, tmp_, 64, 1, 1, 1, 8);
++        } else if (sizeof(T) == sizeof(float) && parts <= 4) {
++            // Fold later 64-lane square vectors into the first vector in place.
++            // This uses one vector Add instruction and one horizontal reduction.
++            // Square data is dead after this operation; no zeroed scratch is needed.
++            Add(tmp_, tmp_[64], tmp_, 64, static_cast<uint8_t>(parts-1),
++                {1,1,1,0,8,0});
++            PipeBarrier<PIPE_V>();
++            WholeReduceSum(sum_, tmp_, 64, 1, 1, 1, 8);
+         } else {
+             WholeReduceSum(partials_, tmp_, 64, parts, 1, 1, 8);
+             PipeBarrier<PIPE_V>();

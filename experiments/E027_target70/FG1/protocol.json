@@ -1,0 +1,6 @@
+{
+  "sha256": "2afcb71c22b7ec3fb93aeabcc013715ce77ce24aab4989a443636ad0dd5d4a3c",
+  "state": "five_shapes_strict_pass_negative",
+  "scope": "float32 2<=rows<=8, D<=256",
+  "factor": "reuse existing batched ShortFloatPartitionKernel with 1 requested cores"
+}

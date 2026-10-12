@@ -1,0 +1,42 @@
+--- FACC/kernel.asc
++++ FPB4/kernel.asc
+@@ -1986,13 +1986,32 @@
+         begin_=rows*GetBlockIdx()/GetBlockNum();end_=rows*(GetBlockIdx()+1)/GetBlockNum();invD_=invD;eps_=eps;
+         xgm_.SetGlobalBuffer((__gm__ float*)x);rgm_.SetGlobalBuffer((__gm__ float*)r);
+         ggm_.SetGlobalBuffer((__gm__ float*)g);bgm_.SetGlobalBuffer((__gm__ float*)b);outgm_.SetGlobalBuffer((__gm__ float*)out);
+-        x_[0]=LocalTensor<float>(TPosition::VECIN,0,12288);
+-        x_[1]=LocalTensor<float>(TPosition::VECIN,49280,12288);
+-        r_=LocalTensor<float>(TPosition::VECIN,98560,12288);
+-        gf_=LocalTensor<float>(TPosition::VECIN,147840,4096);
+-        bf_=LocalTensor<float>(TPosition::VECIN,164352,4096);
+-        work_=LocalTensor<float>(TPosition::VECCALC,180864,1536);
+-        sums_=LocalTensor<float>(TPosition::VECCALC,187136,32);
++        if (d > 3072 && d <= 3264) {
++            const bool compactBatch4 = d > 3072 && d <= 3264;
++            const uint32_t capacity = compactBatch4 ? 4 * stride_ : 12288;
++            const uint32_t parameterCapacity = compactBatch4 ? stride_ : 4096;
++            batch_ = capacity / stride_;
++            const uint32_t inputSlotBytes = capacity * sizeof(float) + 128;
++            const uint32_t parameterSlotBytes = parameterCapacity * sizeof(float) + 128;
++            const uint32_t gammaOffset = 3 * inputSlotBytes;
++            const uint32_t biasOffset = gammaOffset + parameterSlotBytes;
++            const uint32_t workOffset = biasOffset + parameterSlotBytes;
++            x_[0] = LocalTensor<float>(TPosition::VECIN, 0, capacity);
++            x_[1] = LocalTensor<float>(TPosition::VECIN, inputSlotBytes, capacity);
++            r_ = LocalTensor<float>(TPosition::VECIN, 2 * inputSlotBytes, capacity);
++            gf_ = LocalTensor<float>(TPosition::VECIN, gammaOffset, parameterCapacity);
++            bf_ = LocalTensor<float>(TPosition::VECIN, biasOffset, parameterCapacity);
++            work_ = LocalTensor<float>(TPosition::VECCALC, workOffset, 1536);
++            sums_ = LocalTensor<float>(TPosition::VECCALC, workOffset + 1536 * sizeof(float) + 128, 32);
++        } else {
++            x_[0]=LocalTensor<float>(TPosition::VECIN,0,12288);
++            x_[1]=LocalTensor<float>(TPosition::VECIN,49280,12288);
++            r_=LocalTensor<float>(TPosition::VECIN,98560,12288);
++            gf_=LocalTensor<float>(TPosition::VECIN,147840,4096);
++            bf_=LocalTensor<float>(TPosition::VECIN,164352,4096);
++            work_=LocalTensor<float>(TPosition::VECCALC,180864,1536);
++            sums_=LocalTensor<float>(TPosition::VECCALC,187136,32);
++        }
+     }
+     __aicore__ inline void Process()
+     {

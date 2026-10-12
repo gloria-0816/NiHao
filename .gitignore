@@ -2,3 +2,10 @@ build/
 __pycache__/
 *.pyc
 *.bin
+work/
+**/__pycache__/
+experiments/E027_target70/transport_state.json
+experiments/E027_target70/results/
+experiments/E027_target70/inputs/
+experiments/E027_target70/build_*/
+experiments/E027_target70/live_state*.json

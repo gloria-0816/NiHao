@@ -1,0 +1,315 @@
+{
+  "s11": {
+    "base_us": [
+      45.65,
+      45.45,
+      45.72,
+      45.61
+    ],
+    "candidate_us": [
+      44.84,
+      44.95,
+      45.040000000000006,
+      45.019999999999996
+    ],
+    "gain_pct": 1.4135437212360205
+  },
+  "s13": {
+    "base_us": [
+      349.57,
+      349.29,
+      348.63,
+      349.19
+    ],
+    "candidate_us": [
+      349.64,
+      349.59000000000003,
+      348.83,
+      348.9
+    ],
+    "gain_pct": -0.0014316802199047796
+  },
+  "s1": {
+    "aiv_time(us)": 0.960556,
+    "aiv_vec_ratio": 0.200694,
+    "aiv_mte2_ratio": 0.247793,
+    "aiv_mte3_ratio": 0.125628,
+    "aiv_scalar_ratio": 0.449393,
+    "aiv_scalar_time(us)": 0.433889,
+    "aiv_scalar_vector_stall_time(us)": 0.0,
+    "aiv_read_hit_rate(%)": 0.0,
+    "ordinary_median_us": 2.3600000000000003,
+    "strict": {
+      "case_id": "s1",
+      "shape": [
+        1,
+        1,
+        64
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E027/experiments/E027_target70/results/attempt02/diagnose_s1_ordinary/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 64,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 0.001953125,
+      "max_relative_error": 0.0008888888888888889,
+      "examples": []
+    }
+  },
+  "s2": {
+    "aiv_time(us)": 1.408889,
+    "aiv_vec_ratio": 0.199132,
+    "aiv_mte2_ratio": 0.315867,
+    "aiv_mte3_ratio": 0.205322,
+    "aiv_scalar_ratio": 0.279275,
+    "aiv_scalar_time(us)": 0.39,
+    "aiv_scalar_vector_stall_time(us)": 0.0,
+    "aiv_read_hit_rate(%)": 68.965515,
+    "ordinary_median_us": 1.59,
+    "strict": {
+      "case_id": "s2",
+      "shape": [
+        1,
+        7,
+        197
+      ],
+      "dtype": "float32",
+      "output": "/home/developer/addrms_E027/experiments/E027_target70/results/attempt02/diagnose_s2_ordinary/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.0001,
+      "rtol": 0.0001,
+      "elements": 1379,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 4.76837158203125e-07,
+      "max_relative_error": 1.2947665535903877e-05,
+      "examples": []
+    }
+  },
+  "s4": {
+    "aiv_time(us)": 4.9749995,
+    "aiv_vec_ratio": 0.1632675,
+    "aiv_mte2_ratio": 0.5141644999999999,
+    "aiv_mte3_ratio": 0.137075,
+    "aiv_scalar_ratio": 0.12806099999999998,
+    "aiv_scalar_time(us)": 0.674167,
+    "aiv_scalar_vector_stall_time(us)": 0.0,
+    "aiv_read_hit_rate(%)": 76.397514,
+    "ordinary_median_us": 6.880000000000001,
+    "strict": {
+      "case_id": "s4",
+      "shape": [
+        1,
+        767,
+        193
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E027/experiments/E027_target70/results/attempt02/diagnose_s4_ordinary/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 148031,
+      "failed_elements": 63,
+      "classification_failures": 0,
+      "finite_failures": 63,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 1.921540656205421,
+      "examples": [
+        {
+          "flat_index": 1552,
+          "actual": 2.20703125,
+          "expected": 2.2109375
+        },
+        {
+          "flat_index": 7825,
+          "actual": 2.587890625,
+          "expected": 2.591796875
+        },
+        {
+          "flat_index": 8227,
+          "actual": -2.46484375,
+          "expected": -2.46875
+        },
+        {
+          "flat_index": 9016,
+          "actual": -2.037109375,
+          "expected": -2.041015625
+        },
+        {
+          "flat_index": 9984,
+          "actual": 2.26953125,
+          "expected": 2.265625
+        },
+        {
+          "flat_index": 10201,
+          "actual": -2.09765625,
+          "expected": -2.1015625
+        },
+        {
+          "flat_index": 13913,
+          "actual": 2.337890625,
+          "expected": 2.341796875
+        },
+        {
+          "flat_index": 17855,
+          "actual": 2.875,
+          "expected": 2.87890625
+        }
+      ]
+    }
+  },
+  "s6": {
+    "aiv_time(us)": 8.228333,
+    "aiv_vec_ratio": 0.4092565,
+    "aiv_mte2_ratio": 0.6820459999999999,
+    "aiv_mte3_ratio": 0.210165,
+    "aiv_scalar_ratio": 0.21449449999999998,
+    "aiv_scalar_time(us)": 1.743889,
+    "aiv_scalar_vector_stall_time(us)": 5.410278,
+    "aiv_read_hit_rate(%)": 36.491676,
+    "ordinary_median_us": 8.51,
+    "strict": {
+      "case_id": "s6",
+      "shape": [
+        1,
+        1513,
+        577
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E027/experiments/E027_target70/results/attempt02/diagnose_s6_ordinary/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 873001,
+      "failed_elements": 90,
+      "classification_failures": 0,
+      "finite_failures": 90,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 3.675799086757991,
+      "examples": [
+        {
+          "flat_index": 197,
+          "actual": 1.8076171875,
+          "expected": 1.8046875
+        },
+        {
+          "flat_index": 4624,
+          "actual": 2.666015625,
+          "expected": 2.669921875
+        },
+        {
+          "flat_index": 12270,
+          "actual": 2.478515625,
+          "expected": 2.482421875
+        },
+        {
+          "flat_index": 25848,
+          "actual": 2.01953125,
+          "expected": 2.015625
+        },
+        {
+          "flat_index": 28888,
+          "actual": 1.8994140625,
+          "expected": 1.90234375
+        },
+        {
+          "flat_index": 41084,
+          "actual": -1.916015625,
+          "expected": -1.9130859375
+        },
+        {
+          "flat_index": 43755,
+          "actual": -2.138671875,
+          "expected": -2.142578125
+        },
+        {
+          "flat_index": 54234,
+          "actual": -2.654296875,
+          "expected": -2.650390625
+        }
+      ]
+    }
+  },
+  "s7": {
+    "aiv_time(us)": 11.787500000000001,
+    "aiv_vec_ratio": 0.4065335,
+    "aiv_mte2_ratio": 0.7899529999999999,
+    "aiv_mte3_ratio": 0.243924,
+    "aiv_scalar_ratio": 0.159779,
+    "aiv_scalar_time(us)": 1.8777775,
+    "aiv_scalar_vector_stall_time(us)": 8.558610999999999,
+    "aiv_read_hit_rate(%)": 49.1637305,
+    "ordinary_median_us": 10.56,
+    "strict": {
+      "case_id": "s7",
+      "shape": [
+        1,
+        3113,
+        397
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E027/experiments/E027_target70/results/attempt02/diagnose_s7_ordinary/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 1235861,
+      "failed_elements": 122,
+      "classification_failures": 0,
+      "finite_failures": 122,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 27.845070422535212,
+      "examples": [
+        {
+          "flat_index": 71,
+          "actual": -2.30078125,
+          "expected": -2.296875
+        },
+        {
+          "flat_index": 13196,
+          "actual": 2.4375,
+          "expected": 2.43359375
+        },
+        {
+          "flat_index": 21965,
+          "actual": 2.84375,
+          "expected": 2.83984375
+        },
+        {
+          "flat_index": 43232,
+          "actual": -2.05859375,
+          "expected": -2.0546875
+        },
+        {
+          "flat_index": 44924,
+          "actual": 2.142578125,
+          "expected": 2.138671875
+        },
+        {
+          "flat_index": 54709,
+          "actual": -2.3984375,
+          "expected": -2.40234375
+        },
+        {
+          "flat_index": 72729,
+          "actual": -2.0703125,
+          "expected": -2.06640625
+        },
+        {
+          "flat_index": 94239,
+          "actual": -1.7958984375,
+          "expected": -1.798828125
+        }
+      ]
+    }
+  }
+}

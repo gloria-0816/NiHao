@@ -1,0 +1,6 @@
+{
+  "sha256": "fdb39b4a9f1d9f240b3430d8de9db67f621686c8d0239b28a3fce4d919cebc73",
+  "state": "seven_shapes_strict_pass_zero_gain",
+  "factor": "Replace two horizontal reductions with in-place lane accumulation then one WholeReduceSum; no extra Duplicate",
+  "scope": "FP32 SmallRowsStaticKernel 64<D<=256 only; arithmetic association changes"
+}
