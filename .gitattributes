@@ -1,0 +1,2 @@
+# Preserve exact archive bytes and LF in the Ascend C source.
+* -text

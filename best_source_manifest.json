@@ -1,0 +1,8 @@
+{
+  "variant": "FACC",
+  "parent": "LSQM",
+  "source_sha256": "bc62917a0b4e5a6155b188e5f829f32590832ba1e06345deb50564beacef356b",
+  "change": "FP32 wide rows use cross-repeat lane accumulation followed by one WholeReduceSum",
+  "numerical_change": true,
+  "reference": "Installed CANN rms_norm_base.h ReduceSumFP32: Add repeats to same 64-lane accumulator, then WholeReduceSum"
+}

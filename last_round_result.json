@@ -1,0 +1,115 @@
+{
+  "variant": "HSM63",
+  "submission_id": 744352,
+  "points": [
+    {
+      "case": 1,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 2.4,
+      "tbest_us": 1.12
+    },
+    {
+      "case": 2,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 2.57,
+      "tbest_us": 1.63
+    },
+    {
+      "case": 3,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 2.8,
+      "tbest_us": 2.1
+    },
+    {
+      "case": 4,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 8.09,
+      "tbest_us": 4.42
+    },
+    {
+      "case": 5,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 5.84,
+      "tbest_us": 4.91
+    },
+    {
+      "case": 6,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 11.97,
+      "tbest_us": 7.95
+    },
+    {
+      "case": 7,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 16.55,
+      "tbest_us": 10.5
+    },
+    {
+      "case": 8,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 31.83,
+      "tbest_us": 29.72
+    },
+    {
+      "case": 9,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 70.88,
+      "tbest_us": 67.81
+    },
+    {
+      "case": 10,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 48.47,
+      "tbest_us": 45.87
+    },
+    {
+      "case": 11,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 156.93,
+      "tbest_us": 129.65
+    },
+    {
+      "case": 12,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 81.19,
+      "tbest_us": 75.96
+    },
+    {
+      "case": 13,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 559.9,
+      "tbest_us": 394.15
+    },
+    {
+      "case": 14,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 4059.9999999999995,
+      "tbest_us": 3530.0
+    },
+    {
+      "case": 15,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 9370.0,
+      "tbest_us": 7960.0
+    }
+  ],
+  "score": 64.3,
+  "observed_rank": 98,
+  "source_sha256": "6bb58de2f99252489e57161e2f8118b547033bde582790da4713e88809c353d4",
+  "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acc3676694b590c3c9545ac"
+}

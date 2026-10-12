@@ -1,0 +1,1360 @@
+[
+  {
+    "variant": "AFFROW",
+    "source_sha256": "25d1b1801613caac9aa898621a8aa1008adfc23624773d8d6a6ade5b58befb7e"
+  },
+  {
+    "variant": "AUTOV",
+    "parent": "HALFAFF2",
+    "source_sha256": "d1271c2e5465e1aab8bd3e3bc8ed22bd466c9b1610646cc827129b8f221c67a1",
+    "change": "experimental compiler-managed vector dependencies; retain all cross-pipeline flags and final barriers",
+    "removed_explicit_vector_barriers": 226,
+    "validation_requirement": "bitwise comparison on full representative suite; static alias risks require actual tests"
+  },
+  {
+    "variant": "BACC8",
+    "parent": "LSQM",
+    "source_sha256": "28cde60353ba53448e801c8aa48cab88faef46b6551583b96adc684eca1ef951",
+    "change": "BF16 whole rows D4097..8192 use cross-repeat lane accumulation in the existing queue path",
+    "numerical_change": true,
+    "reference": "Installed CANN rms_norm_base.h ReduceSumFP32: Add repeats to same 64-lane accumulator, then WholeReduceSum"
+  },
+  {
+    "variant": "BANKH",
+    "parent": "HALFAFF2",
+    "source_sha256": "94e2ee1850e1c5e6de23115a2ccb52172ec9be78987da05e0a54639447db7992",
+    "change": "move FP16 residual input start by 256B; X and R occupy different modulo-512 bank groups; preserve affine and arithmetic",
+    "ub_end_bytes": 192384,
+    "numerical_change": false,
+    "offset_changes": {
+      "37888": 38144,
+      "56832": 57088,
+      "75776": 76288,
+      "113536": 114048,
+      "151296": 151808,
+      "170240": 170752,
+      "174464": 174976,
+      "178688": 179200,
+      "180864": 181376,
+      "183040": 183552,
+      "191360": 191872
+    }
+  },
+  {
+    "variant": "BASE",
+    "parent": "E025/DB9",
+    "source_sha256": "e20600f63a61104ff4e20ce0954282db14bb7322c823dd56ca8441d46ff90619"
+  },
+  {
+    "variant": "BF128S",
+    "parent": "SHAREDA",
+    "source_sha256": "31b92b4ecae8b2b6235721db5efd88dd646d0fdbebcf7f8c245d35cd99d25cff",
+    "change": "Aligned BF16 short rows with shared residual/square buffer and capacity 12800; convert residual before input X into float alias; cached FP32 parameters",
+    "numerical_change": true,
+    "ub_end_bytes": 191744
+  },
+  {
+    "variant": "BFA8",
+    "parent": "BFSIP",
+    "source_sha256": "c8024d9ea36616e4df49dcf5750cc35f0064d176916f1c8738647bb31b459adb",
+    "change": "Only BF16 generic whole-row affine changes Mul plus Add to FP32 FusedMulAdd; queue, reduction, normalization and prefetch retained",
+    "numerical_change": true
+  },
+  {
+    "variant": "BFDB8",
+    "parent": "BFSIP",
+    "source_sha256": "9a5fa1532d34f10fe313c15b4ae61d4d934ab46f62f9e109f2f03049d8a2ca65",
+    "change": "BF16 D8192 static dual X/R input prefetch two rows ahead, early residual refill, consumed X slot borrowed for reduction scratch and output; retains full-vector FP32 Div and separate affine Mul/Add",
+    "static_ub_end": 196608,
+    "numerical_change": true
+  },
+  {
+    "variant": "BFINV",
+    "parent": "BFSIP",
+    "source_sha256": "b92887d3f6780d1bba61c04eb4cafaf31a8be1ca1b81e73fb70d75b93634f91e",
+    "change": "BF16 generic whole-row normalization replaces vector Div with one FP32 reciprocal Div then broadcast Mul, retaining Sqrt, queues, reduction and separate affine Mul/Add",
+    "numerical_change": true
+  },
+  {
+    "variant": "BFP2",
+    "parent": "SHAREDA",
+    "source_sha256": "e41984137bb979ca73d6245a039db7eccff619528481131ecafbbb719a2fc83c",
+    "change": "BF16 1025..4096 uses multi-row batch pipeline with two input slots, cached FP32 affine operands and direct Cast output; reduction remains FP32",
+    "numerical_change": true,
+    "ub_end_bytes": 186112
+  },
+  {
+    "variant": "BFP3",
+    "parent": "BROAD3",
+    "source_sha256": "d9a56af8793d1b0722d1a42319ce239d337b5e997dc8526a3611a2d90830c36d",
+    "change": "BF16 wide batch pipeline from BFP2; at least eight rows per launched core amortize startup; FP16 dispatch restored to official best BROAD3",
+    "numerical_change": true,
+    "ub_end_bytes": 186112
+  },
+  {
+    "variant": "BFPN3",
+    "parent": "BFP3",
+    "source_sha256": "36ed6c04c7345291d65380af5b4b88970d86fb52b01542deba38a0245d62e0de",
+    "change": "BF16 triple pipeline with output reusing input X slot; raw residual aliases FP32 square scratch after residual cast; 13312 element capacity yields three D4096 rows",
+    "numerical_change": true,
+    "ub_end_bytes": 194368
+  },
+  {
+    "variant": "BFPN4",
+    "parent": "BFP3",
+    "source_sha256": "6755948d30b6f451556f437519cb3a6d84c9628aaacf9817c9012803f706cd81",
+    "change": "BF16 triple pipeline with output reusing input X slot; raw residual aliases FP32 square scratch after residual cast; 13312 element capacity yields three D4096 rows; 320-float partial scratch covers all padded row widths",
+    "numerical_change": true,
+    "ub_end_bytes": 194816
+  },
+  {
+    "variant": "BFRR",
+    "parent": "FACC",
+    "source_sha256": "c0d2d8077ff288a0d8dd4b6bf079f0b7423d0b48a545447decf9250a2c3d7f21",
+    "change": "BF16 D8192 row round-robin with original next-row prefetch preserved",
+    "numerical_change": false
+  },
+  {
+    "variant": "BFS1",
+    "parent": "FACC",
+    "source_sha256": "a644a3ce96b247f223996c8345113d55e0552d94aaa0603c81757f0e879a3deb",
+    "change": "BF16 block-cyclic row assignment; D8192 grain=1",
+    "numerical_change": false
+  },
+  {
+    "variant": "BFS125",
+    "parent": "BFSIP",
+    "source_sha256": "82897b33d068c9b4ebb9f2a04e9785633f4b56c217763a745797173b3bde91a3",
+    "change": "BF16 D128 125-row batches borrow consumed X slot for BlockReduce partials, sums and broadcast, then BF16 output; arithmetic and prefetch order retained",
+    "static_ub_end": 193664,
+    "numerical_change": false
+  },
+  {
+    "variant": "BFS127",
+    "parent": "BFSIP",
+    "source_sha256": "5676ff4d57e445027a42773687d74b0f4c59239ecd571f03627136ad240983b3",
+    "change": "BF16 D128 127-row batches borrow consumed X slot for BlockReduce partials, sums and broadcast, then BF16 output; arithmetic and prefetch order retained",
+    "static_ub_end": 196544,
+    "numerical_change": false
+  },
+  {
+    "variant": "BFS128",
+    "parent": "FACC",
+    "source_sha256": "557cec61c2b34e376f5d8dc50bac2110dba4915c2491d0950cc78616d1fa1100",
+    "change": "BF16 block-cyclic row assignment; D8192 grain=128",
+    "numerical_change": false
+  },
+  {
+    "variant": "BFS32",
+    "parent": "FACC",
+    "source_sha256": "5116b87b4193237697834712878a3bd44628abac5de6e40a218092ffcaf1308b",
+    "change": "BF16 block-cyclic row assignment; D8192 grain=32",
+    "numerical_change": false
+  },
+  {
+    "variant": "BFS8",
+    "parent": "HALFAFF2",
+    "source_sha256": "c7ab1c4d3ac7a81aac08abbc4d40ecc3a48a7d7f9ceba5bdddb031a59210c921",
+    "change": "BF16 4097..8192 static single-input prefetch; vector inverse and FMA; cached FP32 parameters",
+    "ub_end_bytes": 189472,
+    "numerical_change": true
+  },
+  {
+    "variant": "BFSB",
+    "parent": "FACC",
+    "source_sha256": "126ef0134424a76e16217cc216fad5c4d180e94662a6ba053870b624c5322830",
+    "change": "BF16 D128 interleaved 119-row batches across cores; unchanged arithmetic, UB and DMA lengths",
+    "numerical_change": false
+  },
+  {
+    "variant": "BFSB2",
+    "parent": "FACC",
+    "source_sha256": "12b35c02fbca9b5336791d748f15694a70b2e9c200b462735b56b96317c9b734",
+    "change": "BF16 D128 cyclic 119-row batches with early return for empty cores, before any input copy or event; fixes BFSB tail-core error",
+    "numerical_change": false
+  },
+  {
+    "variant": "BFSIP",
+    "parent": "BFPN4",
+    "source_sha256": "7acdc30a6cb1348a867933c5b94f7110de283da5c65da7a995f5789abcb3cb29",
+    "change": "BF16 D128 119-row batches use input/output ping-pong, residual/square alias, column-wise FP32 affine and aligned bulk DMA",
+    "static_ub_end": 193024,
+    "numerical_change": false
+  },
+  {
+    "variant": "BFV160",
+    "parent": "FACC",
+    "source_sha256": "92bcd214972287c9298e859f5baabf0daa022571203a7bbc63742df74272df4f",
+    "change": "For large independent BF16 rows only, launch 4 times physical AIV count as logical blocks; no batch mode or cross-core sync; preserve per-row arithmetic and prefetch",
+    "numerical_change": false,
+    "references": [
+      "https://www.hiascend.com/doc_center/source/en/CANNCommunityEdition/900/programug/Ascendcopdevg/atlas_ascendc_10_00021.html",
+      "https://asc.gitcode.com/guide/programming_guide/language_extension/simd_builtin_keywords.html"
+    ]
+  },
+  {
+    "variant": "BFV80",
+    "parent": "FACC",
+    "source_sha256": "f511c4489a870814adb9fc9618888155029dd964e2a00f825c6d694eb7136356",
+    "change": "For large independent BF16 rows only, launch 2 times physical AIV count as logical blocks; no batch mode or cross-core sync; preserve per-row arithmetic and prefetch",
+    "numerical_change": false,
+    "references": [
+      "https://www.hiascend.com/doc_center/source/en/CANNCommunityEdition/900/programug/Ascendcopdevg/atlas_ascendc_10_00021.html",
+      "https://asc.gitcode.com/guide/programming_guide/language_extension/simd_builtin_keywords.html"
+    ]
+  },
+  {
+    "variant": "BROAD1",
+    "parent": "HALFAFF2",
+    "source_sha256": "5c20081c7edb566ff2437b09b3360fdbc813fcfd1f774eddb790d61550c77285",
+    "change": "FP32 medium-wide triple buffering; FP16 wider batch pipeline; BF16 static 8K; D64 overlap",
+    "merged": [
+      "FPBROAD",
+      "HALFWIDE",
+      "BFS8",
+      "SINGLEOV"
+    ],
+    "numerical_change": true
+  },
+  {
+    "variant": "BROAD2",
+    "parent": "HALFAFF2",
+    "source_sha256": "9756e87c9840ae889fd83e44a4c2dba2fa397042951c163b556f8364cb54d7da",
+    "merged": [
+      "FPBROAD",
+      "HALFWIDE",
+      "SINGLEOV"
+    ],
+    "change": "Broader FP32 triple-buffer and FP16 pipeline routes with D64 DMA overlap; retain baseline BF16 route because BFS8 showed no gain"
+  },
+  {
+    "variant": "BROAD3",
+    "parent": "BROAD2",
+    "source_sha256": "d7384c3263e03450967391bb308c451eda05792a905b5f58cb02999cbe8d70bf",
+    "change": "Merge independently measured HSHORTN and corrected LONGH2; preserve BROAD2 other routes",
+    "merged": [
+      "HSHORTN",
+      "LONGH2"
+    ],
+    "numerical_change": true
+  },
+  {
+    "variant": "BSBC16",
+    "parent": "BFSB2",
+    "source_sha256": "0391aeca40d396a9c3d941e23a1455904e637aa8ea84f83cbd317f3513b5e1c5",
+    "change": "BF16 D128 119-row cyclic batches launch at most 16 vector cores; same arithmetic and safe empty-core return",
+    "numerical_change": false
+  },
+  {
+    "variant": "BSBC24",
+    "parent": "BFSB2",
+    "source_sha256": "07c7152f368c3c22974e592dbbd5296dc788db9ffeb5e27c044f29572d3ff6d4",
+    "change": "BF16 D128 119-row cyclic batches launch at most 24 vector cores; same arithmetic and safe empty-core return",
+    "numerical_change": false
+  },
+  {
+    "variant": "BSBC32",
+    "parent": "BFSB2",
+    "source_sha256": "203f517bf5ca31edd811a9ffc5181466c07a893cb044d5d4e2db4d62aef2048e",
+    "change": "BF16 D128 119-row cyclic batches launch at most 32 vector cores; same arithmetic and safe empty-core return",
+    "numerical_change": false
+  },
+  {
+    "variant": "CACHEALL",
+    "parent": "HALFAFF2",
+    "source_sha256": "6d48b935ca9584ea41976bb1ccd4964657dadb40018d4d6234965eb0b0000596",
+    "change": "disable L2 allocation for large streaming tensors, one tensor >=64 MiB; parameters stay cached",
+    "disabled": [
+      "o",
+      "out",
+      "output",
+      "r",
+      "residual",
+      "x"
+    ],
+    "sites": [
+      {
+        "class": "TinyBatchFloatKernel",
+        "tensor": "xgm_",
+        "argument": "x"
+      },
+      {
+        "class": "TinyBatchFloatKernel",
+        "tensor": "rgm_",
+        "argument": "r"
+      },
+      {
+        "class": "TinyBatchFloatKernel",
+        "tensor": "outgm_",
+        "argument": "out"
+      },
+      {
+        "class": "ShortFloatPartitionKernel",
+        "tensor": "xgm_",
+        "argument": "x"
+      },
+      {
+        "class": "ShortFloatPartitionKernel",
+        "tensor": "rgm_",
+        "argument": "r"
+      },
+      {
+        "class": "ShortFloatPartitionKernel",
+        "tensor": "outgm_",
+        "argument": "out"
+      },
+      {
+        "class": "StaticHalfRowsKernel",
+        "tensor": "xgm_",
+        "argument": "x"
+      },
+      {
+        "class": "StaticHalfRowsKernel",
+        "tensor": "rgm_",
+        "argument": "r"
+      },
+      {
+        "class": "StaticHalfRowsKernel",
+        "tensor": "outgm_",
+        "argument": "out"
+      },
+      {
+        "class": "PipelineBatch9Kernel",
+        "tensor": "xgm_",
+        "argument": "x"
+      },
+      {
+        "class": "PipelineBatch9Kernel",
+        "tensor": "rgm_",
+        "argument": "r"
+      },
+      {
+        "class": "PipelineBatch9Kernel",
+        "tensor": "outgm_",
+        "argument": "out"
+      },
+      {
+        "class": "MultiRowDirectKernel",
+        "tensor": "x_",
+        "argument": "x"
+      },
+      {
+        "class": "MultiRowDirectKernel",
+        "tensor": "r_",
+        "argument": "r"
+      },
+      {
+        "class": "MultiRowDirectKernel",
+        "tensor": "out_",
+        "argument": "o"
+      },
+      {
+        "class": "MultiRowWideKernel",
+        "tensor": "x_",
+        "argument": "x"
+      },
+      {
+        "class": "MultiRowWideKernel",
+        "tensor": "r_",
+        "argument": "r"
+      },
+      {
+        "class": "MultiRowWideKernel",
+        "tensor": "out_",
+        "argument": "o"
+      },
+      {
+        "class": "RetainedLongRowKernel",
+        "tensor": "x_",
+        "argument": "x"
+      },
+      {
+        "class": "RetainedLongRowKernel",
+        "tensor": "r_",
+        "argument": "r"
+      },
+      {
+        "class": "RetainedLongRowKernel",
+        "tensor": "out_",
+        "argument": "out"
+      },
+      {
+        "class": "WholeRowsStaticDoubleBufferKernel",
+        "tensor": "xgm_",
+        "argument": "x"
+      },
+      {
+        "class": "WholeRowsStaticDoubleBufferKernel",
+        "tensor": "rgm_",
+        "argument": "r"
+      },
+      {
+        "class": "WholeRowsStaticDoubleBufferKernel",
+        "tensor": "outgm_",
+        "argument": "out"
+      },
+      {
+        "class": "SmallRowsStaticKernel",
+        "tensor": "xgm_",
+        "argument": "x"
+      },
+      {
+        "class": "SmallRowsStaticKernel",
+        "tensor": "rgm_",
+        "argument": "r"
+      },
+      {
+        "class": "SmallRowsStaticKernel",
+        "tensor": "outgm_",
+        "argument": "out"
+      },
+      {
+        "class": "Kernel",
+        "tensor": "x_",
+        "argument": "x"
+      },
+      {
+        "class": "Kernel",
+        "tensor": "r_",
+        "argument": "r"
+      },
+      {
+        "class": "Kernel",
+        "tensor": "out_",
+        "argument": "out"
+      }
+    ],
+    "numerical_change": false
+  },
+  {
+    "variant": "CACHEIN",
+    "parent": "HALFAFF2",
+    "source_sha256": "163d7e273e8a3cf9747f1f0da77e9e2b60d9ede15754f5bd1261650a4bc4dcbe",
+    "change": "disable L2 allocation for large streaming tensors, one tensor >=64 MiB; parameters stay cached",
+    "disabled": [
+      "r",
+      "residual",
+      "x"
+    ],
+    "sites": [
+      {
+        "class": "TinyBatchFloatKernel",
+        "tensor": "xgm_",
+        "argument": "x"
+      },
+      {
+        "class": "TinyBatchFloatKernel",
+        "tensor": "rgm_",
+        "argument": "r"
+      },
+      {
+        "class": "ShortFloatPartitionKernel",
+        "tensor": "xgm_",
+        "argument": "x"
+      },
+      {
+        "class": "ShortFloatPartitionKernel",
+        "tensor": "rgm_",
+        "argument": "r"
+      },
+      {
+        "class": "StaticHalfRowsKernel",
+        "tensor": "xgm_",
+        "argument": "x"
+      },
+      {
+        "class": "StaticHalfRowsKernel",
+        "tensor": "rgm_",
+        "argument": "r"
+      },
+      {
+        "class": "PipelineBatch9Kernel",
+        "tensor": "xgm_",
+        "argument": "x"
+      },
+      {
+        "class": "PipelineBatch9Kernel",
+        "tensor": "rgm_",
+        "argument": "r"
+      },
+      {
+        "class": "MultiRowDirectKernel",
+        "tensor": "x_",
+        "argument": "x"
+      },
+      {
+        "class": "MultiRowDirectKernel",
+        "tensor": "r_",
+        "argument": "r"
+      },
+      {
+        "class": "MultiRowWideKernel",
+        "tensor": "x_",
+        "argument": "x"
+      },
+      {
+        "class": "MultiRowWideKernel",
+        "tensor": "r_",
+        "argument": "r"
+      },
+      {
+        "class": "RetainedLongRowKernel",
+        "tensor": "x_",
+        "argument": "x"
+      },
+      {
+        "class": "RetainedLongRowKernel",
+        "tensor": "r_",
+        "argument": "r"
+      },
+      {
+        "class": "WholeRowsStaticDoubleBufferKernel",
+        "tensor": "xgm_",
+        "argument": "x"
+      },
+      {
+        "class": "WholeRowsStaticDoubleBufferKernel",
+        "tensor": "rgm_",
+        "argument": "r"
+      },
+      {
+        "class": "SmallRowsStaticKernel",
+        "tensor": "xgm_",
+        "argument": "x"
+      },
+      {
+        "class": "SmallRowsStaticKernel",
+        "tensor": "rgm_",
+        "argument": "r"
+      },
+      {
+        "class": "Kernel",
+        "tensor": "x_",
+        "argument": "x"
+      },
+      {
+        "class": "Kernel",
+        "tensor": "r_",
+        "argument": "r"
+      }
+    ],
+    "numerical_change": false
+  },
+  {
+    "variant": "COAL64",
+    "parent": "FACC",
+    "source_sha256": "35a3edce461da491d8a347f66813cfea9bf12f2418b7aa830b97699b1c6ecd6d",
+    "change": "Single D64: combine 2 or 4 GM reads with strided DMA only when actual pointer gaps satisfy all limits; fallback to independent reads; tensor arithmetic identical",
+    "numerical_change": false
+  },
+  {
+    "variant": "COMBO1",
+    "source_sha256": "6c8dbe73ff9752e60bc5ba9bf82a5aebe1d6e6691d523720e99240972379330a",
+    "parent": "DB9",
+    "changes": [
+      "HALFBR short FP16 reduction",
+      "AFFROW row/column adaptive normalization"
+    ]
+  },
+  {
+    "variant": "COMBO2",
+    "parent": "SHORT8B",
+    "source_sha256": "f75083eb629615f6d58db458bdba6e295a6cd1e1d35a794bbedfcd48c6f5bafc",
+    "change": "FP16 native residual addition; FP32 norm and affine retained"
+  },
+  {
+    "variant": "COMBO3",
+    "parent": "COMBO2",
+    "source_sha256": "061d43325ebcc50a96d14e8568e4f086807f78b288ab9a08a396e4df9a9a04b2",
+    "change": "D512 recast capacity 12288; FP32 medium-wide static buffering; retained long vertical accumulation",
+    "merged": [
+      "RECAST restricted D512",
+      "FPSTATIC2",
+      "RETACC2"
+    ]
+  },
+  {
+    "variant": "COMBOA",
+    "parent": "HALFAFF2",
+    "source_sha256": "a8ab850c7c4a5154330c27ef978a06843f02d45679cef3d0c1698a6a58675d74",
+    "change": "merge FP32 static batch, recast D512, short native add, single overlap, split long FP16 and retained vertical sum",
+    "merged": [
+      "COMBO3",
+      "HALFAFF2",
+      "SHORTADD",
+      "SINGLEOV",
+      "SPLITAFF"
+    ]
+  },
+  {
+    "variant": "CPART",
+    "parent": "FACC",
+    "source_sha256": "3a0b3ecd4a1867f55c97f3fa44e4f4c455836ec06fa27f79526715dfd26b3095",
+    "change": "Metadata-only constant core partition for 40/8/32/1 and one row per core; preserve exact floor boundaries and all tensor arithmetic",
+    "numerical_change": false,
+    "partition_sites": 36
+  },
+  {
+    "variant": "DUP",
+    "source_sha256": "c912a54474c39fd91b06882ed2895893a92b19bf43172a5f7a890efba6796e2d"
+  },
+  {
+    "variant": "FACC",
+    "parent": "LSQM",
+    "source_sha256": "bc62917a0b4e5a6155b188e5f829f32590832ba1e06345deb50564beacef356b",
+    "change": "FP32 wide rows use cross-repeat lane accumulation followed by one WholeReduceSum",
+    "numerical_change": true,
+    "reference": "Installed CANN rms_norm_base.h ReduceSumFP32: Add repeats to same 64-lane accumulator, then WholeReduceSum"
+  },
+  {
+    "variant": "FDACC",
+    "parent": "FACC",
+    "source_sha256": "11db0e0063d079feac9dbde578bb9b8107156795d3ced9631f8d8f3023cbc1f9",
+    "change": "FP32 D4097..32768: direct residual Add and direct affine FMA without copy/conversion instructions; cross-chunk lane accumulation with one final reduction",
+    "numerical_change": true
+  },
+  {
+    "variant": "FDIR",
+    "parent": "FACC",
+    "source_sha256": "d65b8a65efe04c3d24eff48db748d2435a621398b19e48e5c6c179dacb9ae2ba",
+    "change": "FP32 D4097..32768: direct residual Add and direct affine FMA without copy/conversion instructions",
+    "numerical_change": true
+  },
+  {
+    "variant": "FLATDMA",
+    "source_sha256": "652a26e2f4bcd81b83e7bb0a0d28af678cfd6236a832287d0483b8b013356f3f",
+    "parent": "COMBO1",
+    "change": "single contiguous DMA for aligned batches"
+  },
+  {
+    "variant": "FLATH",
+    "source_sha256": "c0c10362ca8491c8a3c181b843f4c4c390d3f97cc5864722134ccf6dbe0300ab",
+    "ub_end_bytes": 144128
+  },
+  {
+    "variant": "FLATH2",
+    "source_sha256": "efcdd33fef9bd9ff6480c7bac04338aff5a7cf71e4a78ab94e5f1c9985ecf9eb"
+  },
+  {
+    "variant": "FLATI",
+    "parent": "FACC",
+    "source_sha256": "8a28c63b6037db1b6ccbb6e5d5ff4325e5f91f01999b4462485772262bd35445",
+    "change": "Short FP16 packed input: one Gather with row/column byte indices assembled using Brcb and high-dimensional Add; avoid four full-index transformations; support padded strides 64/128/192/256",
+    "numerical_change": false,
+    "static_ub_end": 153856
+  },
+  {
+    "variant": "FLATNH",
+    "parent": "BFPN4",
+    "source_sha256": "017ba072affe1ba856bf6ed6f5a0d993cea8215a7213c76aef3f6bf672a9e3e8",
+    "change": "FP16 short non-aligned rows: continuous GM input, native packed residual Add, one half Gather, in-place FP32 square, native half affine and row output DMA",
+    "static_ub_end": 153856,
+    "numerical_change": false
+  },
+  {
+    "variant": "FLATW",
+    "parent": "BFSIP",
+    "source_sha256": "bf70bd23fffd18e879e39e2556403ee10fd800fbac6f040105ec63df654eabac",
+    "change": "Nonaligned FP16 D321..1024 packed input DMA, native-half residual Add, one Gather into padded rows, FP32 RMS and native-half normalize/FMA; shared residual/square and two prefetched X slots",
+    "static_ub_end": 185856,
+    "numerical_change": true
+  },
+  {
+    "variant": "FMACC",
+    "parent": "LSQM",
+    "source_sha256": "326b0adc739acfa0cb17d490c07d9ce14d938974874797aed4a680f38cf29980",
+    "change": "FP32 wide rows: direct VMLA accumulation to 64 lanes per row replaces full square tile and partial-reduction levels",
+    "static_ub_end": 187264,
+    "numerical_change": true
+  },
+  {
+    "variant": "FPBROAD",
+    "parent": "HALFAFF2",
+    "source_sha256": "2b9b45fd13b37ba78f643da2c6457156c035ff1e706ee0821fe2190d5ab0066a",
+    "change": "FP32 broad width 1537..4096 shared residual and direct X output, capacity 12288; FP16/BF16 unchanged",
+    "ub_end_bytes": 187264
+  },
+  {
+    "variant": "FPC4",
+    "parent": "BROAD3",
+    "source_sha256": "5fe51b93b76dfe6111e85f930a2e0ccd23530aab97f6421e0532b481ad7520e6",
+    "change": "Increase FP32 static triple-buffer capacity from 12288 to 12800 elements; four instead of three padded 3136-element rows; preserve math and events",
+    "numerical_change": false,
+    "ub_end_bytes": 193664
+  },
+  {
+    "variant": "FPD4",
+    "parent": "BFP3",
+    "source_sha256": "17c97191d537bd238dc019778160a69ea6fcf6f54e6120627f3d47272b97033d",
+    "change": "FP32 padded row widths 3136 and 3200 use two residual slots and two X/output slots; residual prefetch two batches ahead after reduction; arithmetic unchanged",
+    "numerical_change": false,
+    "ub_end_bytes": 192192
+  },
+  {
+    "variant": "FPFLAT",
+    "parent": "BFSIP",
+    "source_sha256": "e16d88ea9388997f4998f81b504a7c03cf56d021ec4660d43543603d220fa0ba",
+    "change": "Nonaligned FP32 wide rows use packed X/residual DMA, alternating X/residual roles of two input/square slots, one Gather into reusable output tile, original FP32 reduction and affine",
+    "static_ub_end": 192512,
+    "numerical_change": false
+  },
+  {
+    "variant": "FPR56",
+    "parent": "LSQM",
+    "source_sha256": "4f993252e168c38636d58d0b89af52fa2ff815abc2b6e7bfc554e4b6886aff15",
+    "change": "FP32 wide rows pad to 512 elements and reduce all chunks in one contiguous WholeReduceSum invocation per batch",
+    "static_ub_end": 187264,
+    "numerical_change": false
+  },
+  {
+    "variant": "FPSTATIC",
+    "source_sha256": "2529bd2a858d937524ef1a76f3460af312ed94d1df449e6e59eb2f9498bc92d9",
+    "ub_end_bytes": 190848
+  },
+  {
+    "variant": "FPSTATIC2",
+    "source_sha256": "6d9ca63ff7baff496a11a7130b7a01ac248ce27145b19ab56c4656febf31d2ef",
+    "fix": "nonaligned tail clearing avoids 8-bit repeat-stride overflow",
+    "ub_end_bytes": 190848
+  },
+  {
+    "variant": "FPSTATIC3",
+    "parent": "COMBOA",
+    "source_sha256": "1773236ad0d007bb8cae72c4a6c26132d6189df176c97819f30f5e9587f0bcc7",
+    "change": "FP32 shared residual buffer with next-batch prefetch after reduction; batch capacity 13312; direct X output",
+    "ub_end_bytes": 192384
+  },
+  {
+    "variant": "FPSTRIPE",
+    "parent": "BFP3",
+    "source_sha256": "9bd8c4034902d04c3ba5882b4349a8db6d1d098d1b306a0f8b5b2e01d08ae891",
+    "change": "Wide FP32 row batches interleaved across cores, so neighboring cores read neighboring GM ranges; math and buffer capacity preserved",
+    "numerical_change": false,
+    "ub_end_bytes": 187264
+  },
+  {
+    "variant": "FWACC",
+    "parent": "FACC",
+    "source_sha256": "7f1a3021bd315265766d9401612d4d6e59c3418dda642e32332f952b4e5cdbbd",
+    "change": "Integrate independently tested HWACC FP16 wide lane accumulation into official best FACC",
+    "numerical_change": true
+  },
+  {
+    "variant": "H20",
+    "parent": "E025/DB9",
+    "source_sha256": "76c0fe22b2c1282b670821f4294b9289d7167d839f173b93cd367e3cf79dbcbf"
+  },
+  {
+    "variant": "HALFADD",
+    "parent": "COMBO1",
+    "source_sha256": "e4b5e4f24b1acd444e89fc3fe27731df79ff4648bde4888162afbc4566d3b047",
+    "change": "FP16 residual addition before conversion; retains FP32 squared norm and affine stages",
+    "numerical_change": true
+  },
+  {
+    "variant": "HALFAFF",
+    "parent": "COMBO2",
+    "source_sha256": "d9daced7368b15006258c15418dfcaf0a60a7f35caf9cc9af0556fa090b3c829",
+    "change": "FP16 affine FMA after FP32 RMS normalization; retains FP32 reduction",
+    "numerical_change": true
+  },
+  {
+    "variant": "HALFAFF2",
+    "parent": "COMBO2",
+    "source_sha256": "1bb1a25d45d010bbb7510349851160efd2891bad4a1631693b1c720fcc540f92",
+    "change": "FP16 native fused affine after FP32 normalization; compile guard for BF16 route",
+    "numerical_change": true
+  },
+  {
+    "variant": "HALFBR",
+    "parent": "E025/DB9",
+    "source_sha256": "f0873054bd7fefaaa29819ca2667b6e7538d06b960e866a6d9fdcc4a4018f4ae"
+  },
+  {
+    "variant": "HALFNORM",
+    "parent": "BROAD2",
+    "source_sha256": "368c3a8c3741f201b0133ca9512bf5f1246ca30f0c4ffb4cd9bf21f8ed2daa81",
+    "change": "FP32 norm reduction retained; FP16 reciprocal scale and normalization with retained half residual in output buffer; remove full float normalization and output conversion",
+    "numerical_change": true
+  },
+  {
+    "variant": "HALFNORM2",
+    "parent": "BROAD2",
+    "source_sha256": "4d4210e858a9a7dd87e2f2b8cd2978a1730a2a4aa04c611b00784bdc59e192a7",
+    "change": "FP32 square reduction and FP16 normalization; corrected 128-lane tail for widths that are padded to 64 lanes",
+    "numerical_change": true,
+    "fix_of": "HALFNORM"
+  },
+  {
+    "variant": "HALFWIDE",
+    "parent": "HALFAFF2",
+    "source_sha256": "a0d417891215e27323a309b92fe88bdb47577676e903dfc34e28114b6e013a80",
+    "change": "FP16 width 1025..4096 batch pipeline, 9216 capacity, native affine, no float parameter buffers",
+    "ub_end_bytes": 188672,
+    "numerical_change": true
+  },
+  {
+    "variant": "HCB32",
+    "parent": "BFSIP",
+    "source_sha256": "85491ab3484124ffd081a6caa5ec954756481d9f72b2fabe344df470b0b19462",
+    "change": "Merge numerically identical HCORE32 short FP16 in-place square tile and 32-core preference into best official BFSIP",
+    "static_ub_end": 141312,
+    "numerical_change": false
+  },
+  {
+    "variant": "HCORE16",
+    "parent": "BFPN4",
+    "source_sha256": "380d606fcc6a5559fb14d95185843d9841e69ee08771441f22323f2921c8a0a2",
+    "change": "FP16 short static rows use one in-place FP32 square tile, larger UB capacity, prefer 16 cores when <=63 rows/core; retain original row-range route guard",
+    "static_ub_end": 141312,
+    "numerical_change": false
+  },
+  {
+    "variant": "HCORE24",
+    "parent": "BFPN4",
+    "source_sha256": "2aad25b01fa0d7e78cfd6020a9a2daf8f1247089d2f4891376af56014431ee93",
+    "change": "FP16 short static rows use one in-place FP32 square tile, larger UB capacity, prefer 24 cores when <=63 rows/core; retain original row-range route guard",
+    "static_ub_end": 141312,
+    "numerical_change": false
+  },
+  {
+    "variant": "HCORE32",
+    "parent": "BFPN4",
+    "source_sha256": "abbc82dc5c387afda5f5c94e710d2d51a3383b863678ee088c57c72f8eebac5c",
+    "change": "FP16 short static rows use one in-place FP32 square tile, larger UB capacity, prefer 32 cores when <=63 rows/core; retain original row-range route guard",
+    "static_ub_end": 141312,
+    "numerical_change": false
+  },
+  {
+    "variant": "HCORE40",
+    "parent": "BFPN4",
+    "source_sha256": "cb5ede5691b038fc5a212fc8f7dafa979faddf3f000f458703a48318bc19bfaf",
+    "change": "FP16 short static rows use one in-place FP32 square tile, larger UB capacity, prefer 40 cores when <=63 rows/core; retain original row-range route guard",
+    "static_ub_end": 141312,
+    "numerical_change": false
+  },
+  {
+    "variant": "HINV",
+    "parent": "BFPN4",
+    "source_sha256": "ca973946902ea56656244a86daa7456dd975ca7692af1b55bc4b4f85a7750ec8",
+    "change": "FP16 short rows retain FP32 square reduction, then round variance to half and use native half Sqrt/Div for inverse RMS",
+    "numerical_change": true
+  },
+  {
+    "variant": "HIP15",
+    "parent": "BFPN4",
+    "source_sha256": "832128a5aadbcb3fe4bf44e6ae5b7d731134435fca5aa9ae9f56592aa1a33b7e",
+    "change": "FP16 row batches retain native half residual in input/output ping/pong slots, square in one in-place FP32 tile, increase batch capacity to 14848, prefetch residual early and refill X after its output DMA",
+    "static_ub_end": 192000,
+    "numerical_change": true
+  },
+  {
+    "variant": "HIP16S",
+    "parent": "HIP15",
+    "source_sha256": "32530b7c9cd34992c44db3d8b4d303aaff0b86f6835b18e8bdce755d390c9a6c",
+    "change": "FP16 native row batches pad to 16 elements, with column-wise BlockReduceSum and bounded tail mask; enlarged partial workspace 2304 floats",
+    "static_ub_end": 193024,
+    "numerical_change": true
+  },
+  {
+    "variant": "HIPA15",
+    "parent": "BFPN4",
+    "source_sha256": "8bc47cbffb27a1c834932358c2fe5ce8673eff78af6fc4f890a5ba2b15cc7afe",
+    "change": "Adopt HIP15 in-place FP16 batches only at D divisible by 64; non-aligned FP16 retains BFPN4 route",
+    "static_ub_end": 192000,
+    "numerical_change": true
+  },
+  {
+    "variant": "HMACC",
+    "parent": "LSQM",
+    "source_sha256": "4f2d8fcf1b8042208d5aca323c303ca21fb0d5a6ea9d3eb572b13936f9a41842",
+    "change": "FP16 D321..1024: mixed VMLA accumulates directly to 64 FP32 lanes per row; no full square tile, capacity 27648",
+    "static_ub_end": 195968,
+    "numerical_change": true
+  },
+  {
+    "variant": "HNQM",
+    "parent": "LSQM",
+    "source_sha256": "a62a3654bc4c993872055a766bbe2c36e7c4070b1378772f988f2994c6b667af",
+    "change": "FP16 D321..1024 many-row path: retain native half residual, mixed FP32 square accumulation, compact in-place BlockReduce partials, half normalization/FMA and double input/output slots; capacity 23040; deferred output drains overlap next reduction",
+    "numerical_change": true,
+    "static_ub_end": 195840
+  },
+  {
+    "variant": "HNQMA",
+    "parent": "HNQM",
+    "source_sha256": "49081b9cda5d1e923199e1eabbec34fc225da93b5667c58fb5d79ba23d18104e",
+    "change": "Use native-half mixed squares and deferred output drains only for aligned FP16 D321..1024; nonaligned path remains LSQM",
+    "static_ub_end": 195840,
+    "numerical_change": true
+  },
+  {
+    "variant": "HOSTP",
+    "parent": "FACC",
+    "source_sha256": "ec05cecad58bb23d59f9177a224a519b83a50c67ac6f3421054f2bb8cade8606",
+    "change": "Host computes quotient and remainder for FP16 short/medium and FP32 short batch partitions; no division in device partition setup; same maximum rows per core and complete balanced coverage",
+    "numerical_change": false,
+    "partition_order_changed": true
+  },
+  {
+    "variant": "HSFAST",
+    "parent": "BFP3",
+    "source_sha256": "b0828f6c2caaa4a0844457723683b13a47cfd67c88624ec118aeb86b73a0e801",
+    "change": "Single-row FP16 D64 native residual sum, FP32 RMS, native half scaling and FMA with shared vector masks",
+    "numerical_change": true,
+    "ub_end_bytes": 1664
+  },
+  {
+    "variant": "HSFAST2",
+    "parent": "BFP3",
+    "source_sha256": "1e11bbe10f04219bc4b3f7fb8e991970a015761a494a4e18d003de8f487acd86",
+    "change": "Single-row FP16 D64; FP32 normalization; native half affine FMA avoids gamma and bias casts; mask reuse; avoids rounding RMS inverse to half",
+    "numerical_change": true,
+    "ub_end_bytes": 1824
+  },
+  {
+    "variant": "HSHORTN",
+    "parent": "BROAD2",
+    "source_sha256": "eb0ad4645fd7ab547c3e5d87772ffab815cbfa6a153e040633fbdd9809c8d90f",
+    "change": "FP16 short rows retain half residual; FP32 square/norm reduction and native half scale/Mul/FMA; remove input parameter casts and final output cast",
+    "numerical_change": true
+  },
+  {
+    "variant": "HSLANE",
+    "parent": "FACC",
+    "source_sha256": "d8b684e9bc66bf8a31c9bcb1d45547abb903cde3dd25d071e26d287f25d2466d",
+    "change": "FP16 D64..256, 4..32 rows per core: direct mixed VMLA 64-lane FP32 sum, native half normalization; remove full FP32 residual and square tiles",
+    "numerical_change": true
+  },
+  {
+    "variant": "HSM63",
+    "parent": "FACC",
+    "source_sha256": "6bb58de2f99252489e57161e2f8118b547033bde582790da4713e88809c353d4",
+    "change": "FP16 short rows: retain half residual and mixed FP32 square without full float residual tile; fit up to 63 rows per core and preserve existing path up to 32 rows; max BlockReduce repeats 252",
+    "static_ub_end": 141440,
+    "numerical_change": true
+  },
+  {
+    "variant": "HSQM",
+    "parent": "BFSIP",
+    "source_sha256": "4d1f2c00a88024efeaea8c6bc6d8399023c92ce4c86eb76062fe1f0d1f54520e",
+    "change": "FP16 static short-row path overlaps zeroing FP32 square buffer with input DMA and squares retained half residual with mixed MulAddDst; native half tail clearing stays within each row",
+    "numerical_change": false
+  },
+  {
+    "variant": "HWACC",
+    "parent": "LSQM",
+    "source_sha256": "bea6b296b25aa8ab4c82911094fccac18f52b3649791ab1bb96b0e20b32d2857",
+    "change": "FP16 D1025..4096 many rows: native residual retained in half, mixed VMLA lane accumulation, capacity 27648, per-row half normalization and affine, deferred output drains",
+    "static_ub_end": 195840,
+    "numerical_change": true
+  },
+  {
+    "variant": "LCONST",
+    "parent": "BFSIP",
+    "source_sha256": "b29c40d8b0f9463e2dcb3390f46079c733b36cfbb39c5b9c79152d75afd9f02e",
+    "change": "Compile-time D16384/D32768 retained FP16 paths with fixed 8192-element aligned DataCopy; arithmetic and synchronization retained",
+    "numerical_change": false
+  },
+  {
+    "variant": "LCONST2",
+    "parent": "BFSIP",
+    "source_sha256": "abaa4014e6b23c41b887f0dce2c573f71ad8c1f0f76c3896a570953a239a9be8",
+    "change": "Compile-time D16384/D32768 retained FP16 paths with fixed 8192-element aligned DataCopy; arithmetic and synchronization retained",
+    "numerical_change": false
+  },
+  {
+    "variant": "LEXP",
+    "parent": "BFP3",
+    "source_sha256": "2b05f3b887a73954566f505c95080f9ba6a9bc1f15beb03343636e61105fd09f",
+    "change": "Inverse RMS uses exp(-0.5*log(meanSquare+epsilon)), as CANN RmsNorm high-precision implementation, replacing square-root, duplicate and divide in batch paths",
+    "numerical_change": true,
+    "replaced_sequences": 10
+  },
+  {
+    "variant": "LH16G",
+    "parent": "BFSIP",
+    "source_sha256": "f1a12131b767235cc72a7d9669a119f2cb52430f225c2be18afae4cbc45f6aca",
+    "change": "FP16 retained long rows: bound chunk absolute max<=16, square and first 128-value sum in half, cast only partials to FP32; larger/nonfinite max falls back to original FP32 square/reduction",
+    "numerical_change": true,
+    "static_ub_end": 169632
+  },
+  {
+    "variant": "LONGACC",
+    "source_sha256": "74fdca83d1c318ec638f65460ecb447ad75cc5a125fd5dd6f68644f01e0b0c24",
+    "ub_end_bytes": 196608
+  },
+  {
+    "variant": "LONGACC2",
+    "source_sha256": "9185163786e87b4002effb735f54983c5c0acc3c6c16e948258dd11810610ffc",
+    "notes": "serial fences to diagnose overlapping raw input/output storage"
+  },
+  {
+    "variant": "LONGH",
+    "parent": "BROAD2",
+    "source_sha256": "d335f5fc77fa70ac0fc338a8fc25edc4343df8d6acd66a68bc98a638c7e4994b",
+    "change": "Long FP16 rows retain native half residual; FP32 square/norm reduction, 8192-element double-buffer input and half normalization/FMA",
+    "numerical_change": true,
+    "ub_end_bytes": 169632
+  },
+  {
+    "variant": "LONGH2",
+    "parent": "BROAD2",
+    "source_sha256": "6d8e43b6fe1979ea5f35f835ce1f996f0504310c517a4a23887b892b8fe48a71",
+    "change": "LONGH static 8K input tiles with explicit last raw-input V_MTE2 lifetime fence before gamma/bias refill",
+    "numerical_change": true,
+    "fix_of": "LONGH"
+  },
+  {
+    "variant": "LSQM",
+    "parent": "BFSIP",
+    "source_sha256": "34f82a580268a671b1dce250bb0da979b4bdf08d6cb747c1fe9d5c750f9d7c94",
+    "change": "FP16 retained long rows: mixed MulAddDst<float,half> accumulates squared 8192-element chunks into one FP32 buffer, followed by one final FP32 reduction; full elementwise cast and per-chunk reductions removed",
+    "numerical_change": true,
+    "reference": "https://www.hiascend.com/document/detail/en/canncommercial/850/API/ascendcopapi/atlasascendc_api_07_0048.html"
+  },
+  {
+    "variant": "MASK64",
+    "source_sha256": "b0307667e52fe1b6099d734a9da3d8903cb25e2edfa9122d7c20689ccfc95107"
+  },
+  {
+    "variant": "MASK64B",
+    "source_sha256": "b7ec589100ad64c09b1d38aba19b259608d5d53f3cbccf18a18846805f52b772"
+  },
+  {
+    "variant": "MASKBATCH",
+    "source_sha256": "35a15e538b77dceb7e454d6c7f9d12a93eae4f30c0b66429dd75b56ac7753ec7"
+  },
+  {
+    "variant": "OVL3",
+    "parent": "LSQM",
+    "source_sha256": "a60065ea0503302f5216a91d6a285be8dda19b16c0116d859b7e03e73c5b5776",
+    "change": "FP32 broad, BF16 medium and D128: defer output drain until input slot refill during next batch reduction; same arithmetic and buffer layout",
+    "numerical_change": false
+  },
+  {
+    "variant": "PACK",
+    "parent": "E025/DB9",
+    "source_sha256": "80b41aed81213ca41c0f916deab04aa3d74a53335290e61cf35adf5eba2af6ca"
+  },
+  {
+    "variant": "PAIR2",
+    "parent": "FACC",
+    "source_sha256": "19e94059f2745eadc21462a5ffc28b655457322dd4cc4cce1c66109f1b605f39",
+    "change": "FP16 aligned long rows split over two vector cores; mixed square and retained half slices; CrossCore mode 1; 64 bytes of temporary partials inside each output row, all reads synchronized before output overwrite",
+    "static_ub_end": 196608,
+    "numerical_change": true,
+    "references": [
+      "https://www.hiascend.com/doc_center/source/zh/canncommercial/900/API/ascendcopapi/atlasascendc_api_07_0273.html",
+      "https://asc.gitcode.com/guide/programming_guide/language_extension/simd_builtin_keywords.html"
+    ]
+  },
+  {
+    "variant": "PAIRACC",
+    "parent": "PAIR2",
+    "source_sha256": "5ccd518a7c835e66cad299dd4043127fe4877c33280709ef099abbf1d27d5a3c",
+    "change": "Pairwise long FP16: retain one 8192-element FP32 square accumulator over both half-row chunks, reduce once; phase UB regions by 128 bytes; same two mode-1 synchronization points",
+    "static_ub_end": 164352,
+    "numerical_change": true
+  },
+  {
+    "variant": "PAIRASY",
+    "parent": "PAIRACC",
+    "source_sha256": "7d0a0a26c8ac8b86b7af13f1a67a613274b366ae2345d1858f64c84ea1ef5a62",
+    "change": "Overlap second paired read-completion synchronization with local RMS and affine computation; preserve wait before final output overwrite",
+    "static_ub_end": 164352,
+    "numerical_change": false
+  },
+  {
+    "variant": "PAIRSINGLE",
+    "parent": "PAIRACC",
+    "source_sha256": "1880bb26d45b5673dc0fbdca73f31929c8f93528342e0ca3006940f0f907e11d",
+    "change": "Enable verified PAIRACC only for a single aligned FP16 long row; retain FACC fallback for all multiple-row inputs",
+    "static_ub_end": 164352,
+    "numerical_change": false
+  },
+  {
+    "variant": "PAIRTAIL",
+    "parent": "PAIRASY",
+    "source_sha256": "23b27e8b09167f6157bb64632cde6491e81329dd4bffaec76eed24c592ea326a",
+    "change": "Two AIV per FP16 long row including nonaligned widths: 64-element aligned partition, masked mixed square tails, DataCopyPad for valid slices, scratch slots rounded inside each output row, read completion wait before overwrite",
+    "static_ub_end": 164352,
+    "numerical_change": true
+  },
+  {
+    "variant": "PAR64",
+    "parent": "BFSIP",
+    "source_sha256": "893aebc6e5639f988332894d61ac30eb47c54e942fcd4d88a741d25f0a4af090",
+    "change": "D64 single-row half/BF16 gamma/bias conversion issued between first WholeReduceSum and its barrier; independent vector work overlaps reduction latency",
+    "numerical_change": false
+  },
+  {
+    "variant": "PLOAD",
+    "parent": "FACC",
+    "source_sha256": "97a06c00358f63b5d676b5da2866d5a2fa9cf9b38904991ef8f8fdb0a2a6e14f",
+    "change": "Independent parameters and first input share first MTE2 completion event in FP16 pipelines and FP32 wide",
+    "numerical_change": false
+  },
+  {
+    "variant": "RECAST",
+    "parent": "COMBO2",
+    "source_sha256": "eab0111ade852a5c4e28f0d5137275e114d9abf67ecc4ad7c50f14669117f0e8",
+    "change": "retain FP16 sum; reuse one FP32 buffer for squared sum and normalization; batch capacity 12288",
+    "ub_end_bytes": 192384
+  },
+  {
+    "variant": "RES1",
+    "parent": "COMBO1",
+    "source_sha256": "9c514f303bcd15356aa0d118ea7e155bf7b352e7e38c98a5040766bec3ac06b1",
+    "capacity_elements": 11008,
+    "ub_end_bytes": 195840
+  },
+  {
+    "variant": "RETACC",
+    "parent": "COMBO1",
+    "source_sha256": "7ed01866408587bc0fafef3d7014e002cf309c3f13dae2faa6578ea4650096bb",
+    "change": "queue-safe vertical accumulation, one final reduction, early parameter prefetch",
+    "ub_peak_bytes": 191488
+  },
+  {
+    "variant": "RETACC2",
+    "parent": "RETACC",
+    "source_sha256": "03417922911127363012aa5c0c252dd93af2b6dc502b2ce3e2746f79a3409f7d",
+    "fix": "template declaration for standalone injected retained class"
+  },
+  {
+    "variant": "RMN",
+    "parent": "FACC",
+    "source_sha256": "455fc9f2f4f8cbf21809b0b3a8717fe53429c06576a523d967899e41b32ac061",
+    "change": "Normal vector mask reused for RMS scale/epsilon/sqrt/ones/divide when batch <=64; no counter-mode transitions",
+    "numerical_change": false
+  },
+  {
+    "variant": "ROW32",
+    "source_sha256": "24c0fa5ddf7042cebca5040a4b2d1e994d15be2b9f39964911a92c9d9823bfab",
+    "replaced_boundaries": 18
+  },
+  {
+    "variant": "RPIPE0",
+    "parent": "HALFAFF2",
+    "source_sha256": "f272fdf5435cc1f0e6943c54a114be76f5b7b7e39420ad34755daae962e4b1aa",
+    "change": "Pipeline RMS uses native reciprocal sqrt",
+    "numerical_change": true
+  },
+  {
+    "variant": "RPIPE1",
+    "parent": "HALFAFF2",
+    "source_sha256": "b247df589afa489c5c7915d4d409c59e2e22b2d6740abc517cb65a73d1fb76ea",
+    "change": "Pipeline RMS uses reciprocal sqrt with one Newton refinement and Inf/NaN estimate selection",
+    "numerical_change": true
+  },
+  {
+    "variant": "SCHED1",
+    "parent": "FACC",
+    "source_sha256": "12c84a984203241ea748c1af52cb5d784c1acffde6bcb2a74f6f6728207d51a5",
+    "change": "Batch-mode launch for existing pure vector kernels, retain launch counts and all arithmetic",
+    "numerical_change": false,
+    "references": [
+      "https://www.hiascend.com/doc_center/source/en/CANNCommunityEdition/900/programug/Ascendcopdevg/atlas_ascendc_10_00021.html",
+      "https://asc.gitcode.com/guide/programming_guide/language_extension/simd_builtin_keywords.html"
+    ]
+  },
+  {
+    "variant": "SFACC",
+    "parent": "FACC",
+    "source_sha256": "ad6240866f6d913917e1a3aee2a4652c87e2d00466fded854632e08683519034",
+    "change": "Small static rows: first input event covers FP32 parameter DMA, direct float residual Add and direct output; float lane accumulation replaces two-stage WR",
+    "numerical_change": true
+  },
+  {
+    "variant": "SFDIR",
+    "parent": "FACC",
+    "source_sha256": "ec4a229bbbf1f4d01956d6ac2978cd8575f12bdc99093df09ab5268f0d673cfa",
+    "change": "Small static rows: first input event covers FP32 parameter DMA, direct float residual Add and direct output",
+    "numerical_change": false
+  },
+  {
+    "variant": "SFTINY",
+    "parent": "SFACC",
+    "source_sha256": "0db360851cbb5cbf8c03f6fdfd085924669aac28292e2cbbfbd49a703ede3b29",
+    "change": "Integrate verified HSFAST2 single FP16 D64 into small FP32 direct/lane sum candidate; retain low dtype one-part reduction and skip MTE3_MTE2 only when output uses independent float Y",
+    "numerical_change": true
+  },
+  {
+    "variant": "SHAPE0",
+    "parent": "BFSIP",
+    "source_sha256": "a764a214eabda7f932f418bb06a110561e072259ca95f4027368318628177d65",
+    "change": "Define K_MAX_SHAPE_DIM=0 before Ascend C headers, with compile-time ShapeInfo size verification; all arithmetic, buffers and launch geometry retained",
+    "numerical_change": false,
+    "reference": "https://www.hiascend.com/document/detail/zh/canncommercial/900/programug/Ascendcopdevg/atlas_ascendc_best_practices_10_0019.html"
+  },
+  {
+    "variant": "SHAREDA",
+    "parent": "BROAD3",
+    "source_sha256": "4c9b85b0e37db2e0f15f71a20d625c4b9a96398ec3581d68f09289dc6036f338",
+    "change": "SHAREDH residual/square shared-buffer route restricted to widths divisible by 64; retain parent route for non-aligned widths",
+    "numerical_change": false
+  },
+  {
+    "variant": "SHAREDH",
+    "parent": "BROAD3",
+    "source_sha256": "25cd14a81147014ffb7d9b405cd29d17746be782d6d2a6cb64b349959969beb5",
+    "change": "FP16 321..1024 width shares residual DMA and float square scratch after reduction, retains two X slots and increases capacity 9408 to 12800",
+    "numerical_change": false,
+    "ub_end_bytes": 191232,
+    "intentional_alias": "r_[0], r_[1], tmp_ share bytes 51456..102656 with explicit V_MTE2/MTE2_V lifetime fences"
+  },
+  {
+    "variant": "SHORT16",
+    "parent": "COMBO1",
+    "source_sha256": "5541eb87727566016ee6fcb52a15e3b6272b2b2dde77d7e8ab69e250f1a1f514",
+    "short_cores": 16,
+    "ub_end_bytes": 74624
+  },
+  {
+    "variant": "SHORT16B",
+    "parent": "SHORT16",
+    "source_sha256": "36aadf8fbde9939c9f5d5878dcd3598ae2715054349f85b6fa99b12cd8d2a5f5",
+    "fix": "disjoint 32 KiB input-x and residual slots",
+    "ub_end_bytes": 74624
+  },
+  {
+    "variant": "SHORT32",
+    "parent": "COMBO1",
+    "source_sha256": "79bf18f2f7ccc80efab38460cc7d774a17bdf9ab55ecbd8ea486a119d06e27b8",
+    "short_cores": 32,
+    "ub_end_bytes": 74624
+  },
+  {
+    "variant": "SHORT32B",
+    "parent": "SHORT32",
+    "source_sha256": "693e5dc93655f4c8230af65221a3f05c9073e5f4a8757bbf1f2e7419bbfd7f32",
+    "fix": "disjoint 32 KiB input-x and residual slots",
+    "ub_end_bytes": 74624
+  },
+  {
+    "variant": "SHORT8",
+    "parent": "COMBO1",
+    "source_sha256": "9529cc3c42193c803330f56aba1d9a23828997a8e610f376040ade60d1953810",
+    "short_cores": 8,
+    "ub_end_bytes": 74624
+  },
+  {
+    "variant": "SHORT8B",
+    "parent": "SHORT8",
+    "source_sha256": "3aafbcd40626ae636926b0e75776c4755722563e5c8aa2898e46b91809ec8ffe",
+    "fix": "disjoint 32 KiB input-x and residual slots",
+    "ub_end_bytes": 74624
+  },
+  {
+    "variant": "SHORTADD",
+    "parent": "COMBO2",
+    "source_sha256": "32786ee400e6100e72593c3c2beb985b266754202d0c38d97d4dbd07b6b855e5",
+    "change": "native FP16 residual addition for short rows; FP32 norm and affine unchanged",
+    "numerical_change": true
+  },
+  {
+    "variant": "SHORTTREE",
+    "parent": "BFPN4",
+    "source_sha256": "8baed1e000fc553ecafe2ad6600eb3546433a60abf7c9d18123a3e14a1806300",
+    "change": "FP16 and FP32 short rows use 32-byte interleaved block folds for power-of-two padded widths, followed by one WholeReduceSum",
+    "numerical_change": true
+  },
+  {
+    "variant": "SINGLEASY",
+    "parent": "PAIRASY",
+    "source_sha256": "ca3a9ef14d3f9f7b38bcdb40503ddb371dd54164172b51721439b6b0606688bd",
+    "change": "Single aligned FP16 long row only: paired two AIV mixed square accumulator and deferred second synchronization; all multi-row and other-type paths retain FACC",
+    "static_ub_end": 164352,
+    "numerical_change": false
+  },
+  {
+    "variant": "SINGLEOV",
+    "parent": "COMBO2",
+    "source_sha256": "d3c52d0aee7014b4ce69df2a63da4461a8b1683fc23b460f9fa7ec235f22c01b",
+    "change": "D64 overlap parameter DMA with norm; native FP16 add and FP32 affine FMA",
+    "numerical_change": true
+  },
+  {
+    "variant": "SMALL1",
+    "parent": "BROAD2",
+    "source_sha256": "67d9c4abd40b44ba127028810ad040005c985b1b2ba0de088065d3b8c3fdddd6",
+    "change": "FP32 <=16 short rows and <=8192 padded elements use entire-core batch with up to 1 vector cores"
+  },
+  {
+    "variant": "SMALL2",
+    "parent": "BROAD2",
+    "source_sha256": "5a42db393e3daee5ba1f7c530c2a8aac8c30da04af8e9784a2f375168436b2f8",
+    "change": "FP32 <=16 short rows and <=8192 padded elements use entire-core batch with up to 2 vector cores"
+  },
+  {
+    "variant": "SMALL4",
+    "parent": "BROAD2",
+    "source_sha256": "9243562cb2d07104ed8c0893f60cd558fbb5714422fb1e751f3634d564b4c3e4",
+    "change": "FP32 <=16 short rows and <=8192 padded elements use entire-core batch with up to 4 vector cores"
+  },
+  {
+    "variant": "SMALLAFF",
+    "parent": "COMBO2",
+    "source_sha256": "e38fb6f2c709e3d78bfd25b31c147b19beb8513aef8837b23a5c76bb0716c7e0",
+    "change": "FP16 output affine fusion for single D64 and static short rows; FP32 residual sum and norm retained",
+    "numerical_change": true
+  },
+  {
+    "variant": "SPLIT",
+    "source_sha256": "e5905ab903b8163287d89b5b12f302ec3a18b37be8e5ce12d501b203137c3193",
+    "ub_end_bytes": 165408
+  },
+  {
+    "variant": "SPLITAFF",
+    "parent": "COMBO2",
+    "source_sha256": "a2c4ebf22b457642ac9c6f234240c46cf204b84a92ceb16e4ed615d7f5881215",
+    "change": "split long rows across cores with FP16 add and affine, FP32 reduction; same 2 hardware barriers",
+    "numerical_change": true
+  },
+  {
+    "variant": "SYNC2",
+    "parent": "FACC",
+    "source_sha256": "f4ca9526bd8375a82d849b7cbed0566268bb5fdfee15baadbd2d02170c1b84a0",
+    "change": "FP16 aligned long rows split over two vector cores; mixed square and retained half slices; CrossCore mode 0; 64 bytes of temporary partials inside each output row, all reads synchronized before output overwrite",
+    "static_ub_end": 196608,
+    "numerical_change": true,
+    "references": [
+      "https://www.hiascend.com/doc_center/source/zh/canncommercial/900/API/ascendcopapi/atlasascendc_api_07_0273.html",
+      "https://asc.gitcode.com/guide/programming_guide/language_extension/simd_builtin_keywords.html"
+    ]
+  },
+  {
+    "variant": "SYNC4",
+    "parent": "BFSIP",
+    "source_sha256": "01597f56e40c0a70cce3f1dc9e6cb646578510d5f2ba5d9f674c307c187e81e3",
+    "change": "FP16 aligned long rows use 4 cores per row in one batch-mode launch and two hardware SyncAll barriers; temporary FP32 partials occupy 128 bytes inside allocated output row, then are overwritten after all readers finish",
+    "static_ub_end": 117504,
+    "numerical_change": true,
+    "references": [
+      "https://www.hiascend.com/doc_center/source/zh/canncommercial/900/API/ascendcopapi/atlasascendc_api_07_0204.html",
+      "https://asc.gitcode.com/guide/programming_guide/language_extension/simd_builtin_keywords.html"
+    ]
+  },
+  {
+    "variant": "TREE128",
+    "parent": "BFPN4",
+    "source_sha256": "ff8623c71204db9eb3258b19ed42c2b96508190f6d0bb2c9f294bd7b156cc6ae",
+    "change": "BF16 D128 FP32 square reduction folds adjacent 32-byte blocks then WholeReduceSum with source block stride two; no partial-result scratch stage",
+    "numerical_change": true
+  },
+  {
+    "variant": "WCORE24",
+    "parent": "BFSIP",
+    "source_sha256": "3db4206a772248751743593ad077aa77bf0d09e5ba014bd42c517e9bfb1d8626",
+    "change": "Prefer 24 cores on FP32 broad rows, nonaligned FP16 D321..1024 batches and BF16 D8192 many-row generic whole path; preserve original route guards and arithmetic",
+    "numerical_change": false
+  },
+  {
+    "variant": "WCORE32",
+    "parent": "BFSIP",
+    "source_sha256": "d14f6dbc1c43949b0d7e948876d005814b2159ca12c4e0419c2334c3e695905c",
+    "change": "Prefer 32 cores on FP32 broad rows, nonaligned FP16 D321..1024 batches and BF16 D8192 many-row generic whole path; preserve original route guards and arithmetic",
+    "numerical_change": false
+  }
+]

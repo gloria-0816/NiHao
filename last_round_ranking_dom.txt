@@ -1,0 +1,138 @@
+- banner:
+  - link "CANNJudge":
+    - /url: /home
+    - generic: CANNJudge
+  - button "消息"
+  - img "avatar"
+  - link "gem_1210":
+    - /url: /me
+  - link "退出":
+    - /url: "#"
+- main:
+  - link "赛事":
+    - /url: /contests
+  - text: /
+  - link "2026年CANN挑战赛_西南赛区（初赛）":
+    - /url: /public/op_challenge_xinan_prelim
+  - text: /
+  - strong: AddRmsNormBias
+  - heading "AddRmsNormBias" [level=2]
+  - generic: 算子核函数工程(beta)
+  - generic: vector
+  - generic: CANN：9.0.0
+  - generic: 通过率：
+  - strong: 70%
+  - generic: 通过人数：
+  - strong: "715"
+  - generic: 尝试人数：
+  - strong: "1024"
+  - generic: 题目开始：
+  - strong: 2026/09/05 00:00:00
+  - generic: 题目结束：
+  - strong: 2026/10/17 18:00:00
+  - link "开始答题":
+    - /url: /public/op_challenge_xinan_prelim/addrmsnormbias/submit
+  - navigation:
+    - link "题目内容":
+      - /url: /public/op_challenge_xinan_prelim/addrmsnormbias
+    - link "提交排名":
+      - /url: /public/op_challenge_xinan_prelim/addrmsnormbias/ranking
+  - heading "提交排名" [level=3]
+  - search:
+    - searchbox "搜索提交排名": gem_1210
+    - button "搜索"
+    - button "清除"
+  - table:
+    - rowgroup:
+      - row "排名 队伍 最新提交者 状态 分数 提交时间 测试点 1 测试点 2 测试点 3 测试点 4 测试点 5 测试点 6 测试点 7 测试点 8 测试点 9 测试点 10 测试点 11 测试点 12 测试点 13 测试点 14 测试点 15":
+        - columnheader "排名"
+        - columnheader "队伍"
+        - columnheader "最新提交者"
+        - columnheader "状态"
+        - columnheader "分数"
+        - columnheader "提交时间"
+        - columnheader "测试点 1"
+        - columnheader "测试点 2"
+        - columnheader "测试点 3"
+        - columnheader "测试点 4"
+        - columnheader "测试点 5"
+        - columnheader "测试点 6"
+        - columnheader "测试点 7"
+        - columnheader "测试点 8"
+        - columnheader "测试点 9"
+        - columnheader "测试点 10"
+        - columnheader "测试点 11"
+        - columnheader "测试点 12"
+        - columnheader "测试点 13"
+        - columnheader "测试点 14"
+        - columnheader "测试点 15"
+      - row "TBest时间 1.12μs 1.63μs 2.10μs 4.42μs 4.91μs 7.95μs 10.50μs 29.72μs 67.81μs 45.87μs 129.65μs 75.96μs 394.15μs 3.53ms 7.96ms":
+        - columnheader "TBest时间"
+        - columnheader "1.12μs":
+          - generic: 1.12μs
+        - columnheader "1.63μs":
+          - generic: 1.63μs
+        - columnheader "2.10μs":
+          - generic: 2.10μs
+        - columnheader "4.42μs":
+          - generic: 4.42μs
+        - columnheader "4.91μs":
+          - generic: 4.91μs
+        - columnheader "7.95μs":
+          - generic: 7.95μs
+        - columnheader "10.50μs":
+          - generic: 10.50μs
+        - columnheader "29.72μs":
+          - generic: 29.72μs
+        - columnheader "67.81μs":
+          - generic: 67.81μs
+        - columnheader "45.87μs":
+          - generic: 45.87μs
+        - columnheader "129.65μs":
+          - generic: 129.65μs
+        - columnheader "75.96μs":
+          - generic: 75.96μs
+        - columnheader "394.15μs":
+          - generic: 394.15μs
+        - columnheader "3.53ms":
+          - generic: 3.53ms
+        - columnheader "7.96ms":
+          - generic: 7.96ms
+    - rowgroup:
+      - row "98 我 ttal6688 的队伍 gem_1210 Pass 64.30 2026/10/12 09:23:02 2.40μs 2.57μs 2.80μs 8.09μs 5.84μs 11.97μs 16.55μs 31.83μs 70.88μs 48.47μs 156.93μs 81.19μs 559.90μs 4.06ms 9.37ms":
+        - cell "98 我":
+          - text: "98"
+          - generic: 我
+        - cell "ttal6688 的队伍":
+          - generic "ttal6688 的队伍"
+        - cell "gem_1210":
+          - generic "gem_1210"
+        - cell "Pass":
+          - generic: Pass
+        - cell "64.30"
+        - cell "2026/10/12 09:23:02"
+        - cell "2.40μs"
+        - cell "2.57μs"
+        - cell "2.80μs"
+        - cell "8.09μs"
+        - cell "5.84μs"
+        - cell "11.97μs"
+        - cell "16.55μs"
+        - cell "31.83μs"
+        - cell "70.88μs"
+        - cell "48.47μs"
+        - cell "156.93μs"
+        - cell "81.19μs"
+        - cell "559.90μs"
+        - cell "4.06ms"
+        - cell "9.37ms"
+  - generic: 共 1 条
+  - combobox "每页条数":
+    - option "10条/页"
+    - option "20条/页" [selected]
+    - option "50条/页"
+  - generic: ‹
+  - generic: "1"
+  - generic: ›
+  - generic: 前往
+  - textbox "前往页码": "1"
