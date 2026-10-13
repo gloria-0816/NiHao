@@ -1,0 +1,27 @@
+{
+  "protocol": {
+    "baseline_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+    "variants": {
+      "COMBO3": "87eacff75c3628014d86571b93a2f21c871d3e6d0d1f43312dda29f73b0ae51e"
+    },
+    "screening_only": false,
+    "final_candidate_validation": true,
+    "reuse_baseline_protection": "phase05b verified completed output/source/runner/input hashes; not new baseline runs",
+    "changes": [
+      "HLP256 includes HLP, original row partition retained",
+      "P9LP only D513..640",
+      "FPB4 original positive four-row implementation",
+      "S64BAR and LHLP small positive screening retained for final combined check"
+    ],
+    "removed_after_latest_combination": [
+      "S256B",
+      "FPRR"
+    ],
+    "requires_official_full15": true,
+    "large_bf16_reduced": true
+  },
+  "driver_sha256": "2fe0c2283733f16ecfcad3682234ed0e9ad8650e02a074f55a41c8c60be91764",
+  "harness_sha256": "101c9227e8fc5d4ccd11c3bf7741baf23defef435d8a2d4f40b4af0359751f86",
+  "baseline_runner_sha256": "9052108564f96a75d24abece7fc780f52c0ffbf2464545cfe233f35dc78d42a4",
+  "core_driver_sha256": "ce181e20e5474f7986e1a7937f52b48e5c58dfe47b33a41d702b24f649b4f4df"
+}

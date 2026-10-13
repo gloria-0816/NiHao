@@ -2,6 +2,9 @@
 
 AddRmsNormBias 优化研究归档，更新于 2026-10-13。
 
+<!-- E029 latest continuation -->
+新增[E029继续优化记录](experiments/E029_target72_latest/报告.md)：正式775267为64.65分、15/15 Pass，未超过历史65.34分，根目录最佳保持。用户后续已恢复优化并将目标设为72分；下文“停止新增测试”是上一轮结束时的历史状态。赛事新增Host/Device与单Kernel规则已纳入源码审查。
+
 **最高完整官方成绩：FRESLONG 65.34 分，15/15 Pass。** [提交 768708](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd8ea9e769892927ee263e)，当时观察排名78。根目录与 scripts/ 为这一次完整提交的八文件工程，未拼接各次最快测试点。
 
 本轮更换方法并完成10次正式测试，全部15/15；最后 AXSMALL 64.02分。最高未超过70分，已按用户限定停止新增测试。网站排名当前显示最后提交的64.02分，65.34是历史最高观察成绩。TBest与计时会变化，不将0.36分的增幅全部归因于算法。

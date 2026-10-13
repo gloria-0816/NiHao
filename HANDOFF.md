@@ -1,5 +1,8 @@
 # E027：更换优化方法的十次正式评测交接（2026-10-13）
 
+<!-- E029 latest continuation -->
+后续状态见[E029交接](experiments/E029_target72_latest/报告.md)：用户已恢复优化，目标72；新增正式775267为64.65分、15/15 Pass，根工程继续保持FRESLONG65.34。下面十次停止记录保留为当时历史，不作为后续停止指令。
+
 本轮 **10/10 次正式评测已经结束，全部 15/15 Pass；最高完整成绩为 FRESLONG 65.34 分**，提交 [768708](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd8ea9e769892927ee263e)。最后一版 AXSMALL 为 64.02 分。最高未超过 70 分，因此按用户设定停止新增实验。没有继续提交第 11 次，也没有把“恢复最好版本”算作额外测试。网站目前显示最新提交 AXSMALL 的 64.02 分；仓库根目录与最佳工程包选择历史最高完整源码 FRESLONG。
 
 ## 正式比赛结果

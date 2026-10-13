@@ -1,0 +1,22 @@
+{
+  "baseline_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+  "variants": {
+    "COMBO4": "bbb3eafdbc0f02406930ae97127fea47faf6895f71c92a6cf952f6d10cf65bc4"
+  },
+  "screening_only": false,
+  "final_candidate_validation": true,
+  "reuse_baseline_protection": "phase05b verified completed output/source/runner/input hashes; not new baseline runs",
+  "changes": [
+    "HLP256 includes HLP, original row partition retained",
+    "P9LP only D513..640",
+    "FPB4 original positive four-row implementation",
+    "S64BAR retained, LHLP removed after combined -0.811%"
+  ],
+  "removed_after_latest_combination": [
+    "S256B",
+    "FPRR",
+    "LHLP"
+  ],
+  "requires_official_full15": true,
+  "large_bf16_reduced": true
+}

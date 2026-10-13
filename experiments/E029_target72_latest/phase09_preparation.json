@@ -1,0 +1,20 @@
+{
+  "source_sha256": "c17af1588d12db05779f5a4e8a1889b2bdcc8d38b354b009c79431e0f46d8555",
+  "status": "prepared_not_compiled_or_measured",
+  "byte_budget_unchanged": true,
+  "offset_table_reuses_unused_gamma_bytes": [
+    170240,
+    174336
+  ],
+  "bounds_checked_all_D513_to640": true,
+  "shared_column_indices_not_full_batch_indices": true,
+  "arithmetic_order_preserved": true,
+  "UB_end_bytes": 191872,
+  "padded_read_values_discarded_by_original_FP32_tail_zeroing": true,
+  "requires_device_protection": true,
+  "prior_uncompiled_draft_sha256": "0eb6b33e11c2da95be1f71c349bf58453dac15efeb6cf8a85df8da8c585f1d2a",
+  "index_arithmetic": "int32 Adds as already CANN9.0-compiled HSG; reinterpret uint32 only at Gather API",
+  "prior_before_padding_review_sha256": "9b02fc2f854e60501604fd337ece5b48dbcf16887647056f284e0a3b7ab2702c",
+  "packed_source_gather_padding_initialized": true,
+  "suffix_all_width_and_partial_batch_bounds_checked": true
+}

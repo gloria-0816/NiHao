@@ -1,0 +1,32 @@
+{
+  "protocol": {
+    "baseline_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+    "variants": {
+      "HLP": "b41bce606efcda62d51a42aa6466e4074094d1723a0df8101cfb18013ce74707",
+      "S64BAR": "0415392649cf6a212d451ab75f574cc07876335eaa239663787160491d58fb9a",
+      "P9BAR": "e9feb4168d9ec1d1b24b6334745ce9beb292baf34fe501bc4724d9e6e7a6731e"
+    },
+    "screening_only": true,
+    "ordinary_order": [
+      "BASE",
+      "candidate",
+      "candidate",
+      "BASE"
+    ],
+    "target_families": {
+      "HLP": "s4",
+      "S64BAR": "s1",
+      "P9BAR": "s6/s7"
+    },
+    "changes": {
+      "HLP": "Preserve arithmetic/UB, split input-ready and parameter-ready events; wait parameters before half affine.",
+      "S64BAR": "Remove consecutive redundant PIPE_V only for CompactParameterType; preserve Add dependency for other dtype.",
+      "P9BAR": "Remove second consecutive PIPE_V after normalize only for compact half; retain first Mul barrier and all cross-pipe events."
+    },
+    "final_full_validation_deferred": true
+  },
+  "driver_sha256": "c131829cc704e96c9eb6881766a8b973d14102306b2a55dab6c1d05c3e166d0b",
+  "harness_sha256": "101c9227e8fc5d4ccd11c3bf7741baf23defef435d8a2d4f40b4af0359751f86",
+  "baseline_runner_sha256": "9052108564f96a75d24abece7fc780f52c0ffbf2464545cfe233f35dc78d42a4",
+  "core_driver_sha256": "ce181e20e5474f7986e1a7937f52b48e5c58dfe47b33a41d702b24f649b4f4df"
+}

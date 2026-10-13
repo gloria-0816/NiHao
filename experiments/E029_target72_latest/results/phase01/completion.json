@@ -1,0 +1,6 @@
+{
+  "status": "interrupted_by_user_steering",
+  "reason": "User requested fewer unnecessary retests; retain completed protection and builds, switch to bounded screening",
+  "completed_protection_records": 46,
+  "not_a_numerical_failure": true
+}

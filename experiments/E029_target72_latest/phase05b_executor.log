@@ -1,0 +1,64 @@
+REUSED_BUILD COMBO2
+{"case_id": "v5_s1", "variant": "BASE", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s1", "variant": "COMBO2", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s2", "variant": "BASE", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s2", "variant": "COMBO2", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s3", "variant": "BASE", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s3", "variant": "COMBO2", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s4", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s4", "variant": "COMBO2", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s5", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s5", "variant": "COMBO2", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s6", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s6", "variant": "COMBO2", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s7", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s7", "variant": "COMBO2", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s8", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s8", "variant": "COMBO2", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s9", "variant": "BASE", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s9", "variant": "COMBO2", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s10", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s10", "variant": "COMBO2", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s11", "variant": "BASE", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s11", "variant": "COMBO2", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s12", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s12", "variant": "COMBO2", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s13", "variant": "BASE", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s13", "variant": "COMBO2", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s14_reduced", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s14_reduced", "variant": "COMBO2", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s15_reduced", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s15_reduced", "variant": "COMBO2", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_c512", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_c512", "variant": "COMBO2", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_c513", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_c513", "variant": "COMBO2", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_c640", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_c640", "variant": "COMBO2", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_c641", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_c641", "variant": "COMBO2", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s2", "variant": "BASE", "profile": "ordinary", "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s2", "variant": "COMBO2", "profile": "ordinary", "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s2", "variant": "COMBO2", "profile": "ordinary", "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s2", "variant": "BASE", "profile": "ordinary", "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s2", "candidate": "COMBO2", "base_us": [1.77, 1.62], "candidate_us": [1.8, 1.7], "gain_pct": -3.2448377581120904, "screening_only": false}
+{"case_id": "v5_s4", "variant": "BASE", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s4", "variant": "COMBO2", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s4", "variant": "COMBO2", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s4", "variant": "BASE", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s4", "candidate": "COMBO2", "base_us": [7.26, 6.68], "candidate_us": [6.13, 6.2005], "gain_pct": 11.54591104734576, "screening_only": false}
+{"case_id": "v5_s6", "variant": "BASE", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s6", "variant": "COMBO2", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s6", "variant": "COMBO2", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s6", "variant": "BASE", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s6", "candidate": "COMBO2", "base_us": [8.64, 8.51], "candidate_us": [8.14, 8.1705], "gain_pct": 4.8950437317784115, "screening_only": false}
+{"case_id": "v5_s11", "variant": "BASE", "profile": "ordinary", "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s11", "variant": "COMBO2", "profile": "ordinary", "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s11", "variant": "COMBO2", "profile": "ordinary", "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s11", "variant": "BASE", "profile": "ordinary", "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s11", "candidate": "COMBO2", "base_us": [45.510999999999996, 45.481], "candidate_us": [44.7305, 44.841], "gain_pct": 1.561126252857383, "screening_only": false}
+{"case_id": "v5_s13", "variant": "BASE", "profile": "ordinary", "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s13", "variant": "COMBO2", "profile": "ordinary", "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s13", "variant": "COMBO2", "profile": "ordinary", "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s13", "variant": "BASE", "profile": "ordinary", "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "v5_s13", "candidate": "COMBO2", "base_us": [350.16700000000003, 350.587], "candidate_us": [349.277, 352.377], "gain_pct": -0.12843308778829335, "screening_only": false}

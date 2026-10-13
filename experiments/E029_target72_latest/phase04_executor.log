@@ -1,0 +1,26 @@
+BUILD HLPQ completed
+{"case_id": "s4", "variant": "HLP", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s4", "variant": "HLPQ", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "hq255", "variant": "HLP", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "hq255", "variant": "HLPQ", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "hq161", "variant": "HLP", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "hq161", "variant": "HLPQ", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "hq159", "variant": "HLP", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "hq159", "variant": "HLPQ", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "s4", "variant": "HLP", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s4", "variant": "HLPQ", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s4", "variant": "HLPQ", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s4", "variant": "HLP", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s4", "parent": "HLP", "candidate": "HLPQ", "base_us": [6.79, 6.21], "candidate_us": [6.970000000000001, 6.94], "gain_pct": -7.000000000000001, "screening_only": true}
+BUILD LHLP completed
+{"case_id": "s5", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s5", "variant": "LHLP", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "lh8193", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "lh8193", "variant": "LHLP", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "lh16385", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "lh16385", "variant": "LHLP", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s5", "variant": "BASE", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s5", "variant": "LHLP", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s5", "variant": "LHLP", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s5", "variant": "BASE", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s5", "parent": "BASE", "candidate": "LHLP", "base_us": [4.34, 4.359999999999999], "candidate_us": [4.32, 4.34], "gain_pct": 0.45977011494251896, "screening_only": true}

@@ -1,0 +1,20 @@
+BUILD HSG completed
+{"case_id": "s4", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s4", "variant": "HSG", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "sg255", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "sg255", "variant": "HSG", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "sg192", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "sg192", "variant": "HSG", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "sg256", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "sg256", "variant": "HSG", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "sg159", "variant": "BASE", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "sg159", "variant": "HSG", "profile": null, "status": "measured_strict_pass", "output_matches_preserved_baseline": null}
+{"case_id": "sg160", "variant": "BASE", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "sg160", "variant": "HSG", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s4", "variant": "BASE", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s4", "variant": "HSG", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s4", "variant": "HSG", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s4", "variant": "BASE", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"base_us": [7.26, 6.8], "candidate_us": [7.52, 7.5], "gain_pct": -6.8278805120910455, "screening_only": true}
+{"case_id": "s4", "variant": "BASE", "profile": "op", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "s4", "variant": "HSG", "profile": "op", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}

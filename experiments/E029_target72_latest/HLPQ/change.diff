@@ -1,0 +1,41 @@
+--- HLP/kernel.asc
++++ HLPQ/kernel.asc
+@@ -2854,11 +2854,12 @@
+ class StaticHalfRowsKernel {
+ public:
+     __aicore__ inline void Init(GM_ADDR x, GM_ADDR r, GM_ADDR g, GM_ADDR b,
+-        GM_ADDR out, uint64_t rows, uint32_t d, float invD, float eps)
++        GM_ADDR out, uint32_t baseRows, uint32_t extraRows, uint32_t d, float invD, float eps)
+     {
+         d_ = d; stride_ = (d + 63) / 64 * 64; invD_ = invD; eps_ = eps;
+-        begin_ = rows * GetBlockIdx() / GetBlockNum();
+-        count_ = static_cast<uint32_t>(rows * (GetBlockIdx()+1) / GetBlockNum() - begin_);
++        const uint32_t idx=static_cast<uint32_t>(GetBlockIdx());
++        begin_ = static_cast<uint64_t>(baseRows)*idx + (idx<extraRows?idx:extraRows);
++        count_ = baseRows + (idx<extraRows?1:0);
+         xgm_.SetGlobalBuffer((__gm__ half*)x); rgm_.SetGlobalBuffer((__gm__ half*)r);
+         ggm_.SetGlobalBuffer((__gm__ half*)g); bgm_.SetGlobalBuffer((__gm__ half*)b);
+         outgm_.SetGlobalBuffer((__gm__ half*)out);
+@@ -2930,10 +2931,10 @@
+     uint64_t begin_; uint32_t d_,stride_,count_; float invD_,eps_;
+ };
+ __global__ __vector__ void static_half_rows_custom(GM_ADDR x,GM_ADDR r,GM_ADDR g,
+-    GM_ADDR b,GM_ADDR out,uint64_t rows,uint32_t d,float invD,float eps)
++    GM_ADDR b,GM_ADDR out,uint32_t baseRows,uint32_t extraRows,uint32_t d,float invD,float eps)
+ {
+     InitSocState(); StaticHalfRowsKernel op;
+-    op.Init(x,r,g,b,out,rows,d,invD,eps); op.Process();
++    op.Init(x,r,g,b,out,baseRows,extraRows,d,invD,eps); op.Process();
+ }
+ 
+ // At most four FP32 short rows per core. One DMA batch and two vector reductions.
+@@ -3207,7 +3208,8 @@
+     if (input.dtype == 1 && d <= 256 && rows >= static_cast<uint64_t>(blockNum)*4 &&
+         rows <= static_cast<uint64_t>(blockNum)*32) {
+         static_half_rows_custom<<<blockNum,nullptr,stream>>>(
+-            x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
++            x,residual,gamma,bias,output,static_cast<uint32_t>(rows/blockNum),
++            static_cast<uint32_t>(rows%blockNum),d,inverseD,epsilon);
+         return;
+     }
+     const uint32_t shortFloatCores=blockNum<8?blockNum:8;

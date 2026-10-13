@@ -1,0 +1,17 @@
+[
+  {
+    "case_id": "h6_s4",
+    "parent": "HLP",
+    "candidate": "HLP256",
+    "base_us": [
+      6.720000000000001,
+      6.6805
+    ],
+    "candidate_us": [
+      6.66,
+      6.66
+    ],
+    "gain_pct": 0.6007238535875578,
+    "screening_only": true
+  }
+]

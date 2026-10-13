@@ -1,0 +1,118 @@
+{
+  "kind": "Arithmetic comparison from rounded displayed times; no causal attribution; references/time conditions changed",
+  "formula": "mean(100/(1+log_1.5(time/TBest)))",
+  "baseline_old_ref": 65.32990365949334,
+  "new_times_old_ref": 64.4985737312803,
+  "new_times_new_ref": 64.65568136709388,
+  "time_delta": -0.8313299282130373,
+  "reference_delta": 0.15710763581357412,
+  "official_baseline": 65.34,
+  "official_new": 64.65,
+  "rows": [
+    {
+      "case_id": 1,
+      "base_us": 2.24,
+      "new_us": 2.28,
+      "gain_pct": -1.7857142857142674,
+      "changed_route": true
+    },
+    {
+      "case_id": 2,
+      "base_us": 2.48,
+      "new_us": 2.63,
+      "gain_pct": -6.04838709677419,
+      "changed_route": false
+    },
+    {
+      "case_id": 3,
+      "base_us": 2.78,
+      "new_us": 2.76,
+      "gain_pct": 0.7194244604316553,
+      "changed_route": false
+    },
+    {
+      "case_id": 4,
+      "base_us": 7.7,
+      "new_us": 7.69,
+      "gain_pct": 0.1298701298701271,
+      "changed_route": true
+    },
+    {
+      "case_id": 5,
+      "base_us": 5.91,
+      "new_us": 5.9,
+      "gain_pct": 0.1692047377326529,
+      "changed_route": false
+    },
+    {
+      "case_id": 6,
+      "base_us": 11.75,
+      "new_us": 11.18,
+      "gain_pct": 4.851063829787236,
+      "changed_route": true
+    },
+    {
+      "case_id": 7,
+      "base_us": 16.61,
+      "new_us": 16.65,
+      "gain_pct": -0.24081878386513636,
+      "changed_route": false
+    },
+    {
+      "case_id": 8,
+      "base_us": 31.8,
+      "new_us": 31.78,
+      "gain_pct": 0.06289308176100494,
+      "changed_route": false
+    },
+    {
+      "case_id": 9,
+      "base_us": 69.18,
+      "new_us": 71.23,
+      "gain_pct": -2.9632841861809727,
+      "changed_route": false
+    },
+    {
+      "case_id": 10,
+      "base_us": 47.67,
+      "new_us": 47.89,
+      "gain_pct": -0.46150618837843266,
+      "changed_route": false
+    },
+    {
+      "case_id": 11,
+      "base_us": 156.89,
+      "new_us": 160.05,
+      "gain_pct": -2.0141500414303177,
+      "changed_route": true
+    },
+    {
+      "case_id": 12,
+      "base_us": 80.16,
+      "new_us": 81.36,
+      "gain_pct": -1.4970059880239557,
+      "changed_route": false
+    },
+    {
+      "case_id": 13,
+      "base_us": 554.26,
+      "new_us": 558.04,
+      "gain_pct": -0.6819904016165649,
+      "changed_route": false
+    },
+    {
+      "case_id": 14,
+      "base_us": 4050,
+      "new_us": 4060,
+      "gain_pct": -0.24691358024691357,
+      "changed_route": false
+    },
+    {
+      "case_id": 15,
+      "base_us": 9380,
+      "new_us": 9370,
+      "gain_pct": 0.10660980810234541,
+      "changed_route": false
+    }
+  ]
+}

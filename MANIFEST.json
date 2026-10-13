@@ -222,12 +222,12 @@
       "sha256": "73987248184787faa9b11c1bd10fd1cb1f65c793074566193051f3c133ca2066"
     },
     "HANDOFF.md": {
-      "bytes": 10727,
-      "sha256": "3a126af5455d03dbd8e1084b06a2a0958016b2d72342b0248f17c942c46b051c"
+      "bytes": 11035,
+      "sha256": "0bcd1d1dae7d8ccae8e2591bd9839206f0dc6411e19e39cfa49d2dca3ed45a9c"
     },
     "README.md": {
-      "bytes": 1769,
-      "sha256": "eb8624440a63e26e85356782e537f6b95fc52f46d0c2c308a6efd95a364961b6"
+      "bytes": 2161,
+      "sha256": "24702a384763e70f55741bd107a44c30417c182e842054c63c6bf02eafd9b3e7"
     },
     "audit_summary.json": {
       "bytes": 302863,
@@ -436,6 +436,20 @@
     "scripts/verify_result.py": {
       "bytes": 4586,
       "sha256": "08e312f94cbfbf986161040f46cf1fb2f67f3bede5edf31454cb827061b911ac"
+    },
+    "experiments/E029_target72_latest/MANIFEST.json": {
+      "bytes": 28959,
+      "sha256": "0b9b397662ebb15ca27a454d889fa2ca51dac697a7a39821adde443d5208375e"
     }
+  },
+  "subsequent_round": {
+    "name": "E029",
+    "report": "experiments/E029_target72_latest/报告.md",
+    "official_submission": 775267,
+    "score": 64.65,
+    "passed": 15,
+    "target": 72,
+    "goal_achieved": false,
+    "selected_source_unchanged": true
   }
 }

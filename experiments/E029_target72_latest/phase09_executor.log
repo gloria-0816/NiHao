@@ -1,0 +1,16 @@
+BUILD P9PACK completed
+{"case_id": "p9_s6", "variant": "P9LP", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "p9_s6", "variant": "P9PACK", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "p9_513", "variant": "P9LP", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "p9_513", "variant": "P9PACK", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "p9_640", "variant": "P9LP", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "p9_640", "variant": "P9PACK", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "p9_512", "variant": "P9LP", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "p9_512", "variant": "P9PACK", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "p9_641", "variant": "P9LP", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "p9_641", "variant": "P9PACK", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "p9_s6", "variant": "P9LP", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "p9_s6", "variant": "P9PACK", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "p9_s6", "variant": "P9PACK", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "p9_s6", "variant": "P9LP", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "p9_s6", "parent": "P9LP", "candidate": "P9PACK", "base_us": [8.2805, 8.38], "candidate_us": [10.750499999999999, 10.840499999999999], "gain_pct": -29.593949761411714, "screening_only": true}

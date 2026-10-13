@@ -1,0 +1,32 @@
+[
+  {
+    "case_id": "s4",
+    "parent": "HLP",
+    "candidate": "HLPQ",
+    "base_us": [
+      6.79,
+      6.21
+    ],
+    "candidate_us": [
+      6.970000000000001,
+      6.94
+    ],
+    "gain_pct": -7.000000000000001,
+    "screening_only": true
+  },
+  {
+    "case_id": "s5",
+    "parent": "BASE",
+    "candidate": "LHLP",
+    "base_us": [
+      4.34,
+      4.359999999999999
+    ],
+    "candidate_us": [
+      4.32,
+      4.34
+    ],
+    "gain_pct": 0.45977011494251896,
+    "screening_only": true
+  }
+]

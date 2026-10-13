@@ -1,0 +1,34 @@
+[
+  {
+    "variant": "BASE",
+    "case_id": "s4",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 5.046111,
+      "aiv_vec_time(us)": 0.811667,
+      "aiv_scalar_time(us)": 0.6594445,
+      "aiv_mte2_time(us)": 2.6836115,
+      "aiv_mte3_time(us)": 0.6655555,
+      "aiv_vec_ratio": 0.161196,
+      "aiv_scalar_ratio": 0.1301525,
+      "aiv_mte2_ratio": 0.5365305,
+      "aiv_mte3_ratio": 0.1408885
+    }
+  },
+  {
+    "variant": "HSG",
+    "case_id": "s4",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 4.7272225,
+      "aiv_vec_time(us)": 1.554444,
+      "aiv_scalar_time(us)": 1.0055554999999998,
+      "aiv_mte2_time(us)": 1.7258334999999998,
+      "aiv_mte3_time(us)": 0.649722,
+      "aiv_vec_ratio": 0.3316015,
+      "aiv_scalar_ratio": 0.2075285,
+      "aiv_mte2_ratio": 0.3556785,
+      "aiv_mte3_ratio": 0.13672
+    }
+  }
+]

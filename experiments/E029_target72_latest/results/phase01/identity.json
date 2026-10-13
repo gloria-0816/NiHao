@@ -1,0 +1,40 @@
+{
+  "protocol": {
+    "target_score": 72,
+    "repository_base_commit": "97644ea",
+    "baseline": {
+      "variant": "FRESLONG",
+      "source_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+      "runner_sha256": "9052108564f96a75d24abece7fc780f52c0ffbf2464545cfe233f35dc78d42a4",
+      "official_submission": 768708,
+      "official_score": 65.34
+    },
+    "variants": {
+      "P9DB": {
+        "sha256": "aac34ad0b1efd1ba5e90fe5776c4c208b761bd4356f50071e6d0168ed280f772",
+        "parent": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+        "mechanism": "Disjoint output slots and compact UB; original batch/arith/event ownership retained",
+        "unchanged_FRESLONG_long_path": true
+      },
+      "P9MASK": {
+        "sha256": "91ab65de0277ca5d17e2f989be3290c9a4d3dcfac9ccae395fb903313c382062",
+        "parent": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+        "mechanism": "Only reuse normal masks in normalization and half affine loops",
+        "unchanged_FRESLONG_long_path": true
+      },
+      "P9LP": {
+        "sha256": "da48278bf2e727dfabf2e182a4a50bd3b49d8c4d6bb6c16a31e79b75929759ce",
+        "parent": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+        "mechanism": "First input ahead of parameter copy; wait parameters only at affine",
+        "unchanged_FRESLONG_long_path": true
+      }
+    },
+    "timing": "Six rotated/reversed four-version blocks per s6/s7/s8; final20 of31 ordinary tasks; each version6 separate collections",
+    "numerical_policy": "20 full-output protection cases, four versions; structural candidates bitwise equal to BASE, retain inherited CPU strict outcome",
+    "stage": "prepared; actual compilation/measurement recorded by phase01 completion"
+  },
+  "driver_sha256": "0ae4ddf66190aec21b62640bbef6b2f06c5a834d728302f58036086c7736c39c",
+  "harness_sha256": "101c9227e8fc5d4ccd11c3bf7741baf23defef435d8a2d4f40b4af0359751f86",
+  "core_driver_sha256": "ce181e20e5474f7986e1a7937f52b48e5c58dfe47b33a41d702b24f649b4f4df",
+  "baseline_runner_sha256": "9052108564f96a75d24abece7fc780f52c0ffbf2464545cfe233f35dc78d42a4"
+}

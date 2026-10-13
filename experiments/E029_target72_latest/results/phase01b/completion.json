@@ -1,0 +1,9 @@
+{
+  "status": "completed",
+  "baseline_official_score": 65.34,
+  "historical_other_branch_score": 65.36,
+  "target_score": 72,
+  "goal_achieved": false,
+  "screening_only": true,
+  "protection_reused_not_repeated": true
+}

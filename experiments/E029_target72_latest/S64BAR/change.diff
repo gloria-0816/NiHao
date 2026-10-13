@@ -1,0 +1,15 @@
+--- BASE/kernel.asc
++++ S64BAR/kernel.asc
+@@ -675,8 +675,10 @@
+         }
+         PipeBarrier<PIPE_V>();
+     }
+-    if(!CompactParameterType<T>::value) Add(y,y,tmp,64);
+-    PipeBarrier<PIPE_V>();
++    if(!CompactParameterType<T>::value) {
++        Add(y,y,tmp,64);
++        PipeBarrier<PIPE_V>();
++    }
+     Mul(tmp, y, y, 64);
+     PipeBarrier<PIPE_V>();
+     WholeReduceSum(sum, tmp, 64, 1, 1, 1, 8);
