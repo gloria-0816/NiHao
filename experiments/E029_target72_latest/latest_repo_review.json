@@ -1,0 +1,30 @@
+{
+  "repo_latest": {
+    "commit": "97644ea",
+    "variant": "FRESLONG",
+    "score": 65.34,
+    "submission": 768708,
+    "source_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce"
+  },
+  "other_open_PR": {
+    "variant": "E027_COMBO",
+    "score": 65.36,
+    "submission": 752881,
+    "source_sha256": "aef9a81a4c3bc78693db38ea0eea66c4b6cbbc232f7f342aba1408e8b4233c3c"
+  },
+  "same_reference_comparison_required": true,
+  "FP16_PipelineBatch9_body_identical": true,
+  "new_methods_not_repeated": [
+    "TREE",
+    "DBLOCK",
+    "CONST",
+    "RSMALL",
+    "RSMALLF",
+    "HWAVE2",
+    "HWAVE4",
+    "HFAST128",
+    "RMSCF",
+    "AXSMALL"
+  ],
+  "remaining_target": 72
+}

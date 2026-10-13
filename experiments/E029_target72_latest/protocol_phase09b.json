@@ -1,0 +1,14 @@
+{
+  "variants": {
+    "P9LP": "da48278bf2e727dfabf2e182a4a50bd3b49d8c4d6bb6c16a31e79b75929759ce",
+    "P9PACK": "c17af1588d12db05779f5a4e8a1889b2bdcc8d38b354b009c79431e0f46d8555"
+  },
+  "runner_sha256": {
+    "P9LP": "5e16ac0d6438ad9c3ef8a4658b1b60bd3907b3ab721846b3f11dd8e79781e80b",
+    "P9PACK": "9fcdb946f708bc35aac126abe637e8104507ae5975c879dda4a86a07c2e8621d"
+  },
+  "diagnostic_only": true,
+  "ordinary_retest": false,
+  "case": "p9_s6",
+  "metrics": "PipeUtilization, once per variant"
+}

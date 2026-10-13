@@ -1,0 +1,2 @@
+{"case_id": "p9_s6", "variant": "P9LP", "profile": "op", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "p9_s6", "variant": "P9PACK", "profile": "op", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}

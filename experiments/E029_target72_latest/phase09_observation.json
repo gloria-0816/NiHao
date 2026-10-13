@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "pid": 108008,
+  "pid_missing_confirmed": true,
+  "source_sha256": "c17af1588d12db05779f5a4e8a1889b2bdcc8d38b354b009c79431e0f46d8555",
+  "driver_sha256": "34e31f613a7a7c35a80fd19c0e60644f195f7c444c048a00edb2d1e0452ff88d",
+  "launch_confirmed": true,
+  "prior_phase08_completed_and_pid_missing_at_launch": true,
+  "observer_errors": [
+    "SSH protocol banner unavailable",
+    "configured local SSH port closed"
+  ],
+  "old_cloud_page": "https://gitcode.com/org/cann/cannlab/environment?competition_id=2077655605238501377&resource_type=a3",
+  "old_cloud_page_message": "Competition event does not exist; cannot create environment",
+  "restarted": false,
+  "reconnected_and_result_retrieved": true,
+  "completion_unknown_not_failed": false
+}

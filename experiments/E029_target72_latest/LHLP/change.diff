@@ -1,0 +1,20 @@
+--- BASE/kernel.asc
++++ LHLP/kernel.asc
+@@ -2413,6 +2413,8 @@
+                     // Final readers of each raw input slot must finish before
+                     // the parameter phase reuses it for gamma/bias DMA.
+                     SetFlag<HardEvent::V_MTE2>(slot);
++                    WaitFlag<HardEvent::V_MTE2>(slot);
++                    Prefetch(row,slot*8192,slot,true);
+                 }
+                 // Mixed vmla squares half inputs directly into an FP32
+                 // accumulator, combining every retained 8192-element chunk.
+@@ -2427,8 +2429,6 @@
+             Div(sum_,work_,sum_,1);PipeBarrier<PIPE_V>();
+             Cast(rawScale_,sum_,RoundMode::CAST_RINT,1);PipeBarrier<PIPE_V>();
+             Brcb(scale_,rawScale_,1,{1,8});PipeBarrier<PIPE_V>();
+-            WaitFlag<HardEvent::V_MTE2>(0);WaitFlag<HardEvent::V_MTE2>(1);
+-            Prefetch(row,0,0,true);if(chunks>1)Prefetch(row,8192,1,true);
+             for(uint32_t c=0;c<chunks;++c) {
+                 const uint32_t col=c*8192,n=Min(8192,d_-col),slot=c&1;
+                 WaitFlag<HardEvent::MTE2_V>(slot);

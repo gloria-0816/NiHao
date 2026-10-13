@@ -1,0 +1,22 @@
+{
+  "protocol": {
+    "baseline_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+    "variants": {
+      "HLP256": "06dcba102873be469e6210516f457d8a7c9c5b0278f741e9124495fb83af905a"
+    },
+    "parents": {
+      "HLP256": "HLP"
+    },
+    "parent_sha256": {
+      "HLP": "b41bce606efcda62d51a42aa6466e4074094d1723a0df8101cfb18013ce74707"
+    },
+    "screening_only": true,
+    "changes": {
+      "HLP256": "Original static FP16 route only D193..256: constant padded stride256/reduction parts4, unroll exactly two native-half normalization/affine columns. Preserve original balanced partition, row arithmetic, memory slots and events; compare against HLP."
+    }
+  },
+  "driver_sha256": "01b797f55ac408c95778a8646cc1077e7a00da18d6baa70e3435a8ea1e38ff4e",
+  "harness_sha256": "101c9227e8fc5d4ccd11c3bf7741baf23defef435d8a2d4f40b4af0359751f86",
+  "baseline_runner_sha256": "9052108564f96a75d24abece7fc780f52c0ffbf2464545cfe233f35dc78d42a4",
+  "core_driver_sha256": "ce181e20e5474f7986e1a7937f52b48e5c58dfe47b33a41d702b24f649b4f4df"
+}

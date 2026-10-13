@@ -1,0 +1,30 @@
+{
+  "baseline_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+  "variants": {
+    "HLPQ": "5a65cebfe8c68c7e58308526f9252569e8ea008ea453d000951480800f766b7d",
+    "LHLP": "bee90a999ad086fd96d6f75128ddfe5d37c255eb055a90f98aa07ec2fcf3c391"
+  },
+  "parents": {
+    "HLPQ": "HLP",
+    "LHLP": "BASE"
+  },
+  "parent_sha256": {
+    "HLP": "b41bce606efcda62d51a42aa6466e4074094d1723a0df8101cfb18013ce74707",
+    "BASE": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce"
+  },
+  "screening_only": true,
+  "ordinary_order": [
+    "parent",
+    "candidate",
+    "candidate",
+    "parent"
+  ],
+  "changes": {
+    "HLPQ": "Host quotient/remainder balanced contiguous partition replaces device uint64 division; compared against HLP, unchanged per-row arithmetic.",
+    "LHLP": "Only FP16 D8193..32768 with >=2 chunks: prefetch first two parameter chunks immediately after final raw-input slot consumers complete; retain V_MTE2 and parameter MTE2_V waits. Compare BASE."
+  },
+  "old_positive_port": {
+    "HLP": "Same event changes as E027 HSP, now measured on latest FRESLONG; not a new optimization mechanism."
+  },
+  "final_full_validation_deferred": true
+}

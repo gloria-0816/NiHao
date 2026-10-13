@@ -1,0 +1,12 @@
+BUILD HLP256 completed
+{"case_id": "h6_s4", "variant": "HLP", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "h6_s4", "variant": "HLP256", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "h6_256", "variant": "HLP", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "h6_256", "variant": "HLP256", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "h6_192", "variant": "HLP", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "h6_192", "variant": "HLP256", "profile": null, "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "h6_s4", "variant": "HLP", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "h6_s4", "variant": "HLP256", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "h6_s4", "variant": "HLP256", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "h6_s4", "variant": "HLP", "profile": "ordinary", "status": "measured_strict_fail_retained", "output_matches_preserved_baseline": null}
+{"case_id": "h6_s4", "parent": "HLP", "candidate": "HLP256", "base_us": [6.720000000000001, 6.6805], "candidate_us": [6.66, 6.66], "gain_pct": 0.6007238535875578, "screening_only": true}

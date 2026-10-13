@@ -1,0 +1,17 @@
+[
+  {
+    "case_id": "p9_s6",
+    "parent": "P9LP",
+    "candidate": "P9PACK",
+    "base_us": [
+      8.2805,
+      8.38
+    ],
+    "candidate_us": [
+      10.750499999999999,
+      10.840499999999999
+    ],
+    "gain_pct": -29.593949761411714,
+    "screening_only": true
+  }
+]

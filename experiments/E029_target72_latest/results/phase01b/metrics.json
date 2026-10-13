@@ -1,0 +1,98 @@
+[
+  {
+    "variant": "BASE",
+    "case_id": "s6",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 8.618611000000001,
+      "aiv_vec_time(us)": 3.37,
+      "aiv_scalar_time(us)": 1.848333,
+      "aiv_mte2_time(us)": 5.836111000000001,
+      "aiv_mte3_time(us)": 1.6825,
+      "aiv_vec_ratio": 0.39023450000000004,
+      "aiv_scalar_ratio": 0.217955,
+      "aiv_mte2_ratio": 0.6906190000000001,
+      "aiv_mte3_ratio": 0.19686949999999998
+    }
+  },
+  {
+    "variant": "P9LP",
+    "case_id": "s6",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 7.607222,
+      "aiv_vec_time(us)": 3.371667,
+      "aiv_scalar_time(us)": 1.7630555,
+      "aiv_mte2_time(us)": 4.945555499999999,
+      "aiv_mte3_time(us)": 1.6880555,
+      "aiv_vec_ratio": 0.44171950000000004,
+      "aiv_scalar_ratio": 0.23174450000000002,
+      "aiv_mte2_ratio": 0.655714,
+      "aiv_mte3_ratio": 0.221583
+    }
+  },
+  {
+    "variant": "BASE",
+    "case_id": "s7",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 11.976666999999999,
+      "aiv_vec_time(us)": 4.805,
+      "aiv_scalar_time(us)": 1.854722,
+      "aiv_mte2_time(us)": 9.4316665,
+      "aiv_mte3_time(us)": 2.9216664999999997,
+      "aiv_vec_ratio": 0.400463,
+      "aiv_scalar_ratio": 0.15749200000000002,
+      "aiv_mte2_ratio": 0.7934785,
+      "aiv_mte3_ratio": 0.24494
+    }
+  },
+  {
+    "variant": "P9DB",
+    "case_id": "s7",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 11.9311105,
+      "aiv_vec_time(us)": 4.947778,
+      "aiv_scalar_time(us)": 2.1036115,
+      "aiv_mte2_time(us)": 9.272222,
+      "aiv_mte3_time(us)": 2.9144445,
+      "aiv_vec_ratio": 0.414513,
+      "aiv_scalar_ratio": 0.176256,
+      "aiv_mte2_ratio": 0.7867705,
+      "aiv_mte3_ratio": 0.2451805
+    }
+  },
+  {
+    "variant": "BASE",
+    "case_id": "s8",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 18.37,
+      "aiv_vec_time(us)": 15.479445,
+      "aiv_scalar_time(us)": 5.192222,
+      "aiv_mte2_time(us)": 11.062222,
+      "aiv_mte3_time(us)": 3.0002775,
+      "aiv_vec_ratio": 0.8426480000000001,
+      "aiv_scalar_ratio": 0.2819345,
+      "aiv_mte2_ratio": 0.5964415000000001,
+      "aiv_mte3_ratio": 0.16491499999999998
+    }
+  },
+  {
+    "variant": "P9MASK",
+    "case_id": "s8",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 18.414167499999998,
+      "aiv_vec_time(us)": 15.427778,
+      "aiv_scalar_time(us)": 4.616389,
+      "aiv_mte2_time(us)": 12.073055499999999,
+      "aiv_mte3_time(us)": 3.3422225,
+      "aiv_vec_ratio": 0.837821,
+      "aiv_scalar_ratio": 0.2499645,
+      "aiv_mte2_ratio": 0.6581705,
+      "aiv_mte3_ratio": 0.1845865
+    }
+  }
+]

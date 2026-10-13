@@ -1,0 +1,9 @@
+{
+  "source_sha256": "75af7a9e86687fa5850035af55d24a8a710e059e1f9b0e53ad219e5e2e11e624",
+  "runner_sha256": "cc135c5d950718810e1e9351bdf6f32882cc4de75ef32c7893d22f7cceaf645b",
+  "prior_build_record": {
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 33.828778946000966
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "filename": "evidence_phase09.zip",
+  "sha256": "ad2ad4afda891ded4cdc31383108dfcf2fe02e180898fb10f04b669f96deb11d",
+  "bytes": 459235,
+  "entries": 401,
+  "crc_pass": true,
+  "phase": "phase09",
+  "terminal_status": "completed"
+}

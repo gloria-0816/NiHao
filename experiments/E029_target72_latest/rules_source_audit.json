@@ -1,0 +1,207 @@
+{
+  "kind": "Source review against organizer rules supplied by user, 2026-10-13",
+  "host_allowed": [
+    "parameter validation",
+    "shape product and dtype metadata",
+    "tiling/capacity/core count",
+    "launch configuration",
+    "simple metadata scalar calculation such as inverseD"
+  ],
+  "manual_review": {
+    "all_tensor_arithmetic_on_device": true,
+    "host_does_not_read_or_rearrange_tensor_values": true,
+    "no_host_value_lookup_table": true,
+    "one_kernel_completes_each_valid_call": true,
+    "no_output_or_cross_invocation_result_cache": true,
+    "no_warmup_detection_or_empty_kernel_injection": true,
+    "all_valid_rows_and_columns_written": true,
+    "shape_specialization_preserves_full_operator_work": true
+  },
+  "packed_gather_review": {
+    "offset_table_generated_inside_kernel": true,
+    "uint32_view_only_at_Gather_int32_generation": true,
+    "source_suffix_padding_initialized_on_device_before_DMA": true,
+    "scalar_metadata_constants_not_tensor_result_lookup": true
+  },
+  "benchmark_reference_reuse": "CPU-side offline protection comparison only. Candidate still performs full device computation on each invocation and writes all valid output. Baseline hashes are not supplied to operator.",
+  "historical_probe_policy": "Old diagnostic delay/mark sources remain historical evidence only; never insert them into current competition kernels or resume timing-interference probes.",
+  "official_project": "COMBO4 local archive changes only kernel.asc; original seven build/input/verification files kept byte-identical. Submitted kernel checked via editor clipboard round-trip SHA before click.",
+  "files": [
+    {
+      "file": "../../kernel.asc",
+      "sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    },
+    {
+      "file": "BASE/kernel.asc",
+      "sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    },
+    {
+      "file": "COMBO2/kernel.asc",
+      "sha256": "75af7a9e86687fa5850035af55d24a8a710e059e1f9b0e53ad219e5e2e11e624",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    },
+    {
+      "file": "COMBO3/kernel.asc",
+      "sha256": "87eacff75c3628014d86571b93a2f21c871d3e6d0d1f43312dda29f73b0ae51e",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    },
+    {
+      "file": "COMBO4/kernel.asc",
+      "sha256": "bbb3eafdbc0f02406930ae97127fea47faf6895f71c92a6cf952f6d10cf65bc4",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    },
+    {
+      "file": "HLP/kernel.asc",
+      "sha256": "b41bce606efcda62d51a42aa6466e4074094d1723a0df8101cfb18013ce74707",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    },
+    {
+      "file": "HLP256/kernel.asc",
+      "sha256": "06dcba102873be469e6210516f457d8a7c9c5b0278f741e9124495fb83af905a",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    },
+    {
+      "file": "HLPQ/kernel.asc",
+      "sha256": "5a65cebfe8c68c7e58308526f9252569e8ea008ea453d000951480800f766b7d",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    },
+    {
+      "file": "HSG/kernel.asc",
+      "sha256": "906e4c6551d3d7df9e7f7fd53ef595422132f4924d4bd5120ea41ff1807b6734",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    },
+    {
+      "file": "LHLP/kernel.asc",
+      "sha256": "bee90a999ad086fd96d6f75128ddfe5d37c255eb055a90f98aa07ec2fcf3c391",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    },
+    {
+      "file": "P9BAR/kernel.asc",
+      "sha256": "e9feb4168d9ec1d1b24b6334745ce9beb292baf34fe501bc4724d9e6e7a6731e",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    },
+    {
+      "file": "P9DB/kernel.asc",
+      "sha256": "aac34ad0b1efd1ba5e90fe5776c4c208b761bd4356f50071e6d0168ed280f772",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    },
+    {
+      "file": "P9LP/kernel.asc",
+      "sha256": "da48278bf2e727dfabf2e182a4a50bd3b49d8c4d6bb6c16a31e79b75929759ce",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    },
+    {
+      "file": "P9MASK/kernel.asc",
+      "sha256": "91ab65de0277ca5d17e2f989be3290c9a4d3dcfac9ccae395fb903313c382062",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    },
+    {
+      "file": "P9PACK/kernel.asc",
+      "sha256": "c17af1588d12db05779f5a4e8a1889b2bdcc8d38b354b009c79431e0f46d8555",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    },
+    {
+      "file": "S64BAR/kernel.asc",
+      "sha256": "0415392649cf6a212d451ab75f574cc07876335eaa239663787160491d58fb9a",
+      "host_data_indexing_found": false,
+      "pattern_hits": {
+        "timing_or_warmup_detection": false,
+        "test_input_or_reference_detection": false,
+        "host_memory_transfer": false
+      },
+      "dispatch_review": "Mutually exclusive metadata branches, return after selected launch; one complete kernel per valid call."
+    }
+  ]
+}

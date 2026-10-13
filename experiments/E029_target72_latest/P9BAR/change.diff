@@ -1,0 +1,11 @@
+--- BASE/kernel.asc
++++ P9BAR/kernel.asc
+@@ -1837,7 +1837,7 @@
+                     for(uint32_t col=0;col<d_;col+=64)
+                         FusedMulAdd(y_[col],gamma_[col],bias_[col],Min(64,d_-col),count,{1,1,1,step,0,0});
+             }
+-            PipeBarrier<PIPE_V>();
++            if(!CompactParameterType<T>::value) PipeBarrier<PIPE_V>();
+             if(pendingOutput) WaitFlag<HardEvent::MTE3_V>(3);
+             FromFloat<T>(out_,y_,active); PipeBarrier<PIPE_V>();
+             if(CompactParameterType<T>::value) {

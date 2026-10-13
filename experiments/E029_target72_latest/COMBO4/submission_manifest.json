@@ -1,0 +1,22 @@
+{
+  "kernel_sha256": "bbb3eafdbc0f02406930ae97127fea47faf6895f71c92a6cf952f6d10cf65bc4",
+  "archive_sha256": "e8b5a6abf91896daae12552bc1a363bd65cdcf1f7dfb9000f3354050f1248180",
+  "files": {
+    "CMakeLists.txt": "f111399c08fc725aa484f96ad7f99dc2eed769e2d694b2135f7cf4cce81851e9",
+    "data_utils.h": "1bdaae93c09b65e2615691a39bfd611122c09668d90e21809c52516f443bfd84",
+    "kernel.asc": "bbb3eafdbc0f02406930ae97127fea47faf6895f71c92a6cf952f6d10cf65bc4",
+    "main.asc": "edd8d27bf3b346dcbfae40025cfad4a790010e5b5800ac434f1c1b9a45763418",
+    "run.sh": "6285cd1a901a619d0056209907bf2bcc34a7fa2d430ab41cf90f453196f20c56",
+    "scripts/AddRmsNormBias.py": "e6bb5635644678b8044a5c76660d618e2b08d42d90c18de95145d39c038508a8",
+    "scripts/gen_data.py": "017d0f28983ff6ef072316a2f0b87bfb1f4ad6b58ffbe2bb0156628faf744681",
+    "scripts/verify_result.py": "08e312f94cbfbf986161040f46cf1fb2f67f3bede5edf31454cb827061b911ac"
+  },
+  "only_kernel_changed": true,
+  "crc_pass": true,
+  "compiled_validation_pending": false,
+  "official_submission_pending": false,
+  "compiled_validation_completed": true,
+  "official_submission": 775267,
+  "official_passed": 15,
+  "official_score": 64.65
+}

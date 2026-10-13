@@ -1,0 +1,1666 @@
+[
+  {
+    "case_id": "s4",
+    "variant": "BASE",
+    "kernel_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+    "runner_sha256": "9052108564f96a75d24abece7fc780f52c0ffbf2464545cfe233f35dc78d42a4",
+    "shape": [
+      1,
+      767,
+      193
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "af2752fbcb5a439d43c8a75e3f5843bd6cb876fd4dace07ee759ada18042a63c",
+    "input_file_sha256": {
+      "x.bin": "f32fef6ea22353a3874a2d03d654b5c82f026fbb6ab4ddb780de933bc1ac9892",
+      "residual.bin": "e8e1eb549fc0a27bf76f20533da4d9985aa37480d19d48c9adbbf1de603d3306",
+      "gamma.bin": "eded8ee6280ced695655cd1c6e7210b7075b0466ec9223b97ffd589f204156a3",
+      "bias.bin": "0253db0ea14c220b1f998d8e2571d061d55f4cdddef38e8fa44abafae47a3177",
+      "golden_output.bin": "0d016b273cd0fe3cac37d884396a4f1b464eb57dc72201bc2191410b7228687f",
+      "golden_output_fp32.bin": "28d3c86c3a0667fffc3917e99af8e40f6687398e4020c4d0be81a0542ba058bc",
+      "meta.json": "af2752fbcb5a439d43c8a75e3f5843bd6cb876fd4dace07ee759ada18042a63c"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/mnt/workspace/addrms_cloudbench/huawei-CANN/experiments/E027_new_methods/build_FRESLONG/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_s4_BASE/case",
+      "--result",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_s4_BASE/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_s4_BASE",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-13T06:21:46Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 3.2698626700002933,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        767,
+        193
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 888958,
+      "free_hbm_before_allocation": 65079115776,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        49.491
+      ],
+      "host_queued_batch_median_us": 49.491
+    },
+    "strict": {
+      "case_id": "s4",
+      "shape": [
+        1,
+        767,
+        193
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_s4_BASE/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 148031,
+      "failed_elements": 63,
+      "classification_failures": 0,
+      "finite_failures": 63,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 1.921540656205421,
+      "examples": [
+        {
+          "flat_index": 1552,
+          "actual": 2.20703125,
+          "expected": 2.2109375
+        },
+        {
+          "flat_index": 7825,
+          "actual": 2.587890625,
+          "expected": 2.591796875
+        },
+        {
+          "flat_index": 8227,
+          "actual": -2.46484375,
+          "expected": -2.46875
+        },
+        {
+          "flat_index": 9016,
+          "actual": -2.037109375,
+          "expected": -2.041015625
+        },
+        {
+          "flat_index": 9984,
+          "actual": 2.26953125,
+          "expected": 2.265625
+        },
+        {
+          "flat_index": 10201,
+          "actual": -2.09765625,
+          "expected": -2.1015625
+        },
+        {
+          "flat_index": 13913,
+          "actual": 2.337890625,
+          "expected": 2.341796875
+        },
+        {
+          "flat_index": 17855,
+          "actual": 2.875,
+          "expected": 2.87890625
+        }
+      ]
+    },
+    "output_sha256": "f365003a2c6ce14472427d44f65522ad132f23cf0cd520a7317ce6a6b3e97225",
+    "output_bytes": 296062,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_BASE": true
+  },
+  {
+    "case_id": "s4",
+    "variant": "HSG",
+    "kernel_sha256": "906e4c6551d3d7df9e7f7fd53ef595422132f4924d4bd5120ea41ff1807b6734",
+    "runner_sha256": "98711707e2b2cd8be10456e7c496d2fa03a2ecc0f93e4c9d431616b80519df6d",
+    "shape": [
+      1,
+      767,
+      193
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "af2752fbcb5a439d43c8a75e3f5843bd6cb876fd4dace07ee759ada18042a63c",
+    "input_file_sha256": {
+      "x.bin": "f32fef6ea22353a3874a2d03d654b5c82f026fbb6ab4ddb780de933bc1ac9892",
+      "residual.bin": "e8e1eb549fc0a27bf76f20533da4d9985aa37480d19d48c9adbbf1de603d3306",
+      "gamma.bin": "eded8ee6280ced695655cd1c6e7210b7075b0466ec9223b97ffd589f204156a3",
+      "bias.bin": "0253db0ea14c220b1f998d8e2571d061d55f4cdddef38e8fa44abafae47a3177",
+      "golden_output.bin": "0d016b273cd0fe3cac37d884396a4f1b464eb57dc72201bc2191410b7228687f",
+      "golden_output_fp32.bin": "28d3c86c3a0667fffc3917e99af8e40f6687398e4020c4d0be81a0542ba058bc",
+      "meta.json": "af2752fbcb5a439d43c8a75e3f5843bd6cb876fd4dace07ee759ada18042a63c"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/build_HSG/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_s4_HSG/case",
+      "--result",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_s4_HSG/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_s4_HSG",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-13T06:21:49Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.0680494680054835,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "906e4c6551d3d7df9e7f7fd53ef595422132f4924d4bd5120ea41ff1807b6734",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1,
+        767,
+        193
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 888958,
+      "free_hbm_before_allocation": 65079029760,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        40.28
+      ],
+      "host_queued_batch_median_us": 40.28
+    },
+    "strict": {
+      "case_id": "s4",
+      "shape": [
+        1,
+        767,
+        193
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_s4_HSG/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 148031,
+      "failed_elements": 63,
+      "classification_failures": 0,
+      "finite_failures": 63,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 1.921540656205421,
+      "examples": [
+        {
+          "flat_index": 1552,
+          "actual": 2.20703125,
+          "expected": 2.2109375
+        },
+        {
+          "flat_index": 7825,
+          "actual": 2.587890625,
+          "expected": 2.591796875
+        },
+        {
+          "flat_index": 8227,
+          "actual": -2.46484375,
+          "expected": -2.46875
+        },
+        {
+          "flat_index": 9016,
+          "actual": -2.037109375,
+          "expected": -2.041015625
+        },
+        {
+          "flat_index": 9984,
+          "actual": 2.26953125,
+          "expected": 2.265625
+        },
+        {
+          "flat_index": 10201,
+          "actual": -2.09765625,
+          "expected": -2.1015625
+        },
+        {
+          "flat_index": 13913,
+          "actual": 2.337890625,
+          "expected": 2.341796875
+        },
+        {
+          "flat_index": 17855,
+          "actual": 2.875,
+          "expected": 2.87890625
+        }
+      ]
+    },
+    "output_sha256": "f365003a2c6ce14472427d44f65522ad132f23cf0cd520a7317ce6a6b3e97225",
+    "output_bytes": 296062,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_BASE": true
+  },
+  {
+    "case_id": "sg255",
+    "variant": "BASE",
+    "kernel_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+    "runner_sha256": "9052108564f96a75d24abece7fc780f52c0ffbf2464545cfe233f35dc78d42a4",
+    "shape": [
+      1280,
+      255
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "8d2bdf1770e737ad353ce2954ac9f1f64298e932ef289f2c654d49ecf1e89c48",
+    "input_file_sha256": {
+      "x.bin": "ff4659b14f2f5bf263ad6d2a653d215bc2bb579dd528d9219958964ccc31ac70",
+      "residual.bin": "f44408f6cd26e7f1ca8ef4c5dda1e47b536e76f65864ec30e30d9836127ed808",
+      "gamma.bin": "faf31a89e36f107b1d3509a8efcded4eab6e5263f8fbe5fc33fca77d07b774b3",
+      "bias.bin": "99ddd9fa8b05eb0790e474d2b61d3275bdb50f7267e0d6fc1c23c3489cd05f96",
+      "golden_output.bin": "4b97da25e88ab763c5821de4202c5f0a8de90a0cb5daa9539c8616cfe80ff2fb",
+      "golden_output_fp32.bin": "1decc6da2568dd8b555780f3a75d467af3930a619ab140c3c9e662babf368feb",
+      "meta.json": "8d2bdf1770e737ad353ce2954ac9f1f64298e932ef289f2c654d49ecf1e89c48"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/mnt/workspace/addrms_cloudbench/huawei-CANN/experiments/E027_new_methods/build_FRESLONG/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg255_BASE/case",
+      "--result",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg255_BASE/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg255_BASE",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-13T06:21:51Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.0677762320046895,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1280,
+        255
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 1959420,
+      "free_hbm_before_allocation": 65078874112,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        55.031
+      ],
+      "host_queued_batch_median_us": 55.031
+    },
+    "strict": {
+      "case_id": "sg255",
+      "shape": [
+        1280,
+        255
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg255_BASE/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 326400,
+      "failed_elements": 160,
+      "classification_failures": 0,
+      "finite_failures": 160,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 13.047058823529412,
+      "examples": [
+        {
+          "flat_index": 449,
+          "actual": -1.8916015625,
+          "expected": -1.89453125
+        },
+        {
+          "flat_index": 1970,
+          "actual": -2.326171875,
+          "expected": -2.330078125
+        },
+        {
+          "flat_index": 2115,
+          "actual": -2.169921875,
+          "expected": -2.166015625
+        },
+        {
+          "flat_index": 3067,
+          "actual": 2.775390625,
+          "expected": 2.779296875
+        },
+        {
+          "flat_index": 3161,
+          "actual": -2.49609375,
+          "expected": -2.5
+        },
+        {
+          "flat_index": 4360,
+          "actual": -2.572265625,
+          "expected": -2.568359375
+        },
+        {
+          "flat_index": 5493,
+          "actual": -1.7880859375,
+          "expected": -1.78515625
+        },
+        {
+          "flat_index": 9899,
+          "actual": -2.345703125,
+          "expected": -2.349609375
+        }
+      ]
+    },
+    "output_sha256": "a698966d9cd9ba03867c69828a8e92c3d168c63cb0068c5e525a66207e37aa59",
+    "output_bytes": 652800,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_BASE": true
+  },
+  {
+    "case_id": "sg255",
+    "variant": "HSG",
+    "kernel_sha256": "906e4c6551d3d7df9e7f7fd53ef595422132f4924d4bd5120ea41ff1807b6734",
+    "runner_sha256": "98711707e2b2cd8be10456e7c496d2fa03a2ecc0f93e4c9d431616b80519df6d",
+    "shape": [
+      1280,
+      255
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "8d2bdf1770e737ad353ce2954ac9f1f64298e932ef289f2c654d49ecf1e89c48",
+    "input_file_sha256": {
+      "x.bin": "ff4659b14f2f5bf263ad6d2a653d215bc2bb579dd528d9219958964ccc31ac70",
+      "residual.bin": "f44408f6cd26e7f1ca8ef4c5dda1e47b536e76f65864ec30e30d9836127ed808",
+      "gamma.bin": "faf31a89e36f107b1d3509a8efcded4eab6e5263f8fbe5fc33fca77d07b774b3",
+      "bias.bin": "99ddd9fa8b05eb0790e474d2b61d3275bdb50f7267e0d6fc1c23c3489cd05f96",
+      "golden_output.bin": "4b97da25e88ab763c5821de4202c5f0a8de90a0cb5daa9539c8616cfe80ff2fb",
+      "golden_output_fp32.bin": "1decc6da2568dd8b555780f3a75d467af3930a619ab140c3c9e662babf368feb",
+      "meta.json": "8d2bdf1770e737ad353ce2954ac9f1f64298e932ef289f2c654d49ecf1e89c48"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/build_HSG/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg255_HSG/case",
+      "--result",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg255_HSG/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg255_HSG",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-13T06:21:53Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.268284304002009,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "906e4c6551d3d7df9e7f7fd53ef595422132f4924d4bd5120ea41ff1807b6734",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        1280,
+        255
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 1959420,
+      "free_hbm_before_allocation": 65078169600,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        41.181
+      ],
+      "host_queued_batch_median_us": 41.181
+    },
+    "strict": {
+      "case_id": "sg255",
+      "shape": [
+        1280,
+        255
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg255_HSG/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 326400,
+      "failed_elements": 160,
+      "classification_failures": 0,
+      "finite_failures": 160,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 13.047058823529412,
+      "examples": [
+        {
+          "flat_index": 449,
+          "actual": -1.8916015625,
+          "expected": -1.89453125
+        },
+        {
+          "flat_index": 1970,
+          "actual": -2.326171875,
+          "expected": -2.330078125
+        },
+        {
+          "flat_index": 2115,
+          "actual": -2.169921875,
+          "expected": -2.166015625
+        },
+        {
+          "flat_index": 3067,
+          "actual": 2.775390625,
+          "expected": 2.779296875
+        },
+        {
+          "flat_index": 3161,
+          "actual": -2.49609375,
+          "expected": -2.5
+        },
+        {
+          "flat_index": 4360,
+          "actual": -2.572265625,
+          "expected": -2.568359375
+        },
+        {
+          "flat_index": 5493,
+          "actual": -1.7880859375,
+          "expected": -1.78515625
+        },
+        {
+          "flat_index": 9899,
+          "actual": -2.345703125,
+          "expected": -2.349609375
+        }
+      ]
+    },
+    "output_sha256": "a698966d9cd9ba03867c69828a8e92c3d168c63cb0068c5e525a66207e37aa59",
+    "output_bytes": 652800,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_BASE": true
+  },
+  {
+    "case_id": "sg192",
+    "variant": "BASE",
+    "kernel_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+    "runner_sha256": "9052108564f96a75d24abece7fc780f52c0ffbf2464545cfe233f35dc78d42a4",
+    "shape": [
+      767,
+      192
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "b8a2ce99cfb214b4c3eb5d14171c2df96b7bed392f829256b75ad2d9cfd2c1a0",
+    "input_file_sha256": {
+      "x.bin": "8ef0e0fe5a690e174555b2f87704ab107303fe4ad7c325c458705d2c7b32a3f3",
+      "residual.bin": "36a16ef4560bf27f9476e4dc819eac8859d576cbf95a2c83d0ac6e0a832ea6b1",
+      "gamma.bin": "0f17c2c49dfe05fa31e43a791ba774604fe30b96f61502422e82d7959e9a7932",
+      "bias.bin": "39781164b1fd1f4a6b951c7e4aff86fb3eab7841e3e227113f5cd0c82c603582",
+      "golden_output.bin": "5b0e6d577fe801490dc2057289a7cf94298e8809e468f9954e6dc6b88e8b6468",
+      "golden_output_fp32.bin": "d3383698edfc45447e79be3882e4ad583ab07454e8b74446c64d9a82e977e5ed",
+      "meta.json": "b8a2ce99cfb214b4c3eb5d14171c2df96b7bed392f829256b75ad2d9cfd2c1a0"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/mnt/workspace/addrms_cloudbench/huawei-CANN/experiments/E027_new_methods/build_FRESLONG/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg192_BASE/case",
+      "--result",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg192_BASE/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg192_BASE",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-13T06:21:55Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.0678816060026293,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        767,
+        192
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 884352,
+      "free_hbm_before_allocation": 65078890496,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        48.731
+      ],
+      "host_queued_batch_median_us": 48.731
+    },
+    "strict": {
+      "case_id": "sg192",
+      "shape": [
+        767,
+        192
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg192_BASE/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 147264,
+      "failed_elements": 57,
+      "classification_failures": 0,
+      "finite_failures": 57,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 1.115702479338843,
+      "examples": [
+        {
+          "flat_index": 2246,
+          "actual": -2.7109375,
+          "expected": -2.71484375
+        },
+        {
+          "flat_index": 5713,
+          "actual": 2.259765625,
+          "expected": 2.263671875
+        },
+        {
+          "flat_index": 5857,
+          "actual": -2.193359375,
+          "expected": -2.189453125
+        },
+        {
+          "flat_index": 6499,
+          "actual": 1.8798828125,
+          "expected": 1.8828125
+        },
+        {
+          "flat_index": 7700,
+          "actual": 1.8984375,
+          "expected": 1.9013671875
+        },
+        {
+          "flat_index": 8281,
+          "actual": 1.8583984375,
+          "expected": 1.861328125
+        },
+        {
+          "flat_index": 14980,
+          "actual": -1.908203125,
+          "expected": -1.9111328125
+        },
+        {
+          "flat_index": 15431,
+          "actual": 2.580078125,
+          "expected": 2.583984375
+        }
+      ]
+    },
+    "output_sha256": "b2ec1c470c99a6602ab067911c6a696049b2cddec777651d4b3ea10cc6c72871",
+    "output_bytes": 294528,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_BASE": true
+  },
+  {
+    "case_id": "sg192",
+    "variant": "HSG",
+    "kernel_sha256": "906e4c6551d3d7df9e7f7fd53ef595422132f4924d4bd5120ea41ff1807b6734",
+    "runner_sha256": "98711707e2b2cd8be10456e7c496d2fa03a2ecc0f93e4c9d431616b80519df6d",
+    "shape": [
+      767,
+      192
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "b8a2ce99cfb214b4c3eb5d14171c2df96b7bed392f829256b75ad2d9cfd2c1a0",
+    "input_file_sha256": {
+      "x.bin": "8ef0e0fe5a690e174555b2f87704ab107303fe4ad7c325c458705d2c7b32a3f3",
+      "residual.bin": "36a16ef4560bf27f9476e4dc819eac8859d576cbf95a2c83d0ac6e0a832ea6b1",
+      "gamma.bin": "0f17c2c49dfe05fa31e43a791ba774604fe30b96f61502422e82d7959e9a7932",
+      "bias.bin": "39781164b1fd1f4a6b951c7e4aff86fb3eab7841e3e227113f5cd0c82c603582",
+      "golden_output.bin": "5b0e6d577fe801490dc2057289a7cf94298e8809e468f9954e6dc6b88e8b6468",
+      "golden_output_fp32.bin": "d3383698edfc45447e79be3882e4ad583ab07454e8b74446c64d9a82e977e5ed",
+      "meta.json": "b8a2ce99cfb214b4c3eb5d14171c2df96b7bed392f829256b75ad2d9cfd2c1a0"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/build_HSG/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg192_HSG/case",
+      "--result",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg192_HSG/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg192_HSG",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-13T06:21:57Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.268365215000813,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "906e4c6551d3d7df9e7f7fd53ef595422132f4924d4bd5120ea41ff1807b6734",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        767,
+        192
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 884352,
+      "free_hbm_before_allocation": 65078239232,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        21.02
+      ],
+      "host_queued_batch_median_us": 21.02
+    },
+    "strict": {
+      "case_id": "sg192",
+      "shape": [
+        767,
+        192
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg192_HSG/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 147264,
+      "failed_elements": 57,
+      "classification_failures": 0,
+      "finite_failures": 57,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 1.115702479338843,
+      "examples": [
+        {
+          "flat_index": 2246,
+          "actual": -2.7109375,
+          "expected": -2.71484375
+        },
+        {
+          "flat_index": 5713,
+          "actual": 2.259765625,
+          "expected": 2.263671875
+        },
+        {
+          "flat_index": 5857,
+          "actual": -2.193359375,
+          "expected": -2.189453125
+        },
+        {
+          "flat_index": 6499,
+          "actual": 1.8798828125,
+          "expected": 1.8828125
+        },
+        {
+          "flat_index": 7700,
+          "actual": 1.8984375,
+          "expected": 1.9013671875
+        },
+        {
+          "flat_index": 8281,
+          "actual": 1.8583984375,
+          "expected": 1.861328125
+        },
+        {
+          "flat_index": 14980,
+          "actual": -1.908203125,
+          "expected": -1.9111328125
+        },
+        {
+          "flat_index": 15431,
+          "actual": 2.580078125,
+          "expected": 2.583984375
+        }
+      ]
+    },
+    "output_sha256": "b2ec1c470c99a6602ab067911c6a696049b2cddec777651d4b3ea10cc6c72871",
+    "output_bytes": 294528,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_BASE": true
+  },
+  {
+    "case_id": "sg256",
+    "variant": "BASE",
+    "kernel_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+    "runner_sha256": "9052108564f96a75d24abece7fc780f52c0ffbf2464545cfe233f35dc78d42a4",
+    "shape": [
+      767,
+      256
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "62aec76634ede96bcce282936d06ac1ad7fe0d047b2d2ca400831a549e733730",
+    "input_file_sha256": {
+      "x.bin": "2b4c9a486b1c6649711568cb0a74b9e6dd0b0130c8133d81be5c30c4db93911b",
+      "residual.bin": "3a4c24c949e207e58cbd528f95055aa276ae5393a83e3f31ff6961b07c2b921c",
+      "gamma.bin": "cd6e7b88db74432b8c944a74375a83ccc3633e47f96f7b34d72d414487c76ef3",
+      "bias.bin": "4823102602816cfcd28e4759b2d35ebf159f3bab8c60f076e165e5337377253a",
+      "golden_output.bin": "d2f2b7fa0510f103ce78419b6f3e6ade6cef3bf28b9d35766db2ddc54992ff17",
+      "golden_output_fp32.bin": "dda770e0e020ab07310b89beff058be19223937f88e49af476a034cb3b787bc0",
+      "meta.json": "62aec76634ede96bcce282936d06ac1ad7fe0d047b2d2ca400831a549e733730"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/mnt/workspace/addrms_cloudbench/huawei-CANN/experiments/E027_new_methods/build_FRESLONG/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg256_BASE/case",
+      "--result",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg256_BASE/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg256_BASE",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-13T06:22:00Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 3.269873393997841,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        767,
+        256
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 1179136,
+      "free_hbm_before_allocation": 65078398976,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        29.851
+      ],
+      "host_queued_batch_median_us": 29.851
+    },
+    "strict": {
+      "case_id": "sg256",
+      "shape": [
+        767,
+        256
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg256_BASE/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 196352,
+      "failed_elements": 75,
+      "classification_failures": 0,
+      "finite_failures": 75,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 291.57142857142856,
+      "examples": [
+        {
+          "flat_index": 3789,
+          "actual": 1.9951171875,
+          "expected": 1.9912109375
+        },
+        {
+          "flat_index": 6896,
+          "actual": 1.806640625,
+          "expected": 1.8037109375
+        },
+        {
+          "flat_index": 8862,
+          "actual": 2.45703125,
+          "expected": 2.4609375
+        },
+        {
+          "flat_index": 9037,
+          "actual": 2.28515625,
+          "expected": 2.28125
+        },
+        {
+          "flat_index": 9374,
+          "actual": -2.283203125,
+          "expected": -2.279296875
+        },
+        {
+          "flat_index": 12772,
+          "actual": -2.0234375,
+          "expected": -2.02734375
+        },
+        {
+          "flat_index": 17758,
+          "actual": -2.73046875,
+          "expected": -2.734375
+        },
+        {
+          "flat_index": 19016,
+          "actual": -2.66796875,
+          "expected": -2.6640625
+        }
+      ]
+    },
+    "output_sha256": "74d50fab205acf5cda69c193009bc1135220ac83cdb58c01e010b76e4f4c2fde",
+    "output_bytes": 392704,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_BASE": true
+  },
+  {
+    "case_id": "sg256",
+    "variant": "HSG",
+    "kernel_sha256": "906e4c6551d3d7df9e7f7fd53ef595422132f4924d4bd5120ea41ff1807b6734",
+    "runner_sha256": "98711707e2b2cd8be10456e7c496d2fa03a2ecc0f93e4c9d431616b80519df6d",
+    "shape": [
+      767,
+      256
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "62aec76634ede96bcce282936d06ac1ad7fe0d047b2d2ca400831a549e733730",
+    "input_file_sha256": {
+      "x.bin": "2b4c9a486b1c6649711568cb0a74b9e6dd0b0130c8133d81be5c30c4db93911b",
+      "residual.bin": "3a4c24c949e207e58cbd528f95055aa276ae5393a83e3f31ff6961b07c2b921c",
+      "gamma.bin": "cd6e7b88db74432b8c944a74375a83ccc3633e47f96f7b34d72d414487c76ef3",
+      "bias.bin": "4823102602816cfcd28e4759b2d35ebf159f3bab8c60f076e165e5337377253a",
+      "golden_output.bin": "d2f2b7fa0510f103ce78419b6f3e6ade6cef3bf28b9d35766db2ddc54992ff17",
+      "golden_output_fp32.bin": "dda770e0e020ab07310b89beff058be19223937f88e49af476a034cb3b787bc0",
+      "meta.json": "62aec76634ede96bcce282936d06ac1ad7fe0d047b2d2ca400831a549e733730"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/build_HSG/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg256_HSG/case",
+      "--result",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg256_HSG/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg256_HSG",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-13T06:22:03Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.0678693509980803,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "906e4c6551d3d7df9e7f7fd53ef595422132f4924d4bd5120ea41ff1807b6734",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        767,
+        256
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 1179136,
+      "free_hbm_before_allocation": 65078550528,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        38.94
+      ],
+      "host_queued_batch_median_us": 38.94
+    },
+    "strict": {
+      "case_id": "sg256",
+      "shape": [
+        767,
+        256
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg256_HSG/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 196352,
+      "failed_elements": 75,
+      "classification_failures": 0,
+      "finite_failures": 75,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 291.57142857142856,
+      "examples": [
+        {
+          "flat_index": 3789,
+          "actual": 1.9951171875,
+          "expected": 1.9912109375
+        },
+        {
+          "flat_index": 6896,
+          "actual": 1.806640625,
+          "expected": 1.8037109375
+        },
+        {
+          "flat_index": 8862,
+          "actual": 2.45703125,
+          "expected": 2.4609375
+        },
+        {
+          "flat_index": 9037,
+          "actual": 2.28515625,
+          "expected": 2.28125
+        },
+        {
+          "flat_index": 9374,
+          "actual": -2.283203125,
+          "expected": -2.279296875
+        },
+        {
+          "flat_index": 12772,
+          "actual": -2.0234375,
+          "expected": -2.02734375
+        },
+        {
+          "flat_index": 17758,
+          "actual": -2.73046875,
+          "expected": -2.734375
+        },
+        {
+          "flat_index": 19016,
+          "actual": -2.66796875,
+          "expected": -2.6640625
+        }
+      ]
+    },
+    "output_sha256": "74d50fab205acf5cda69c193009bc1135220ac83cdb58c01e010b76e4f4c2fde",
+    "output_bytes": 392704,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_BASE": true
+  },
+  {
+    "case_id": "sg159",
+    "variant": "BASE",
+    "kernel_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+    "runner_sha256": "9052108564f96a75d24abece7fc780f52c0ffbf2464545cfe233f35dc78d42a4",
+    "shape": [
+      159,
+      193
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "02dc1ca69b112b8693de0e8d5e10fe12708ee14e3c6fb52b10e3e9664f9933af",
+    "input_file_sha256": {
+      "x.bin": "a49c8abf90da2b1bc13d06d98569b2f19b8a2782033aad718ffe07999fb903bb",
+      "residual.bin": "36840314babc4eb57cf34a43be26971eb3b7a16b2b0424bbf65a3148a82b2167",
+      "gamma.bin": "a49fd2069707d783a805f84aa9713f361f2494ac353c74cd16f7dfab39df050a",
+      "bias.bin": "bda70aacd123df0fa3693cf9f7ab174c120e14762c4892011d2f084f55e8f8a1",
+      "golden_output.bin": "eee0be7d8340674829aa8636e0127c7e374b0a642c888fb5215c7a1ce0ce7c2f",
+      "golden_output_fp32.bin": "fe6cda872a8b22add9cd1ac2f17ce4256cbf2878c5f6a78161393c2e8cde0f6e",
+      "meta.json": "02dc1ca69b112b8693de0e8d5e10fe12708ee14e3c6fb52b10e3e9664f9933af"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/mnt/workspace/addrms_cloudbench/huawei-CANN/experiments/E027_new_methods/build_FRESLONG/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg159_BASE/case",
+      "--result",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg159_BASE/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg159_BASE",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-13T06:22:05Z",
+    "status": "measured_strict_pass",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.068091093999101,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        159,
+        193
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 184894,
+      "free_hbm_before_allocation": 65078915072,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        43.38
+      ],
+      "host_queued_batch_median_us": 43.38
+    },
+    "strict": {
+      "case_id": "sg159",
+      "shape": [
+        159,
+        193
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg159_BASE/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 30687,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 0.00048828125,
+      "max_relative_error": 0.0006215040397762585,
+      "examples": []
+    },
+    "output_sha256": "1b4a3cc3b2cad92fecf64138a702f9ee72003a5eec0acb86e51f8c0c051a41ff",
+    "output_bytes": 61374,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_BASE": true
+  },
+  {
+    "case_id": "sg159",
+    "variant": "HSG",
+    "kernel_sha256": "906e4c6551d3d7df9e7f7fd53ef595422132f4924d4bd5120ea41ff1807b6734",
+    "runner_sha256": "98711707e2b2cd8be10456e7c496d2fa03a2ecc0f93e4c9d431616b80519df6d",
+    "shape": [
+      159,
+      193
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "02dc1ca69b112b8693de0e8d5e10fe12708ee14e3c6fb52b10e3e9664f9933af",
+    "input_file_sha256": {
+      "x.bin": "a49c8abf90da2b1bc13d06d98569b2f19b8a2782033aad718ffe07999fb903bb",
+      "residual.bin": "36840314babc4eb57cf34a43be26971eb3b7a16b2b0424bbf65a3148a82b2167",
+      "gamma.bin": "a49fd2069707d783a805f84aa9713f361f2494ac353c74cd16f7dfab39df050a",
+      "bias.bin": "bda70aacd123df0fa3693cf9f7ab174c120e14762c4892011d2f084f55e8f8a1",
+      "golden_output.bin": "eee0be7d8340674829aa8636e0127c7e374b0a642c888fb5215c7a1ce0ce7c2f",
+      "golden_output_fp32.bin": "fe6cda872a8b22add9cd1ac2f17ce4256cbf2878c5f6a78161393c2e8cde0f6e",
+      "meta.json": "02dc1ca69b112b8693de0e8d5e10fe12708ee14e3c6fb52b10e3e9664f9933af"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/build_HSG/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg159_HSG/case",
+      "--result",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg159_HSG/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg159_HSG",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-13T06:22:07Z",
+    "status": "measured_strict_pass",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.0677604599986807,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "906e4c6551d3d7df9e7f7fd53ef595422132f4924d4bd5120ea41ff1807b6734",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        159,
+        193
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 184894,
+      "free_hbm_before_allocation": 65078407168,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        47.661
+      ],
+      "host_queued_batch_median_us": 47.661
+    },
+    "strict": {
+      "case_id": "sg159",
+      "shape": [
+        159,
+        193
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg159_HSG/case/output.bin",
+      "pass": true,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 30687,
+      "failed_elements": 0,
+      "classification_failures": 0,
+      "finite_failures": 0,
+      "max_abs_error": 0.00048828125,
+      "max_relative_error": 0.0006215040397762585,
+      "examples": []
+    },
+    "output_sha256": "1b4a3cc3b2cad92fecf64138a702f9ee72003a5eec0acb86e51f8c0c051a41ff",
+    "output_bytes": 61374,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_BASE": true
+  },
+  {
+    "case_id": "sg160",
+    "variant": "BASE",
+    "kernel_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+    "runner_sha256": "9052108564f96a75d24abece7fc780f52c0ffbf2464545cfe233f35dc78d42a4",
+    "shape": [
+      160,
+      193
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "d75963c215feb134e6486befe87b9c682209425bd8086209daa25bc2b918d5b3",
+    "input_file_sha256": {
+      "x.bin": "c3b9557e729ac4698940896dac634188538a85a9beb764434ed96ba7c51e3644",
+      "residual.bin": "64e411a7f47356a5ab78651e2944cec93461b1bccec77ff9fdbc6af447e39a34",
+      "gamma.bin": "a0f6fa551d252ac84d02332d64367cb87f3d916b79824a9049bf86a3949569d9",
+      "bias.bin": "c0f9649ad87c389d3b09d698ece9f73e79861d70c3b4b6f2f0145c49719873c8",
+      "golden_output.bin": "2c880307963765799c6c869b6d1f1ac4031686d609e8186afc906ffa61c4cc7e",
+      "golden_output_fp32.bin": "cdb279fb0cdc4dc91216a91a37197f5758f2fcd3e9e2c8e2bb2bf29e01265206",
+      "meta.json": "d75963c215feb134e6486befe87b9c682209425bd8086209daa25bc2b918d5b3"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/mnt/workspace/addrms_cloudbench/huawei-CANN/experiments/E027_new_methods/build_FRESLONG/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg160_BASE/case",
+      "--result",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg160_BASE/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg160_BASE",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-13T06:22:09Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.0678199600006337,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        160,
+        193
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 186052,
+      "free_hbm_before_allocation": 65077846016,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        39.7
+      ],
+      "host_queued_batch_median_us": 39.7
+    },
+    "strict": {
+      "case_id": "sg160",
+      "shape": [
+        160,
+        193
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg160_BASE/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 30880,
+      "failed_elements": 8,
+      "classification_failures": 0,
+      "finite_failures": 8,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 1.7416331994645247,
+      "examples": [
+        {
+          "flat_index": 1187,
+          "actual": -2.2421875,
+          "expected": -2.24609375
+        },
+        {
+          "flat_index": 2122,
+          "actual": 2.42578125,
+          "expected": 2.4296875
+        },
+        {
+          "flat_index": 6835,
+          "actual": -1.783203125,
+          "expected": -1.7802734375
+        },
+        {
+          "flat_index": 18495,
+          "actual": 2.087890625,
+          "expected": 2.083984375
+        },
+        {
+          "flat_index": 20183,
+          "actual": 2.1484375,
+          "expected": 2.14453125
+        },
+        {
+          "flat_index": 24517,
+          "actual": 2.783203125,
+          "expected": 2.779296875
+        },
+        {
+          "flat_index": 26947,
+          "actual": -2.595703125,
+          "expected": -2.591796875
+        },
+        {
+          "flat_index": 28796,
+          "actual": -2.025390625,
+          "expected": -2.021484375
+        }
+      ]
+    },
+    "output_sha256": "ee5aca74e3d6f1f2b1e0be6b5224007207b07b2db7e815ee04a3b4aeeb8e7005",
+    "output_bytes": 61760,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_BASE": true
+  },
+  {
+    "case_id": "sg160",
+    "variant": "HSG",
+    "kernel_sha256": "906e4c6551d3d7df9e7f7fd53ef595422132f4924d4bd5120ea41ff1807b6734",
+    "runner_sha256": "98711707e2b2cd8be10456e7c496d2fa03a2ecc0f93e4c9d431616b80519df6d",
+    "shape": [
+      160,
+      193
+    ],
+    "dtype": "float16",
+    "input_meta_sha256": "d75963c215feb134e6486befe87b9c682209425bd8086209daa25bc2b918d5b3",
+    "input_file_sha256": {
+      "x.bin": "c3b9557e729ac4698940896dac634188538a85a9beb764434ed96ba7c51e3644",
+      "residual.bin": "64e411a7f47356a5ab78651e2944cec93461b1bccec77ff9fdbc6af447e39a34",
+      "gamma.bin": "a0f6fa551d252ac84d02332d64367cb87f3d916b79824a9049bf86a3949569d9",
+      "bias.bin": "c0f9649ad87c389d3b09d698ece9f73e79861d70c3b4b6f2f0145c49719873c8",
+      "golden_output.bin": "2c880307963765799c6c869b6d1f1ac4031686d609e8186afc906ffa61c4cc7e",
+      "golden_output_fp32.bin": "cdb279fb0cdc4dc91216a91a37197f5758f2fcd3e9e2c8e2bb2bf29e01265206",
+      "meta.json": "d75963c215feb134e6486befe87b9c682209425bd8086209daa25bc2b918d5b3"
+    },
+    "preserved_old_output_sha256": null,
+    "command": [
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/build_HSG/cloud_addrmsnormbias",
+      "--case-dir",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg160_HSG/case",
+      "--result",
+      "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg160_HSG/benchmark.json",
+      "--warmup",
+      "0",
+      "--repeats",
+      "1",
+      "--batch",
+      "1",
+      "--timing",
+      "host",
+      "--timeout-ms",
+      "30000"
+    ],
+    "directory": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg160_HSG",
+    "settings": {
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timing": "host"
+    },
+    "profile": null,
+    "started_utc": "2026-10-13T06:22:11Z",
+    "status": "measured_strict_fail_retained",
+    "returncode": 0,
+    "timed_out": false,
+    "wall_seconds": 2.067548587998317,
+    "benchmark": {
+      "schema_version": 1,
+      "status": "executed_not_yet_verified",
+      "kernel_sha256": "906e4c6551d3d7df9e7f7fd53ef595422132f4924d4bd5120ea41ff1807b6734",
+      "device": 0,
+      "vector_cores": 40,
+      "shape": [
+        160,
+        193
+      ],
+      "dtype": 1,
+      "epsilon": 9.99999974738e-06,
+      "required_device_bytes": 186052,
+      "free_hbm_before_allocation": 65078308864,
+      "total_hbm": 65452113920,
+      "warmup": 0,
+      "repeats": 1,
+      "batch": 1,
+      "timeout_ms": 30000,
+      "timing_mode": "host",
+      "cache_mode": "same_buffers_warm",
+      "timing_definition": "batch wall spans divided by launch count; includes queue gaps; host span additionally includes event recording and final synchronization; not isolated kernel task duration",
+      "host_queued_batch_us": [
+        41.251
+      ],
+      "host_queued_batch_median_us": 41.251
+    },
+    "strict": {
+      "case_id": "sg160",
+      "shape": [
+        160,
+        193
+      ],
+      "dtype": "float16",
+      "output": "/home/developer/addrms_E029/experiments/E029_target72_latest/results/phase02/check_sg160_HSG/case/output.bin",
+      "pass": false,
+      "criterion": "finite abs(actual-reference) <= atol + rtol*abs(reference); NaN/+Inf/-Inf classes equal",
+      "atol": 0.001,
+      "rtol": 0.001,
+      "elements": 30880,
+      "failed_elements": 8,
+      "classification_failures": 0,
+      "finite_failures": 8,
+      "max_abs_error": 0.00390625,
+      "max_relative_error": 1.7416331994645247,
+      "examples": [
+        {
+          "flat_index": 1187,
+          "actual": -2.2421875,
+          "expected": -2.24609375
+        },
+        {
+          "flat_index": 2122,
+          "actual": 2.42578125,
+          "expected": 2.4296875
+        },
+        {
+          "flat_index": 6835,
+          "actual": -1.783203125,
+          "expected": -1.7802734375
+        },
+        {
+          "flat_index": 18495,
+          "actual": 2.087890625,
+          "expected": 2.083984375
+        },
+        {
+          "flat_index": 20183,
+          "actual": 2.1484375,
+          "expected": 2.14453125
+        },
+        {
+          "flat_index": 24517,
+          "actual": 2.783203125,
+          "expected": 2.779296875
+        },
+        {
+          "flat_index": 26947,
+          "actual": -2.595703125,
+          "expected": -2.591796875
+        },
+        {
+          "flat_index": 28796,
+          "actual": -2.025390625,
+          "expected": -2.021484375
+        }
+      ]
+    },
+    "output_sha256": "ee5aca74e3d6f1f2b1e0be6b5224007207b07b2db7e815ee04a3b4aeeb8e7005",
+    "output_bytes": 61760,
+    "old_output_unchanged": true,
+    "output_matches_preserved_baseline": null,
+    "bitwise_equal_BASE": true
+  }
+]

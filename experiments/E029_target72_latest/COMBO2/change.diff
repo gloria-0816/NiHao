@@ -1,0 +1,523 @@
+--- BASE/kernel.asc
++++ COMBO2/kernel.asc
+@@ -1883,6 +1883,159 @@
+     op.Init(x,r,g,b,out,rows,d,invD,eps); op.Process();
+ }
+ 
++template <typename T, bool BlockReduction>
++class P9LPKernel {
++public:
++    __aicore__ inline void Init(GM_ADDR x, GM_ADDR r, GM_ADDR g, GM_ADDR b,
++        GM_ADDR out, uint64_t rows, uint32_t d, float invD, float eps)
++    {
++        d_=d; stride_=(d+63)/64*64; batch_=9408/stride_;
++        begin_=rows*GetBlockIdx()/GetBlockNum();
++        end_=rows*(GetBlockIdx()+1)/GetBlockNum(); invD_=invD; eps_=eps;
++        xgm_.SetGlobalBuffer((__gm__ T*)x); rgm_.SetGlobalBuffer((__gm__ T*)r);
++        ggm_.SetGlobalBuffer((__gm__ T*)g); bgm_.SetGlobalBuffer((__gm__ T*)b);
++        outgm_.SetGlobalBuffer((__gm__ T*)out);
++        x_[0]=LocalTensor<T>(TPosition::VECIN,0,9408);
++        x_[1]=LocalTensor<T>(TPosition::VECIN,18944,9408);
++        r_[0]=LocalTensor<T>(TPosition::VECIN,37888,9408);
++        r_[1]=LocalTensor<T>(TPosition::VECIN,56832,9408);
++        y_=LocalTensor<float>(TPosition::VECCALC,75776,9408);
++        tmp_=LocalTensor<float>(TPosition::VECCALC,113536,9408);
++        out_=LocalTensor<T>(TPosition::VECOUT,151296,9408);
++        gamma_=LocalTensor<float>(TPosition::VECCALC,170240,1024);
++        bias_=LocalTensor<float>(TPosition::VECCALC,174464,1024);
++        gh_=LocalTensor<T>(TPosition::VECIN,178688,1024);
++        bh_=LocalTensor<T>(TPosition::VECIN,180864,1024);
++        work_=LocalTensor<float>(TPosition::VECCALC,183040,2048);
++        sums_=LocalTensor<float>(TPosition::VECCALC,191360,128);
++    }
++    __aicore__ inline void Process()
++    {
++        DataCopyExtParams parameter={1,static_cast<uint32_t>(d_*sizeof(T)),0,0,0};
++        DataCopyPadExtParams<T> pad={}; pad.isPad=false;
++        // Only launched for half: gamma/bias remain native half until affine.
++        Prefetch(begin_,0);
++        DataCopyPad(gh_,ggm_,parameter,pad); DataCopyPad(bh_,bgm_,parameter,pad);
++        SetFlag<HardEvent::MTE2_V>(3);
++        if(begin_+batch_<end_) Prefetch(begin_+batch_,1);
++        bool pendingParameters=true;
++        bool pendingOutput=false;
++        uint32_t slot=0;
++        for(uint64_t row=begin_;row<end_;row+=batch_,slot^=1) {
++            const uint32_t count=Min(batch_,static_cast<uint32_t>(end_-row));
++            const uint32_t active=count*stride_;
++            WaitFlag<HardEvent::MTE2_V>(slot);
++            if(CompactParameterType<T>::value) {
++                Add(x_[slot],x_[slot],r_[slot],active);PipeBarrier<PIPE_V>();
++                ToFloat<T>(y_,x_[slot],active);PipeBarrier<PIPE_V>();
++            } else {
++                ToFloat<T>(y_,x_[slot],active);ToFloat<T>(tmp_,r_[slot],active);PipeBarrier<PIPE_V>();
++            }
++            // This slot is only overwritten after both Cast source reads end.
++            if(row+2*batch_<end_) {
++                SetFlag<HardEvent::V_MTE2>(slot); WaitFlag<HardEvent::V_MTE2>(slot);
++                Prefetch(row+2*batch_,slot);
++            }
++            if(!CompactParameterType<T>::value){Add(y_,y_,tmp_,active);PipeBarrier<PIPE_V>();}
++            if(d_!=stride_) {
++                uint64_t tail[2]={~static_cast<uint64_t>(0)<<(d_%64),0};
++                Duplicate(y_[d_/64*64],0.0f,tail,count,1,stride_/8);
++                PipeBarrier<PIPE_V>();
++            }
++            Mul(tmp_,y_,y_,active); PipeBarrier<PIPE_V>();
++            const uint32_t parts=stride_/64;
++            if(BlockReduction) {
++                BlockReduceSum(work_,tmp_,active/64,64,1,1,8);
++                PipeBarrier<PIPE_V>();
++                const uint32_t partialRow=parts*8;
++                if(partialRow>64) {
++                    Add(work_,work_,work_[64],partialRow-64,count,
++                        {1,1,1,static_cast<uint8_t>(parts),static_cast<uint8_t>(parts),static_cast<uint8_t>(parts)});
++                    PipeBarrier<PIPE_V>();
++                }
++                WholeReduceSum(sums_,work_,Min(64,partialRow),count,1,1,parts);
++            } else if(parts<=8) {
++                WholeReduceSum(work_,tmp_,64,active/64,8,1,8);
++                PipeBarrier<PIPE_V>();
++                uint64_t mask[2]={0,0};
++                for(uint32_t p=0;p<parts;++p) mask[0]|=static_cast<uint64_t>(1)<<(p*8);
++                WholeReduceSum(sums_,work_,mask,count,1,1,parts);
++            } else {
++                const uint32_t partialStride=(parts+7)/8*8;
++                for(uint32_t i=0;i<count;++i)
++                    WholeReduceSum(work_[i*partialStride],tmp_[i*stride_],64,parts,1,1,8);
++                PipeBarrier<PIPE_V>();
++                WholeReduceSum(sums_,work_,parts,count,1,1,partialStride/8);
++            }
++            PipeBarrier<PIPE_V>();
++            Muls(sums_,sums_,invD_,count); PipeBarrier<PIPE_V>();
++            Adds(sums_,sums_,eps_,count); PipeBarrier<PIPE_V>();
++            Sqrt(sums_,sums_,count); Duplicate(work_,1.0f,count); PipeBarrier<PIPE_V>();
++            Div(sums_,work_,sums_,count); PipeBarrier<PIPE_V>();
++            const uint32_t rms=(count+7)/8*8;
++            Brcb(work_,sums_,rms/8,{1,8}); PipeBarrier<PIPE_V>();
++            if(count<=parts) {
++                for(uint32_t i=0;i<count;++i)
++                    Mul(y_[i*stride_],y_[i*stride_],work_[i*8],64,parts,{1,1,0,8,8,0});
++                PipeBarrier<PIPE_V>();
++                if(!CompactParameterType<T>::value)
++                    for(uint32_t i=0;i<count;++i)FusedMulAdd(y_[i*stride_],gamma_,bias_,d_);
++            } else {
++                const uint8_t step=stride_/8;
++                for(uint32_t col=0;col<d_;col+=64)
++                    Mul(y_[col],y_[col],work_,Min(64,d_-col),count,{1,1,0,step,step,1});
++                PipeBarrier<PIPE_V>();
++                if(!CompactParameterType<T>::value)
++                    for(uint32_t col=0;col<d_;col+=64)
++                        FusedMulAdd(y_[col],gamma_[col],bias_[col],Min(64,d_-col),count,{1,1,1,step,0,0});
++            }
++            PipeBarrier<PIPE_V>();
++            if(pendingOutput) WaitFlag<HardEvent::MTE3_V>(3);
++            FromFloat<T>(out_,y_,active); PipeBarrier<PIPE_V>();
++            if(CompactParameterType<T>::value) {
++                if(pendingParameters) {WaitFlag<HardEvent::MTE2_V>(3);pendingParameters=false;}
++                const uint32_t halfParts=(d_+127)/128;
++                if(count<=halfParts) {
++                    for(uint32_t i=0;i<count;++i)FusedMulAdd(out_[i*stride_].template ReinterpretCast<half>(),gh_.template ReinterpretCast<half>(),bh_.template ReinterpretCast<half>(),d_);
++                } else {
++                    for(uint32_t col=0;col<d_;col+=128)
++                        FusedMulAdd(out_[col].template ReinterpretCast<half>(),gh_[col].template ReinterpretCast<half>(),bh_[col].template ReinterpretCast<half>(),Min(128,d_-col),count,
++                            {1,1,1,static_cast<uint8_t>(stride_/16),0,0});
++                }
++                PipeBarrier<PIPE_V>();
++            }
++            SetFlag<HardEvent::V_MTE3>(2); WaitFlag<HardEvent::V_MTE3>(2);
++            DataCopyExtParams copy={static_cast<uint16_t>(count),static_cast<uint32_t>(d_*sizeof(T)),Gap(),0,0};
++            DataCopyPad(outgm_[row*d_],out_,copy);
++            SetFlag<HardEvent::MTE3_V>(3); pendingOutput=true;
++        }
++        if(pendingOutput) WaitFlag<HardEvent::MTE3_V>(3);
++    }
++private:
++    __aicore__ inline uint32_t Min(uint32_t a,uint32_t b){return a<b?a:b;}
++    __aicore__ inline uint32_t Gap(){return (stride_*sizeof(T)-(static_cast<uint32_t>(d_*sizeof(T))+31)/32*32)/32;}
++    __aicore__ inline void Prefetch(uint64_t row,uint32_t slot)
++    {
++        const uint32_t count=Min(batch_,static_cast<uint32_t>(end_-row));
++        DataCopyExtParams copy={static_cast<uint16_t>(count),static_cast<uint32_t>(d_*sizeof(T)),0,Gap(),0};
++        DataCopyPadExtParams<T> pad={}; pad.isPad=false;
++        DataCopyPad(x_[slot],xgm_[row*d_],copy,pad);
++        DataCopyPad(r_[slot],rgm_[row*d_],copy,pad);
++        SetFlag<HardEvent::MTE2_V>(slot);
++    }
++    GlobalTensor<T> xgm_,rgm_,ggm_,bgm_,outgm_;
++    LocalTensor<T> x_[2],r_[2],out_,gh_,bh_;
++    LocalTensor<float> y_,tmp_,gamma_,bias_,work_,sums_;
++    uint64_t begin_,end_; uint32_t d_,stride_,batch_; float invD_,eps_;
++};
++template <typename T,bool BlockReduction>
++__global__ __vector__ void p9lp_custom(GM_ADDR x,GM_ADDR r,GM_ADDR g,
++    GM_ADDR b,GM_ADDR out,uint64_t rows,uint32_t d,float invD,float eps)
++{
++    InitSocState(); P9LPKernel<T,BlockReduction> op;
++    op.Init(x,r,g,b,out,rows,d,invD,eps); op.Process();
++}
++
+ class BFloatTripleInplaceKernel {
+ public:
+     __aicore__ inline void Init(GM_ADDR x,GM_ADDR r,GM_ADDR g,GM_ADDR b,GM_ADDR out,
+@@ -2070,13 +2223,32 @@
+         begin_=rows*GetBlockIdx()/GetBlockNum();end_=rows*(GetBlockIdx()+1)/GetBlockNum();invD_=invD;eps_=eps;
+         xgm_.SetGlobalBuffer((__gm__ float*)x);rgm_.SetGlobalBuffer((__gm__ float*)r);
+         ggm_.SetGlobalBuffer((__gm__ float*)g);bgm_.SetGlobalBuffer((__gm__ float*)b);outgm_.SetGlobalBuffer((__gm__ float*)out);
+-        x_[0]=LocalTensor<float>(TPosition::VECIN,0,12288);
+-        x_[1]=LocalTensor<float>(TPosition::VECIN,49280,12288);
+-        r_=LocalTensor<float>(TPosition::VECIN,98560,12288);
+-        gf_=LocalTensor<float>(TPosition::VECIN,147840,4096);
+-        bf_=LocalTensor<float>(TPosition::VECIN,164352,4096);
+-        work_=LocalTensor<float>(TPosition::VECCALC,180864,1536);
+-        sums_=LocalTensor<float>(TPosition::VECCALC,187136,32);
++        if (d > 3072 && d <= 3264) {
++            const bool compactBatch4 = d > 3072 && d <= 3264;
++            const uint32_t capacity = compactBatch4 ? 4 * stride_ : 12288;
++            const uint32_t parameterCapacity = compactBatch4 ? stride_ : 4096;
++            batch_ = capacity / stride_;
++            const uint32_t inputSlotBytes = capacity * sizeof(float) + 128;
++            const uint32_t parameterSlotBytes = parameterCapacity * sizeof(float) + 128;
++            const uint32_t gammaOffset = 3 * inputSlotBytes;
++            const uint32_t biasOffset = gammaOffset + parameterSlotBytes;
++            const uint32_t workOffset = biasOffset + parameterSlotBytes;
++            x_[0] = LocalTensor<float>(TPosition::VECIN, 0, capacity);
++            x_[1] = LocalTensor<float>(TPosition::VECIN, inputSlotBytes, capacity);
++            r_ = LocalTensor<float>(TPosition::VECIN, 2 * inputSlotBytes, capacity);
++            gf_ = LocalTensor<float>(TPosition::VECIN, gammaOffset, parameterCapacity);
++            bf_ = LocalTensor<float>(TPosition::VECIN, biasOffset, parameterCapacity);
++            work_ = LocalTensor<float>(TPosition::VECCALC, workOffset, 1536);
++            sums_ = LocalTensor<float>(TPosition::VECCALC, workOffset + 1536 * sizeof(float) + 128, 32);
++        } else {
++            x_[0]=LocalTensor<float>(TPosition::VECIN,0,12288);
++            x_[1]=LocalTensor<float>(TPosition::VECIN,49280,12288);
++            r_=LocalTensor<float>(TPosition::VECIN,98560,12288);
++            gf_=LocalTensor<float>(TPosition::VECIN,147840,4096);
++            bf_=LocalTensor<float>(TPosition::VECIN,164352,4096);
++            work_=LocalTensor<float>(TPosition::VECCALC,180864,1536);
++            sums_=LocalTensor<float>(TPosition::VECCALC,187136,32);
++        }
+     }
+     __aicore__ inline void Process()
+     {
+@@ -2147,6 +2319,94 @@
+     uint64_t rows,uint32_t d,float invD,float eps)
+ {
+     InitSocState();FloatBroadTripleKernel op;op.Init(x,r,g,b,out,rows,d,invD,eps);op.Process();
++}
++
++class FloatBroadRoundRobinKernel {
++public:
++    __aicore__ inline void Init(GM_ADDR x,GM_ADDR r,GM_ADDR g,GM_ADDR b,GM_ADDR out,
++        uint64_t rows,uint32_t d,float invD,float eps)
++    {
++        d_=d;stride_=(d+63)/64*64;batch_=12288/stride_;
++        begin_=GetBlockIdx();end_=rows;rowStep_=GetBlockNum();invD_=invD;eps_=eps;
++        xgm_.SetGlobalBuffer((__gm__ float*)x);rgm_.SetGlobalBuffer((__gm__ float*)r);
++        ggm_.SetGlobalBuffer((__gm__ float*)g);bgm_.SetGlobalBuffer((__gm__ float*)b);outgm_.SetGlobalBuffer((__gm__ float*)out);
++        x_[0]=LocalTensor<float>(TPosition::VECIN,0,12288);
++        x_[1]=LocalTensor<float>(TPosition::VECIN,49280,12288);
++        r_=LocalTensor<float>(TPosition::VECIN,98560,12288);
++        gf_=LocalTensor<float>(TPosition::VECIN,147840,4096);
++        bf_=LocalTensor<float>(TPosition::VECIN,164352,4096);
++        work_=LocalTensor<float>(TPosition::VECCALC,180864,1536);
++        sums_=LocalTensor<float>(TPosition::VECCALC,187136,32);
++    }
++    __aicore__ inline void Process()
++    {
++        DataCopyExtParams cp={1,d_*4,0,0,0};DataCopyPadExtParams<float> pad={};pad.isPad=false;
++        DataCopyPad(gf_,ggm_,cp,pad);DataCopyPad(bf_,bgm_,cp,pad);
++        SetFlag<HardEvent::MTE2_V>(3);WaitFlag<HardEvent::MTE2_V>(3);
++        Copy(x_[0],xgm_,begin_);SetFlag<HardEvent::MTE2_V>(0);
++        Copy(r_,rgm_,begin_);SetFlag<HardEvent::MTE2_V>(2);
++        if(begin_+batch_*rowStep_<end_) {Copy(x_[1],xgm_,begin_+batch_*rowStep_);SetFlag<HardEvent::MTE2_V>(1);}
++        uint32_t slot=0;
++        for(uint64_t row=begin_;row<end_;row+=batch_*rowStep_,slot^=1) {
++            WaitFlag<HardEvent::MTE2_V>(slot);WaitFlag<HardEvent::MTE2_V>(2);
++            auto y=x_[slot];auto tmp=r_;
++            const uint32_t count=Min(batch_,static_cast<uint32_t>((end_-row+rowStep_-1)/rowStep_)),active=count*stride_;
++            Add(y,y,tmp,active);PipeBarrier<PIPE_V>();
++            if(d_!=stride_) {
++                uint64_t tail[2]={~static_cast<uint64_t>(0)<<(d_%64),0};
++                // A2 high-dimensional repeat strides are only 8 bits.
++                // A 3136-float row needs 392 blocks, so clear rows individually.
++                for(uint32_t i=0;i<count;++i)Duplicate(y[i*stride_+d_/64*64],0.0f,tail,1,1,8);
++                PipeBarrier<PIPE_V>();
++            }
++            Mul(tmp,y,y,active);PipeBarrier<PIPE_V>();
++            const uint32_t parts=stride_/64;
++            // Accumulate corresponding lanes across chunks before the final
++            // within-vector reduction, as in the installed RMSNorm helper.
++            Duplicate(work_,0.0f,count*64);PipeBarrier<PIPE_V>();
++            for(uint32_t i=0;i<count;++i)
++                Add(work_[i*64],tmp[i*stride_],work_[i*64],64,parts,{1,1,1,0,8,0});
++            PipeBarrier<PIPE_V>();
++            WholeReduceSum(sums_,work_,64,count,1,1,8);PipeBarrier<PIPE_V>();
++            if(row+batch_*rowStep_<end_) {
++                SetFlag<HardEvent::V_MTE2>(2);WaitFlag<HardEvent::V_MTE2>(2);
++                Copy(r_,rgm_,row+batch_*rowStep_);SetFlag<HardEvent::MTE2_V>(2);
++            }
++            Muls(sums_,sums_,invD_,count);PipeBarrier<PIPE_V>();
++            Adds(sums_,sums_,eps_,count);PipeBarrier<PIPE_V>();
++            Sqrt(sums_,sums_,count);Duplicate(work_,1.0f,count);PipeBarrier<PIPE_V>();
++            Div(sums_,work_,sums_,count);PipeBarrier<PIPE_V>();
++            Brcb(work_,sums_,(count+7)/8,{1,8});PipeBarrier<PIPE_V>();
++            for(uint32_t i=0;i<count;++i)
++                Mul(y[i*stride_],y[i*stride_],work_[i*8],64,parts,{1,1,0,8,8,0});
++            PipeBarrier<PIPE_V>();
++            for(uint32_t i=0;i<count;++i)FusedMulAdd(y[i*stride_],gf_,bf_,d_);
++            PipeBarrier<PIPE_V>();
++            SetFlag<HardEvent::V_MTE3>(slot);WaitFlag<HardEvent::V_MTE3>(slot);
++            DataCopyExtParams out={static_cast<uint16_t>(count),d_*4,Gap(),(rowStep_-1)*d_*4,0};DataCopyPad(outgm_[row*d_],y,out);
++            SetFlag<HardEvent::MTE3_MTE2>(slot);WaitFlag<HardEvent::MTE3_MTE2>(slot);
++            if(row+2*batch_*rowStep_<end_) {
++                Copy(x_[slot],xgm_,row+2*batch_*rowStep_);SetFlag<HardEvent::MTE2_V>(slot);
++            }
++        }
++        PipeBarrier<PIPE_ALL>();
++    }
++private:
++    __aicore__ inline uint32_t Min(uint32_t a,uint32_t b){return a<b?a:b;}
++    __aicore__ inline uint32_t Gap(){return (stride_*4-(d_*4+31)/32*32)/32;}
++    __aicore__ inline void Copy(LocalTensor<float> dst,GlobalTensor<float> src,uint64_t row) {
++        const uint32_t count=Min(batch_,static_cast<uint32_t>((end_-row+rowStep_-1)/rowStep_));
++        DataCopyExtParams copy={static_cast<uint16_t>(count),d_*4,(rowStep_-1)*d_*4,Gap(),0};DataCopyPadExtParams<float> pad={};pad.isPad=false;
++        DataCopyPad(dst,src[row*d_],copy,pad);
++    }
++    GlobalTensor<float> xgm_,rgm_,ggm_,bgm_,outgm_;
++    LocalTensor<float> x_[2],r_,gf_,bf_,work_,sums_;
++    uint64_t begin_,end_;uint32_t d_,stride_,batch_,rowStep_;float invD_,eps_;
++};
++__global__ __vector__ void float_broad_rr_custom(GM_ADDR x,GM_ADDR r,GM_ADDR g,GM_ADDR b,GM_ADDR out,
++    uint64_t rows,uint32_t d,float invD,float eps)
++{
++    InitSocState();FloatBroadRoundRobinKernel op;op.Init(x,r,g,b,out,rows,d,invD,eps);op.Process();
+ }
+ 
+ 
+@@ -2882,8 +3142,10 @@
+         DataCopyPadExtParams<half> pad = {}; pad.isPad = false;
+         DataCopyPad(x_,xgm_[begin_*d_],batch,pad);
+         DataCopyPad(r_,rgm_[begin_*d_],batch,pad);
++        SetFlag<HardEvent::MTE2_V>(0);
+         DataCopyPad(gh_,ggm_,params,pad); DataCopyPad(bh_,bgm_,params,pad);
+-        SetFlag<HardEvent::MTE2_V>(0); WaitFlag<HardEvent::MTE2_V>(0);
++        SetFlag<HardEvent::MTE2_V>(3);
++        WaitFlag<HardEvent::MTE2_V>(0);
+         Add(x_,x_,r_,active);PipeBarrier<PIPE_V>();
+         ToFloat<half>(y_,x_,active);PipeBarrier<PIPE_V>();
+         if(d_!=stride_) {
+@@ -2912,6 +3174,7 @@
+         for(uint32_t col=0;col<d_;col+=128)
+             Mul(x_[col],x_[col],broadcast,static_cast<uint64_t>(d_-col<128?d_-col:128),repeats,{1,1,0,rb,rb,1});
+         PipeBarrier<PIPE_V>();
++        WaitFlag<HardEvent::MTE2_V>(3);
+         for(uint32_t col=0;col<d_;col+=128)
+             FusedMulAdd(x_[col],gh_[col],bh_[col],static_cast<uint64_t>(d_-col<128?d_-col:128),repeats,{1,1,1,rb,0,0});
+         PipeBarrier<PIPE_V>();
+@@ -3152,6 +3415,171 @@
+ }
+ 
+ 
++template <typename T, bool AlignedDma = false>
++class FixedShortFloat256Kernel {
++public:
++    __aicore__ inline void Init(GM_ADDR x, GM_ADDR r, GM_ADDR g, GM_ADDR b,
++                               GM_ADDR out, uint64_t rows, uint32_t d, float inverseD, float epsilon)
++    {
++        rows_ = rows;
++        d_ = d;
++        padded_ = 256;
++        invD_ = inverseD;
++        epsilon_ = epsilon;
++        xgm_.SetGlobalBuffer((__gm__ T*)x);
++        rgm_.SetGlobalBuffer((__gm__ T*)r);
++        ggm_.SetGlobalBuffer((__gm__ T*)g);
++        bgm_.SetGlobalBuffer((__gm__ T*)b);
++        outgm_.SetGlobalBuffer((__gm__ T*)out);
++        // Each fixed slot reserves 16384 B, enough for 4096 FP32 elements.
++        // Slots are byte-addressed, 32 B aligned, and never exceed UB148000 B.
++        x_ = LocalTensor<T>(TPosition::VECIN, 0, padded_);
++        r_ = LocalTensor<T>(TPosition::VECIN, 16384, padded_);
++        g_ = LocalTensor<T>(TPosition::VECIN, 32768, padded_);
++        b_ = LocalTensor<T>(TPosition::VECIN, 49152, padded_);
++        y_ = LocalTensor<float>(TPosition::VECOUT, 65536, padded_);
++        tmp_ = LocalTensor<float>(TPosition::VECCALC, 81920, padded_);
++        gf_ = LocalTensor<float>(TPosition::VECCALC, 98304, padded_);
++        bf_ = LocalTensor<float>(TPosition::VECCALC, 114688, padded_);
++        result_ = LocalTensor<T>(TPosition::VECOUT, 131072, padded_);
++        partials_ = LocalTensor<float>(TPosition::VECCALC, 147456, 64);
++        sum_ = LocalTensor<float>(TPosition::VECCALC, 147712, 8);
++        work_ = LocalTensor<float>(TPosition::VECCALC, 147744, 64);
++    }
++
++    __aicore__ inline void Process()
++    {
++        CacheParameters();
++        ProcessRow(GetBlockIdx());
++    }
++
++    __aicore__ inline void CacheParameters()
++    {
++        DataCopyExtParams copy = {1, static_cast<uint32_t>(d_ * sizeof(T)), 0, 0, 0};
++        DataCopyPadExtParams<T> pad = {};
++        pad.isPad = false;
++        if (AlignedDma) {
++            // Host enables this variant only for FP32 and D divisible by 64.
++            // DataCopyParams.blockLen is in 32 B blocks, not bytes.
++            DataCopyParams aligned = {1, static_cast<uint16_t>(d_ * sizeof(T) / 32), 0, 0};
++            DataCopy(g_, ggm_, aligned);
++            DataCopy(b_, bgm_, aligned);
++        } else {
++            DataCopyPad(g_, ggm_, copy, pad);
++            DataCopyPad(b_, bgm_, copy, pad);
++        }
++        SetFlag<HardEvent::MTE2_V>(0);
++        WaitFlag<HardEvent::MTE2_V>(0);
++        if (sizeof(T) == sizeof(float)) {
++            gf_ = g_.template ReinterpretCast<float>();
++            bf_ = b_.template ReinterpretCast<float>();
++        } else {
++            ToFloat<T>(gf_, g_, d_);
++            ToFloat<T>(bf_, b_, d_);
++        }
++        PipeBarrier<PIPE_V>();
++    }
++
++    __aicore__ inline void ProcessRow(uint64_t row)
++    {
++        const uint64_t base = row * d_;
++        DataCopyExtParams copy = {1, static_cast<uint32_t>(d_ * sizeof(T)), 0, 0, 0};
++        DataCopyPadExtParams<T> pad = {};
++        pad.isPad = false;
++        if (AlignedDma) {
++            DataCopyParams aligned = {1, static_cast<uint16_t>(d_ * sizeof(T) / 32), 0, 0};
++            DataCopy(x_, xgm_[base], aligned);
++            DataCopy(r_, rgm_[base], aligned);
++        } else {
++            DataCopyPad(x_, xgm_[base], copy, pad);
++            DataCopyPad(r_, rgm_[base], copy, pad);
++        }
++        SetFlag<HardEvent::MTE2_V>(0);
++        WaitFlag<HardEvent::MTE2_V>(0);
++        if (sizeof(T) == sizeof(float) && d_ == padded_) {
++            y_ = x_.template ReinterpretCast<float>();
++            tmp_ = r_.template ReinterpretCast<float>();
++        } else {
++            if (d_ != padded_) {
++                Duplicate(y_[d_ / 64 * 64], 0.0f, 64);
++                PipeBarrier<PIPE_V>();
++            }
++            ToFloat<T>(y_, x_, d_);
++            ToFloat<T>(tmp_, r_, d_);
++        }
++        PipeBarrier<PIPE_V>();
++        Add(y_, y_, tmp_, d_);
++        PipeBarrier<PIPE_V>();
++        Mul(tmp_, y_, y_, 256);
++        PipeBarrier<PIPE_V>();
++        constexpr uint32_t parts = 4;
++        // A2 ReduceSum(count) is not supported in static Tensor mode. Two
++        // hardware reductions retain FP32 arithmetic while tree-summing the
++        // repeat partials. This differs from the baseline's sequential final
++        // accumulation, and must be checked against the official tolerance.
++        // Four 64-float repeats -> 32 block sums -> one whole-vector sum.
++        BlockReduceSum(partials_,tmp_,4,64,1,1,8);PipeBarrier<PIPE_V>();
++        WholeReduceSum(sum_,partials_,32,1,1,1,8);PipeBarrier<PIPE_V>();
++        Muls(sum_, sum_, invD_, 1);
++        PipeBarrier<PIPE_V>();
++        Adds(sum_, sum_, epsilon_, 1);
++        PipeBarrier<PIPE_V>();
++        Sqrt(sum_, sum_, 1);
++        PipeBarrier<PIPE_V>();
++        Brcb(work_, sum_, 1, {1, 8});
++        PipeBarrier<PIPE_V>();
++        Div(y_, y_, work_, static_cast<uint64_t>(64), static_cast<uint8_t>(parts),
++            {1, 1, 0, 8, 8, 0});
++        PipeBarrier<PIPE_V>();
++        // Preserve combo_core's affine FMA and normalization placement.
++        FusedMulAdd(y_, gf_, bf_, d_);
++        PipeBarrier<PIPE_V>();
++        if (sizeof(T) == sizeof(float)) {
++            // VECIN (aligned) and VECOUT (unaligned) are both A2 DMA sources.
++            // Retain the baseline's final FP32 Adds(+0) conversion.
++            Adds(y_, y_, 0.0f, d_);
++            PipeBarrier<PIPE_V>();
++            result_ = y_.template ReinterpretCast<T>();
++        } else {
++            FromFloat<T>(result_, y_, d_);
++            PipeBarrier<PIPE_V>();
++        }
++        SetFlag<HardEvent::V_MTE3>(1);
++        WaitFlag<HardEvent::V_MTE3>(1);
++        if (AlignedDma) {
++            DataCopyParams aligned = {1, static_cast<uint16_t>(d_ * sizeof(T) / 32), 0, 0};
++            DataCopy(outgm_[base], result_, aligned);
++        } else {
++            DataCopyPad(outgm_[base], result_, copy);
++        }
++        // V and MTE2 are separate pipelines. Guard both future vector writes
++        // and future input DMA writes against the preceding GM output read.
++        SetFlag<HardEvent::MTE3_V>(2);
++        WaitFlag<HardEvent::MTE3_V>(2);
++        SetFlag<HardEvent::MTE3_MTE2>(3);
++        WaitFlag<HardEvent::MTE3_MTE2>(3);
++    }
++
++private:
++    GlobalTensor<T> xgm_, rgm_, ggm_, bgm_, outgm_;
++    LocalTensor<T> x_, r_, g_, b_, result_;
++    LocalTensor<float> y_, tmp_, gf_, bf_, partials_, sum_, work_;
++    uint64_t rows_;
++    uint32_t d_, padded_;
++    float invD_, epsilon_;
++};
++
++template <bool AlignedDma = false>
++__global__ __vector__ void fixed_short_float_256_custom(
++    GM_ADDR x, GM_ADDR residual, GM_ADDR gamma, GM_ADDR bias, GM_ADDR output,
++    uint64_t rows, uint32_t d, float inverseD, float epsilon)
++{
++    InitSocState();
++    FixedShortFloat256Kernel<float, AlignedDma> op;
++    op.Init(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
++    op.Process();
++}
++
+ } // namespace addrmsnormbias_solution
+ 
+ extern "C" void run_kernel(
+@@ -3184,10 +3612,21 @@
+     // The inverse dimension depends only on shape metadata. Compute it once
+     // on the host, leaving every tensor operation on the NPU.
+     const float inverseD = 1.0f / static_cast<float>(d);
++    // E028: one row per launched core, width band gives a constant 256-float UB vector.
++    if (input.dtype == 0 && rows > 1 && rows <= static_cast<uint64_t>(blockNum) && d > 192 && d <= 256) {
++        if (d == 256) fixed_short_float_256_custom<true><<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
++        else fixed_short_float_256_custom<false><<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
++        return;
++    }
+     if(input.dtype==1 && d>1024 && d<=4096 && rows>=static_cast<uint64_t>(blockNum)*4) {
+         half_wide_pipeline_custom<half,false><<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
+         return;
+     }
++    if(input.dtype==0 && d>1536 && d<=4096 && rows>=static_cast<uint64_t>(blockNum)*4 &&
++       rows*static_cast<uint64_t>(d)*sizeof(float)>=64ULL*1024*1024) {
++        float_broad_rr_custom<<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
++        return;
++    }
+     if(input.dtype==0 && d>1536 && d<=4096 && rows>=static_cast<uint64_t>(blockNum)*4) {
+         float_broad_triple_custom<<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
+         return;
+@@ -3197,7 +3636,10 @@
+         return;
+     }
+     if (rows >= static_cast<uint64_t>(blockNum)*4 && ((input.dtype==1 && d>=321 && d<=1024) || (input.dtype==2 && d==128))) {
+-        if(input.dtype==1) pipeline_batch9_custom<half,true><<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
++        if(input.dtype==1) {
++            if(d>512 && d<=640) p9lp_custom<half,true><<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
++            else pipeline_batch9_custom<half,true><<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,d,inverseD,epsilon);
++        }
+         else bfloat_short_inplace_custom<<<blockNum,nullptr,stream>>>(x,residual,gamma,bias,output,rows,epsilon);
+         return;
+     }

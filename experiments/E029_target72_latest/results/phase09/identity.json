@@ -1,0 +1,29 @@
+{
+  "protocol": {
+    "baseline_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+    "variants": {
+      "P9PACK": "c17af1588d12db05779f5a4e8a1889b2bdcc8d38b354b009c79431e0f46d8555"
+    },
+    "parents": {
+      "P9PACK": "P9LP"
+    },
+    "parent_sha256": {
+      "P9LP": "da48278bf2e727dfabf2e182a4a50bd3b49d8c4d6bb6c16a31e79b75929759ce"
+    },
+    "screening_only": true,
+    "changes": {
+      "P9PACK": "FP16 original PipelineBatch9 domain narrowed D513..640: flat input DMA, native half residual Add on packed layout, per-row half Gather into consumed residual slot, shared 4KiB byte-offset table reuses unused FP32 gamma slot; original Cast, zero padding, reduction, normalization/affine and prefetch-slot events preserved."
+    },
+    "source_reference": "https://asc.gitcode.com/api/SIMD-API/basic_api/memory_vector_compute/scatter_gather/Gather.html",
+    "installed_interface_verified": "CANN9.0 dav_c220 uint16 Gather, element alignment; same interface used by completed HSG phase02",
+    "planned_device_execution": true,
+    "padding_initialization": "Final packed-source suffix initialized on Device before input DMA, explicit V_MTE2 dependency; valid data overwritten by fresh DMA.",
+    "parent_runner_sha256": {
+      "P9LP": "5e16ac0d6438ad9c3ef8a4658b1b60bd3907b3ab721846b3f11dd8e79781e80b"
+    }
+  },
+  "driver_sha256": "34e31f613a7a7c35a80fd19c0e60644f195f7c444c048a00edb2d1e0452ff88d",
+  "harness_sha256": "101c9227e8fc5d4ccd11c3bf7741baf23defef435d8a2d4f40b4af0359751f86",
+  "baseline_runner_sha256": "9052108564f96a75d24abece7fc780f52c0ffbf2464545cfe233f35dc78d42a4",
+  "core_driver_sha256": "ce181e20e5474f7986e1a7937f52b48e5c58dfe47b33a41d702b24f649b4f4df"
+}

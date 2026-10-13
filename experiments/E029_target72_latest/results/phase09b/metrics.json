@@ -1,0 +1,34 @@
+[
+  {
+    "variant": "P9LP",
+    "case_id": "p9_s6",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 7.786667,
+      "aiv_vec_time(us)": 3.371667,
+      "aiv_scalar_time(us)": 1.7561110000000002,
+      "aiv_mte2_time(us)": 5.0755555,
+      "aiv_mte3_time(us)": 1.730278,
+      "aiv_vec_ratio": 0.432496,
+      "aiv_scalar_ratio": 0.22811,
+      "aiv_mte2_ratio": 0.6579029999999999,
+      "aiv_mte3_ratio": 0.22000350000000002
+    }
+  },
+  {
+    "variant": "P9PACK",
+    "case_id": "p9_s6",
+    "n_core_records": 200,
+    "metrics": {
+      "aiv_time(us)": 8.9994445,
+      "aiv_vec_time(us)": 6.520555,
+      "aiv_scalar_time(us)": 2.0933335,
+      "aiv_mte2_time(us)": 2.9872225,
+      "aiv_mte3_time(us)": 1.5225,
+      "aiv_vec_ratio": 0.721522,
+      "aiv_scalar_ratio": 0.23511949999999998,
+      "aiv_mte2_ratio": 0.328047,
+      "aiv_mte3_ratio": 0.1706345
+    }
+  }
+]

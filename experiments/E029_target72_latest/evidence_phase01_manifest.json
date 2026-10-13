@@ -1,0 +1,9 @@
+{
+  "filename": "evidence_phase01.zip",
+  "sha256": "c7499bf00a2d30bb9318d0f4376a14b7ff4d020aafe1f9bed6c594c25ed01ce5",
+  "bytes": 304666,
+  "entries": 306,
+  "crc_pass": true,
+  "phase": "phase01",
+  "terminal_status": "interrupted_by_user_steering"
+}

@@ -1,0 +1,37 @@
+{
+  "protocol": {
+    "baseline_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+    "variants": {
+      "COMBO2": "75af7a9e86687fa5850035af55d24a8a710e059e1f9b0e53ad219e5e2e11e624"
+    },
+    "screening_only": false,
+    "final_candidate_validation": true,
+    "ordinary_order": [
+      "BASE",
+      "COMBO2",
+      "COMBO2",
+      "BASE"
+    ],
+    "features": [
+      "S256B prior E028 two-round positive; general short FP32 D193..256/one row per core",
+      "HLP port E027 HSP, verified positive phase03 latest BASE",
+      "P9LP only D513..640 within original batched FP16 route, phase01b D577 gain; D397/D512 remain parent",
+      "FPB4/FPRR port verified E027 COMBO source classes/metadata guards; preserve latest FP32 resident long path"
+    ],
+    "discarded": [
+      "HSG",
+      "HLPQ",
+      "LHLP",
+      "P9DB",
+      "P9MASK",
+      "P9BAR",
+      "S64BAR"
+    ],
+    "local_large_bf16_checks_reduced": true,
+    "requires_official_full15": true
+  },
+  "driver_sha256": "e687dfbc2a752115f1c1fd0ff64fb04a010ed6390cfa84415d4a875143eef588",
+  "harness_sha256": "101c9227e8fc5d4ccd11c3bf7741baf23defef435d8a2d4f40b4af0359751f86",
+  "baseline_runner_sha256": "9052108564f96a75d24abece7fc780f52c0ffbf2464545cfe233f35dc78d42a4",
+  "core_driver_sha256": "ce181e20e5474f7986e1a7937f52b48e5c58dfe47b33a41d702b24f649b4f4df"
+}

@@ -1,0 +1,58 @@
+[
+  {
+    "case_id": "s4",
+    "candidate": "HLP",
+    "base_us": [
+      7.23,
+      6.99
+    ],
+    "candidate_us": [
+      6.82,
+      6.3
+    ],
+    "gain_pct": 7.735583684950771,
+    "screening_only": true
+  },
+  {
+    "case_id": "s1",
+    "candidate": "S64BAR",
+    "base_us": [
+      2.36,
+      2.441
+    ],
+    "candidate_us": [
+      2.33,
+      2.43
+    ],
+    "gain_pct": 0.8539887523432695,
+    "screening_only": true
+  },
+  {
+    "case_id": "s6",
+    "candidate": "P9BAR",
+    "base_us": [
+      8.5205,
+      8.5305
+    ],
+    "candidate_us": [
+      8.57,
+      8.5805
+    ],
+    "gain_pct": -0.5835434871854965,
+    "screening_only": true
+  },
+  {
+    "case_id": "s7",
+    "candidate": "P9BAR",
+    "base_us": [
+      10.6405,
+      10.51
+    ],
+    "candidate_us": [
+      10.64,
+      10.5205
+    ],
+    "gain_pct": -0.04728020614168937,
+    "screening_only": true
+  }
+]

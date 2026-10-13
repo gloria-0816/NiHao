@@ -1,0 +1,11 @@
+BUILD COMBO2 completed
+Traceback (most recent call last):
+  File "/home/developer/addrms_E029/experiments/E029_target72_latest/phase05.py", line 54, in <module>
+    try:main()
+        ^^^^^^
+  File "/home/developer/addrms_E029/experiments/E029_target72_latest/phase05.py", line 29, in main
+    trial.ITEMS=CASES[name];trial.stage_inputs()
+                            ^^^^^^^^^^^^^^^^^^^^
+  File "/home/developer/addrms_E027/experiments/E027_target70/resume_probe.py", line 62, in stage_inputs
+    raise ValueError('Staged row count mismatch')
+ValueError: Staged row count mismatch
