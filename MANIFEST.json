@@ -1,408 +1,441 @@
 {
   "best": {
-    "variant": "FACC",
-    "submission_id": 743109,
-    "points": [
-      {
-        "case": 1,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 2.4,
-        "tbest_us": 1.12
-      },
-      {
-        "case": 2,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 2.47,
-        "tbest_us": 1.63
-      },
-      {
-        "case": 3,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 2.72,
-        "tbest_us": 2.1
-      },
-      {
-        "case": 4,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 7.97,
-        "tbest_us": 4.42
-      },
-      {
-        "case": 5,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 5.9,
-        "tbest_us": 4.91
-      },
-      {
-        "case": 6,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 11.77,
-        "tbest_us": 7.95
-      },
-      {
-        "case": 7,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 16.25,
-        "tbest_us": 10.5
-      },
-      {
-        "case": 8,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 31.8,
-        "tbest_us": 29.72
-      },
-      {
-        "case": 9,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 69.82,
-        "tbest_us": 67.81
-      },
-      {
-        "case": 10,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 48.46,
-        "tbest_us": 45.87
-      },
-      {
-        "case": 11,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 158.24,
-        "tbest_us": 129.65
-      },
-      {
-        "case": 12,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 80.45,
-        "tbest_us": 75.96
-      },
-      {
-        "case": 13,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 559.15,
-        "tbest_us": 394.15
-      },
-      {
-        "case": 14,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 4059.9999999999995,
-        "tbest_us": 3530.0
-      },
-      {
-        "case": 15,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 9380.0,
-        "tbest_us": 7960.0
-      }
+    "trial": 4,
+    "variant": "FRESLONG",
+    "id": 768708,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd8ea9e769892927ee263e",
+    "submitted_at": "2026-10-13 09:51:37",
+    "status": "Pass",
+    "passed": 15,
+    "total": 15,
+    "score": 65.34,
+    "rank_observed": 78,
+    "source_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+    "times_us": [
+      2.24,
+      2.48,
+      2.78,
+      7.7,
+      5.91,
+      11.75,
+      16.61,
+      31.8,
+      69.18,
+      47.67,
+      156.89,
+      80.16,
+      554.26,
+      4050,
+      9380
     ],
-    "score": 64.98,
-    "observed_rank": 91,
-    "source_sha256": "bc62917a0b4e5a6155b188e5f829f32590832ba1e06345deb50564beacef356b",
+    "tbest_us": [
+      1.14,
+      1.64,
+      2.12,
+      4.32,
+      4.62,
+      7.97,
+      10.68,
+      29.72,
+      67.81,
+      45.87,
+      131.05,
+      75.96,
+      397,
+      3530,
+      7960
+    ],
+    "submission_id": 768708,
     "goal_score": 70,
-    "goal_achieved": false
+    "goal_achieved": false,
+    "selection_rule": "Highest total score of one complete official submission; no per-point mixing",
+    "latest_submission": {
+      "trial": 10,
+      "variant": "AXSMALL",
+      "id": 771910,
+      "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acdb6d3e769892927173e50",
+      "submitted_at": "2026/10/13 12:42:59",
+      "status": "Pass",
+      "passed": 15,
+      "total": 15,
+      "source_sha256": "6bc2d6a682f0283dff9f229aa84eb96424e233f25d1f81318b4c1f00d4411f0a",
+      "points": [
+        {
+          "case": 1,
+          "status": "Pass",
+          "error": "0.00%",
+          "time_us": 2.31,
+          "tbest_us": 1.14
+        },
+        {
+          "case": 2,
+          "status": "Pass",
+          "error": "0.00%",
+          "time_us": 2.54,
+          "tbest_us": 1.68
+        },
+        {
+          "case": 3,
+          "status": "Pass",
+          "error": "0.00%",
+          "time_us": 2.82,
+          "tbest_us": 2.12
+        },
+        {
+          "case": 4,
+          "status": "Pass",
+          "error": "0.00%",
+          "time_us": 8.3,
+          "tbest_us": 4.34
+        },
+        {
+          "case": 5,
+          "status": "Pass",
+          "error": "0.00%",
+          "time_us": 5.91,
+          "tbest_us": 4.52
+        },
+        {
+          "case": 6,
+          "status": "Pass",
+          "error": "0.00%",
+          "time_us": 12.08,
+          "tbest_us": 8.03
+        },
+        {
+          "case": 7,
+          "status": "Pass",
+          "error": "0.00%",
+          "time_us": 16.95,
+          "tbest_us": 10.68
+        },
+        {
+          "case": 8,
+          "status": "Pass",
+          "error": "0.00%",
+          "time_us": 32.13,
+          "tbest_us": 29.72
+        },
+        {
+          "case": 9,
+          "status": "Pass",
+          "error": "0.00%",
+          "time_us": 71.08,
+          "tbest_us": 67.81
+        },
+        {
+          "case": 10,
+          "status": "Pass",
+          "error": "0.00%",
+          "time_us": 48.28,
+          "tbest_us": 45.87
+        },
+        {
+          "case": 11,
+          "status": "Pass",
+          "error": "0.00%",
+          "time_us": 155.56,
+          "tbest_us": 130.55
+        },
+        {
+          "case": 12,
+          "status": "Pass",
+          "error": "0.00%",
+          "time_us": 80.32,
+          "tbest_us": 75.96
+        },
+        {
+          "case": 13,
+          "status": "Pass",
+          "error": "0.00%",
+          "time_us": 557.28,
+          "tbest_us": 397
+        },
+        {
+          "case": 14,
+          "status": "Pass",
+          "error": "0.00%",
+          "time_us": 4050,
+          "tbest_us": 3530
+        },
+        {
+          "case": 15,
+          "status": "Pass",
+          "error": "0.00%",
+          "time_us": 9370,
+          "tbest_us": 7960
+        }
+      ],
+      "times_us": [
+        2.31,
+        2.54,
+        2.82,
+        8.3,
+        5.91,
+        12.08,
+        16.95,
+        32.13,
+        71.08,
+        48.28,
+        155.56,
+        80.32,
+        557.28,
+        4050,
+        9370
+      ],
+      "tbest_us": [
+        1.14,
+        1.68,
+        2.12,
+        4.34,
+        4.52,
+        8.03,
+        10.68,
+        29.72,
+        67.81,
+        45.87,
+        130.55,
+        75.96,
+        397,
+        3530,
+        7960
+      ],
+      "score": 64.02,
+      "rank_observed": 95,
+      "ranking_tbest": "1.14μs 1.68μs 2.12μs 4.34μs 4.52μs 8.03μs 10.68μs 29.72μs 67.81μs 45.87μs 130.55μs 75.96μs 397.00μs 3.53ms 7.96ms"
+    },
+    "stop_reason": "stopped_after_10_best_not_over_70"
   },
-  "official_url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acc0f3d694b590c3c87def3",
-  "last_round": {
-    "variant": "HSM63",
-    "submission_id": 744352,
-    "points": [
-      {
-        "case": 1,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 2.4,
-        "tbest_us": 1.12
-      },
-      {
-        "case": 2,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 2.57,
-        "tbest_us": 1.63
-      },
-      {
-        "case": 3,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 2.8,
-        "tbest_us": 2.1
-      },
-      {
-        "case": 4,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 8.09,
-        "tbest_us": 4.42
-      },
-      {
-        "case": 5,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 5.84,
-        "tbest_us": 4.91
-      },
-      {
-        "case": 6,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 11.97,
-        "tbest_us": 7.95
-      },
-      {
-        "case": 7,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 16.55,
-        "tbest_us": 10.5
-      },
-      {
-        "case": 8,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 31.83,
-        "tbest_us": 29.72
-      },
-      {
-        "case": 9,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 70.88,
-        "tbest_us": 67.81
-      },
-      {
-        "case": 10,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 48.47,
-        "tbest_us": 45.87
-      },
-      {
-        "case": 11,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 156.93,
-        "tbest_us": 129.65
-      },
-      {
-        "case": 12,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 81.19,
-        "tbest_us": 75.96
-      },
-      {
-        "case": 13,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 559.9,
-        "tbest_us": 394.15
-      },
-      {
-        "case": 14,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 4059.9999999999995,
-        "tbest_us": 3530.0
-      },
-      {
-        "case": 15,
-        "status": "Pass",
-        "error": "0.00%",
-        "time_us": 9370.0,
-        "tbest_us": 7960.0
-      }
-    ],
-    "score": 64.3,
-    "observed_rank": 98,
-    "source_sha256": "6bb58de2f99252489e57161e2f8118b547033bde582790da4713e88809c353d4",
-    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acc3676694b590c3c9545ac"
-  },
-  "cloud_record_files": 47293,
-  "experiment_files": 1657,
-  "files": [
-    {
-      "path": "best_source_manifest.json",
-      "bytes": 388,
-      "sha256": "1921e08bbbec3b7164ea7b9c850c19702a009a1d2a9bf58d3836c5905e61d877"
+  "official_experiments": 10,
+  "status": "stopped_after_10_best_not_over_70",
+  "files": {
+    ".gitignore": {
+      "bytes": 36,
+      "sha256": "ef02b3b1ed8ac18bf5d559bea907e2605d479c36911558d422f46d05588b95ee"
     },
-    {
-      "path": "best_submission_743109.zip",
-      "bytes": 27865,
-      "sha256": "90eecb237d8da448732c68d27e20c535c656b7279f7128a7635c5a0e247c2774"
-    },
-    {
-      "path": "cloud_reports_E026_part01.zip",
-      "bytes": 11490140,
-      "sha256": "bd47bd303afc84534fdf008784789cc0fe30006f45da6d314db915441f5719f0"
-    },
-    {
-      "path": "cloud_reports_E026_part02.zip",
-      "bytes": 12168355,
-      "sha256": "96eacfa7780793f9e57055b5a9644dc578e09c2a8b4be7558578be82e834dde5"
-    },
-    {
-      "path": "cloud_reports_E026_part03.zip",
-      "bytes": 11954668,
-      "sha256": "60694211485c5304a668236e9c3e816500db9b5f8e9527e1f63eabbc36a8e8a2"
-    },
-    {
-      "path": "cloud_reports_E026_part04.zip",
-      "bytes": 11081200,
-      "sha256": "cba97721e2ec7d2765f137c88d228da706191c26fbf9443464b44a63ab244e90"
-    },
-    {
-      "path": "cloud_reports_E026_part05.zip",
-      "bytes": 10955096,
-      "sha256": "c75e5e255200aa1a32957763be469936c14edb299b0a91342b66ad5bc37caee8"
-    },
-    {
-      "path": "cloud_reports_E026_part06.zip",
-      "bytes": 4074845,
-      "sha256": "f3dccc236a65f0227569884929a3f5b32fe6689f3eff8e02dfacda4f3caa86bc"
-    },
-    {
-      "path": "cloud_reports_E026_part07.zip",
-      "bytes": 9066610,
-      "sha256": "6752b22169d2226d264be12b551162c106c2cd7dbabb6423953af45c6d14a5c5"
-    },
-    {
-      "path": "CMakeLists.txt",
+    "CMakeLists.txt": {
       "bytes": 645,
       "sha256": "f111399c08fc725aa484f96ad7f99dc2eed769e2d694b2135f7cf4cce81851e9"
     },
-    {
-      "path": "data_utils.h",
+    "E024_full_experiment.zip": {
+      "bytes": 3970835,
+      "sha256": "73987248184787faa9b11c1bd10fd1cb1f65c793074566193051f3c133ca2066"
+    },
+    "HANDOFF.md": {
+      "bytes": 10727,
+      "sha256": "3a126af5455d03dbd8e1084b06a2a0958016b2d72342b0248f17c942c46b051c"
+    },
+    "README.md": {
+      "bytes": 1769,
+      "sha256": "eb8624440a63e26e85356782e537f6b95fc52f46d0c2c308a6efd95a364961b6"
+    },
+    "audit_summary.json": {
+      "bytes": 302863,
+      "sha256": "1157b223049374a85c33ea970b38e864339171357ba6c9b9c3a9898faccf4921"
+    },
+    "best_submission_735124.zip": {
+      "bytes": 22113,
+      "sha256": "558e6ecbeee196e77a0b54c24d7a5217f5fffa2c46ba8169207c6302f2bc7245"
+    },
+    "cloud_reports.zip": {
+      "bytes": 3890780,
+      "sha256": "57a4eb9fb4ee5fd04fe9ac8f48785f1d8ba671d511c372527f7e1fe221b54122"
+    },
+    "data_utils.h": {
       "bytes": 1962,
       "sha256": "1bdaae93c09b65e2615691a39bfd611122c09668d90e21809c52516f443bfd84"
     },
-    {
-      "path": "E026_full_experiment.zip",
-      "bytes": 7892478,
-      "sha256": "396a4b384a78142cfbd0ff6c2e1d195f4f41a745567e05061ad289cce50e0054"
+    "final_verification.json": {
+      "bytes": 770,
+      "sha256": "a6b08e1147b9699ba2fc4f3722a1a138a1ab5d1ff4db0f22a17e92d449513f5b"
     },
-    {
-      "path": "HANDOFF.md",
-      "bytes": 9046,
-      "sha256": "66ca7709cd2109b40a0e1aa261d3f1a60d97a4bbe32d9fc377122ad057125492"
+    "half_numerical_audit.json": {
+      "bytes": 11531,
+      "sha256": "81197deb37b24e78c72732c97ae92e65795176a5b6b5e5ca25873fae2247d137"
     },
-    {
-      "path": "kernel.asc",
-      "bytes": 157754,
-      "sha256": "bc62917a0b4e5a6155b188e5f829f32590832ba1e06345deb50564beacef356b"
+    "half_reproducibility.json": {
+      "bytes": 482,
+      "sha256": "13397db1d7621533d0f3c4f4558e80376a0360ce4030c9995b215eec9f4c2b3c"
     },
-    {
-      "path": "last_round_kernel.asc",
-      "bytes": 162690,
-      "sha256": "6bb58de2f99252489e57161e2f8118b547033bde582790da4713e88809c353d4"
+    "kernel.asc": {
+      "bytes": 162810,
+      "sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce"
     },
-    {
-      "path": "last_round_official_dom.txt",
-      "bytes": 5258,
-      "sha256": "c19f653b1bb11b2c34b3755d75c55197da59103bcaac935fc293699e10ab826c"
-    },
-    {
-      "path": "last_round_ranking.png",
-      "bytes": 22235,
-      "sha256": "c848a7566c283a8c4b1132406d0ef96fcf31002d06705680e4330eae7cf85592"
-    },
-    {
-      "path": "last_round_ranking_dom.txt",
-      "bytes": 4579,
-      "sha256": "ac6ddf3e256d974b05ceb3dcdc3aab5ad270097baa34064f62a775ca69167334"
-    },
-    {
-      "path": "last_round_result.json",
-      "bytes": 2329,
-      "sha256": "8ad1c46d423510bd9e6ccb5cc46c2c13bcf42e9709955eb5098441f1811623b8"
-    },
-    {
-      "path": "last_round_submission_url.txt",
-      "bytes": 105,
-      "sha256": "6355ad9334cc8dfbc799f0ddd548dbaeaf153578acbe713b01252cc2bb0aa366"
-    },
-    {
-      "path": "main.asc",
+    "main.asc": {
       "bytes": 5226,
       "sha256": "edd8d27bf3b346dcbfae40025cfad4a790010e5b5800ac434f1c1b9a45763418"
     },
-    {
-      "path": "official_rank_743109.png",
-      "bytes": 40429,
-      "sha256": "b15d74aae04cca56722230e9eb6a7e03422b0f3348c7451f2bfdf9f9e8cc4f21"
+    "numerical_audit.json": {
+      "bytes": 33599,
+      "sha256": "f7a9a8873bfeb389a0f674017709e2eb3b49efa3436b2ac61cfea563d5dc3616"
     },
-    {
-      "path": "official_result_743109.txt",
-      "bytes": 5258,
-      "sha256": "c194e0f673c9ee3bcff37ccc91a09fe65c1dd8b20521dadebec56d3ad70e5ec2"
+    "official_rank_735124.png": {
+      "bytes": 22311,
+      "sha256": "c73cadaa117b87bc1b143dc1aedaf7d1a51cc0fb7c33a4c828d8a42534259491"
     },
-    {
-      "path": "official_results.json",
-      "bytes": 53983,
-      "sha256": "8f18ada273d7cb6a64d071a3698f3b2e6fdf145228d9a2de25a478f86787f25a"
+    "official_results.json": {
+      "bytes": 72461,
+      "sha256": "aec497eb3019c171284fdd72a1b78ca23c3d0d682e36c1bed69ca4f2c69cb653"
     },
-    {
-      "path": "README.md",
-      "bytes": 1972,
-      "sha256": "55d7f895a5c06c770e963a90787ad2b3c55bb70a536b6fe8c30dd56bb0d2ff89"
+    "official_score_735124.png": {
+      "bytes": 22217,
+      "sha256": "062efa208b6d08d9901fb481fe6e3fa27fb8ef6abc4a153175cb0cfacc7dbca4"
     },
-    {
-      "path": "REPRODUCE.md",
-      "bytes": 1725,
-      "sha256": "abe0572e5a70e0756e1a150d12b9d1a79c63fe3745c4ebeb4247bdc1bf4c7e06"
+    "research.json": {
+      "bytes": 2119,
+      "sha256": "a763533c41b40fbd77aab82e5924913210d475562765708b67f10520d0e4f78a"
     },
-    {
-      "path": "run.sh",
+    "run.sh": {
       "bytes": 1109,
       "sha256": "6285cd1a901a619d0056209907bf2bcc34a7fa2d430ab41cf90f453196f20c56"
     },
-    {
-      "path": "scripts/AddRmsNormBias.py",
-      "bytes": 2066,
-      "sha256": "e6bb5635644678b8044a5c76660d618e2b08d42d90c18de95145d39c038508a8"
+    "selection.json": {
+      "bytes": 4313,
+      "sha256": "99ea96f880b829231c321b2e27f66c74b6d7533d510d500317f26afc68858be4"
     },
-    {
-      "path": "scripts/gen_data.py",
-      "bytes": 1074,
-      "sha256": "017d0f28983ff6ef072316a2f0b87bfb1f4ad6b58ffbe2bb0156628faf744681"
+    "submission_735124_official_dom.txt": {
+      "bytes": 5418,
+      "sha256": "ac19af5257c3d96ccc7cbc7d0541bc9480960dadf9077bd2e93b976a66b0eb40"
     },
-    {
-      "path": "scripts/verify_result.py",
-      "bytes": 4586,
-      "sha256": "08e312f94cbfbf986161040f46cf1fb2f67f3bede5edf31454cb827061b911ac"
+    "submission_735124_ranking_dom.txt": {
+      "bytes": 4719,
+      "sha256": "2b58339329f76dc748ee1d0c120b6449d67d318bb14f8b36ec84a6d003b4c0f3"
     },
-    {
-      "path": "selection.json",
-      "bytes": 2259,
-      "sha256": "d1c4b777b675cae5c3c6e2dd4fca87aa563d696f61f0192014a4105281d5a36e"
+    "verification.json": {
+      "bytes": 701,
+      "sha256": "c5f21f2389c48665e2f5c81e248b6c4945572126d4831450966bf49f2b9a8998"
     },
-    {
-      "path": "source_inventory.json",
+    "实验报告_E024.md": {
+      "bytes": 10117,
+      "sha256": "86c286f2c8ef714278f731897efffc6603796b99ee4ad397eda6cc1d7f373bf6"
+    },
+    "best_source_manifest.json": {
+      "bytes": 388,
+      "sha256": "1921e08bbbec3b7164ea7b9c850c19702a009a1d2a9bf58d3836c5905e61d877"
+    },
+    "best_submission_743109.zip": {
+      "bytes": 27865,
+      "sha256": "90eecb237d8da448732c68d27e20c535c656b7279f7128a7635c5a0e247c2774"
+    },
+    "cloud_reports_E026_part01.zip": {
+      "bytes": 11490140,
+      "sha256": "bd47bd303afc84534fdf008784789cc0fe30006f45da6d314db915441f5719f0"
+    },
+    "cloud_reports_E026_part02.zip": {
+      "bytes": 12168355,
+      "sha256": "96eacfa7780793f9e57055b5a9644dc578e09c2a8b4be7558578be82e834dde5"
+    },
+    "cloud_reports_E026_part03.zip": {
+      "bytes": 11954668,
+      "sha256": "60694211485c5304a668236e9c3e816500db9b5f8e9527e1f63eabbc36a8e8a2"
+    },
+    "cloud_reports_E026_part04.zip": {
+      "bytes": 11081200,
+      "sha256": "cba97721e2ec7d2765f137c88d228da706191c26fbf9443464b44a63ab244e90"
+    },
+    "cloud_reports_E026_part05.zip": {
+      "bytes": 10955096,
+      "sha256": "c75e5e255200aa1a32957763be469936c14edb299b0a91342b66ad5bc37caee8"
+    },
+    "cloud_reports_E026_part06.zip": {
+      "bytes": 4074845,
+      "sha256": "f3dccc236a65f0227569884929a3f5b32fe6689f3eff8e02dfacda4f3caa86bc"
+    },
+    "cloud_reports_E026_part07.zip": {
+      "bytes": 9066610,
+      "sha256": "6752b22169d2226d264be12b551162c106c2cd7dbabb6423953af45c6d14a5c5"
+    },
+    "E026_full_experiment.zip": {
+      "bytes": 7892478,
+      "sha256": "396a4b384a78142cfbd0ff6c2e1d195f4f41a745567e05061ad289cce50e0054"
+    },
+    "last_round_kernel.asc": {
+      "bytes": 162690,
+      "sha256": "6bb58de2f99252489e57161e2f8118b547033bde582790da4713e88809c353d4"
+    },
+    "last_round_official_dom.txt": {
+      "bytes": 5258,
+      "sha256": "c19f653b1bb11b2c34b3755d75c55197da59103bcaac935fc293699e10ab826c"
+    },
+    "last_round_ranking.png": {
+      "bytes": 22235,
+      "sha256": "c848a7566c283a8c4b1132406d0ef96fcf31002d06705680e4330eae7cf85592"
+    },
+    "last_round_ranking_dom.txt": {
+      "bytes": 4579,
+      "sha256": "ac6ddf3e256d974b05ceb3dcdc3aab5ad270097baa34064f62a775ca69167334"
+    },
+    "last_round_result.json": {
+      "bytes": 2329,
+      "sha256": "8ad1c46d423510bd9e6ccb5cc46c2c13bcf42e9709955eb5098441f1811623b8"
+    },
+    "last_round_submission_url.txt": {
+      "bytes": 105,
+      "sha256": "6355ad9334cc8dfbc799f0ddd548dbaeaf153578acbe713b01252cc2bb0aa366"
+    },
+    "official_rank_743109.png": {
+      "bytes": 40429,
+      "sha256": "b15d74aae04cca56722230e9eb6a7e03422b0f3348c7451f2bfdf9f9e8cc4f21"
+    },
+    "official_result_743109.txt": {
+      "bytes": 5258,
+      "sha256": "c194e0f673c9ee3bcff37ccc91a09fe65c1dd8b20521dadebec56d3ad70e5ec2"
+    },
+    "REPRODUCE.md": {
+      "bytes": 1725,
+      "sha256": "abe0572e5a70e0756e1a150d12b9d1a79c63fe3745c4ebeb4247bdc1bf4c7e06"
+    },
+    "source_inventory.json": {
       "bytes": 54129,
       "sha256": "45a5ec3c1377d7d11d0664c136ef70544ae26f6f2342300c5e97d4f1384f68e0"
     },
-    {
-      "path": "实验报告_E026.md",
+    "实验报告_E026.md": {
       "bytes": 59226,
       "sha256": "8a047b9df84e1f0485aa07371ada3744bb964df8c51e79553c99b8c7383de95e"
     },
-    {
-      "path": ".gitattributes",
+    ".gitattributes": {
       "bytes": 70,
       "sha256": "da6735987b0f729fa479037e864631fbbc08c2206f9ff7d787860b1ae2a3b415"
+    },
+    "official_results_E027.json": {
+      "bytes": 18483,
+      "sha256": "7a02382e59342b0cd75ed667291c55e2840f3cc478cea887f88de6660db73727"
+    },
+    "实验报告_E027.md": {
+      "bytes": 10727,
+      "sha256": "3a126af5455d03dbd8e1084b06a2a0958016b2d72342b0248f17c942c46b051c"
+    },
+    "official_rank_768708.png": {
+      "bytes": 57266,
+      "sha256": "922fb283a43d2abe54862e1b4d3c15b71c6ef8ecc8bc64eade9cae1e471235f3"
+    },
+    "official_rank_771910.png": {
+      "bytes": 57395,
+      "sha256": "52a2038f9741db806d6976ea1316a6e1e35acf2c49e293b90059ee1f6afe17cc"
+    },
+    "best_submission_768708.zip": {
+      "bytes": 28563,
+      "sha256": "0ec7f71dc8be6c6a4ce5328fbe64dca34c7c63d277c66602b4cdd7180893d042"
+    },
+    "E027_full_experiment.zip": {
+      "bytes": 8989344,
+      "sha256": "9842b7ffac8665f0a205e5a1925621d55dcc9c71c4e5489ee7c10c610345b035"
+    },
+    "E026_previous_handoff.zip": {
+      "bytes": 12381,
+      "sha256": "d9f632f3ce5b67e8c5b14e2a17556f2c7cf51f2893a9a0636dff56e37ff0ca0e"
+    },
+    "scripts/AddRmsNormBias.py": {
+      "bytes": 2066,
+      "sha256": "e6bb5635644678b8044a5c76660d618e2b08d42d90c18de95145d39c038508a8"
+    },
+    "scripts/gen_data.py": {
+      "bytes": 1074,
+      "sha256": "017d0f28983ff6ef072316a2f0b87bfb1f4ad6b58ffbe2bb0156628faf744681"
+    },
+    "scripts/verify_result.py": {
+      "bytes": 4586,
+      "sha256": "08e312f94cbfbf986161040f46cf1fb2f67f3bede5edf31454cb827061b911ac"
     }
-  ]
+  }
 }

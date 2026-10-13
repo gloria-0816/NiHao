@@ -1,19 +1,19 @@
 # CANN_HuaiWei
 
-AddRmsNormBias CANN 性能优化归档，更新于2026-10-12。
+AddRmsNormBias 优化研究归档，更新于 2026-10-13。
 
-**最高完整官方成绩：64.98 分，15/15 Pass，观察排名 91。** 方案 FACC，提交 [743109](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acc0f3d694b590c3c87def3)。相对上一阶段56.71分提高8.27分。排名是评测完成时观察值，会随他人提交变化。
+**最高完整官方成绩：FRESLONG 65.34 分，15/15 Pass。** [提交 768708](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd8ea9e769892927ee263e)，当时观察排名78。根目录与 scripts/ 为这一次完整提交的八文件工程，未拼接各次最快测试点。
 
-最后一轮 HSM63：64.3 分，15/15 Pass，提交 744352。 用户要求本轮评分后停止。70分目标未达成；后续没有继续发起实验。
+本轮更换方法并完成10次正式测试，全部15/15；最后 AXSMALL 64.02分。最高未超过70分，已按用户限定停止新增测试。网站排名当前显示最后提交的64.02分，65.34是历史最高观察成绩。TBest与计时会变化，不将0.36分的增幅全部归因于算法。
 
-- [交接文档](HANDOFF.md)：最佳源码身份、15点耗时、复现和验证边界。
-- [完整比赛工程](best_submission_743109.zip)：8个原始工程文件。根目录和scripts/保留同一套最佳源码。
-- [kernel.asc](kernel.asc)、[选择记录](selection.json)、[全部官方结果](official_results.json)。
-- [本阶段实验报告](实验报告_E026.md)、[完整实验与工具包](E026_full_experiment.zip)。原始云机报告分卷保存在 cloud_reports_E026_part*.zip，文件身份见MANIFEST.json。
-- [文件哈希清单](MANIFEST.json)。此前E024文档和压缩包继续保留。
+- [交接与方法取舍](HANDOFF.md)、[E027实验报告](实验报告_E027.md)。
+- [最佳完整比赛工程](best_submission_768708.zip)、[kernel.asc](kernel.asc)、[选择依据](selection.json)。
+- [本轮10次官方结果](official_results_E027.json)、[历史正式结果](official_results.json)。
+- [E027完整源码、驱动与网页证据包](E027_full_experiment.zip)、[文件身份清单](MANIFEST.json)。
+- 先前 E026、E024 归档保留；[上一阶段顶层交接](E026_previous_handoff.zip)也保留，另可查看 Git 历史。
 
-最佳版以实际 dtype、行数、列数和可用向量核数选择路径。FP32 宽行将多个64元素向量重复的平方和累加到同一组lane，最后一次 WholeReduceSum；FP16 长行保留整行残差，减少重复读写并用 mixed FP32 平方；短行按每核多行归约、原生FP16加法及affine融合减少指令；BF16 中宽行使用三阶段静态缓冲和参数复用，D128路径保留已验证批次。不同路径的实际守卫以 kernel.asc/run_kernel 为准。
+本轮已经尝试树形/块归约、静态片上驻留、计算重排、FP16方差、Rsqrt修正、核波次和DMA/Axpy融合。FRESLONG 在自建FP32长行上降低设备耗时，但正式成绩没有同等幅度提升。云机结果与官方隐藏输入区分记录；后期SSH断开，后期云机完整原始日志尚未全部下载，详细边界见交接文档。
 
-![最高分官方记录](official_rank_743109.png)
+![历史最高65.34分官方记录](official_rank_768708.png)
 
-构建复现见 HANDOFF.md。云机使用Ascend910B3、CANN9.0.0、40个向量核；本机Windows仅归档。自建输入不是官方隐藏输入，云机收益不能当作比赛收益，也不拼接不同提交的最快测试点。
+![最后一次64.02分官方记录](official_rank_771910.png)

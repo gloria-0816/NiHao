@@ -1,87 +1,100 @@
-# E026 最佳完整方案交接（2026-10-12）
+# E027：更换优化方法的十次正式评测交接（2026-10-13）
 
-当前采用 **FACC，64.98 分，15/15 Pass**；[官方提交743109](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acc0f3d694b590c3c87def3)，观察排名91。最后一轮 HSM63：64.3 分，15/15 Pass，提交 744352。
+本轮 **10/10 次正式评测已经结束，全部 15/15 Pass；最高完整成绩为 FRESLONG 65.34 分**，提交 [768708](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd8ea9e769892927ee263e)。最后一版 AXSMALL 为 64.02 分。最高未超过 70 分，因此按用户设定停止新增实验。没有继续提交第 11 次，也没有把“恢复最好版本”算作额外测试。网站目前显示最新提交 AXSMALL 的 64.02 分；仓库根目录与最佳工程包选择历史最高完整源码 FRESLONG。
 
-源码SHA256：`bc62917a0b4e5a6155b188e5f829f32590832ba1e06345deb50564beacef356b`。云机runner SHA256：`c7ba9ab4f2b26d85aaef160fd2e377ca439114d564353c4861ffbbc83deb5603`。根目录kernel.asc、selected/code和最佳工程ZIP内容一致，选择的是一次完整提交的总分。
+## 正式比赛结果
 
-最佳版以实际 dtype、行数、列数和可用向量核数选择路径。FP32 宽行将多个64元素向量重复的平方和累加到同一组lane，最后一次 WholeReduceSum；FP16 长行保留整行残差，减少重复读写并用 mixed FP32 平方；短行按每核多行归约、原生FP16加法及affine融合减少指令；BF16 中宽行使用三阶段静态缓冲和参数复用，D128路径保留已验证批次。不同路径的实际守卫以 kernel.asc/run_kernel 为准。
+|次数|完整候选|提交|总分|通过|评测时观察排名|
+|---|---|---|---:|---|---:|
+|1|DBLOCK|[768104](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd8445e769892927e6277d)|63.95|15/15|104|
+|2|CONST|[768306](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd8859e769892927e93601)|63.52|15/15|104|
+|3|FRES8|[768574](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd8cbae769892927ec8d8e)|64.11|15/15|89|
+|4|FRESLONG|[768708](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd8ea9e769892927ee263e)|65.34|15/15|78|
+|5|FRESWL|[769154](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd94bae769892927f3bb58)|64.04|15/15|92|
+|6|FRES15|[769607](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd99dce769892927f90d58)|64.18|15/15|91|
+|7|AFFLONG|[770144](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd9fd9e769892927ffbfd7)|64.42|15/15|92|
+|8|HFAST128|[771506](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acdb0b4e769892927111ce2)|63.63|15/15|98|
+|9|RMSCF|[771696](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acdb392e76989292713fd9e)|64.03|15/15|93|
+|10|AXSMALL|[771910](https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acdb6d3e769892927173e50)|64.02|15/15|95|
 
-## 六类场景的处理路径
+排名会变化，记录值是当时观察结果。各候选的 official/ 保存原始页面文本、结果 JSON、结果和排名截图。小数耗时来自网页显示值，毫秒换算为微秒；没有拼接不同提交的最快点。TBest 在本轮和前一日之间发生变化，不能将相对历史 FACC 64.98 的 0.36 分全部归因于算法改进，也不能据一次 65.34 分声称稳定突破 65 分。
 
-|场景|最佳完整方案中的方法|实际分派依据|
-|---|---|---|
-|少行、短行|单行静态缓冲，少行独立向量核；FP32短行限定核数并批量归约|dtype、D、rows和可用核数；D64有专用单行入口|
-|FP16短非对齐行|每核多行静态缓存，填零无效尾部，原生残差加法、转为FP32平方与批量归约|D≤256且每核可容纳4..32行；扩大到63行的HSM63是独立候选|
-|FP16中等行宽|批量流水、参数复用及affine融合；更宽行使用独立整行缓冲流水|D321..1024与D1025..4096使用不同入口，均要求足够行数|
-|FP16长行|整行残差留在UB，分段平方和、归一化与输出，减少重复搬运|D8193..32768；双AIV单行与非对齐候选另存，未凭云机局部收益替换最佳版|
-|FP32宽行|静态三缓冲，跨repeat lane累加后一次WholeReduceSum；其他宽度有通用保留行路径|D1537..4096且足够行数；非命中情况按完整源码的后续守卫执行|
-|BF16短行及宽行|D128原位批量缓存，中宽行三阶段流水，宽行保留原有预取|D128、D1025..4096与其他宽度分别处理；分派候选均独立实测|
+## 实际实施的方法与取舍
 
-此表用于阅读源码，准确边界、守卫顺序、尾部处理及fallback以run_kernel为准，不能用表格替代完整工程。
+正百分比表示云机候选比对照快，负百分比表示更慢。以下是自建形状的设备计时，不代表官方隐藏用例。
 
-## 官方完整15点结果
+|候选|方法|云机观察|处理|
+|---|---|---|---|
+|TREE|二叉树归约|s11 -2.42%；s13 +0.09%|云机筛选后淘汰|
+|BTREE|块归约后树形归约|s11 +7.74%；s13 -0.07%|未提交；保留对照|
+|DBLOCK|两级块归约|s11 +8.92%；s13 -0.02%|正式63.95|
+|CONST|FP16 编译期行宽特化|s8 +1.69%；s10 +0.55%|正式63.52|
+|LIBRARY|高阶 RmsNorm 接口|s3 -3.72%|云机筛选后淘汰|
+|FRES8|FP32 参数常驻、双输入/输出槽、静态同步|1024×4097/8192：+65.64%/+63.01%|正式64.11|
+|FRESLONG|FP32 整行残差驻留、直接搬入最终 Y、槽位复用|1024×16384/32768：+21.50%/+12.65%|正式65.34；选用完整版本|
+|FRESWL|参数常驻扩展至中宽行，保留长行路径|s9 +16.84%；s11 -10.66%；s13 -1.18%|正式64.04|
+|FRES15|只选择有收益的行宽区间|s9 +16.82%|正式64.18|
+|AFFEARLY|提前 gamma 缩放，与归约重叠；最终 FMA|s11 +1.32%；s13 -0.11%|用于合成 AFFLONG|
+|AFFLONG|提前 affine 与最佳长行驻留组合|s11 +0.59%；s13 +0.01%|正式64.42|
+|RSMALL|原生 Rsqrt 替换 Sqrt/Div|s1/s2/s3：+4.12%/+7.60%/+1.24%|9个常规输入新增8个 strict 失败；未作为最佳|
+|RSMALLF|Rsqrt 加一次 FMA Newton 修正|s1/s2/s3：-7.47%/-11.16%/-4.17%|性能下降；部分 strict 失败；淘汰|
+|RFMAW|批量路径 Rsqrt 修正|s4/s6/s11：-1.55%/-5.59%/-6.54%|性能下降；淘汰|
+|HVAR128|FP16 方差归约及输入幅值回退|实现存在未清零 padding 的问题|无效原型；不得作为有效方法收益|
+|HFAST128|清零 padding 后 FP16 方差、溢出回退 FP32|s6 +0.87%；s7 -0.95%；s8 +5.84%；s10 -2.16%|正式63.63；15/15|
+|HWAVE2|FP16 逻辑核波次改为物理 AIV 的两倍|s6 -29.83%；s7 -27.74%|淘汰；未提交|
+|HWAVE4|FP16 逻辑核波次改为物理 AIV 的四倍|s6 -67.66%；s7 -66.16%|淘汰；未提交|
+|RMSCF|缓存常量、融合 sum/D+epsilon|云机已编译；SSH 断开后未测 NPU|正式64.03；15/15|
+|HFRMSCF|融合均方计算与 FP16 方差候选组合|云机已编译；未测 NPU|未提交|
+|AXSMALL|小输入连续地址 DMA 合并、独立 fallback、Axpy 均方融合|未做云机测试；比赛端编译成功|正式64.02；15/15|
 
-|测试点|本方案μs|TBest μs|状态|
+额外保留 FRESW（已编译但未单独测量）、AXPROTO（与 AXSMALL 源码相同的准备版本，未云机编译）和 HVAR128_failed_scope（第一次编译失败的原始版本）。它们不是额外正式比赛次数。HVAR128 随后修复了编译作用域，但 padding 错误仍使该实现无效；修复 padding 后独立生成的是 HFAST128，不混用两者记录。
+
+本轮没有仅围绕原方案调整常数，已尝试归约拓扑、静态片上驻留与槽位复用、计算重排、低精度方差、近似倒平方根及修正、逻辑核波次和搬运融合。多个自建输入出现明显设备收益，正式成绩却没有对应幅度的改善。这说明这些形状的云机收益不足以预测隐藏测试的总分；本轮无法证明新方法能超过 70 分。
+
+## 最佳完整源码身份及路径
+
+采用 `FRESLONG/code` 的完整八文件工程。kernel.asc SHA256：`d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce`。云机 runner SHA256：`9052108564f96a75d24abece7fc780f52c0ffbf2464545cfe233f35dc78d42a4`。
+
+FRESLONG 继承 FACC 的少行/短行、FP16 非对齐短行、中行、长行、FP32 中宽行与 BF16 路径；新增 FP32 D8193..32768 的静态整行残差驻留路径。该路径使用约 168992 字节 UB，X 直接进入最终 Y，两个 residual/square 槽随后复用于 gamma/bias，归约完成后流式输出 affine FMA。分派只使用实际 dtype、维度、行数和设备核数；准确守卫和顺序见完整源码 run_kernel。云机的七个边界形状和五类模式共十二组检查均 strict 通过，正式评测全部 15 点通过。
+
+|测试点|本方案 μs|当次 TBest μs|结果|
 |---|---:|---:|---|
-|1|2.40|1.12|Pass|
-|2|2.47|1.63|Pass|
-|3|2.72|2.10|Pass|
-|4|7.97|4.42|Pass|
-|5|5.90|4.91|Pass|
-|6|11.77|7.95|Pass|
-|7|16.25|10.50|Pass|
+|1|2.24|1.14|Pass|
+|2|2.48|1.64|Pass|
+|3|2.78|2.12|Pass|
+|4|7.70|4.32|Pass|
+|5|5.91|4.62|Pass|
+|6|11.75|7.97|Pass|
+|7|16.61|10.68|Pass|
 |8|31.80|29.72|Pass|
-|9|69.82|67.81|Pass|
-|10|48.46|45.87|Pass|
-|11|158.24|129.65|Pass|
-|12|80.45|75.96|Pass|
-|13|559.15|394.15|Pass|
-|14|4060.00|3530.00|Pass|
+|9|69.18|67.81|Pass|
+|10|47.67|45.87|Pass|
+|11|156.89|131.05|Pass|
+|12|80.16|75.96|Pass|
+|13|554.26|397.00|Pass|
+|14|4050.00|3530.00|Pass|
 |15|9380.00|7960.00|Pass|
 
-网站总分为15点 `100/(1+log_1.5(t/TBest))` 的平均。页面显示耗时有四舍五入，按显示值复算有小幅差异。最高记录只有本次完整官方观察结果，不把它描述成稳定达到该分数。
+## 计时与数值验证边界
 
-## 最后一轮取舍与停止状态
+云机为 Ascend 910B3、CANN 9.0.0、40 AIV。对照是原 FACC，通常执行 ABBA/BAAB，warmup10、batch20；每次 msprof 收集 31 个任务，取最后 20 个设备任务的中位数。输入由 seed42 及实际 shape/dtype/pattern 生成。后期部分筛选只运行一个 ABBA 块，读原始 driver 模式和记录确认次数，不把所有数据称为两块。
 
-# 本轮结束前的已完成结果（2026-10-12）
+代表输入 s1=1×64 FP16，s2=7×197 FP32，s3=128×256 FP32，s4=767×193 FP16，s5=8×32768 FP16，s6=1513×577 FP16，s7=3113×397 FP16，s8=10240×512 FP16，s9=4096×1536 FP32，s10=8192×1024 FP16，s11=3749×3083 FP32，s12=3408×4096 BF16，s13=10300×3079 FP32；s14/s15 使用较小 BF16 形状。行数以合法 batch/seq 组合表达；这些名称不证明与官方 1..15 点一一对应。
 
-- PAIRSINGLE 官方提交 743789，64.73 分、15/15 Pass，观察排名 93。仅单行 FP16 对齐长行使用双 AIV 内核；第5点 5.95 μs，FACC 为5.90 μs。云机单行确认提速39.30%/47.02%/49.37%，未转化为总分提高。
-- PAIRASY 延后第二次同步等待，仍在最终输出覆盖前确保所有 partial 读者完成。8个常规、10个数值模式及11个宽度边界共87次检查与各自FACC对照逐位一致。多行相对FACC：2×16K -6.21%、2×24K +1.65%、2×32K +4.04%、4×32K +1.18%、8×32K -1.38%、16×32K -8.56%、20×32K -14.91%，不能使用宽范围守卫。
-- SINGLEASY 将上述等待重叠限定为单行对齐长行。两组交错测量 D16K/24K/32K 提速43.57%/51.88%/52.86%。尚无独立比赛成绩，不能作为最佳比赛方案。
-- PAIRTAIL 支持非对齐长行，首分片按64元素边界划分，DataCopyPad搬运有效尾部，partial暂存位置向行内32字节边界上取整。12个常规形状及10个数值模式共44次检查逐位一致。单行 D8193/24575/32767 +40.20%/+53.13%/+55.28%，3×16383 +24.11%，2/4/8×32767 +0.92%/+3.52%/+3.37%。尚无独立官方成绩。
-- HSM63 扩大原生FP16短行静态批次到每核33..63行，D≤256。4个形状提速17.82%/8.32%/33.52%/13.86%。与FACC不是逐位一致，正常输入 strict超差占比最高0.05052%，特殊模式最高0.03468%，无NaN/Inf分类差异；这些数值不能写作全部strict通过。保留研究结果，正式采用与否以官方完整提交为准。
-- 大BF16输入形状 [128,25920,128]、[16,7360,8192] 是公开文档中描述的代表性工作负载，不能宣称就是官方隐藏输入。第一个完整尺寸下BFSB2相对FACC回退0.89%，此前缩小场景约1.69%的收益未延伸到该完整尺寸。
-- 完整BF16 D8192：双缓冲BFDB8 -0.92%、标量逆维度BFINV +0.12%、保留预取的逐行交错BFRR -3.54%，未显示值得正式替换的收益。正常模式均无NaN/Inf分类差异；strict超差比例FACC为0.001082%，BFDB8为0.000367%，BFINV为0.001167%。这些都是百分数，不能误读为比例超过比赛0.001阈值。
-- 大尺寸msprof op诊断失败：工具报告“不支持软链接输出目录”，返回0但没有生成benchmark.json，因此记录为verification_or_metadata_error。没有得到PipeUtilization/Memory/L2指标，不据此声称硬件瓶颈。普通msprof任务耗时比较已实际执行，独立保留。
-- SCHED1在纯向量入口使用__schedmode__(1)，源码算术和分块数不变，15个代表输入共30项与FACC逐位一致；s1/s2/s4/s5/s11/s14_reduced对照为-2.74%/-1.82%/-2.85%/-0.11%/+0.11%/约0%。没有明确总体改善。
+部分 FP16/BF16 自建输入在 FACC 基线就未通过更严格的本地 strict 阈值；保留基线与候选结果，没有把“官方 Pass”改写成“本地 strict 全通过”。原生 Rsqrt 和 Newton 修正候选的数值与性能结果单独记录。未因为单个精度候选失败而中止其他方法。
 
-用户要求完成已排队测试和本轮最后一次正式评分后停止，再将最高完整成绩方案归档到私人仓库 gloria-0816/CANN_HuaiWei。此后没有启动新的优化方向。
+## 归档及复现
 
-## 本轮正式结束结果
+E027_full_experiment.zip 包含所有候选八文件源码、生成脚本、驱动、清单、十次网页证据和已下载云机 metadata 快照。ROOT/cloud_bench 与 experiments/E006A_probe 的必要依赖一起保留。将 experiments/E027_new_methods/BASE/code/kernel.asc 用 cloud_bench/build.sh 构建到 experiments/E026_target70/build_FACC，再运行 run_round.py 对应模式；Windows 本机仅做归档、源码和压缩包一致性验证，不声称本机运行过 NPU。
 
-- BFV80/BFV160根据实际可用AIV数将独立BF16行任务分成2倍/4倍逻辑块，支持空核守卫且不使用跨核同步。7个边界输入、3版本共21次输出逐位一致。全尺寸D128分别+0.039%/-0.214%，D8192分别-0.116%/-0.397%，没有明显收益，不提交。
-- 最后一次官方测试采用已在云机测量的HSM63，提交744352，2026/10/12 09:23:02，15/15 Pass、64.30分，观察排名98。第4点8.09μs，没有超过FACC的7.97μs。第11点156.93μs对比158.24μs的波动来自未修改路径，不能归因于HSM63。
-- 历史最高仍是FACC提交743109的64.98分、15/15 Pass，观察排名91。仓库归档此完整源码。比赛排行榜当前最新提交是HSM63的64.30分，不能将历史最高排名91描述为当前排名。
-- 所有本轮云机队列已经自然结束，没有run_round.py/run_wait.py或NPU runner仍在执行。按用户要求停止研究与比赛提交，70分目标没有达成。原始tensor保留，归档只执行文件整理和上传。
+云机当前结果位于 /home/developer/addrms_experiments/E027。工作盘满后的迁移及失败尝试记录在早期 metadata 中。已保存 results_complete.tar.gz 和 metadata_20261013_0958.tar.gz，完整元数据不含原始输入 tensor 和二进制 runner。后期 SSH 返回连接关闭/拒绝登录，因而后期云机完整原始日志尚留在云机；本报告后期云机数字来自已读取的执行输出，归档包未假称包含全部后期云机原始日志。RMSCF/HFRMSCF 云机只编译未测量，AXSMALL 未云机编译/测量而由比赛端成功编译并通过。
 
+## 参考资料
 
-## 构建与复现
+归约方案依据 [Huawei AddRmsNormBias 原始归约实现](https://dev.modelhub.org.cn/EngineX/xc-llm-ascend/src/commit/fbae41697e83574f073cd1eb663b66caad19d91a/csrc/add_rms_norm_bias/op_kernel/reduce_common.h)。高阶接口候选依据 [RmsNorm API](https://asc.gitcode.com/api/SIMD-API/adv_api/normalization/RmsNorm.html) 并读取已安装 CANN9 头文件。静态流水参考 [Ascend C 手动同步接口](https://www.hiascend.com/doc_center/source/zh/canncommercial/80RC3/apiref/ascendcopapi/atlasascendc_api_07_0256.html)。
 
-比赛工程完整8文件：kernel.asc、main.asc、data_utils.h、CMakeLists.txt、run.sh及scripts中的3个Python脚本。解压最佳工程包，在匹配的CANN9.0/A2环境运行：
+倒平方根方案查阅了 [Rsqrt 官方精度说明](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/900beta2/API/ascendcopapi/atlasascendc_api_07_0036.html)，A2 原生精度需实测而不能假设满足本题阈值。最后两版融合均方使用支持实际平台的 [Axpy 基础接口](https://www.hiascend.com/document/detail/en/CANNCommunityEdition/900/API/ascendcopapi/atlasascendc_api_07_0063.html)，没有将仅适用于其他型号的寄存器接口当作 A2 能力。
 
-```bash
-export ASCEND_HOME_PATH=/home/developer/Ascend/cann-9.0.0
-bash run.sh
-```
+## 停止状态
 
-run.sh为比赛原始工程驱动，只生成和验证公开模板case0；它不复现官方隐藏15点。
-
-解压E026_full_experiment.zip后保持huawei-CANN目录结构，内含E026候选完整源码、驱动、E006A导入依赖和cloud_bench工具。E026驱动使用/mnt/workspace/addrms_results/E026和实验源码目录；首次复跑先读REPRODUCE.md，在新的结果目录或新的云机副本中运行，已有record.json会被用于恢复而非重新计时。性能比较顺序ABBA/BAAB，每次msprof任务的最后20次启动耗时中位数。严禁并发启动多个NPU性能比较。
-
-## 验证边界与证据
-
-官方Pass以对应网页15点结果为准。云机strict逐元素全通过标准与比赛允许mismatch比例不同，BF16代理输入有基线继承的strict失败；归约顺序和原生FP16加法也可能改变舍入。JSON保留失败比例、类别差异和输出哈希，不把“官方0.00%”写成逐位一致。
-
-cloud_reports_E026_part*.zip保留JSON/CSV/日志，包含构建、实际输入元数据/哈希、输出哈希和msprof测量。分卷按文件容量划分，请按part01、part02…编号递增解压至同一目录，后续卷的最新记录覆盖同名旧记录。原始输入/输出tensor继续保留在云机，本GitHub包不包含几十GB的tensor或编译产物。所有候选源码与官方截图在实验包内；此前基线归档仍保留。
-
-按用户要求，完成本轮正式评分后停止，没有继续追求70分或安排后台循环。要恢复研究，应从本页最高分完整工程开始，先复查云机和比赛环境。
+最高 65.34 ≤ 70，停止条件已触发。本轮新增研究和比赛评测停止，未达到 70 分；当前仅整理并发布实验交接。所有已启动云机任务均已返回，本地记录 npu_jobs_running=false。后续如继续，需重新确认可用云机并首先校准能预测比赛收益的工作负载；这些建议尚未执行。

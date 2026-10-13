@@ -1,0 +1,905 @@
+[
+  {
+    "trial": 1,
+    "variant": "DBLOCK",
+    "id": 768104,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd8445e769892927e6277d",
+    "submitted_at": "2026-10-13 09:07:17",
+    "status": "Pass",
+    "passed": 15,
+    "total": 15,
+    "score": 63.95,
+    "rank_observed": 104,
+    "source_sha256": "e79f8e6a21913a514d8687586a637b6160c8ecba5d5a47400813ef17321e880e",
+    "times_us": [
+      2.27,
+      2.55,
+      2.75,
+      7.94,
+      5.95,
+      11.87,
+      16.74,
+      31.87,
+      70.17,
+      48.26,
+      159.15,
+      81.75,
+      557.32,
+      4060,
+      9380
+    ],
+    "tbest_us": [
+      1.14,
+      1.64,
+      2.12,
+      4.26,
+      4.57,
+      7.97,
+      10.66,
+      29.72,
+      67.81,
+      45.87,
+      127.17,
+      75.96,
+      397,
+      3530,
+      7960
+    ]
+  },
+  {
+    "trial": 2,
+    "variant": "CONST",
+    "id": 768306,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd8859e769892927e93601",
+    "submitted_at": "2026-10-13 09:24:41",
+    "status": "Pass",
+    "passed": 15,
+    "total": 15,
+    "score": 63.52,
+    "rank_observed": 104,
+    "source_sha256": "0a69f33e276870690541476d241253ea7296705a583b2a04aa2013b4593fff70",
+    "times_us": [
+      2.3,
+      2.65,
+      2.78,
+      7.84,
+      5.94,
+      11.84,
+      16.58,
+      32.55,
+      70.87,
+      48.26,
+      157.08,
+      81.88,
+      555.76,
+      4060,
+      9380
+    ],
+    "tbest_us": [
+      1.14,
+      1.64,
+      2.12,
+      4.26,
+      4.57,
+      7.97,
+      10.66,
+      29.72,
+      67.81,
+      45.87,
+      127.17,
+      75.96,
+      397,
+      3530,
+      7960
+    ]
+  },
+  {
+    "trial": 3,
+    "variant": "FRES8",
+    "id": 768574,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd8cbae769892927ec8d8e",
+    "submitted_at": "2026-10-13 09:43:22",
+    "status": "Pass",
+    "passed": 15,
+    "total": 15,
+    "score": 64.11,
+    "rank_observed": 89,
+    "source_sha256": "f3b7ccfe0b6a012659baf5b06ff5e38643d8a1bf8b25f160ad9187af8cb913a1",
+    "times_us": [
+      2.31,
+      2.63,
+      2.84,
+      7.76,
+      5.89,
+      11.84,
+      16.72,
+      32.65,
+      69.66,
+      47.9,
+      159.82,
+      80.66,
+      559.9,
+      4060,
+      9380
+    ],
+    "tbest_us": [
+      1.14,
+      1.64,
+      2.12,
+      4.32,
+      4.62,
+      7.97,
+      10.68,
+      29.72,
+      67.81,
+      45.87,
+      131.05,
+      75.96,
+      397,
+      3530,
+      7960
+    ]
+  },
+  {
+    "trial": 4,
+    "variant": "FRESLONG",
+    "id": 768708,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd8ea9e769892927ee263e",
+    "submitted_at": "2026-10-13 09:51:37",
+    "status": "Pass",
+    "passed": 15,
+    "total": 15,
+    "score": 65.34,
+    "rank_observed": 78,
+    "source_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce",
+    "times_us": [
+      2.24,
+      2.48,
+      2.78,
+      7.7,
+      5.91,
+      11.75,
+      16.61,
+      31.8,
+      69.18,
+      47.67,
+      156.89,
+      80.16,
+      554.26,
+      4050,
+      9380
+    ],
+    "tbest_us": [
+      1.14,
+      1.64,
+      2.12,
+      4.32,
+      4.62,
+      7.97,
+      10.68,
+      29.72,
+      67.81,
+      45.87,
+      131.05,
+      75.96,
+      397,
+      3530,
+      7960
+    ]
+  },
+  {
+    "trial": 5,
+    "variant": "FRESWL",
+    "id": 769154,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd94bae769892927f3bb58",
+    "submitted_at": "2026-10-13 10:17:30",
+    "status": "Pass",
+    "passed": 15,
+    "total": 15,
+    "score": 64.04,
+    "rank_observed": 92,
+    "source_sha256": "f6a9507deb9ee6063bc7d810537ecb498cb42f010ef81a18e488d850dc24fdf2",
+    "times_us": [
+      2.18,
+      2.58,
+      2.76,
+      7.98,
+      6.03,
+      11.99,
+      16.4,
+      31.71,
+      71.03,
+      48.34,
+      160.99,
+      81.5,
+      560.77,
+      4050,
+      9390
+    ],
+    "tbest_us": [
+      1.14,
+      1.64,
+      2.12,
+      4.32,
+      4.62,
+      7.97,
+      10.68,
+      29.72,
+      67.81,
+      45.87,
+      131.05,
+      75.96,
+      397,
+      3530,
+      7960
+    ]
+  },
+  {
+    "trial": 6,
+    "variant": "FRES15",
+    "id": 769607,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd99dce769892927f90d58",
+    "submitted_at": "2026-10-13 10:39:24",
+    "status": "Pass",
+    "passed": 15,
+    "total": 15,
+    "score": 64.18,
+    "rank_observed": 91,
+    "source_sha256": "d9d0a2a51a68ef46a39fed6c3f1d96ba416900c460d6efaf8cdaf31d42140000",
+    "times_us": [
+      2.31,
+      2.62,
+      2.84,
+      7.74,
+      5.94,
+      11.85,
+      16.69,
+      31.6,
+      71.36,
+      48.25,
+      157.87,
+      80.6,
+      557.72,
+      4050,
+      9370
+    ],
+    "tbest_us": [
+      1.14,
+      1.64,
+      2.12,
+      4.32,
+      4.62,
+      7.97,
+      10.68,
+      29.72,
+      67.81,
+      45.87,
+      131.05,
+      75.96,
+      397,
+      3530,
+      7960
+    ]
+  },
+  {
+    "trial": 7,
+    "variant": "AFFLONG",
+    "id": 770144,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acd9fd9e769892927ffbfd7",
+    "submitted_at": "2026/10/13 11:04:57",
+    "status": "Pass",
+    "passed": 15,
+    "total": 15,
+    "source_sha256": "c8214c636fc614c6cd7fd4df7c1081ef6ca6a99899e6ec35648af934cf53c5f7",
+    "points": [
+      {
+        "case": 1,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.34,
+        "tbest_us": 1.14
+      },
+      {
+        "case": 2,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.58,
+        "tbest_us": 1.72
+      },
+      {
+        "case": 3,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.77,
+        "tbest_us": 2.14
+      },
+      {
+        "case": 4,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 8.06,
+        "tbest_us": 4.34
+      },
+      {
+        "case": 5,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 5.84,
+        "tbest_us": 4.64
+      },
+      {
+        "case": 6,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 12.26,
+        "tbest_us": 8.05
+      },
+      {
+        "case": 7,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 16.7,
+        "tbest_us": 10.68
+      },
+      {
+        "case": 8,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 32,
+        "tbest_us": 29.72
+      },
+      {
+        "case": 9,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 70.89,
+        "tbest_us": 67.81
+      },
+      {
+        "case": 10,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 48.05,
+        "tbest_us": 45.87
+      },
+      {
+        "case": 11,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 157.69,
+        "tbest_us": 131.05
+      },
+      {
+        "case": 12,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 80.6,
+        "tbest_us": 75.96
+      },
+      {
+        "case": 13,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 558.14,
+        "tbest_us": 397
+      },
+      {
+        "case": 14,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 4050,
+        "tbest_us": 3530
+      },
+      {
+        "case": 15,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 9380,
+        "tbest_us": 7960
+      }
+    ],
+    "times_us": [
+      2.34,
+      2.58,
+      2.77,
+      8.06,
+      5.84,
+      12.26,
+      16.7,
+      32,
+      70.89,
+      48.05,
+      157.69,
+      80.6,
+      558.14,
+      4050,
+      9380
+    ],
+    "tbest_us": [
+      1.14,
+      1.72,
+      2.14,
+      4.34,
+      4.64,
+      8.05,
+      10.68,
+      29.72,
+      67.81,
+      45.87,
+      131.05,
+      75.96,
+      397,
+      3530,
+      7960
+    ],
+    "server_source_verified": true,
+    "score": 64.42,
+    "rank_observed": 92,
+    "ranking_tbest": "1.14μs 1.68μs 2.14μs 4.34μs 4.64μs 8.05μs 10.68μs 29.72μs 67.81μs 45.87μs 131.05μs 75.96μs 397.00μs 3.53ms 7.96ms"
+  },
+  {
+    "trial": 8,
+    "variant": "HFAST128",
+    "id": 771506,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acdb0b4e769892927111ce2",
+    "submitted_at": "2026/10/13 12:16:52",
+    "status": "Pass",
+    "passed": 15,
+    "total": 15,
+    "source_sha256": "d788d6f5333e8b9bd9c3eaa519fdcb7e07e69abe7622e76e494687d2b506f264",
+    "points": [
+      {
+        "case": 1,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.18,
+        "tbest_us": 1.14
+      },
+      {
+        "case": 2,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.56,
+        "tbest_us": 1.68
+      },
+      {
+        "case": 3,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.84,
+        "tbest_us": 2.12
+      },
+      {
+        "case": 4,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 8.12,
+        "tbest_us": 4.34
+      },
+      {
+        "case": 5,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 6.06,
+        "tbest_us": 4.52
+      },
+      {
+        "case": 6,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 11.88,
+        "tbest_us": 8.03
+      },
+      {
+        "case": 7,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 17.33,
+        "tbest_us": 10.68
+      },
+      {
+        "case": 8,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 33.03,
+        "tbest_us": 29.72
+      },
+      {
+        "case": 9,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 70.34,
+        "tbest_us": 67.81
+      },
+      {
+        "case": 10,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 48.02,
+        "tbest_us": 45.87
+      },
+      {
+        "case": 11,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 157.06,
+        "tbest_us": 130.55
+      },
+      {
+        "case": 12,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 81.23,
+        "tbest_us": 75.96
+      },
+      {
+        "case": 13,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 560.5,
+        "tbest_us": 397
+      },
+      {
+        "case": 14,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 4059.9999999999995,
+        "tbest_us": 3530
+      },
+      {
+        "case": 15,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 9380,
+        "tbest_us": 7960
+      }
+    ],
+    "times_us": [
+      2.18,
+      2.56,
+      2.84,
+      8.12,
+      6.06,
+      11.88,
+      17.33,
+      33.03,
+      70.34,
+      48.02,
+      157.06,
+      81.23,
+      560.5,
+      4059.9999999999995,
+      9380
+    ],
+    "tbest_us": [
+      1.14,
+      1.68,
+      2.12,
+      4.34,
+      4.52,
+      8.03,
+      10.68,
+      29.72,
+      67.81,
+      45.87,
+      130.55,
+      75.96,
+      397,
+      3530,
+      7960
+    ],
+    "score": 63.63,
+    "rank_observed": 98,
+    "ranking_tbest": "1.14μs 1.68μs 2.12μs 4.34μs 4.52μs 8.03μs 10.68μs 29.72μs 67.81μs 45.87μs 130.55μs 75.96μs 397.00μs 3.53ms 7.96ms"
+  },
+  {
+    "trial": 9,
+    "variant": "RMSCF",
+    "id": 771696,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acdb392e76989292713fd9e",
+    "submitted_at": "2026/10/13 12:29:06",
+    "status": "Pass",
+    "passed": 15,
+    "total": 15,
+    "source_sha256": "8ac75dc5014d5dd5582a3071ca8d0be2284e7fcf33fec73715c4862c4c2700b6",
+    "points": [
+      {
+        "case": 1,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.22,
+        "tbest_us": 1.14
+      },
+      {
+        "case": 2,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.79,
+        "tbest_us": 1.68
+      },
+      {
+        "case": 3,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.83,
+        "tbest_us": 2.12
+      },
+      {
+        "case": 4,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 8.23,
+        "tbest_us": 4.34
+      },
+      {
+        "case": 5,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 5.94,
+        "tbest_us": 4.52
+      },
+      {
+        "case": 6,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 11.78,
+        "tbest_us": 8.03
+      },
+      {
+        "case": 7,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 16.38,
+        "tbest_us": 10.68
+      },
+      {
+        "case": 8,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 32.39,
+        "tbest_us": 29.72
+      },
+      {
+        "case": 9,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 69.37,
+        "tbest_us": 67.81
+      },
+      {
+        "case": 10,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 47.85,
+        "tbest_us": 45.87
+      },
+      {
+        "case": 11,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 158.07,
+        "tbest_us": 130.55
+      },
+      {
+        "case": 12,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 81.23,
+        "tbest_us": 75.96
+      },
+      {
+        "case": 13,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 559.84,
+        "tbest_us": 397
+      },
+      {
+        "case": 14,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 4059.9999999999995,
+        "tbest_us": 3530
+      },
+      {
+        "case": 15,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 9380,
+        "tbest_us": 7960
+      }
+    ],
+    "times_us": [
+      2.22,
+      2.79,
+      2.83,
+      8.23,
+      5.94,
+      11.78,
+      16.38,
+      32.39,
+      69.37,
+      47.85,
+      158.07,
+      81.23,
+      559.84,
+      4059.9999999999995,
+      9380
+    ],
+    "tbest_us": [
+      1.14,
+      1.68,
+      2.12,
+      4.34,
+      4.52,
+      8.03,
+      10.68,
+      29.72,
+      67.81,
+      45.87,
+      130.55,
+      75.96,
+      397,
+      3530,
+      7960
+    ],
+    "score": 64.03,
+    "rank_observed": 93,
+    "ranking_tbest": "1.14μs 1.68μs 2.12μs 4.34μs 4.52μs 8.03μs 10.68μs 29.72μs 67.81μs 45.87μs 130.55μs 75.96μs 397.00μs 3.53ms 7.96ms"
+  },
+  {
+    "trial": 10,
+    "variant": "AXSMALL",
+    "id": 771910,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acdb6d3e769892927173e50",
+    "submitted_at": "2026/10/13 12:42:59",
+    "status": "Pass",
+    "passed": 15,
+    "total": 15,
+    "source_sha256": "6bc2d6a682f0283dff9f229aa84eb96424e233f25d1f81318b4c1f00d4411f0a",
+    "points": [
+      {
+        "case": 1,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.31,
+        "tbest_us": 1.14
+      },
+      {
+        "case": 2,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.54,
+        "tbest_us": 1.68
+      },
+      {
+        "case": 3,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.82,
+        "tbest_us": 2.12
+      },
+      {
+        "case": 4,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 8.3,
+        "tbest_us": 4.34
+      },
+      {
+        "case": 5,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 5.91,
+        "tbest_us": 4.52
+      },
+      {
+        "case": 6,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 12.08,
+        "tbest_us": 8.03
+      },
+      {
+        "case": 7,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 16.95,
+        "tbest_us": 10.68
+      },
+      {
+        "case": 8,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 32.13,
+        "tbest_us": 29.72
+      },
+      {
+        "case": 9,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 71.08,
+        "tbest_us": 67.81
+      },
+      {
+        "case": 10,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 48.28,
+        "tbest_us": 45.87
+      },
+      {
+        "case": 11,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 155.56,
+        "tbest_us": 130.55
+      },
+      {
+        "case": 12,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 80.32,
+        "tbest_us": 75.96
+      },
+      {
+        "case": 13,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 557.28,
+        "tbest_us": 397
+      },
+      {
+        "case": 14,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 4050,
+        "tbest_us": 3530
+      },
+      {
+        "case": 15,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 9370,
+        "tbest_us": 7960
+      }
+    ],
+    "times_us": [
+      2.31,
+      2.54,
+      2.82,
+      8.3,
+      5.91,
+      12.08,
+      16.95,
+      32.13,
+      71.08,
+      48.28,
+      155.56,
+      80.32,
+      557.28,
+      4050,
+      9370
+    ],
+    "tbest_us": [
+      1.14,
+      1.68,
+      2.12,
+      4.34,
+      4.52,
+      8.03,
+      10.68,
+      29.72,
+      67.81,
+      45.87,
+      130.55,
+      75.96,
+      397,
+      3530,
+      7960
+    ],
+    "score": 64.02,
+    "rank_observed": 95,
+    "ranking_tbest": "1.14μs 1.68μs 2.12μs 4.34μs 4.52μs 8.03μs 10.68μs 29.72μs 67.81μs 45.87μs 130.55μs 75.96μs 397.00μs 3.53ms 7.96ms"
+  }
+]
