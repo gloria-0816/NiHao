@@ -1,0 +1,73 @@
+{
+  "baseline_sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+  "outside_scope_sha256": "83f2365981b2be1706c72e5f927551477eaca4911fb55cfc8340dc9bd7db3aa8",
+  "variants": [
+    {
+      "variant": "BANK",
+      "source_sha256": "1580ca05258902d73e22f85eb0426b4507a6a5dc5012a0116770309ff28784e0",
+      "all_other_source_equal": true,
+      "other_project_files_equal": 7
+    },
+    {
+      "variant": "DMA4",
+      "source_sha256": "2ce8e507d0149380781784c7919c125bcc86a6cd278c775005aaf79dd240d106",
+      "all_other_source_equal": true,
+      "other_project_files_equal": 7
+    },
+    {
+      "variant": "EARLY",
+      "source_sha256": "8c1c23bf0876f69ed9a78014f96192288c7423df3df944235f31dc6e0f2e9efb",
+      "all_other_source_equal": true,
+      "other_project_files_equal": 7
+    },
+    {
+      "variant": "FENCE",
+      "source_sha256": "6ffa1a92c08531929b7844a501f5d0e99555aa934ea2802d7ece7e9b4d868f9f",
+      "all_other_source_equal": true,
+      "other_project_files_equal": 7
+    },
+    {
+      "variant": "INNC",
+      "source_sha256": "a1a31a8d6ae12f73a1636fd02fee728502e8d9aa54fb2c3b4f599069143f7174",
+      "all_other_source_equal": true,
+      "other_project_files_equal": 7
+    },
+    {
+      "variant": "MASK",
+      "source_sha256": "4016609819cf5d69d64e276fb08ae8a354b28e66ed9ddf98400b4a248f9993d2",
+      "all_other_source_equal": true,
+      "other_project_files_equal": 7
+    },
+    {
+      "variant": "NR",
+      "source_sha256": "9fdc1a62b41aeded6526a2552be853a2053506f83f13f0a316102c19a9f70aca",
+      "all_other_source_equal": true,
+      "other_project_files_equal": 7
+    },
+    {
+      "variant": "NR2",
+      "source_sha256": "1952c8ec0a85d50dbdf38a5b49120f390c0ed8a0ae5745d527cffb2fd3c29630",
+      "all_other_source_equal": true,
+      "other_project_files_equal": 7
+    },
+    {
+      "variant": "OUTNC",
+      "source_sha256": "475e5caebf59a10e4f62aececd8b6d8a8ddafd5d3c419dfd2b3493fd60edebe1",
+      "all_other_source_equal": true,
+      "other_project_files_equal": 7
+    },
+    {
+      "variant": "PAIR",
+      "source_sha256": "9cd3bc169e2b68aa6e72f5114090fbb3b8f184736c522c6960bd42fadb6f7c05",
+      "all_other_source_equal": true,
+      "other_project_files_equal": 7
+    },
+    {
+      "variant": "READY",
+      "source_sha256": "d7414356d124c2f919b171f143fb8184ef3e3e0c197a32e97d36cfd2b6b50aa8",
+      "all_other_source_equal": true,
+      "other_project_files_equal": 7
+    }
+  ],
+  "retained_root_kernel_sha256": "d676dd20267c736d2c35d245c043be933a13f84ba0e0fc67d887e30611e66bce"
+}

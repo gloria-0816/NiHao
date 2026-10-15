@@ -1,0 +1,81 @@
+{
+  "status": "success",
+  "hostname": "44b249dec8984f7282ac9a1cdb4f10ce",
+  "remote_directory": "/home/developer/addrms_experiments/E030/best_801341_H6SHARE_20261015",
+  "verified_at": "2026-10-15T02:31:26.319766+00:00",
+  "original_submission_id": 801341,
+  "variant": "H6SHARE",
+  "historical_highest_observed_score": 68.32,
+  "source_sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+  "archive_sha256": "c6ecfd6e470d519c2a052e8a6cd5d894a2e8b3b14cb21d1f0a031149e7353d29",
+  "code_files_verified": 8,
+  "total_files_verified": 13,
+  "files": [
+    {
+      "path": "code/CMakeLists.txt",
+      "sha256": "f111399c08fc725aa484f96ad7f99dc2eed769e2d694b2135f7cf4cce81851e9",
+      "bytes": 645
+    },
+    {
+      "path": "code/data_utils.h",
+      "sha256": "1bdaae93c09b65e2615691a39bfd611122c09668d90e21809c52516f443bfd84",
+      "bytes": 1962
+    },
+    {
+      "path": "code/kernel.asc",
+      "sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+      "bytes": 193403
+    },
+    {
+      "path": "code/main.asc",
+      "sha256": "edd8d27bf3b346dcbfae40025cfad4a790010e5b5800ac434f1c1b9a45763418",
+      "bytes": 5226
+    },
+    {
+      "path": "code/run.sh",
+      "sha256": "6285cd1a901a619d0056209907bf2bcc34a7fa2d430ab41cf90f453196f20c56",
+      "bytes": 1109
+    },
+    {
+      "path": "code/scripts/AddRmsNormBias.py",
+      "sha256": "e6bb5635644678b8044a5c76660d618e2b08d42d90c18de95145d39c038508a8",
+      "bytes": 2066
+    },
+    {
+      "path": "code/scripts/gen_data.py",
+      "sha256": "017d0f28983ff6ef072316a2f0b87bfb1f4ad6b58ffbe2bb0156628faf744681",
+      "bytes": 1074
+    },
+    {
+      "path": "code/scripts/verify_result.py",
+      "sha256": "08e312f94cbfbf986161040f46cf1fb2f67f3bede5edf31454cb827061b911ac",
+      "bytes": 4586
+    },
+    {
+      "path": "best_source_manifest.json",
+      "sha256": "58055b0a302620f05f4a9f2d45f4453460df3eb8430c2bc234b910165bfe0226",
+      "bytes": 1763
+    },
+    {
+      "path": "official_best_result.json",
+      "sha256": "15f2837edeeb33045d76744808f5a1cb53191d44aa50b23a702900639de240c4",
+      "bytes": 3191
+    },
+    {
+      "path": "official_latest_same_source_repeat.json",
+      "sha256": "9c80b5ce660aa83de0654ada44b75611a3ada4e8a88e681de974f7fb817f980f",
+      "bytes": 3007
+    },
+    {
+      "path": "case_reports_20261015.md",
+      "sha256": "335b0b4189937a1bc0a9aeac4cd2ad1118de4cce4691c0c0fe8b3a6ffd9a915e",
+      "bytes": 10552
+    },
+    {
+      "path": "README.md",
+      "sha256": "639f67a119369a4609c0d94654e6cd571043104c6d04e8f6cfbaad3f79dafca4",
+      "bytes": 905
+    }
+  ],
+  "build_or_test_started": false
+}

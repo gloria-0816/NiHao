@@ -1,0 +1,11 @@
+{
+  "variant": "MASK",
+  "parent": "H6SHARE",
+  "baseline_sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+  "source_sha256": "4016609819cf5d69d64e276fb08ae8a354b28e66ed9ddf98400b4a248f9993d2",
+  "description": "Explicit high-dimensional repeat APIs with shared normal masks (64/1/64); preserve the baseline FP16 residual sum, FP32 Sqrt/Div and affine sequence",
+  "numerical_change": false,
+  "other_paths_recovered_byte_equal": true,
+  "guard": "FP16 rows=1 D=64",
+  "prior_direction": "A mask-reuse direction was tried historically without clear benefit; this explicit CANN9 repeat-API implementation is independently measured, not claimed as a novel direction"
+}

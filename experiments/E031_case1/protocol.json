@@ -1,0 +1,17 @@
+{
+  "experiment": "E031_case1",
+  "baseline": "H6SHARE / 801341 / 810016",
+  "baseline_sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+  "scope": "Only dtype=float16, product of leading dimensions=1, D=64 may select a new implementation. All other source and methods remain the exact H6SHARE baseline.",
+  "objective": "Improve case1 duration; do not select by total score or combine independent per-case minima.",
+  "known_case1_scene": "Historical official tests identify the FP16 single-row D64 entry; exact leading singleton dimensions and input distribution are not assumed.",
+  "cloud": {
+    "representative_shape": [1, 1, 64],
+    "correctness": "Shared baseline for eight seed/pattern inputs. Preserve both strict outcomes and bitwise equality; reject any new strict failure on a baseline-passing input.",
+    "screening": "Serial msprof device task durations, warmup=10, repeats=1, batch=20, median of last 20 of 31 tasks. Shared baseline controls across a candidate batch.",
+    "confirmation": "Repeat promising candidate and baseline in alternating order; retain all task durations. Cloud results do not establish official gains."
+  },
+  "official": "Submit complete isolated candidates when the logged-in evaluation session is available. Preserve all 15 point outcomes, emphasize case1, and keep H6SHARE source separately for restoration.",
+  "probe_policy": "Only if metadata uncertainty prevents optimization; preserve outputs, label diagnostic timings, never use test numbers or prior computed answers in final kernels.",
+  "merge": "No merge into the retained root baseline during this focused investigation."
+}

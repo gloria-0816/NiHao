@@ -1,0 +1,10 @@
+{
+  "variant": "NR2",
+  "parent": "H6SHARE",
+  "baseline_sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+  "source_sha256": "1952c8ec0a85d50dbdf38a5b49120f390c0ed8a0ae5745d527cffb2fd3c29630",
+  "description": "Vector-only FP32 Rsqrt and fused Newton correction with finite-clamped correction operand; no vector-to-scalar transfer or data-dependent branch",
+  "numerical_change": true,
+  "other_paths_recovered_byte_equal": true,
+  "guard": "FP16 rows=1 D=64"
+}

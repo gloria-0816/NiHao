@@ -1,0 +1,168 @@
+- banner:
+  - link "CANNJudge":
+    - /url: /home
+    - generic: CANNJudge
+  - navigation:
+    - link "开放题库":
+      - /url: /home
+    - link "开放赛事":
+      - /url: /contests
+    - link "小组空间":
+      - /url: /groups
+  - button "消息"
+  - img "avatar"
+  - link "ttal6688":
+    - /url: /me
+  - link "退出":
+    - /url: "#"
+- main:
+  - link "赛事":
+    - /url: /contests
+  - text: /
+  - link "2026年CANN挑战赛_西南赛区（初赛）":
+    - /url: /public/op_challenge_xinan_prelim
+  - text: /
+  - link "AddRmsNormBias":
+    - /url: /public/op_challenge_xinan_prelim/addrmsnormbias
+  - text: /
+  - strong: 提交记录
+  - heading "AddRmsNormBias" [level=2]:
+    - link "AddRmsNormBias":
+      - /url: /public/op_challenge_xinan_prelim/addrmsnormbias
+  - button "下载工程"
+  - generic: 提交 ID：824363
+  - generic: 提交人：ttal6688
+  - generic: 提交时间：2026/10/15 14:49:35
+  - text: 提交状态：
+  - generic: Pass
+  - button "CMakeLists.txt"
+  - button "data_utils.h"
+  - button "kernel.asc"
+  - button "main.asc"
+  - button "run.sh"
+  - button "scripts/AddRmsNormBias.py"
+  - button "scripts/gen_data.py"
+  - button "scripts/verify_result.py"
+  - button "滚动到顶部": ↺
+  - button "复制代码": ⧉
+  - generic: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34
+  - generic: "cmake_minimum_required(VERSION 3.16) find_package(ASC REQUIRED) project(add_rms_norm_bias_custom LANGUAGES ASC CXX) set(CMAKE_CXX_STANDARD 14) if(DEFINED NPU_ARCH) set(SOC_ARCH ${NPU_ARCH}) else() set(SOC_ARCH \"dav-2201\") endif() add_executable(add_rms_norm_bias_custom main.asc) target_link_libraries(add_rms_norm_bias_custom PRIVATE tiling_api register platform unified_dlog dl m graph_base ) target_include_directories(add_rms_norm_bias_custom PRIVATE ${CMAKE_CURRENT_SOURCE_DIR} ) target_compile_options(add_rms_norm_bias_custom PRIVATE $<$<COMPILE_LANGUAGE:ASC>:--npu-arch=${SOC_ARCH}> )"
+  - complementary:
+    - heading "执行结果" [level=3]
+    - table:
+      - rowgroup:
+        - row "测试点 结果 输出错误占比 用时 最优用时":
+          - columnheader "测试点"
+          - columnheader "结果"
+          - columnheader "输出错误占比"
+          - columnheader "用时"
+          - columnheader "最优用时"
+      - rowgroup:
+        - row "1 Pass 0.00% 2.10μs 1.07μs":
+          - cell "1"
+          - cell "Pass":
+            - generic: Pass
+          - cell "0.00%"
+          - cell "2.10μs"
+          - cell "1.07μs"
+        - row "2 Pass 0.00% 2.42μs 1.62μs":
+          - cell "2"
+          - cell "Pass":
+            - generic: Pass
+          - cell "0.00%"
+          - cell "2.42μs"
+          - cell "1.62μs"
+        - row "3 Pass 0.00% 2.82μs 2.11μs":
+          - cell "3"
+          - cell "Pass":
+            - generic: Pass
+          - cell "0.00%"
+          - cell "2.82μs"
+          - cell "2.11μs"
+        - row "4 Pass 0.00% 7.35μs 4.28μs":
+          - cell "4"
+          - cell "Pass":
+            - generic: Pass
+          - cell "0.00%"
+          - cell "7.35μs"
+          - cell "4.28μs"
+        - row "5 Pass 0.00% 6.17μs 4.47μs":
+          - cell "5"
+          - cell "Pass":
+            - generic: Pass
+          - cell "0.00%"
+          - cell "6.17μs"
+          - cell "4.47μs"
+        - row "6 Pass 0.00% 11.19μs 7.64μs":
+          - cell "6"
+          - cell "Pass":
+            - generic: Pass
+          - cell "0.00%"
+          - cell "11.19μs"
+          - cell "7.64μs"
+        - row "7 Pass 0.00% 14.86μs 10.21μs":
+          - cell "7"
+          - cell "Pass":
+            - generic: Pass
+          - cell "0.00%"
+          - cell "14.86μs"
+          - cell "10.21μs"
+        - row "8 Pass 0.00% 32.35μs 29.72μs":
+          - cell "8"
+          - cell "Pass":
+            - generic: Pass
+          - cell "0.00%"
+          - cell "32.35μs"
+          - cell "29.72μs"
+        - row "9 Pass 0.00% 69.55μs 67.81μs":
+          - cell "9"
+          - cell "Pass":
+            - generic: Pass
+          - cell "0.00%"
+          - cell "69.55μs"
+          - cell "67.81μs"
+        - row "10 Pass 0.00% 47.86μs 45.87μs":
+          - cell "10"
+          - cell "Pass":
+            - generic: Pass
+          - cell "0.00%"
+          - cell "47.86μs"
+          - cell "45.87μs"
+        - row "11 Pass 0.00% 159.17μs 127.66μs":
+          - cell "11"
+          - cell "Pass":
+            - generic: Pass
+          - cell "0.00%"
+          - cell "159.17μs"
+          - cell "127.66μs"
+        - row "12 Pass 0.00% 80.10μs 75.96μs":
+          - cell "12"
+          - cell "Pass":
+            - generic: Pass
+          - cell "0.00%"
+          - cell "80.10μs"
+          - cell "75.96μs"
+        - row "13 Pass 0.00% 422.00μs 396.73μs":
+          - cell "13"
+          - cell "Pass":
+            - generic: Pass
+          - cell "0.00%"
+          - cell "422.00μs"
+          - cell "396.73μs"
+        - row "14 Pass 0.00% 3.80ms 3.53ms":
+          - cell "14"
+          - cell "Pass":
+            - generic: Pass
+          - cell "0.00%"
+          - cell "3.80ms"
+          - cell "3.53ms"
+        - row "15 Pass 0.00% 9.01ms 7.90ms":
+          - cell "15"
+          - cell "Pass":
+            - generic: Pass
+          - cell "0.00%"
+          - cell "9.01ms"
+          - cell "7.90ms"
+    - generic: 通过：15 / 15
+- alert
+- alert

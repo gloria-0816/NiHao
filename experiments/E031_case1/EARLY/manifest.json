@@ -1,0 +1,14 @@
+{
+  "variant": "EARLY",
+  "parent": "H6SHARE",
+  "baseline_sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+  "source_sha256": "8c1c23bf0876f69ed9a78014f96192288c7423df3df944235f31dc6e0f2e9efb",
+  "guard": "dtype=float16 AND rows=1 AND D=64; existing Host branch",
+  "description": "Issue independent gamma/bias casts beside the row reduction and share their final vector barrier",
+  "numerical_change": false,
+  "other_paths_recovered_byte_equal": true,
+  "kernels_per_valid_call": 1,
+  "host_tensor_reads": false,
+  "cached_answers": false,
+  "status": "prepared"
+}

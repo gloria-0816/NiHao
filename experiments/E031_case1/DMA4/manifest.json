@@ -1,0 +1,13 @@
+{
+  "variant": "DMA4",
+  "parent": "H6SHARE",
+  "baseline_sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+  "source_sha256": "2ce8e507d0149380781784c7919c125bcc86a6cd278c775005aaf79dd240d106",
+  "description": "One strided four-row DMA only for an actual equally-spaced X,residual,gamma,bias allocation; exact original fallback otherwise",
+  "guard": "Only the existing FP16 rows=1,D=64 branch; pointer-distance safety guard otherwise retains original launch",
+  "numerical_change": false,
+  "other_paths_recovered_byte_equal": true,
+  "reads_only_valid_tensor_bytes": true,
+  "host_tensor_reads": false,
+  "kernels_per_valid_call": 1
+}

@@ -1,0 +1,6 @@
+# Authoritative evidence is kept in the ZIP files; avoid Windows long-path extracts.
+/cloud_logs/
+/harness/
+/build_*/
+# Preserve the prior editor backup locally, separate from this experiment's baseline.
+/official/prior_editor_kernel.asc

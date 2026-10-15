@@ -1,0 +1,10 @@
+{
+  "variant": "OUTNC",
+  "parent": "H6SHARE",
+  "baseline_sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+  "source_sha256": "475e5caebf59a10e4f62aececd8b6d8a8ddafd5d3c419dfd2b3493fd60edebe1",
+  "description": "Bypass output L2 allocation for this 128-byte output only; no arithmetic or other shape changes",
+  "numerical_change": false,
+  "guard": "FP16 rows=1 D=64",
+  "other_paths_recovered_byte_equal": true
+}

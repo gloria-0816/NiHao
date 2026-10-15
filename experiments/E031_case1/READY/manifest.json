@@ -1,0 +1,10 @@
+{
+  "variant": "READY",
+  "parent": "H6SHARE",
+  "baseline_sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+  "source_sha256": "d7414356d124c2f919b171f143fb8184ef3e3e0c197a32e97d36cfd2b6b50aa8",
+  "description": "Four independent input DMAs share one readiness event; full arithmetic and original output synchronization retained",
+  "numerical_change": false,
+  "guard": "FP16 rows=1 D=64",
+  "other_paths_recovered_byte_equal": true
+}

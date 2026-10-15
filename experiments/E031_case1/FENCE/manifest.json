@@ -1,0 +1,14 @@
+{
+  "variant": "FENCE",
+  "parent": "H6SHARE",
+  "baseline_sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+  "source_sha256": "6ffa1a92c08531929b7844a501f5d0e99555aa934ea2802d7ece7e9b4d868f9f",
+  "guard": "dtype=float16 AND rows=1 AND D=64; existing Host branch",
+  "description": "Remove the redundant post-Cast V barrier; drain final DMA with PIPE_ALL instead of an event pair",
+  "numerical_change": false,
+  "other_paths_recovered_byte_equal": true,
+  "kernels_per_valid_call": 1,
+  "host_tensor_reads": false,
+  "cached_answers": false,
+  "status": "prepared"
+}

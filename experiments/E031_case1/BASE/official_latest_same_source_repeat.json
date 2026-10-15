@@ -1,0 +1,159 @@
+{
+  "trial": 35,
+  "variant": "H6RESTORE2",
+  "id": 810016,
+  "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6acf8ebfaad397b6d90321df",
+  "submitted_at": "2026/10/14 22:16:31",
+  "status": "Pass",
+  "passed": 15,
+  "total": 15,
+  "source_sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+  "source_verified": true,
+  "points": [
+    {
+      "case": 1,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 2.17,
+      "tbest_us": 1.09
+    },
+    {
+      "case": 2,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 2.42,
+      "tbest_us": 1.62
+    },
+    {
+      "case": 3,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 2.8,
+      "tbest_us": 2.11
+    },
+    {
+      "case": 4,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 7.43,
+      "tbest_us": 4.28
+    },
+    {
+      "case": 5,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 5.94,
+      "tbest_us": 4.47
+    },
+    {
+      "case": 6,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 11.3,
+      "tbest_us": 7.64
+    },
+    {
+      "case": 7,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 15.19,
+      "tbest_us": 10.21
+    },
+    {
+      "case": 8,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 32.26,
+      "tbest_us": 29.72
+    },
+    {
+      "case": 9,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 70.39,
+      "tbest_us": 67.81
+    },
+    {
+      "case": 10,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 48.06,
+      "tbest_us": 45.87
+    },
+    {
+      "case": 11,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 159.87,
+      "tbest_us": 127.66
+    },
+    {
+      "case": 12,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 81.67,
+      "tbest_us": 75.96
+    },
+    {
+      "case": 13,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 423.22,
+      "tbest_us": 396.73
+    },
+    {
+      "case": 14,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 3800,
+      "tbest_us": 3530
+    },
+    {
+      "case": 15,
+      "status": "Pass",
+      "error": "0.00%",
+      "time_us": 9010,
+      "tbest_us": 7960
+    }
+  ],
+  "times_us": [
+    2.17,
+    2.42,
+    2.8,
+    7.43,
+    5.94,
+    11.3,
+    15.19,
+    32.26,
+    70.39,
+    48.06,
+    159.87,
+    81.67,
+    423.22,
+    3800,
+    9010
+  ],
+  "tbest_us": [
+    1.09,
+    1.62,
+    2.11,
+    4.28,
+    4.47,
+    7.64,
+    10.21,
+    29.72,
+    67.81,
+    45.87,
+    127.66,
+    75.96,
+    396.73,
+    3530,
+    7960
+  ],
+  "same_source_as_submission": 801341,
+  "score": 67.32,
+  "rank_observed": 76,
+  "ranking_tbest": "1.09μs 1.62μs 2.11μs 4.28μs 4.47μs 7.64μs 10.21μs 29.72μs 67.81μs 45.87μs 127.66μs 75.96μs 396.73μs 3.53ms 7.96ms",
+  "adopted": true,
+  "decision": "Exact801341/H6SHARE source restored per user. Current repeat score is separate from historical68.32"
+}

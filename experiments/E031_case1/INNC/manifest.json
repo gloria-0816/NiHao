@@ -1,0 +1,10 @@
+{
+  "variant": "INNC",
+  "parent": "H6SHARE",
+  "baseline_sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+  "source_sha256": "a1a31a8d6ae12f73a1636fd02fee728502e8d9aa54fb2c3b4f599069143f7174",
+  "description": "Bypass L2 allocation for all four 128-byte input vectors on this path only; recompute every input every call",
+  "numerical_change": false,
+  "guard": "FP16 rows=1 D=64",
+  "other_paths_recovered_byte_equal": true
+}

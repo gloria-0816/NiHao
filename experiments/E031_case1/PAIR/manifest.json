@@ -1,0 +1,13 @@
+{
+  "variant": "PAIR",
+  "parent": "H6SHARE",
+  "baseline_sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+  "source_sha256": "9cd3bc169e2b68aa6e72f5114090fbb3b8f184736c522c6960bd42fadb6f7c05",
+  "description": "Two strided DMA commands for X/residual and gamma/bias; arbitrary pair ordering preserved through UB offsets, actual pointer gaps are metadata",
+  "guard": "Only the existing FP16 rows=1,D=64 branch; pointer-distance safety guard otherwise retains original launch",
+  "numerical_change": false,
+  "other_paths_recovered_byte_equal": true,
+  "reads_only_valid_tensor_bytes": true,
+  "host_tensor_reads": false,
+  "kernels_per_valid_call": 1
+}

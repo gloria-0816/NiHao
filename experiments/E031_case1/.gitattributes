@@ -1,0 +1,2 @@
+# Preserve source and evidence bytes exactly as measured, including on Windows.
+* -text

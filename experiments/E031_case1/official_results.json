@@ -1,0 +1,592 @@
+[
+  {
+    "variant": "BASE_restore",
+    "id": 824837,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6ad07c3eaad397b6d9c2e68b",
+    "source_sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+    "editor_source_verified": true,
+    "passed": 15,
+    "points": [
+      {
+        "case": 1,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.1,
+        "tbest_us": 1.07
+      },
+      {
+        "case": 2,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.49,
+        "tbest_us": 1.62
+      },
+      {
+        "case": 3,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.78,
+        "tbest_us": 2.11
+      },
+      {
+        "case": 4,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 7.32,
+        "tbest_us": 4.28
+      },
+      {
+        "case": 5,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 6.09,
+        "tbest_us": 4.47
+      },
+      {
+        "case": 6,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 11.29,
+        "tbest_us": 7.64
+      },
+      {
+        "case": 7,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 15.94,
+        "tbest_us": 10.21
+      },
+      {
+        "case": 8,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 32.05,
+        "tbest_us": 29.72
+      },
+      {
+        "case": 9,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 69.97,
+        "tbest_us": 67.81
+      },
+      {
+        "case": 10,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 48.28,
+        "tbest_us": 45.87
+      },
+      {
+        "case": 11,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 157.89,
+        "tbest_us": 127.66
+      },
+      {
+        "case": 12,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 81.59,
+        "tbest_us": 75.96
+      },
+      {
+        "case": 13,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 424.01,
+        "tbest_us": 396.73
+      },
+      {
+        "case": 14,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 3800.0,
+        "tbest_us": 3530.0
+      },
+      {
+        "case": 15,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 9020.0,
+        "tbest_us": 7900.0
+      }
+    ],
+    "case1_us": 2.1,
+    "tbest_case1_us": 1.07,
+    "submitted_at": "2026/10/15 15:09:50"
+  },
+  {
+    "variant": "BASE",
+    "id": 823983,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6ad073ddaad397b6d9b97a07",
+    "source_sha256": "e6a9f33d0d730fcd20d8a4f6d533929b89cd9bbeb84ce6090e2a8eed8501394e",
+    "editor_source_verified": true,
+    "passed": 15,
+    "points": [
+      {
+        "case": 1,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.04,
+        "tbest_us": 1.07
+      },
+      {
+        "case": 2,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.48,
+        "tbest_us": 1.62
+      },
+      {
+        "case": 3,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.84,
+        "tbest_us": 2.11
+      },
+      {
+        "case": 4,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 7.23,
+        "tbest_us": 4.28
+      },
+      {
+        "case": 5,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 6.09,
+        "tbest_us": 4.47
+      },
+      {
+        "case": 6,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 11.11,
+        "tbest_us": 7.64
+      },
+      {
+        "case": 7,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 15.21,
+        "tbest_us": 10.21
+      },
+      {
+        "case": 8,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 32.28,
+        "tbest_us": 29.72
+      },
+      {
+        "case": 9,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 69.67,
+        "tbest_us": 67.81
+      },
+      {
+        "case": 10,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 47.9,
+        "tbest_us": 45.87
+      },
+      {
+        "case": 11,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 159.47,
+        "tbest_us": 127.66
+      },
+      {
+        "case": 12,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 80.6,
+        "tbest_us": 75.96
+      },
+      {
+        "case": 13,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 419.25,
+        "tbest_us": 396.73
+      },
+      {
+        "case": 14,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 3810.0,
+        "tbest_us": 3530.0
+      },
+      {
+        "case": 15,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 9010.0,
+        "tbest_us": 7900.0
+      }
+    ],
+    "case1_us": 2.04,
+    "tbest_case1_us": 1.07,
+    "submitted_at": "2026/10/15 14:34:05"
+  },
+  {
+    "variant": "FENCE",
+    "id": 824187,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6ad075b1aad397b6d9bb9c31",
+    "source_sha256": "6ffa1a92c08531929b7844a501f5d0e99555aa934ea2802d7ece7e9b4d868f9f",
+    "editor_source_verified": true,
+    "passed": 15,
+    "points": [
+      {
+        "case": 1,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.06,
+        "tbest_us": 1.07
+      },
+      {
+        "case": 2,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.45,
+        "tbest_us": 1.62
+      },
+      {
+        "case": 3,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.8,
+        "tbest_us": 2.11
+      },
+      {
+        "case": 4,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 7.29,
+        "tbest_us": 4.28
+      },
+      {
+        "case": 5,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 6.11,
+        "tbest_us": 4.47
+      },
+      {
+        "case": 6,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 10.9,
+        "tbest_us": 7.64
+      },
+      {
+        "case": 7,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 15.7,
+        "tbest_us": 10.21
+      },
+      {
+        "case": 8,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 32.18,
+        "tbest_us": 29.72
+      },
+      {
+        "case": 9,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 71.55,
+        "tbest_us": 67.81
+      },
+      {
+        "case": 10,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 48.43,
+        "tbest_us": 45.87
+      },
+      {
+        "case": 11,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 158.8,
+        "tbest_us": 127.66
+      },
+      {
+        "case": 12,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 81.77,
+        "tbest_us": 75.96
+      },
+      {
+        "case": 13,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 424.82,
+        "tbest_us": 396.73
+      },
+      {
+        "case": 14,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 3810.0,
+        "tbest_us": 3530.0
+      },
+      {
+        "case": 15,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 9010.0,
+        "tbest_us": 7900.0
+      }
+    ],
+    "case1_us": 2.06,
+    "tbest_case1_us": 1.07,
+    "submitted_at": "2026/10/15 14:41:53"
+  },
+  {
+    "variant": "NR2",
+    "id": 824731,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6ad07b42aad397b6d9c1d2e7",
+    "source_sha256": "1952c8ec0a85d50dbdf38a5b49120f390c0ed8a0ae5745d527cffb2fd3c29630",
+    "editor_source_verified": true,
+    "passed": 15,
+    "points": [
+      {
+        "case": 1,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.06,
+        "tbest_us": 1.07
+      },
+      {
+        "case": 2,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.45,
+        "tbest_us": 1.62
+      },
+      {
+        "case": 3,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.84,
+        "tbest_us": 2.11
+      },
+      {
+        "case": 4,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 6.98,
+        "tbest_us": 4.28
+      },
+      {
+        "case": 5,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 6.09,
+        "tbest_us": 4.47
+      },
+      {
+        "case": 6,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 11.28,
+        "tbest_us": 7.64
+      },
+      {
+        "case": 7,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 15.33,
+        "tbest_us": 10.21
+      },
+      {
+        "case": 8,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 33.08,
+        "tbest_us": 29.72
+      },
+      {
+        "case": 9,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 69.97,
+        "tbest_us": 67.81
+      },
+      {
+        "case": 10,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 48.11,
+        "tbest_us": 45.87
+      },
+      {
+        "case": 11,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 157.3,
+        "tbest_us": 127.66
+      },
+      {
+        "case": 12,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 80.59,
+        "tbest_us": 75.96
+      },
+      {
+        "case": 13,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 422.96,
+        "tbest_us": 396.73
+      },
+      {
+        "case": 14,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 3800.0,
+        "tbest_us": 3530.0
+      },
+      {
+        "case": 15,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 9010.0,
+        "tbest_us": 7900.0
+      }
+    ],
+    "case1_us": 2.06,
+    "tbest_case1_us": 1.07,
+    "submitted_at": "2026/10/15 15:05:38"
+  },
+  {
+    "variant": "PAIR",
+    "id": 824363,
+    "url": "https://cannjudge.cn/public/op_challenge_xinan_prelim/addrmsnormbias/submission/6ad0777faad397b6d9bd9d18",
+    "source_sha256": "9cd3bc169e2b68aa6e72f5114090fbb3b8f184736c522c6960bd42fadb6f7c05",
+    "editor_source_verified": true,
+    "passed": 15,
+    "points": [
+      {
+        "case": 1,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.1,
+        "tbest_us": 1.07
+      },
+      {
+        "case": 2,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.42,
+        "tbest_us": 1.62
+      },
+      {
+        "case": 3,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 2.82,
+        "tbest_us": 2.11
+      },
+      {
+        "case": 4,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 7.35,
+        "tbest_us": 4.28
+      },
+      {
+        "case": 5,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 6.17,
+        "tbest_us": 4.47
+      },
+      {
+        "case": 6,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 11.19,
+        "tbest_us": 7.64
+      },
+      {
+        "case": 7,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 14.86,
+        "tbest_us": 10.21
+      },
+      {
+        "case": 8,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 32.35,
+        "tbest_us": 29.72
+      },
+      {
+        "case": 9,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 69.55,
+        "tbest_us": 67.81
+      },
+      {
+        "case": 10,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 47.86,
+        "tbest_us": 45.87
+      },
+      {
+        "case": 11,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 159.17,
+        "tbest_us": 127.66
+      },
+      {
+        "case": 12,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 80.1,
+        "tbest_us": 75.96
+      },
+      {
+        "case": 13,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 422.0,
+        "tbest_us": 396.73
+      },
+      {
+        "case": 14,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 3800.0,
+        "tbest_us": 3530.0
+      },
+      {
+        "case": 15,
+        "status": "Pass",
+        "error": "0.00%",
+        "time_us": 9010.0,
+        "tbest_us": 7900.0
+      }
+    ],
+    "case1_us": 2.1,
+    "tbest_case1_us": 1.07,
+    "submitted_at": "2026/10/15 14:49:35"
+  }
+]
